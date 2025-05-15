@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post Foodstock - SwapIt</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #f9fff9;
+    }
+    .container {
+      padding: 20px;
+      max-width: 500px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      color: #2e7d32;
+    }
+    .form-group {
+      margin: 15px 0;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+    textarea {
+      resize: vertical;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #43a047;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .voice-btn {
+      margin-top: 10px;
+      background-color: #2e7d32;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Post Foodstock to Swap</h2>
+    <form>
+      <div class="form-group">
+        <label for="foodname">Food Name</label>
+        <input type="text" id="foodname" placeholder="e.g. Rice, Yam">
+      </div>
+      <div class="form-group">
+        <label for="quantity">Quantity & Unit</label>
+        <input type="text" id="quantity" placeholder="e.g. 5kg, 2 tubers">
+      </div>
+      <div class="form-group">
+        <label for="location">Your Location</label>
+        <input type="text" id="location" placeholder="e.g. Ibadan, Lagos">
+      </div>
+      <div class="form-group">
+        <label for="wanted">What You Want in Exchange</label>
+        <input type="text" id="wanted" placeholder="e.g. Yam for Rice">
+      </div>
+      <div class="form-group">
+        <label for="description">Extra Notes (Optional)</label>
+        <textarea id="description" rows="3" placeholder="Any special conditions?"></textarea>
+      </div>
+      <button class="get-started-btn" onclick="window.location.href='post-confirmation.html'">Get Started</button>
+      <button type="submit" onclick="window.location.href='post-confirmation.html'">Post Swap Offer</button>
+    </form>
+    <button class="voice-btn" onclick="startVoicePost()">🎙️ Post Using Voice</button>
+  </div>
+
+  <script>
+    function startVoicePost() {
+      if (!('webkitSpeechRecognition' in window)) {
+        alert("Voice recognition not supported on this device.");
+        return;
+      }
+      const recognition = new webkitSpeechRecognition();
+      recognition.lang = 'en-US';
+      recognition.interimResults = false;
+      recognition.maxAlternatives = 1;
+
+      recognition.onstart = function () {
+        alert("Say: food name, quantity, location, and what you want");
+      };
+
+      recognition.onresult = function (event) {
+        const transcript = event.results[0][0].transcript;
+        const parts = transcript.split(' ');
+        if (parts.length >= 4) {
+          document.getElementById('foodname').value = parts[0];
+          document.getElementById('quantity').value = parts[1];
+          document.getElementById('location').value = parts[2];
+          document.getElementById('wanted').value = parts.slice(3).join(' ');
+        } else {
+          alert("Please say complete information.");
+        }
+      };
+
+      recognition.start();
+    }
+  </script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post Swap Item - FoodSwap Nigeria</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #27ae60;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      font-size: 14px;
+      margin-bottom: 5px;
+      display: block;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .mic-btn {
+      background-color: #2980b9;
+      color: white;
+      padding: 8px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+    .submit-btn {
+      width: 100%;
+      background-color: #27ae60;
+      color: white;
+      padding: 14px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+    .toggle-assist {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .toggle-assist button {
+      background-color: #2c3e50;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+    }
+  </style>
+  <script>
+    function startDictation(fieldId) {
+      if (window.SpeechRecognition || window.webkitSpeechRecognition) {
+        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+        recognition.lang = 'en-NG';
+        recognition.start();
+
+        recognition.onresult = function(event) {
+          document.getElementById(fieldId).value = event.results[0][0].transcript;
+        };
+      } else {
+        alert("Voice input is not supported in your browser.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h2>Post Foodstock to Swap</h2>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <form>
+        <div class="form-group">
+          <label for="foodName">Food Item Name</label>
+          <input type="text" id="foodName" name="foodName">
+          <button type="button" class="mic-btn" onclick="startDictation('foodName')">🎤 Speak Name</button>
+        </div>
+
+        <div class="form-group">
+          <label for="quantity">Quantity (e.g. 5kg, 1 bag)</label>
+          <input type="text" id="quantity" name="quantity">
+          <button type="button" class="mic-btn" onclick="startDictation('quantity')">🎤 Speak Quantity</button>
+        </div>
+
+        <div class="form-group">
+          <label for="location">Your Location</label>
+          <input type="text" id="location" name="location">
+          <button type="button" class="mic-btn" onclick="startDictation('location')">🎤 Speak Location</button>
+        </div>
+
+        <div class="form-group">
+          <label for="swapFor">Looking to Swap For</label>
+          <input type="text" id="swapFor" name="swapFor">
+          <button type="button" class="mic-btn" onclick="startDictation('swapFor')">🎤 Speak What You Want</button>
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Extra Notes (Optional)</label>
+          <textarea id="notes" name="notes"></textarea>
+          <button type="button" class="mic-btn" onclick="startDictation('notes')">🎤 Speak Notes</button>
+        </div>
+
+        <button type="submit" class="submit-btn">Post Swap</button>
+      </form>
+    </div>
+
+    <div class="toggle-assist">
+      <p>If you need help posting with voice:</p>
+      <button onclick="location.href='post-simple.html'">🧏‍♂️ Use Easy Voice Post</button>
+    </div>
+  </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Easy Voice Swap Post - FoodSwap Nigeria</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #27ae60;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .container {
+      padding: 20px;
+    }
+    .instructions {
+      background-color: #fff3cd;
+      color: #856404;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    .mic-button {
+      width: 100%;
+      background-color: #2980b9;
+      color: white;
+      padding: 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .output-box {
+      background: white;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+      min-height: 80px;
+      margin-bottom: 20px;
+    }
+    .submit-btn {
+      background-color: #27ae60;
+      color: white;
+      padding: 15px;
+      font-size: 18px;
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+    }
+  </style>
+  <script>
+    function startVoiceCapture() {
+      if (window.SpeechRecognition || window.webkitSpeechRecognition) {
+        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+        recognition.lang = 'en-NG';
+        recognition.start();
+
+        recognition.onresult = function(event) {
+          document.getElementById("voiceOutput").innerText = event.results[0][0].transcript;
+        };
+      } else {
+        alert("Voice recognition not supported on this device.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h2>Easy Voice Post</h2>
+  </header>
+
+  <div class="container">
+    <div class="instructions">
+      Press the mic below and say:
+      <strong>what food you have, how much, your location, and what you want in return.</strong>
+    </div>
+
+    <button class="mic-button" onclick="startVoiceCapture()">🎤 Speak Your Swap Details</button>
+
+    <div class="output-box" id="voiceOutput">
+      <!-- Transcribed voice input will show here -->
+    </div>
+
+    <button class="submit-btn">Post My Swap</button>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Swaps - FoodSwap Nigeria</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
+    header {
+      background-color: #27ae60;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .swap-list {
+      padding: 15px;
+    }
+    .swap-card {
+      background-color: white;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .swap-card h3 {
+      margin-top: 0;
+      color: #2c3e50;
+      font-size: 18px;
+    }
+    .swap-card p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+    .swap-status {
+      font-weight: bold;
+      margin-top: 10px;
+      color: #2980b9;
+    }
+    .swap-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .swap-actions button,
+    .delete-btn {
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+    }
+    .edit-btn {
+      background-color: #f39c12;
+      color: white;
+    }
+    .cancel-btn {
+      background-color: #e74c3c;
+      color: white;
+    }
+    .delete-btn {
+      background-color: #c0392b;
+      color: white;
+      margin-top: 10px;
+    }
+    @media screen and (min-width: 600px) {
+      .swap-actions {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .swap-actions button {
+        width: 48%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>My Swaps</h2>
+    <p>Manage your food swap offers and requests</p>
+  </header>
+
+  <div class="swap-list">
+    <div class="swap-card">
+      <h3>5kg Rice ↔ 3 Tubers of Yam</h3>
+      <p><strong>Status:</strong> Waiting for response</p>
+      <p><strong>Location:</strong> Lagos Mainland</p>
+      <p><strong>Date Posted:</strong> May 10, 2025</p>
+      <div class="swap-actions">
+        <button class="edit-btn">Edit</button>
+        <button class="cancel-btn">Cancel</button>
+      </div>
+    </div>
+
+    <div class="swap-card">
+      <h3>2kg Beans ↔ Sweet Potatoes</h3>
+      <p><strong>Status:</strong> Accepted & Concluded</p>
+      <p><strong>Location:</strong> Abuja</p>
+      <p><strong>Swap Date:</strong> May 8, 2025</p>
+      <button class="delete-btn">Delete Post</button>
+    </div>
+  </div>
+</body>
+</html>

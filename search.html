@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Swap - FoodSwap Nigeria</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
+    header {
+      background-color: #27ae60;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .search-container {
+      padding: 15px;
+      background-color: white;
+    }
+    .search-container input, .search-container select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    .results {
+      padding: 10px;
+    }
+    .result-card {
+      background-color: white;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .result-card h4 {
+      margin: 0 0 5px 0;
+      color: #2c3e50;
+    }
+    .result-card p {
+      margin: 3px 0;
+      font-size: 14px;
+    }
+    .result-card button {
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      padding: 8px;
+      border-radius: 5px;
+      font-size: 14px;
+      margin-top: 8px;
+      cursor: pointer;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Search Food Items</h2>
+    <p>Find the food you want to swap</p>
+  </header>
+
+  <div class="search-container">
+    <input type="text" placeholder="Search by food name (e.g., Yam, Beans, Rice)">
+    <select>
+      <option value="">Filter by Location</option>
+      <option value="lagos">Lagos</option>
+      <option value="abuja">Abuja</option>
+      <option value="kano">Kano</option>
+    </select>
+    <select>
+      <option value="">Sort by</option>
+      <option value="recent">Most Recent</option>
+      <option value="verified">Verified Users</option>
+    </select>
+  </div>
+
+  <div class="results">
+    <div class="result-card">
+      <h4>5kg Rice</h4>
+      <p><strong>Wants:</strong> 3 Tubers of Yam</p>
+      <p><strong>Location:</strong> Lagos Mainland</p>
+      <p>🟢 Verified | ⏱️ 2 hours ago</p>
+      <button onclick="window.location.href='swap-offer.html'">Request Swap</button>
+    </div>
+
+    <div class="result-card">
+      <h4>2kg Beans</h4>
+      <p><strong>Wants:</strong> Sweet Potatoes</p>
+      <p><strong>Location:</strong> Abuja</p>
+      <p>🟢 Verified | ⏱️ 5 hours ago</p>
+      <button onclick="window.location.href='swap-offer.html'">Request Swap</button>
+    </div>
+  </div>
+</body>
+</html>

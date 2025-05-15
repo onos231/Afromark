@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swap Listings - Message Alert</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #27ae60;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .swap-listing {
+      padding: 10px;
+    }
+    .swap-item {
+      background: white;
+      margin-bottom: 10px;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    .swap-item h4 {
+      margin: 0 0 5px 0;
+    }
+    .message-alert {
+      background-color: #ffefc5;
+      border-left: 5px solid #f39c12;
+      padding: 8px;
+      margin-top: 8px;
+      border-radius: 5px;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .message-alert span {
+      flex: 1;
+    }
+    .view-chat-btn {
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>My Swaps</h2>
+  </header>
+  <div class="swap-listing">
+    <div class="swap-item">
+      <h4>Rice for Yam</h4>
+      <p>Offered: 1 bag of rice<br>Requested: 3 tubers of yam</p>
+      <div class="message-alert">
+        <span>📨 New message: "I accepted your offer, let's meet..."</span>
+        <button class="view-chat-btn" onclick="window.location.href='chat.html'">View Chat</button>
+      </div>
+    </div>
+
+    <div class="swap-item">
+      <h4>Beans for Garri</h4>
+      <p>Offered: 5 cups of beans<br>Requested: 1 bowl of garri</p>
+    </div>
+  </div>
+</body>
+</html>

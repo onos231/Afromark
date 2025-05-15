@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoodSwap Nigeria</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #27ae60;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .language-toggle {
+      margin-top: 10px;
+    }
+    .language-toggle button {
+      margin: 0 5px;
+      background-color: white;
+      color: #27ae60;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .tab-bar {
+      display: flex;
+      justify-content: space-around;
+      background-color: white;
+      padding: 10px 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .tab-bar button {
+      background: none;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      color: #2c3e50;
+    }
+    .card {
+      background-color: white;
+      margin: 15px;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .card img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    .card-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .info {
+      margin-left: 10px;
+    }
+    .swap-btn {
+      background-color: #27ae60;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Swap Your Extra Food for What You Need</h1>
+    <div class="language-toggle">
+      <button>English</button>
+      <button>Pidgin</button>
+      <button>Yoruba</button>
+      <button>Hausa</button>
+    </div>
+  </header>
+
+  <div class="tab-bar">
+    <button>🔄 Swap Listings</button>
+    <button>📤 Post Offer</button>
+    <button http://127.0.0.1:63719/search.html>🔍 Find Match</button>
+    <button onclick="window.location.href='my-swaps.html'">👤 My Swaps</button>
+  </div>
+
+  <div class="card">
+    <div class="card-content">
+      <img src="https://via.placeholder.com/50" alt="Rice">
+      <div class="info">
+        <p><strong>Offers:</strong> 5kg Rice</p>
+        <p><strong>Wants:</strong> 3 Yam Tubers</p>
+        <p>📍 Lagos Mainland | 🟢 Verified</p>
+        <p>⏱️ 2 hours ago</p>
+      </div>
+      <button class="swap-btn" onclick="window.location.href='notification.html'">Request Swap</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-content">
+      <img src="https://via.placeholder.com/50" alt="Beans">
+      <div class="info">
+        <p><strong>Offers:</strong> 2kg Beans</p>
+        <p><strong>Wants:</strong> Sweet Potatoes</p>
+        <p>📍 Abuja | 🟢 Verified</p>
+        <p>⏱️ 5 hours ago</p>
+      </div>
+      <button class="swap-btn" onclick="window.location.href='posting.html'">Request Swap</button>
+    </div>
+  </div>
+</body>
+</html>
+

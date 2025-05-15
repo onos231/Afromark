@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swap Chat - FoodSwap Nigeria</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      background-color: #27ae60;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .chat-container {
+      display: flex;
+      flex-direction: column;
+      height: calc(100vh - 180px);
+      padding: 10px;
+      overflow-y: auto;
+    }
+    .message {
+      max-width: 70%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 10px;
+    }
+    .from-user {
+      align-self: flex-end;
+      background-color: #d1f5d3;
+    }
+    .from-other {
+      align-self: flex-start;
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+    }
+    .input-container {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      background: white;
+      padding: 10px;
+      border-top: 1px solid #ccc;
+    }
+    input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    .send-btn, .mic-btn, .map-btn {
+      background-color: #27ae60;
+      color: white;
+      padding: 10px 15px;
+      margin-left: 5px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    .map-btn {
+      background-color: #2980b9;
+    }
+  </style>
+  <script>
+    function startVoiceMessage() {
+      if (window.SpeechRecognition || window.webkitSpeechRecognition) {
+        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+        recognition.lang = 'en-NG';
+        recognition.start();
+
+        recognition.onresult = function(event) {
+          document.getElementById("chatInput").value = event.results[0][0].transcript;
+        };
+      } else {
+        alert("Voice recognition not supported on this device.");
+      }
+    }
+
+    function openMap() {
+      window.open("https://www.google.com/maps", "_blank");
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h2>Swap Chat</h2>
+    <p>You're chatting with the person who accepted your swap</p>
+  </header>
+
+  <div class="chat-container">
+    <div class="message from-other">Hi! I accepted your swap offer for 1 bag of rice.</div>
+    <div class="message from-user">Thanks! I'm based in Ibadan. When can we meet?</div>
+    <div class="message from-other">How about tomorrow at Bodija market?</div>
+  </div>
+
+  <div class="input-container">
+    <input type="text" id="chatInput" placeholder="Type or speak your message...">
+    <button class="send-btn" onclick="window.location.href='swap-listings.html'">Send</button>
+    <button class="mic-btn" onclick="startVoiceMessage()">🎤</button>
+    <button class="map-btn" onclick="openMap()">📍Map</button>
+  </div>
+</body>
+</html>
