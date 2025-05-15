@@ -3,6 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Easy Voice Swap Post - FoodSwap Nigeria</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #27ae60;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .container {
+      padding: 20px;
+    }
+    .instructions {
+      background-color: #fff3cd;
+      color: #856404;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    .mic-button {
+      width: 100%;
+      background-color: #2980b9;
+      color: white;
+      padding: 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .output-box {
+      background: white;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+      min-height: 80px;
+      margin-bottom: 20px;
+    }
+    .submit-btn {
+      background-color: #27ae60;
+      color: white;
+      padding: 15px;
+      font-size: 18px;
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+    }
+  </style>
+  <script>
+    function startVoiceCapture() {
+      if (window.SpeechRecognition || window.webkitSpeechRecognition) {
+        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+        recognition.lang = 'en-NG';
+        recognition.start();
+
+        recognition.onresult = function(event) {
+          document.getElementById("voiceOutput").innerText = event.results[0][0].transcript;
+        };
+      } else {
+        alert("Voice recognition not supported on this device.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h2>Easy Voice Post</h2>
+  </header>
+
+  <div class="container">
+    <div class="instructions">
+      Press the mic below and say:
+      <strong>what food you have, how much, your location, and what you want in return.</strong>
+    </div>
+
+    <button class="mic-button" onclick="startVoiceCapture()">🎤 Speak Your Swap Details</button>
+
+    <div class="output-box" id="voiceOutput">
+      <!-- Transcribed voice input will show here -->
+    </div>
+
+    <button class="submit-btn" onclick="window.location.href='post-confirmation.html'">Post My Swap</button>
+  </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Post Foodstock - SwapIt</title>
   <style>
     body {
@@ -76,8 +173,8 @@
         <label for="description">Extra Notes (Optional)</label>
         <textarea id="description" rows="3" placeholder="Any special conditions?"></textarea>
       </div>
-      <button class="get-started-btn" onclick="window.location.href='post-confirmation.html'">Get Started</button>
-      <button type="submit" onclick="window.location.href='post-confirmation.html'">Post Swap Offer</button>
+		
+      <button type="submit">Post Swap Offer</button>
     </form>
     <button class="voice-btn" onclick="startVoicePost()">🎙️ Post Using Voice</button>
   </div>
@@ -246,7 +343,7 @@
           <button type="button" class="mic-btn" onclick="startDictation('notes')">🎤 Speak Notes</button>
         </div>
 
-        <button type="submit" class="submit-btn">Post Swap</button>
+        <button type="submit" class="submit-btn" onclick="window.location.href='post-confirmation.html'">Post Swap</button>
       </form>
     </div>
 
@@ -258,100 +355,5 @@
 </body>
 </html>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Easy Voice Swap Post - FoodSwap Nigeria</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      background-color: #f9f9f9;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #27ae60;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-    .container {
-      padding: 20px;
-    }
-    .instructions {
-      background-color: #fff3cd;
-      color: #856404;
-      padding: 15px;
-      border-radius: 10px;
-      font-size: 16px;
-      margin-bottom: 20px;
-    }
-    .mic-button {
-      width: 100%;
-      background-color: #2980b9;
-      color: white;
-      padding: 20px;
-      font-size: 18px;
-      border: none;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-    .output-box {
-      background: white;
-      padding: 15px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      font-size: 16px;
-      min-height: 80px;
-      margin-bottom: 20px;
-    }
-    .submit-btn {
-      background-color: #27ae60;
-      color: white;
-      padding: 15px;
-      font-size: 18px;
-      width: 100%;
-      border: none;
-      border-radius: 10px;
-    }
-  </style>
-  <script>
-    function startVoiceCapture() {
-      if (window.SpeechRecognition || window.webkitSpeechRecognition) {
-        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-        recognition.lang = 'en-NG';
-        recognition.start();
 
-        recognition.onresult = function(event) {
-          document.getElementById("voiceOutput").innerText = event.results[0][0].transcript;
-        };
-      } else {
-        alert("Voice recognition not supported on this device.");
-      }
-    }
-  </script>
-</head>
-<body>
-  <header>
-    <h2>Easy Voice Post</h2>
-  </header>
-
-  <div class="container">
-    <div class="instructions">
-      Press the mic below and say:
-      <strong>what food you have, how much, your location, and what you want in return.</strong>
-    </div>
-
-    <button class="mic-button" onclick="startVoiceCapture()">🎤 Speak Your Swap Details</button>
-
-    <div class="output-box" id="voiceOutput">
-      <!-- Transcribed voice input will show here -->
-    </div>
-
-    <button class="submit-btn">Post My Swap</button>
-  </div>
-</body>
-</html>
 
