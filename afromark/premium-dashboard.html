@@ -1,0 +1,107 @@
+	
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SwapIt Premium Dashboard</title>
+	<link rel="stylesheet" href="css/style.css">
+	
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: #f7f7f7;
+    }
+    header {
+      background: #4CAF50;
+      color: white;
+      padding: 16px;
+      text-align: center;
+    }
+    .dashboard {
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      margin-bottom: 16px;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+    .card p {
+      margin: 0;
+      color: #555;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 16px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #fff;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      border-top: 1px solid #ddd;
+    }
+    nav button {
+      background: none;
+      border: none;
+      font-size: 14px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h2>SwapIt Premium</h2>
+</header>
+
+<div class="dashboard">
+  <div class="card">
+    <h3>Welcome to Premium</h3>
+    <p>Unlock access to exclusive food swap partnerships and funding opportunities.</p>
+  </div>
+  <div class="card">
+    <h3>Investor Marketplace</h3>
+    <p>Apply to investors supporting food-related businesses.</p>
+    <button class="btn" onclick="location.href='investor-marketplace.html'">Enter Marketplace</button>
+  </div>
+  <div class="card">
+    <h3>NGO Food Programs</h3>
+    <p>Join large-scale food relief initiatives with local impact.</p>
+    <button class="btn" onclick="location.href='ngo-progress.html'">View Programs</button>
+  </div>
+  <div class="card">
+    <h3>Exclusive Swaps</h3>
+    <p>Access premium-only food swaps in bulk quantities.</p>
+    <button class="btn" onclick="location.href='exclusive-marketplace.html'">See Deals</button>
+  </div>
+</div>
+
+	<nav>
+    <a href="index.html"><div>🏠</div>Home</a>
+    <a href="exclusive-marketplace"><div>🔍</div>Find Match</a>
+    <a href="exclusive-submit.html"><div>➕</div>Post Offer</a>
+    <a href="premium-onboarding.html"><div>👤</div>Premium</a>
+	<a href="#"><div>👤</div>Account</a>
+  </nav>
+
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - SwapIt</title>
+	<link rel="stylesheet" href="css/style.css">
+	</head>
+<div class="admin-ngo-progress-container">
+  <h2>NGO Project Progress Review</h2>
+
+  <div class="project-card">
+    <h3>Community Rice Farm – Kaduna</h3>
+    <p><strong>Status:</strong> Midpoint</p>
+    <p><strong>Last Update:</strong> 12 May 2025</p>
+    
+    <h4>Description</h4>
+    <p>First planting phase completed. Irrigation systems operational. Harvest expected in 2 weeks.</p>
+
+    <h4>Uploaded Media</h4>
+    <div class="media">
+      <img src="rice-field.jpg" alt="Rice Field">
+      <video src="progress-update.mp4" controls></video>
+    </div>
+
+    <h4>Timeline</h4>
+    <ul class="timeline">
+      <li><strong>12 Mar:</strong> Project Started</li>
+      <li><strong>3 Apr:</strong> Planting Completed</li>
+      <li><strong>12 May:</strong> Midpoint Update Submitted</li>
+    </ul>
+
+    <h4>Comments</h4>
+    <div class="comments-box">
+      <p><strong>Investor A:</strong> Looks promising!</p>
+      <p><strong>Admin:</strong> Please include water usage report next time.</p>
+    </div>
+
+    <textarea placeholder="Write feedback or a request..."></textarea>
+    <button class="btn-comment">Post Feedback</button>
+
+    <div class="admin-actions">
+      <button class="btn-approve">Mark as Verified</button>
+      <button class="btn-flag">Flag for Review</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .admin-ngo-progress-container { padding: 16px; font-family: 'Segoe UI', sans-serif; }
+  .project-card { background: #fff; padding: 16px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); }
+  .media img, .media video { width: 100%; margin-top: 10px; border-radius: 8px; }
+  .timeline { list-style: none; padding-left: 0; margin: 12px 0; }
+  .timeline li { padding: 6px 0; border-bottom: 1px solid #eee; }
+  .comments-box { background: #f5f5f5; padding: 10px; border-radius: 8px; margin-bottom: 10px; }
+  textarea { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; }
+  .btn-comment, .btn-approve, .btn-flag {
+    padding: 10px; margin-top: 10px; width: 100%;
+    border: none; border-radius: 6px; cursor: pointer;
+  }
+  .btn-comment { background-color: #007bff; color: #fff; }
+  .btn-approve { background-color: #28a745; color: #fff; }
+  .btn-flag { background-color: #dc3545; color: #fff; }
+</style>
+</html>

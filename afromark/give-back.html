@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Give Back</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f4f4f4;
+      padding: 16px;
+    }
+    .tabs {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+    .tab {
+      flex: 1;
+      padding: 12px;
+      text-align: center;
+      background: #e0e0e0;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .tab.active {
+      background: #4CAF50;
+      color: white;
+    }
+    .form-group {
+      margin-bottom: 14px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+    input, select, textarea, button {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #4CAF50;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+    .donation-card {
+      background: white;
+      padding: 12px;
+      border-radius: 10px;
+      margin-top: 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .donation-card h4 {
+      margin: 0 0 5px;
+    }
+    .location-btn {
+      margin-top: 6px;
+      background: #2196F3;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🎁 Give Back</h2>
+
+  <div class="tabs">
+    <div class="tab active" onclick="switchTab('donate')">Donate</div>
+    <div class="tab" onclick="switchTab('browse')">Browse</div>
+  </div>
+
+  <!-- Donate Form -->
+  <div id="donateTab">
+    <div class="form-group">
+      <label>Donation Type</label>
+      <select id="donationType">
+        <option>Food</option>
+        <option>Seeds</option>
+        <option>Farming Tools</option>
+        <option>Cash</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Location</label>
+      <input id="donationLocation" type="text" placeholder="e.g. Ibadan, Lagos">
+      <button class="location-btn" onclick="getLocation('donationLocation')">📍 Use My Current Location</button>
+    </div>
+    <div class="form-group">
+      <label>Description</label>
+      <textarea placeholder="Describe what you're giving out..."></textarea>
+    </div>
+    <div class="form-group">
+      <label>Upload Image or Video</label>
+      <input type="file">
+    </div>
+    <button>Submit Donation</button>
+  </div>
+
+  <!-- Browse Donations -->
+  <div id="browseTab" style="display:none;">
+    <div class="form-group">
+      <label>Search by Location</label>
+      <input id="searchLocation" type="text" placeholder="e.g. Kaduna, Edo">
+      <button class="location-btn" onclick="getLocation('searchLocation')">📍 Use My Current Location</button>
+    </div>
+    <div class="form-group">
+      <label>Category</label>
+      <select id="categoryFilter">
+        <option value="all">All</option>
+        <option value="Food">Food</option>
+        <option value="Seeds">Seeds</option>
+        <option value="Farming Tools">Farming Tools</option>
+        <option value="Cash">Cash</option>
+      </select>
+    </div>
+    <button onclick="applyFilter()">Apply Filter</button>
+
+    <div id="donationResults">
+      <!-- Filtered results will appear here -->
+    </div>
+  </div>
+
+  <script>
+    const sampleDonations = [
+      { type: 'Food', location: 'Kaduna', desc: '10kg Rice for single mothers' },
+      { type: 'Seeds', location: 'Benue', desc: 'Maize seeds from GreenFarm' },
+      { type: 'Farming Tools', location: 'Ogun', desc: 'Manual Hoe & Sprayers' }
+    ];
+
+    function switchTab(tab) {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.getElementById('donateTab').style.display = 'none';
+      document.getElementById('browseTab').style.display = 'none';
+
+      if (tab === 'donate') {
+        document.querySelector('.tabs .tab:first-child').classList.add('active');
+        document.getElementById('donateTab').style.display = 'block';
+      } else {
+        document.querySelector('.tabs .tab:last-child').classList.add('active');
+        document.getElementById('browseTab').style.display = 'block';
+      }
+    }
+
+    function applyFilter() {
+      const category = document.getElementById("categoryFilter").value;
+      const location = document.getElementById("searchLocation").value.toLowerCase();
+      const resultsContainer = document.getElementById("donationResults");
+      resultsContainer.innerHTML = '';
+
+      const filtered = sampleDonations.filter(d => 
+        (category === 'all' || d.type === category) && 
+        d.location.toLowerCase().includes(location)
+      );
+
+      if (filtered.length === 0) {
+        resultsContainer.innerHTML = '<p>No donations match your filter.</p>';
+      } else {
+        filtered.forEach(d => {
+          resultsContainer.innerHTML += `
+            <div class="donation-card">
+              <h4>${d.type}</h4>
+              <p><strong>Location:</strong> ${d.location}</p>
+              <p>${d.desc}</p>
+              <button>Request This</button>
+            </div>
+          `;
+        });
+      }
+    }
+
+    function getLocation(inputId) {
+      if (!navigator.geolocation) {
+        alert("Geolocation is not supported.");
+        return;
+      }
+      navigator.geolocation.getCurrentPosition(pos => {
+        fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${pos.coords.latitude}&lon=${pos.coords.longitude}`)
+          .then(response => response.json())
+          .then(data => {
+            const city = data.address.city || data.address.town || data.address.state || 'Your Area';
+            document.getElementById(inputId).value = city;
+          });
+      }, () => {
+        alert("Unable to retrieve location.");
+      });
+    }
+  </script>
+
+</body>
+</html>

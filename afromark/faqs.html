@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQs - SwapIt</title>
+	<link rel="stylesheet" href="css/style.css">
+  <style>
+    
+    
+  </style>
+</head>
+<body>
+  <div class="header">Frequently Asked Questions</div>
+  <div class="faq-container">
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleAnswer(this)">What is SwapIt? <span class="toggle-icon">+</span></div>
+      <div class="faq-answer">SwapIt is a food item swapping platform where users can exchange raw foodstuff with one another across Nigeria.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleAnswer(this)">How do I post a swap? <span class="toggle-icon">+</span></div>
+      <div class="faq-answer">After registering and verifying your profile, go to the Post Swap page, add your item details, upload a picture or take one using your camera, then submit.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleAnswer(this)">Is it free to use? <span class="toggle-icon">+</span></div>
+      <div class="faq-answer">Yes, SwapIt is free to use. However, users are responsible for their own delivery or collection logistics.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleAnswer(this)">Do I have to meet the person I’m swapping with? <span class="toggle-icon">+</span></div>
+      <div class="faq-answer">You can decide whether to meet in person or use a delivery service. We recommend safe and public meeting places.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleAnswer(this)">Can I report inappropriate behavior? <span class="toggle-icon">+</span></div>
+      <div class="faq-answer">Yes, go to the user’s profile and tap "Report User" if you encounter issues.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleAnswer(this)">Is verification necessary? <span class="toggle-icon">+</span></div>
+      <div class="faq-answer">Verification builds trust. Verified users are more likely to have successful swaps.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleAnswer(this)">Can I cancel my swap request? <span class="toggle-icon">+</span></div>
+      <div class="faq-answer">Yes, go to your My Swaps page, locate the request, and choose cancel.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleAnswer(this)">How do I contact someone about their swap post? <span class="toggle-icon">+</span></div>
+      <div class="faq-answer">Tap on the post and use the messaging option to chat with the owner directly.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleAnswer(this)">Can I swap more than one item at a time? <span class="toggle-icon">+</span></div>
+      <div class="faq-answer">Yes, you can post multiple items, and even bundle them in a swap if the other party agrees.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleAnswer(this)">Do I need an internet connection to use SwapIt? <span class="toggle-icon">+</span></div>
+      <div class="faq-answer">Yes, a stable internet connection is required to view listings, chat, and post items.</div>
+    </div>
+  </div>
+	
+	<script src="js/theme.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    function toggleAnswer(element) {
+      const answer = element.nextElementSibling;
+      const icon = element.querySelector('.toggle-icon');
+      if (answer.style.display === 'block') {
+        answer.style.display = 'none';
+        icon.textContent = '+';
+      } else {
+        answer.style.display = 'block';
+        icon.textContent = '-';
+      }
+    }
+  </script>
+</body>
+</html>

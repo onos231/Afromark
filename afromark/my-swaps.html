@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Swaps - FoodSwap Nigeria</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h2>My Swaps</h2>
+    <p>Manage your food swap offers and requests</p>
+  </header>
+
+  <div class="swap-list">
+    <div class="swap-card">
+      <h3>5kg Rice ↔ 3 Tubers of Yam</h3>
+      <p><strong>Status:</strong> Waiting for response</p>
+      <p><strong>Location:</strong> Lagos Mainland</p>
+      <p><strong>Date Posted:</strong> May 10, 2025</p>
+      <div class="swap-actions">
+        <button class="edit-btn" onclick="window.location.href='index.html'">Edit</button>
+        <button class="cancel-btn">Cancel</button>
+      </div>
+    </div>
+
+    <div class="swap-card">
+      <h3>2kg Beans ↔ Sweet Potatoes</h3>
+      <p><strong>Status:</strong> Accepted & Concluded</p>
+      <p><strong>Location:</strong> Abuja</p>
+      <p><strong>Swap Date:</strong> May 8, 2025</p>
+      <button class="delete-btn">Delete Post</button>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Swaps</title>
+  <style>
+    
+    h2 {
+      text-align: center;
+      color: #2e7d32;
+      margin-bottom: 20px;
+    }
+    .swap-card {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .swap-card h4 {
+      margin: 0 0 10px 0;
+      color: #333;
+    }
+    .swap-card p {
+      margin: 4px 0;
+      color: #555;
+      font-size: 14px;
+    }
+    .status {
+      font-weight: bold;
+      margin-top: 10px;
+      color: white;
+      padding: 6px 10px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+    .pending { background: orange; }
+    .accepted { background: green; }
+    .declined { background: red; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>My Swap Listings</h2>
+
+    <div class="swap-card">
+      <h4>Rice - 5kg</h4>
+      <p>Wanted: Yam</p>
+      <p>Location: Ibadan</p>
+      <span class="status pending">Pending</span>
+    </div>
+
+    <div class="swap-card">
+      <h4>Beans - 3kg</h4>
+      <p>Wanted: Plantain</p>
+      <p>Location: Lagos</p>
+      <span class="status accepted">Accepted ✅</span>
+    </div>
+
+    <div class="swap-card">
+      <h4>Garri - 10kg</h4>
+      <p>Wanted: Fish</p>
+      <p>Location: Abuja</p>
+      <span class="status declined">Declined ❌</span>
+    </div>
+
+  </div>
+	
+	<script src="js/theme.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

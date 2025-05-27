@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Swap Search - SwapIt</title>
+	  <link rel="stylesheet" href="css/style.css">
+    
+
+</head>
+<body>
+  <header>
+    <a href="landing-page.html"><h2>Search Food Items</h2>
+    <p>Find the food you want to swap</p>
+  </a></header>
+
+  <div class="container">
+    <div style="position: relative">
+      <input type="text" id="foodInput" placeholder="Enter food item (e.g., Rice)" oninput="showSuggestions(this.value)">
+      <div id="suggestions" class="suggestions" style="display:none"></div>
+    </div>
+    <button class="voice-btn" onclick="startVoiceInput('foodInput')">🎤 Speak Food Name</button>
+
+    <select id="locationInput" onchange="validateSearch()">
+      <option value="">Select Location</option>
+      <option value="Lagos">Lagos</option>
+      <option value="Abuja">Abuja</option>
+      <option value="Kano">Kano</option>
+    </select>
+
+    <select id="sortInput" onchange="validateSearch()">
+      <option value="recent">Sort by Most Recent</option>
+      <option value="popular">Sort by Popular</option>
+    </select>
+
+    <button class="search-btn" onclick="performSearch()">🔍 Search</button>
+
+    <div id="results" class="results"></div>
+  </div>
+	
+	<nav>
+    <a href="index.html"><div>🏠</div>Home</a>
+    <a href="search.html"><div>🔍</div>Search</a>
+    <a href="posting.html"><div>➕</div>Post</a>
+    <a href="premium-dashboard.html"><div>👤</div>Premium</a>
+	 <a href="account.html"><div>👤</div>Account</a>
+  </nav>
+	
+	<script src="js/theme.js"></script>
+  <script src="js/script.js"></script>
+
+  <script>
+    const foodSuggestions = ['Rice', 'Beans', 'Yam', 'Cassava', 'Plantain', 'Tomatoes'];
+
+    function showSuggestions(input) {
+      const suggestionBox = document.getElementById('suggestions');
+      if (!input) {
+        suggestionBox.style.display = 'none';
+        return;
+      }
+      const matches = foodSuggestions.filter(item => item.toLowerCase().includes(input.toLowerCase()));
+      if (matches.length === 0) {
+        suggestionBox.style.display = 'none';
+        return;
+      }
+      suggestionBox.innerHTML = matches.map(item => `<div class='suggestion' onclick="selectSuggestion('${item}')">${item}</div>`).join('');
+      suggestionBox.style.display = 'block';
+    }
+
+    function selectSuggestion(value) {
+      document.getElementById('foodInput').value = value;
+      document.getElementById('suggestions').style.display = 'none';
+    }
+
+    function performSearch() {
+      const food = document.getElementById('foodInput').value.trim();
+      const location = document.getElementById('locationInput').value;
+      const sort = document.getElementById('sortInput').value;
+
+      if (!food && !location) {
+        alert('Please enter a food item or select a location.');
+        return;
+      }
+
+      const resultsDiv = document.getElementById('results');
+      resultsDiv.innerHTML = `
+        <div class="result-item">
+          <strong>${food || 'Yam'} in ${location || 'Any Location'}</strong><br>
+          Swap with: Rice<br>
+          Location: ${location || 'Not specified'}<br>
+          Sorted by: ${sort}<br>
+          Posted: Just now
+        </div>
+        <div class="result-item">
+          <strong>Beans in Lagos</strong><br>
+          Swap with: Yam<br>
+          Location: Lagos<br>
+          Sorted by: ${sort}<br>
+          Posted: 1 day ago
+        </div>
+        <div class="result-item">
+          <strong>Plantain in Abuja</strong><br>
+          Swap with: Cassava<br>
+          Location: Abuja<br>
+          Sorted by: ${sort}<br>
+          Posted: 3 days ago
+        </div>
+      `;
+    }
+
+    function validateSearch() {
+      const food = document.getElementById('foodInput').value.trim();
+      const location = document.getElementById('locationInput').value;
+      if (!food && !location) {
+        document.getElementById('results').innerHTML = '';
+      }
+    }
+
+    function startVoiceInput(targetId) {
+      const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+      recognition.lang = 'en-US';
+      recognition.start();
+
+      recognition.onresult = function(event) {
+        const transcript = event.results[0][0].transcript;
+        document.getElementById(targetId).value = transcript;
+        showSuggestions(transcript);
+      };
+
+      recognition.onerror = function(event) {
+        alert('Voice recognition error: ' + event.error);
+      };
+    }
+  </script>
+</body>
+</html>

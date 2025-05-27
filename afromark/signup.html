@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup - SwapIt</title>
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+  <div class="container">
+    <h2>Register on SwapIt</h2>
+    <p class="hint">For everyone: readers and non-readers. Use typing or voice command.</p>
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Your full name">
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="text" id="phone" placeholder="08012345678">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Choose a password">
+      </div>
+		
+		<div class="form-group">
+        <label>
+          <input type="checkbox" id="agreeTerms" required />
+          I agree to the
+          <a href="terms.html" target="_blank">Terms and Conditions</a> and
+          <a href="privacy.html" target="_blank">Privacy Policy</a>.
+        </label>
+      </div>
+		
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <button class="voice-btn" onclick="startVoiceSignup()">🎙️ Use Voice to Register</button>
+    <button class="biometric-btn" onclick="startBiometricSignup()">🔒 Use Biometrics</button>
+  </div>
+	
+	<script>
+    document.getElementById('signupForm').addEventListener('submit', function(event) {
+      if (!document.getElementById('agreeTerms').checked) {
+        alert('You must agree to the terms and conditions to proceed.');
+        event.preventDefault();
+      }
+    });
+  </script>
+
+  <script>
+    function startVoiceSignup() {
+      if (!('webkitSpeechRecognition' in window)) {
+        alert("Voice recognition not supported on this device.");
+        return;
+      }
+      const recognition = new webkitSpeechRecognition();
+      recognition.lang = 'en-US';
+      recognition.interimResults = false;
+      recognition.maxAlternatives = 1;
+
+      recognition.onstart = function () {
+        alert("Say your name, phone number and password clearly");
+      };
+
+      recognition.onresult = function (event) {
+        const transcript = event.results[0][0].transcript;
+        const parts = transcript.split(' ');
+        if (parts.length >= 3) {
+          document.getElementById('name').value = parts[0] + ' ' + parts[1];
+          document.getElementById('phone').value = parts[2];
+          document.getElementById('password').value = parts[3] || "password123";
+        } else {
+          alert("Please say all information clearly.");
+        }
+      };
+      recognition.start();
+    }
+
+    async function startBiometricSignup() {
+      try {
+        const credential = await navigator.credentials.get({
+          publicKey: {
+            challenge: new Uint8Array(32),
+            timeout: 60000,
+            userVerification: "preferred"
+          }
+        });
+        alert("Biometric verification successful!");
+      } catch (err) {
+        alert("Biometric failed or cancelled.");
+      }
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help Me Register - FoodSwap Nigeria</title>
+
+  <script>
+    function startVoiceInput() {
+      if (window.SpeechRecognition || window.webkitSpeechRecognition) {
+        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+        recognition.lang = 'en-NG';
+        recognition.start();
+
+        recognition.onresult = function(event) {
+          document.getElementById("voiceOutput").innerText = event.results[0][0].transcript;
+        };
+      } else {
+        alert("Your browser does not support voice recognition.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h2>Help Me Register</h2>
+  </header>
+
+  <div class="assist-container">
+    <div class="instruction">
+      Please press the microphone and say your full name, phone number, and where you live. We will fill the form for you.
+    </div>
+
+    <button class="mic-button" onclick="startVoiceInput()">🎤 Start Speaking</button>
+
+    <div class="output-box" id="voiceOutput">
+      <!-- Spoken text will appear here -->
+    </div>
+
+    <button class="submit-btn" onclick="window.location.href='landing-page.html'">Register Me</button>
+  </div>
+	<script src="js/theme.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
+
+
+
+

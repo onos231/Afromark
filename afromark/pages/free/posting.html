@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post Foodstock - SwapIt</title>
+
+</head>
+<body>
+  <div class="header">
+    <h2>Post Food Item to Swap</h2>
+  </div>
+
+  <div class="container">
+    <label for="item-name">Food Item Name</label>
+    <input type="text" id="item-name" placeholder="e.g. Rice, Yam">
+    <button class="voice-button" onclick="startVoiceInput('item-name')">🎤 Speak Item Name</button>
+
+    <label for="quantity">Quantity / Weight</label>
+    <input type="text" id="quantity" placeholder="e.g. 10kg">
+
+    <label for="location">Your Location</label>
+    <input type="text" id="location" placeholder="e.g. Ajah, Lagos">
+    <button class="voice-button" onclick="startVoiceInput('location')">🎤 Speak Location</button>
+
+    <label for="description">Description</label>
+    <textarea id="description" placeholder="Brief info about the food item"></textarea>
+    <button class="voice-button" onclick="startVoiceInput('description')">🎤 Speak Description</button>
+
+    <label for="photo">Upload or Take Photo</label>
+    <input type="file" accept="image/*" id="photo" capture="environment" onchange="previewImage(event)">
+    <img id="imagePreview" class="image-preview" style="display:none;">
+
+    <div class="image-controls" style="display:none;" id="imageControls">
+      <button onclick="document.getElementById('photo').click()">Replace</button>
+      <button onclick="removeImage()">Delete</button>
+    </div>
+
+    <button style="background:#4caf50; color:white;" onclick="submitPost()">Post Swap Offer</button>
+  </div>
+
+  <nav>
+    <a href="#"><div>🏠</div>Home</a>
+    <a href="#"><div>🔍</div>Search</a>
+    <a href="#"><div>➕</div>Post</a>
+    <a href="#"><div>👤</div>Account</a>
+  </nav>
+
+  <script>
+    function previewImage(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const preview = document.getElementById('imagePreview');
+          preview.src = e.target.result;
+          preview.style.display = 'block';
+          document.getElementById('imageControls').style.display = 'flex';
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function removeImage() {
+      document.getElementById('photo').value = "";
+      document.getElementById('imagePreview').style.display = 'none';
+      document.getElementById('imageControls').style.display = 'none';
+    }
+
+    function startVoiceInput(fieldId) {
+      if (!('webkitSpeechRecognition' in window)) {
+        alert("Voice recognition not supported on this browser.");
+        return;
+      }
+      const recognition = new webkitSpeechRecognition();
+      recognition.lang = "en-US";
+      recognition.start();
+      recognition.onresult = function(event) {
+        const transcript = event.results[0][0].transcript;
+        document.getElementById(fieldId).value = transcript;
+      };
+    }
+
+    function submitPost() {
+      alert("Swap post submitted successfully!");
+    }
+  </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Easy Voice Swap Post - FoodSwap Nigeria</title>
+	<link rel="stylesheet" href="css/style.css">
+
+  <script>
+    function startVoiceCapture() {
+      if (window.SpeechRecognition || window.webkitSpeechRecognition) {
+        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+        recognition.lang = 'en-NG';
+        recognition.start();
+
+        recognition.onresult = function(event) {
+          document.getElementById("voiceOutput").innerText = event.results[0][0].transcript;
+        };
+      } else {
+        alert("Voice recognition not supported on this device.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h2>Easy Voice Post</h2>
+  </header>
+
+  <div class="container">
+    <div class="instructions">
+      Press the mic below and say:
+      <strong>what food you have, how much, your location, and what you want in return.</strong>
+    </div>
+
+    <button class="mic-button" onclick="startVoiceCapture()">🎤 Speak Your Swap Details</button>
+
+    <div class="output-box" id="voiceOutput">
+      <!-- Transcribed voice input will show here -->
+    </div>
+
+    <button class="submit-btn" onclick="window.location.href='post-confirmation.html'">Post My Swap</button>
+	  
+  </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post Foodstock - SwapIt</title>
+
+</head>
+<body>
+  <div class="container">
+    <h2>Post Foodstock to Swap</h2>
+    <form>
+      <div class="form-group">
+        <label for="foodname">Food Name</label>
+        <input type="text" id="foodname" placeholder="e.g. Rice, Yam">
+      </div>
+      <div class="form-group">
+        <label for="quantity">Quantity & Unit</label>
+        <input type="text" id="quantity" placeholder="e.g. 5kg, 2 tubers">
+      </div>
+      <div class="form-group">
+        <label for="location">Your Location</label>
+        <input type="text" id="location" placeholder="e.g. Ibadan, Lagos">
+      </div>
+      <div class="form-group">
+        <label for="wanted">What You Want in Exchange</label>
+        <input type="text" id="wanted" placeholder="e.g. Yam for Rice">
+      </div>
+      <div class="form-group">
+        <label for="description">Extra Notes (Optional)</label>
+        <textarea id="description" rows="3" placeholder="Any special conditions?"></textarea>
+      </div>
+		
+      <button type="submit">Post Swap Offer</button>
+    </form>
+    <button class="voice-btn" onclick="startVoicePost()">🎙️ Post Using Voice</button>
+  </div>
+
+	<script src="js/theme.js"></script>
+  <script src="js/script.js"></script>
+	
+  <script>
+    function startVoicePost() {
+      if (!('webkitSpeechRecognition' in window)) {
+        alert("Voice recognition not supported on this device.");
+        return;
+      }
+      const recognition = new webkitSpeechRecognition();
+      recognition.lang = 'en-US';
+      recognition.interimResults = false;
+      recognition.maxAlternatives = 1;
+
+      recognition.onstart = function () {
+        alert("Say: food name, quantity, location, and what you want");
+      };
+
+      recognition.onresult = function (event) {
+        const transcript = event.results[0][0].transcript;
+        const parts = transcript.split(' ');
+        if (parts.length >= 4) {
+          document.getElementById('foodname').value = parts[0];
+          document.getElementById('quantity').value = parts[1];
+          document.getElementById('location').value = parts[2];
+          document.getElementById('wanted').value = parts.slice(3).join(' ');
+        } else {
+          alert("Please say complete information.");
+        }
+      };
+
+      recognition.start();
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+

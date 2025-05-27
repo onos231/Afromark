@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Exclusive Swaps</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 16px;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .swap-card {
+      background-color: white;
+      margin: 12px;
+      padding: 12px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .swap-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .swap-card h3 {
+      margin-top: 8px;
+      font-size: 16px;
+    }
+
+    .swap-card p {
+      margin: 4px 0;
+      color: #444;
+      font-size: 14px;
+    }
+
+    .status {
+      font-size: 13px;
+      font-weight: bold;
+      margin-top: 6px;
+    }
+
+    .status.approved { color: green; }
+    .status.pending { color: orange; }
+    .status.declined { color: red; }
+
+    .actions {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .actions button {
+      flex: 1;
+      margin: 4px;
+      padding: 8px;
+      font-size: 13px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .btn-edit { background-color: #2196F3; color: white; }
+    .btn-delete { background-color: #f44336; color: white; }
+  </style>
+</head>
+<body>
+
+  <div class="header">My Exclusive Swaps</div>
+
+  <div class="swap-card">
+    <img src="yam-bundle.jpg" alt="Yam Bundle">
+    <h3>Fresh Yam Bundle</h3>
+    <p><strong>Swap For:</strong> Premium Garri Package</p>
+    <p><strong>Location:</strong> Ibadan, Oyo</p>
+    <p class="status approved">Approved</p>
+    <div class="actions">
+      <button class="btn-edit">Edit</button>
+      <button class="btn-delete">Delete</button>
+    </div>
+  </div>
+
+  <div class="swap-card">
+    <img src="dry-fish.jpg" alt="Dry Fish">
+    <h3>Dried Catfish Set</h3>
+    <p><strong>Swap For:</strong> Palm Oil 5L</p>
+    <p><strong>Location:</strong> Makurdi, Benue</p>
+    <p class="status pending">Pending</p>
+    <div class="actions">
+      <button class="btn-edit">Edit</button>
+      <button class="btn-delete">Delete</button>
+    </div>
+  </div>
+
+</body>
+</html>

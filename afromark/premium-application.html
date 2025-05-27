@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SwapIt Premium</title>
+  <style>
+    :root {
+      --bg-color: #fff;
+      --primary: #4caf50;
+      --text-color: #333;
+      --card-bg: #f9f9f9;
+      --highlight: #e0ffe0;
+    }
+
+```
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: var(--bg-color);
+  color: var(--text-color);
+  padding-bottom: 80px;
+}
+
+.header {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.section {
+  padding: 20px;
+}
+
+.premium-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  padding: 16px;
+}
+
+.premium-card h3 {
+  margin: 0 0 10px;
+  color: var(--primary);
+}
+
+.premium-card p {
+  margin: 0 0 8px;
+}
+
+.btn-primary {
+  display: block;
+  width: 100%;
+  background: var(--primary);
+  color: white;
+  padding: 12px;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.highlight {
+  background: var(--highlight);
+  padding: 12px;
+  border-left: 5px solid var(--primary);
+  margin: 10px 0;
+  font-style: italic;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #ddd;
+}
+
+.bottom-nav button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: none;
+  font-size: 14px;
+}
+
+.form-section {
+  margin-top: 20px;
+}
+
+.form-section input,
+.form-section textarea,
+.form-section select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+```
+
+  </style>
+</head>
+<body>
+  <div class="header">SwapIt Premium</div>
+
+  <div class="section">
+    <div class="premium-card">
+      <h3>Premium Partner Access</h3>
+      <p>Engage directly with verified large-scale food suppliers, processors, investors, and NGOs.</p>
+      <div class="highlight">For farmers, cooperatives, and bulk traders looking for scale.</div>
+      <form class="form-section">
+        <input type="text" placeholder="Full Name" required>
+        <input type="text" placeholder="Organization (Optional)">
+        <input type="email" placeholder="Email" required>
+        <textarea rows="3" placeholder="Tell us about your partnership goal"></textarea>
+    <button class="btn-primary" onclick="window.location.href='premium-dashboard.html'">Apply as Premium Partner</button>
+      </form>
+    </div>
+
+```
+<div class="premium-card">
+  <h3>Investor Collaboration</h3>
+  <p>Get your agro-projects or bulk food swap proposals featured to funding partners and donor agencies.</p>
+  <form class="form-section">
+    <input type="text" placeholder="Full Name" required>
+    <input type="email" placeholder="Email" required>
+    <textarea rows="3" placeholder="Describe your proposal"></textarea>
+    <button class="btn-primary" type="submit">Submit Proposal</button>
+  </form>
+</div>
+
+<div class="premium-card">
+  <h3>NGO & Food Program</h3>
+  <p>Join government and international bodies distributing food support via smart swap strategies.</p>
+  <form class="form-section">
+    <input type="text" placeholder="Full Name" required>
+    <input type="email" placeholder="Email" required>
+    <textarea rows="3" placeholder="Why do you want to join the program?"></textarea>
+    <button class="btn-primary" type="submit">Join Food Program</button>
+  </form>
+</div>
+```
+
+  </div>
+
+  <div class="bottom-nav">
+    <button onclick="location.href='home.html'">Home</button>
+    <button onclick="location.href='search.html'">Search</button>
+    <button onclick="location.href='premium.html'">Premium</button>
+    <button onclick="location.href='account.html'">Account</button>
+  </div>
+</body>
+</html>

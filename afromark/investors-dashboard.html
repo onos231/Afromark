@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Investor Dashboard</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f0f0f0;
+      margin: 0;
+      padding: 16px;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    .pitch-card {
+      background: white;
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      margin-bottom: 16px;
+    }
+
+    .pitch-card h3 {
+      margin: 0;
+    }
+
+    .status {
+      font-size: 14px;
+      margin-top: 8px;
+      color: green;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #2196f3;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Investor Dashboard</h2>
+
+  <div class="pitch-card">
+    <h3>Community Rice Farm</h3>
+    <p class="status">Status: Approved ✅</p>
+    <a href="view-pitch.html" class="btn">View Pitch</a>
+    <a href="investor-message.html" class="btn" style="background:#4CAF50;">Chat</a>
+  </div>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pitch Status</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 16px;
+      background: #f0f0f0;
+    }
+
+    .status-card {
+      background: white;
+      border-radius: 10px;
+      padding: 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    .status {
+      font-weight: bold;
+      color: green;
+    }
+
+    .note {
+      background: #fff9c4;
+      padding: 10px;
+      border-radius: 6px;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="status-card">
+    <h2>Applicants Pitch Status</h2>
+    <p>Pitch: <strong>Community Rice Farm</strong></p>
+    <p>Status: <span class="status">Approved ✅</span></p>
+    <div class="note">
+      🎉 Your pitch has been approved and is now visible to investors in the marketplace.
+    </div>
+  </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Investor Marketplace</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; padding: 1rem; background: #f5f5f5; }
+    h2 { margin-bottom: 1rem; }
+    .filters select, .filters input {
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .pitch-card {
+      background: white;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 1rem;
+    }
+    .pitch-card h3 { margin: 0 0 .5rem; }
+    .pitch-card p { margin: 0.5rem 0; font-size: 0.9rem; }
+    .pitch-card a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      background: #4CAF50;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+	
+	<br><br><br><br>
+<h2>Investor Marketplace to view and filter pitches</h2>
+
+<div class="filters">
+  <input type="text" placeholder="Search by keyword..." />
+  <select>
+    <option value="">Category</option>
+    <option value="Farming">Farming</option>
+    <option value="Retail">Retail</option>
+    <option value="Processing">Food Processing</option>
+  </select>
+  <select>
+    <option value="">Location</option>
+    <option value="Kaduna">Kaduna</option>
+    <option value="Lagos">Lagos</option>
+    <option value="Abuja">Abuja</option>
+  </select>
+</div>
+
+<div class="pitch-card">
+  <h3>Community Rice Farm</h3>
+  <p><strong>Amount:</strong> ₦500,000</p>
+  <p><strong>Location:</strong> Kaduna</p>
+  <a href="view-pitch.html">View Pitch</a>
+</div>
+
+</body>
+</html>
+

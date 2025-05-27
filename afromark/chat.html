@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swap Chat - FoodSwap Nigeria</title>
+	<link rel="stylesheet" href="css/style.css">
+ 
+  <script>
+    function startVoiceMessage() {
+      if (window.SpeechRecognition || window.webkitSpeechRecognition) {
+        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+        recognition.lang = 'en-NG';
+        recognition.start();
+
+        recognition.onresult = function(event) {
+          document.getElementById("chatInput").value = event.results[0][0].transcript;
+        };
+      } else {
+        alert("Voice recognition not supported on this device.");
+      }
+    }
+
+    function openMap() {
+      window.open("https://www.google.com/maps", "_blank");
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h2>Swap Chat</h2>
+    <p>You're chatting with the person who accepted your swap</p>
+  </header>
+
+  <div class="chat-container">
+    <div class="message from-other">Hi! I accepted your swap offer for 1 bag of rice.</div>
+    <div class="message from-user">Thanks! I'm based in Ibadan. When can we meet?</div>
+    <div class="message from-other">How about tomorrow at Bodija market?</div>
+  </div>
+
+  <div class="input-container">
+    <input type="text" id="chatInput" placeholder="Type or speak your message...">
+    <button class="send-btn" onclick="window.location.href='swap-listings.html'">Send</button>
+    <button class="mic-btn" onclick="startVoiceMessage()">🎤</button>
+    <button class="map-btn" onclick="openMap()">📍Map</button>
+  </div>
+	
+	<script src="js/theme.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - SwapIt</title>
+	<link rel="stylesheet" href="css/style.css">
+  <style>
+    
+    
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <h2>Login to SwapIt</h2>
+      <form>
+        <input type="text" id="username" placeholder="Phone Number or Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit" class="login-btn" onclick="window.location.href='swap-listings.html'">Login</button>
+      </form>
+      <div class="voice-login">
+        <p>Or login with your voice:</p>
+        <button class="voice-btn" onclick="startVoiceLogin()">🎙️ Start Voice Login</button>
+      </div>
+      <div class="biometric-login">
+        <p>Or use your fingerprint/face:</p>
+        <button class="biometric-btn" onclick="startBiometricLogin()">🔒 Use Biometrics</button>
+      </div>
+      <div class="signup-link">
+        Don't have an account? <a href="signup.html">Sign up</a>
+      </div>
+    </div>
+  </div>
+	
+	<script src="js/theme.js"></script>
+  <script src="js/script.js"></script>
+
+  <script>
+    function startVoiceLogin() {
+      if (!('webkitSpeechRecognition' in window)) {
+        alert("Voice recognition is not supported on this device.");
+        return;
+      }
+
+      const recognition = new webkitSpeechRecognition();
+      recognition.lang = 'en-US';
+      recognition.interimResults = false;
+      recognition.maxAlternatives = 1;
+
+      recognition.onstart = function () {
+        alert("Please say your username and password slowly");
+      };
+
+      recognition.onresult = function (event) {
+        const transcript = event.results[0][0].transcript;
+        const words = transcript.split(' ');
+        if (words.length >= 2) {
+          document.getElementById('username').value = words[0];
+          document.getElementById('password').value = words[1];
+        } else {
+          alert("Please speak both your username and password clearly");
+        }
+      };
+
+      recognition.onerror = function (event) {
+        alert("Voice recognition error: " + event.error);
+      };
+
+      recognition.start();
+    }
+
+    async function startBiometricLogin() {
+      if (!window.PublicKeyCredential) {
+        alert("Biometric login is not supported on this device.");
+        return;
+      }
+      try {
+        const publicKey = {
+          challenge: new Uint8Array(32),
+          rpId: window.location.hostname,
+          allowCredentials: [],
+          timeout: 60000,
+          userVerification: "preferred"
+        };
+        const credential = await navigator.credentials.get({ publicKey });
+        alert("Biometric login successful!");
+        // Simulate login or redirect
+      } catch (err) {
+        alert("Biometric login failed or was cancelled.");
+      }
+    }
+  </script>
+</body>
+</html>

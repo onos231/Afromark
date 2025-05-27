@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swapit Premium Dashboard</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 16px;
+    }
+    .dashboard-header {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .pitch-card {
+      background: white;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .pitch-card h3 {
+      margin: 0 0 8px;
+    }
+    .pitch-status {
+      padding: 6px 12px;
+      display: inline-block;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: bold;
+      color: white;
+    }
+    .approved { background-color: #4CAF50; }
+    .btn-view {
+      background: #2196f3;
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+    .messages-notification {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+<div class="dashboard-header">My Premium Dashboard</div>
+
+<div class="pitch-card">
+  <h3>Community Rice Farm</h3>
+  <span class="pitch-status approved">Approved</span>
+  <p>₦500,000 | Kaduna | Rice farming for local supply</p>
+  <div class="messages-notification">
+    💬 2 new investor messages
+  </div>
+  <button class="btn-view" onclick="window.location='pitch-detail.html'">View Pitch</button>
+</div>
+
+</body>
+</html>
+

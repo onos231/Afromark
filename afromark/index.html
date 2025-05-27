@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to SwapIt</title>
+	<link rel="stylesheet" href="css/style.css">	
+  
+</head>
+<body>
+  <div class="hero">
+    <h1>Welcome to SwapIt!</h1>
+    <p>Trade your extra food for what you really need — quick, simple, no cash involved!</p>
+  </div>
+
+  <div class="features">
+    <a href="search.html"><div class="feature-box">
+      <div class="feature-icon">🔍</div>
+      <div class="feature-content">
+        <h4>Search Swaps</h4>
+        <p>See trending food items people want to swap nearby.</p>
+      </div>
+		</div></a>
+
+    <div class="feature-box">
+      <div class="feature-icon">➕</div>
+      <div class="feature-content">
+        <h4>Post a Swap</h4>
+        <p>Add your item in seconds — others will find you fast!</p>
+      </div>
+    </div>
+	    <div class="feature-box">
+      <div class="feature-icon">🔥</div>
+      <div class="feature-content">
+        <h4>Go Premium</h4>
+        <p>View popular swap deals happening right now.</p>
+      </div>
+    </div>
+	  
+
+    <div class="feature-box">
+      <div class="feature-icon">🔥</div>
+      <div class="feature-content">
+        <h4>Hot Offers</h4>
+        <p>View popular swap deals happening right now.</p>
+      </div>
+    </div>
+  </div>
+
+  <nav>
+    <a href="index.html"><div>🏠</div>Home</a>
+    <a href="search.html"><div>🔍</div>Search</a>
+    <a href="posting.html"><div>➕</div>Post</a>
+    <a href="premium-dashboard.html"><div>👤</div>Premium</a>
+	 <a href="account.html"><div>👤</div>Account</a>
+  </nav>
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to SwapIt</title>
+
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Welcome to SwapIt</h1>
+      <p>Swap your excess food for what you need — no money involved!</p>
+    </header>
+
+    <div class="quick-links">
+      <div class="card">
+        <h4>🔍 Search for Food Swaps</h4>
+        <p>Find people offering what you need and offering what you have.</p>
+        <a href="#">Go to Search</a>
+      </div>
+
+      <div class="card">
+        <h4>➕ Post Your Foodstock</h4>
+        <p>Add your food item and let others swap with you.</p>
+        <a href="#">Post an Item</a>
+      </div>
+
+      <div class="card">
+        <h4>📚 How It Works</h4>
+        <p>New here? Learn how to make your first swap successfully.</p>
+        <a href="#">Read Guide</a>
+      </div>
+
+      <div class="card">
+        <h4>💬 Recent Swap Stories</h4>
+        <p>See how others are saving food and helping each other.</p>
+        <a href="#">Read Stories</a>
+      </div>
+    </div>
+  </div>
+	<style>
+	
+	</style>
+	<!-- Floating Chat Button -->
+<button class="chat-float-btn" onclick="toggleChatModal()">💬 Support</button>
+
+<!-- Chat Modal -->
+<div id="chatModal" class="chat-modal">
+  <div class="chat-header">
+    <span>Support Chat</span>
+    <button class="close-chat" onclick="toggleChatModal()">×</button>
+  </div>
+  <div class="chat-body" id="chatMessages">
+    <div class="bot-message">Hi! 👋 How can we help you today?</div>
+  </div>
+  <div class="chat-input-container">
+    <input type="text" id="chatInput" placeholder="Type your message..." />
+    <button onclick="sendChat()">➤</button>
+  </div>
+</div>
+<script src="js/theme.js"></script>
+	<script src="js/script.js"></script>
+	
+<script>
+  function toggleChatModal() {
+    const modal = document.getElementById("chatModal");
+    modal.style.display = modal.style.display === "flex" ? "none" : "flex";
+  }
+
+  function sendChat() {
+    const input = document.getElementById("chatInput");
+    const message = input.value.trim();
+    if (!message) return;
+
+    const chatBox = document.getElementById("chatMessages");
+
+    // Add user message
+    const userMsg = document.createElement("div");
+    userMsg.className = "user-message";
+    userMsg.textContent = message;
+    chatBox.appendChild(userMsg);
+
+    // Fake bot response
+    const botMsg = document.createElement("div");
+    botMsg.className = "bot-message";
+    setTimeout(() => {
+      botMsg.textContent = "Thanks for reaching out. We'll get back to you shortly.";
+      chatBox.appendChild(botMsg);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }, 800);
+
+    input.value = "";
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
+</script>
+
+</body>
+</html>

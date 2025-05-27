@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investor Marketplace</title>
+	<link rel="stylesheet" href="css/style.css">	
+  
+</head>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f7f7;
+      margin: 0;
+      padding: 16px;
+    }
+
+    .header {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+
+    .search-filter {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .search-filter input, .search-filter select, .search-filter button {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .search-btn {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+	  .back-btn {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+	  background-color: transparent;
+		  text-align: left;
+    }
+    .investor-card {
+      background: white;
+      padding: 14px;
+      margin-bottom: 12px;
+      border-radius: 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    .investor-card h3 {
+      margin-top: 0;
+    }
+
+    .investor-card p {
+      margin: 4px 0;
+    }
+
+    .action-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 12px;
+    }
+
+    .action-buttons a {
+      flex: 1;
+      text-align: center;
+      text-decoration: none;
+      padding: 10px;
+      margin: 4px;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 14px;
+      color: white;
+    }
+
+    .view-profile {
+      background-color: #2196F3;
+    }
+
+    .send-pitch {
+      background-color: #FF5722;
+    }
+
+    .no-results {
+      color: #999;
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+<body>
+	
+	
+
+  <div class="header">Investor Marketplace</div>
+	<div class="form-container">
+	<a class="back-btn" href="premium-onboarding.html">← Onboarding</a></div>
+  <div class="search-filter">
+    <input type="text" id="searchInput" placeholder="Search by name...">
+    <select id="industryFilter">
+      <option value="">All Industries</option>
+      <option value="Agriculture">Agriculture</option>
+      <option value="Food Processing">Food Processing</option>
+      <option value="Tech">Tech</option>
+    </select>
+    <select id="locationFilter">
+      <option value="">All Locations</option>
+      <option value="Lagos">Lagos</option>
+      <option value="Abuja">Abuja</option>
+      <option value="Kano">Kano</option>
+    </select>
+    <button class="search-btn" id="searchBtn">Search</button>
+  </div>
+
+  <div id="investorList">
+    <div class="investor-card" data-name="FarmFund Capital" data-industry="Agriculture" data-location="Lagos">
+      <h3>FarmFund Capital</h3>
+      <p><strong>Industry:</strong> Agriculture</p>
+      <p><strong>Location:</strong> Lagos</p>
+      <p>Invests in rice, maize, and poultry projects.</p>
+      <div class="action-buttons">
+        <a href="investor-profile.html?id=farmfund" class="view-profile">View Profile</a>
+        <a href="send-pitch.html?to=farmfund" class="send-pitch">Send Pitch</a>
+      </div>
+    </div>
+
+    <div class="investor-card" data-name="AgriTech Ventures" data-industry="Tech" data-location="Abuja">
+      <h3>AgriTech Ventures</h3>
+      <p><strong>Industry:</strong> Tech</p>
+      <p><strong>Location:</strong> Abuja</p>
+      <p>Technology and logistics solutions for farmers.</p>
+      <div class="action-buttons">
+        <a href="investor-profile.html?id=agritech" class="view-profile">View Profile</a>
+        <a href="send-pitch.html?to=agritech" class="send-pitch">Send Pitch</a>
+      </div>
+    </div>
+
+    <div class="investor-card" data-name="Green Harvest Co." data-industry="Food Processing" data-location="Kano">
+      <h3>Green Harvest Co.</h3>
+      <p><strong>Industry:</strong> Food Processing</p>
+      <p><strong>Location:</strong> Kano</p>
+      <p>Focused on food packaging and export business.</p>
+      <div class="action-buttons">
+        <a href="investor-profile.html?id=greenharvest" class="view-profile">View Profile</a>
+        <a href="send-pitch.html?to=greenharvest" class="send-pitch">Send Pitch</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="noResults" class="no-results" style="display:none;">No matching investors found.</div>
+
+<script src="js/theme.js"></script>
+	<script src="js/investor-marketplace.js"></script>
+
+</body>
+</html>

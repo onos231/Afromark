@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swap Listings - Message Alert</title>
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+  <header>
+    <h2>My Swaps</h2>
+    <div class="notification-badge" id="notifBadge">1</div>
+  </header>
+  <div class="swap-listing">
+    <div class="swap-item">
+      <h4>Rice for Yam</h4>
+      <p>Offered: 1 bag of rice<br>Requested: 3 tubers of yam</p>
+      <div class="message-alert">
+        <span>📨 New message: "I accepted your offer, let's meet..."</span>
+        <button class="view-chat-btn" onclick="window.location.href='chat.html'">View Chat</button>
+      </div>
+    </div>
+
+    <div class="swap-item">
+      <h4>Beans for Garri</h4>
+      <p>Offered: 5 cups of beans<br>Requested: 1 bowl of garri</p>
+    </div>
+  </div>
+	
+	<script src="js/theme.js"></script>
+  <script src="js/script.js"></script>
+
+  <script>
+    // Simulate updating the badge count dynamically
+    const notifBadge = document.getElementById("notifBadge");
+    let unreadMessages = 1; // Example dynamic count
+
+    function updateBadge(count) {
+      notifBadge.textContent = count;
+      notifBadge.style.display = count > 0 ? 'flex' : 'none';
+    }
+
+    // Simulate dynamic change (e.g. polling server)
+    setTimeout(() => updateBadge(0), 10000); // Remove badge after 10 seconds
+  </script>
+</body>
+</html>
+
+<!-- Add Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+
+<script>
+  // Your Firebase configuration
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_AUTH_DOMAIN",
+    databaseURL: "YOUR_DATABASE_URL",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_STORAGE_BUCKET",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId: "YOUR_APP_ID"
+  };
+
+  // Initialize Firebase
+  const app = firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+
+  const notifBadge = document.getElementById("notifBadge");
+  const userId = "user_123"; // Replace with actual authenticated user ID
+
+  function updateBadge(count) {
+    notifBadge.textContent = count;
+    notifBadge.style.display = count > 0 ? 'flex' : 'none';
+  }
+
+  // Listen to changes in unread message count
+  firebase.database().ref(`messages/${userId}/unreadCount`).on('value', (snapshot) => {
+    const count = snapshot.val() || 0;
+    updateBadge(count);
+  });
+</script>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Submit Pitch</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+      padding-bottom: 80px;
+    }
+    header {
+      background: #388E3C;
+      color: white;
+      padding: 16px;
+      text-align: center;
+    }
+	  .back-btn {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .form-container {
+      padding: 20px;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 12px;
+      color: #333;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+    .voice-btn {
+      margin-top: 8px;
+      background: #eee;
+      padding: 8px 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background: #388E3C;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h2>Submit Your Pitch</h2>
+</header>
+
+<div class="form-container">
+	<a class="back-btn" href="premium-onboarding.html">← Onboarding</a>
+  <form id="pitchForm">
+    <label for="title">Project Title</label>
+    <input type="text" id="title" name="title" placeholder="e.g. Community Rice Swap Initiative" required>
+
+    <label for="amount">Funding Needed (₦)</label>
+    <input type="number" id="amount" name="amount" placeholder="e.g. 5000000" required>
+
+    <label for="category">Project Category</label>
+    <select id="category" name="category" required>
+      <option value="">Select category</option>
+      <option value="farming">Farming</option>
+      <option value="food-distribution">Food Distribution</option>
+      <option value="storage">Storage Facility</option>
+      <option value="education">Farmer Training</option>
+    </select>
+
+    <label for="details">Project Details</label>
+    <textarea id="details" name="details" rows="5" placeholder="Describe your project..." required></textarea>
+    <button class="voice-btn" type="button" onclick="startVoice('details')">🎤 Voice Input</button>
+
+    <label for="document">Upload Proposal (PDF/Image)</label>
+    <input type="file" id="document" name="document" accept=".pdf,.jpg,.jpeg,.png">
+
+    <label for="photo">Project Photo (Optional)</label>
+    <input type="file" id="photo" name="photo" accept="image/*" capture="environment">
+
+	  <button class="submit-btn" onclick="location.href='premium-pitch-status.html'">Submit Pitch</button>
+  </form>
+</div>
+
+<script>
+  // Handle form submission
+  document.getElementById('pitchForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Your pitch has been submitted! We will review and contact you shortly.');
+    this.reset();
+  });
+
+  // Voice input handler
+  function startVoice(targetId) {
+    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+    recognition.lang = 'en-NG';
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+
+    recognition.start();
+    recognition.onresult = function(event) {
+      document.getElementById(targetId).value = event.results[0][0].transcript;
+    };
+    recognition.onerror = function(event) {
+      alert('Voice input error: ' + event.error);
+    };
+  }
+</script>
+
+</body>
+</html>
