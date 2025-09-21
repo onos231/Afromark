@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Account Navigation - SwapIt</title>
+		<link rel="stylesheet" href="../../css/style.ncss">	
+	</head>
+<div class="chat-container">
+  <div class="chat-header">
+    <h3>Investor: AgriFund Capital</h3>
+    <p>Pitch: Women-Led Tomato Farm</p>
+  </div>
+
+  <div class="chat-messages" id="chatMessages">
+    <div class="message received">
+      <p>Hi, thanks for accepting my pitch!</p>
+      <span class="timestamp">10:42 AM</span>
+    </div>
+    <div class="message sent">
+      <p>You're welcome. Can we schedule a call for more details?</p>
+      <span class="timestamp">10:44 AM</span>
+    </div>
+    <!-- More dynamic messages -->
+  </div>
+
+  <div class="chat-input">
+    <input type="text" id="chatInput" placeholder="Type your message...">
+    <button onclick="sendMessage()">➤</button>
+  </div>
+</div>
+
+<style>
+.chat-container {
+  max-width: 600px;
+  margin: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', sans-serif;
+}
+.chat-header {
+  background: #007BFF;
+  color: white;
+  padding: 16px;
+  border-bottom: 1px solid #0056b3;
+}
+.chat-header h3 {
+  margin: 0;
+  font-size: 16px;
+}
+.chat-messages {
+  flex-grow: 1;
+  padding: 16px;
+  overflow-y: auto;
+  background-color: #f1f1f1;
+}
+.message {
+  max-width: 80%;
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  position: relative;
+}
+.message.received {
+  background-color: #e0e0e0;
+  align-self: flex-start;
+}
+.message.sent {
+  background-color: #DCF8C6;
+  align-self: flex-end;
+}
+.timestamp {
+  font-size: 11px;
+  color: gray;
+  margin-top: 4px;
+  display: block;
+  text-align: right;
+}
+.chat-input {
+  display: flex;
+  border-top: 1px solid #ccc;
+  padding: 8px;
+  background-color: white;
+}
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 14px;
+  margin-right: 8px;
+}
+.chat-input button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+</style>
+
+<script>
+function sendMessage() {
+  const input = document.getElementById("chatInput");
+  const msg = input.value.trim();
+  if (!msg) return;
+
+  const chat = document.getElementById("chatMessages");
+  const message = document.createElement("div");
+  message.classList.add("message", "sent");
+  message.innerHTML = `<p>${msg}</p><span class="timestamp">${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</span>`;
+  chat.appendChild(message);
+
+  input.value = "";
+  chat.scrollTop = chat.scrollHeight;
+}
+</script>
+</html>

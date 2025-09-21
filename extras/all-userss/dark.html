@@ -1,0 +1,149 @@
+<div class="search-container">
+  <div class="search-header">
+    <button class="btn-location">📍 Use My Location</button>
+    <input type="text" placeholder="Search for food items…" class="search-input">
+  </div>
+  <div class="filter-dropdowns">
+    <select>
+      <option>Category</option>
+      <option>Food</option>
+      <option>Equipment</option>
+      <option>Services</option>
+    </select>
+    <select>
+      <option>Posted</option>
+      <option>Today</option>
+      <option>This Week</option>
+      <option>Last Month</option>
+    </select>
+  </div>
+  <div class="results-section">
+    <!-- Swap result cards will appear here -->
+    <p class="placeholder">🔍 Start searching for available swaps near you!</p>
+  </div>
+</div>
+
+<style>
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: sans-serif;
+}
+.search-container {
+  padding: 16px;
+}
+.search-header {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.btn-location {
+  background: #1f1f1f;
+  color: #90caf9;
+  border: 1px solid #333;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.search-input {
+  flex-grow: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #2c2c2c;
+  color: white;
+}
+.filter-dropdowns select {
+  background: #1e1e1e;
+  color: white;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 6px;
+  border: 1px solid #333;
+}
+.results-section .placeholder {
+  text-align: center;
+  margin-top: 20px;
+  font-style: italic;
+  color: #bbb;
+}
+</style>
+
+<div class="swap-status-card accepted">
+  <h4>Swap Accepted ✅</h4>
+  <p>🎁 You offered: 5kg Garri</p>
+  <p>🛍️ You’ll receive: 3 Cups of Beans</p>
+  <p>📍 Meet-up Location: <a href="#">Mushin Market, Lagos</a></p>
+  <p>👤 Confirm Receiver: <strong>SarahK</strong> | <img src="/profile-photo.jpg" width="24" style="border-radius:50%; vertical-align:middle;"> </p>
+  <div class="card-actions">
+    <button class="btn-chat">💬 Chat Now</button>
+    <button class="btn-location">📍 Share Meet-up Location</button>
+    <button class="btn-mark-complete">✅ Mark as Completed</button>
+    <button class="btn-report">⚠️ Report this Swap</button>
+  </div>
+</div>
+<style>
+.swap-status-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-family: sans-serif;
+  margin-bottom: 20px;
+}
+.swap-status-card .card-actions button {
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.btn-chat { background-color: #2196F3; color: white; }
+.btn-location { background-color: #8BC34A; color: white; }
+.btn-mark-complete { background-color: #4CAF50; color: white; }
+.btn-report { background-color: #f44336; color: white; }
+</style>
+
+<div class="swap-card">
+  <h3>🌽 10kg Maize</h3>
+  <p><strong>Posted by:</strong> FatimaO</p>
+  <p><strong>Wants:</strong> 3kg Rice or Yam</p>
+  <p>📍 Kano – 5km away</p>
+  <p>🕒 Posted: Today</p>
+  <button class="btn-request">Request Swap</button>
+</div>
+
+<style>
+.swap-card {
+  background: #1e1e1e;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  color: #fff;
+  font-family: sans-serif;
+}
+.swap-card h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+.swap-card p {
+  margin: 4px 0;
+}
+.btn-request {
+  margin-top: 10px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+</style>
+

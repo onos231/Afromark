@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Requests</title>
+		  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 16px;
+      background: #f4f4f4;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    .request-card {
+      background: white;
+      padding: 12px;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .request-card h3 {
+      margin: 0 0 6px;
+    }
+    .request-card p {
+      margin: 4px 0;
+      font-size: 14px;
+    }
+    .status {
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      display: inline-block;
+      margin-top: 6px;
+    }
+    .pending { background: #ffeb3b; color: #000; }
+    .approved { background: #4caf50; color: #fff; }
+    .declined { background: #f44336; color: #fff; }
+    .fulfilled { background: #2196f3; color: #fff; }
+    .btn-collect {
+      margin-top: 10px;
+      background: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>My Donation Requests</h2>
+
+  <div class="request-card">
+    <h3>Maize Donation – 2 Bags</h3>
+    <p><strong>Reason:</strong> For family feeding during planting season.</p>
+    <p class="status pending">Pending</p>
+  </div>
+
+  <div class="request-card">
+    <h3>Seedlings (Tomato Hybrid)</h3>
+    <p><strong>Reason:</strong> For community farm training project.</p>
+    <p class="status approved">Approved</p>
+    <button class="btn-collect">Arrange Pickup / Delivery</button>
+  </div>
+
+  <div class="request-card">
+    <h3>Portable Irrigation Pipe</h3>
+    <p><strong>Reason:</strong> Requested for a school garden initiative.</p>
+    <p class="status declined">Declined</p>
+  </div>
+
+  <div class="request-card">
+    <h3>Yam Tubers – 10 pcs</h3>
+    <p><strong>Reason:</strong> Feeding orphans at outreach center.</p>
+    <p class="status fulfilled">Fulfilled</p>
+  </div>
+
+</body>
+</html>
+

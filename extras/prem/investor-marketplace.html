@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Investor Marketplace</title>
+	<link rel="stylesheet" href="../../css/style.css">
+	</head>
+<div class="investor-dashboard">
+  <h2>Pitches You've Received</h2>
+
+  <!-- Filter Options -->
+  <div class="filters">
+    <select>
+      <option>Sort by: Most Recent</option>
+      <option>Sort by: Category</option>
+      <option>Sort by: Requested Amount</option>
+    </select>
+  </div>
+
+  <!-- Pitch Cards -->
+  <div class="pitch-card">
+    <h3>📌 Women-Led Tomato Farm</h3>
+    <p><strong>Amount:</strong> ₦350,000</p>
+    <p><strong>Sector:</strong> Organic Farming</p>
+    <p><strong>Submitted:</strong> Today</p>
+    <p><strong>Location:</strong> Zaria, Kaduna</p>
+    <p><strong>Summary:</strong> Looking to scale with hybrid seeds and irrigation kits.</p>
+    <div class="pitch-actions">
+      <button class="btn-accept">Accept</button>
+      <button class="btn-info">Request Info</button>
+      <button class="btn-decline">Decline</button>
+    </div>
+  </div>
+
+  <div class="pitch-card">
+    <h3>📌 Community Hatchery Project</h3>
+    <p><strong>Amount:</strong> ₦1,200,000</p>
+    <p><strong>Sector:</strong> Poultry</p>
+    <p><strong>Submitted:</strong> 2 days ago</p>
+    <p><strong>Location:</strong> Ibadan, Oyo State</p>
+    <p><strong>Summary:</strong> Seeking funds to build scalable hatchery for local farmers.</p>
+    <div class="pitch-actions">
+      <button class="btn-accept">Accept</button>
+      <button class="btn-info">Request Info</button>
+      <button class="btn-decline">Decline</button>
+    </div>
+  </div>
+
+  <div class="pitch-card">
+    <h3>📌 Farm-to-Market Logistics</h3>
+    <p><strong>Amount:</strong> ₦600,000</p>
+    <p><strong>Sector:</strong> Agri Logistics</p>
+    <p><strong>Submitted:</strong> Last Week</p>
+    <p><strong>Location:</strong> Uyo, Akwa Ibom</p>
+    <p><strong>Summary:</strong> Plans to buy reusable crates and hire part-time delivery crew.</p>
+    <div class="pitch-actions">
+      <button class="btn-accept">Accept</button>
+      <button class="btn-info">Request Info</button>
+      <button class="btn-decline">Decline</button>
+    </div>
+  </div>
+</div>
+
+<style>
+.investor-dashboard {
+  padding: 16px;
+  font-family: 'Segoe UI', sans-serif;
+}
+.filters {
+  margin-bottom: 10px;
+}
+.filters select {
+  padding: 8px;
+  border-radius: 6px;
+  width: 100%;
+  font-size: 14px;
+}
+.pitch-card {
+  background: white;
+  padding: 14px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+.pitch-card h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+.pitch-card p {
+  font-size: 14px;
+  margin: 3px 0;
+}
+.pitch-actions button {
+  border: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin-right: 6px;
+  margin-top: 10px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.btn-accept { background-color: #28a745; color: white; }
+.btn-info { background-color: #ffc107; color: white; }
+.btn-decline { background-color: #dc3545; color: white; }
+</style>
+</html>
+
+
+<!DOCTYPE html>
+<!--<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Investor Marketplace</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+      padding: 12px;
+    }
+
+    .search-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .search-bar button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .search-field {
+      position: relative;
+      flex-grow: 1;
+    }
+
+    .search-field input {
+      width: 100%;
+      padding: 10px 40px 10px 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .search-field i {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #888;
+    }
+
+    .dropdowns {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    select {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      flex: 1;
+    }
+
+    .investor-card {
+      background: white;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+    }
+
+    .investor-card h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+
+    .investor-card p {
+      margin: 4px 0;
+      font-size: 14px;
+      color: #444;
+    }
+
+    .card-actions button {
+      background-color: #007BFF;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 6px;
+      margin-top: 10px;
+      margin-right: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="search-bar">
+    <button onclick="useMyLocation()">📍 Use My Location</button>
+    <div class="search-field">
+      <input type="text" id="searchInput" placeholder="Search investors, e.g. AgriTech...">
+      <i class="fas fa-search">🔍</i>
+    </div>
+  </div>
+
+  <div class="dropdowns">
+    <select id="categorySelect" onchange="filterInvestors()">
+      <option value="">All Categories</option>
+      <option value="agritech">AgriTech</option>
+      <option value="storage">Storage</option>
+      <option value="equipment">Equipment</option>
+    </select>
+
+    <select id="sortSelect" onchange="filterInvestors()">
+      <option value="">Recently Posted</option>
+      <option value="today">Today</option>
+      <option value="week">This Week</option>
+    </select>
+  </div>
+
+  <div id="results">
+    <!-- Sample result -->
+    <!--<div class="investor-card">
+      <h3>AgriFund Capital</h3>
+      <p><strong>Focus:</strong> AgriTech, Storage, Equipment</p>
+      <p>📍 Lagos – 12km away | 🕒 Active Today</p>
+      <p><strong>Funding:</strong> ₦500k – ₦10M</p>
+      <p><strong>Accepts:</strong> PDF, Short Video, Voice Pitch</p>
+      <div class="card-actions">
+        <button>View Profile</button>
+        <button>Send Pitch</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function useMyLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          alert("Location retrieved: " + position.coords.latitude + ", " + position.coords.longitude);
+          // Optional: Use these coordinates to filter results
+        }, () => {
+          alert("Could not access location.");
+        });
+      } else {
+        alert("Geolocation not supported.");
+      }
+    }
+
+    function filterInvestors() {
+      const keyword = document.getElementById("searchInput").value.toLowerCase();
+      const category = document.getElementById("categorySelect").value;
+      const sort = document.getElementById("sortSelect").value;
+
+      // Example logic for filtering (replace with actual dynamic data logic)
+      const results = document.getElementById("results");
+      results.innerHTML = "";
+
+      // Add sample card if keyword matches
+      if (!keyword || keyword.includes("agri")) {
+        results.innerHTML += `
+          <div class="investor-card">
+            <h3>AgriFund Capital</h3>
+            <p><strong>Focus:</strong> AgriTech, Storage, Equipment</p>
+            <p>📍 Lagos – 12km away | 🕒 Active Today</p>
+            <p><strong>Funding:</strong> ₦500k – ₦10M</p>
+            <p><strong>Accepts:</strong> PDF, Short Video, Voice Pitch</p>
+            <div class="card-actions">
+              <button>View Profile</button>
+              <button>Send Pitch</button>
+            </div>
+          </div>`;
+      } else {
+        results.innerHTML = "<p>No matching investors found.</p>";
+      }
+    }
+
+    document.getElementById("searchInput").addEventListener("input", filterInvestors);
+  </script>
+</body>
+</html>-->

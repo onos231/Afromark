@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <title>Fund Now - SwapIt Premium</title>
+		<link rel="stylesheet" href="../../css/style.css">	
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 1rem;
+      background: #f8f9fa;
+    }
+    .fund-container {
+      background: #fff;
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    h2 {
+      margin-bottom: 12px;
+    }
+    .summary {
+      background: #e8f5e9;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+    }
+    label {
+      display: block;
+      margin-top: 12px;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-bottom: 12px;
+    }
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .submit-btn:disabled {
+      background: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+<div class="fund-container">
+  <h2>Fund Now</h2>
+
+  <div class="summary">
+    <p><strong>Project:</strong> Community Rice Farm</p>
+    <p><strong>Location:</strong> Kaduna</p>
+    <p><strong>Total Requested:</strong> ₦500,000</p>
+  </div>
+
+  <form id="fundForm">
+    <label for="amount">Enter Amount (₦)</label>
+    <input type="number" id="amount" name="amount" placeholder="e.g. 100000" required min="1000" />
+
+    <label for="method">Select Payment Method</label>
+    <select id="method" required>
+      <option value="">Choose One</option>
+      <option value="wallet">Wallet</option>
+      <option value="card">Credit/Debit Card</option>
+      <option value="bank">Bank Transfer</option>
+    </select>
+
+    <button type="submit" class="submit-btn">Submit Funding</button>
+  </form>
+</div>
+
+<script>
+  document.getElementById("fundForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const amount = document.getElementById("amount").value;
+    const method = document.getElementById("method").value;
+
+    if (!amount || !method) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    alert("Funding submitted successfully!\nAmount: ₦" + amount + "\nMethod: " + method);
+    window.location.href = "premium-dashboard.html"; // redirect back to dashboard
+  });
+</script>
+
+</body>
+</html>

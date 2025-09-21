@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Premium Payment</title>
+		<link rel="stylesheet" href="../../css/style.css">	
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f9fb;
+    }
+
+    .container {
+      padding: 16px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .select-method {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    select, input[type="text"], input[type="number"], input[type="email"], input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .form-section {
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.08);
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background: #2e7d32;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      margin-top: 16px;
+      cursor: pointer;
+    }
+
+    .note {
+      font-size: 12px;
+      color: #666;
+      margin-top: 8px;
+      text-align: center;
+    }
+
+    .verification {
+      margin-top: 20px;
+      text-align: center;
+      display: none;
+    }
+
+    .verification p {
+      color: #ff9800;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Upgrade to SwapIt Premium</h2>
+
+  <div class="select-method">
+    <label for="payment-method">Choose Payment Method:</label>
+    <select id="payment-method" onchange="togglePaymentForm()">
+      <option value="">-- Select Payment Method --</option>
+      <option value="card">Credit/Debit Card</option>
+      <option value="transfer">Bank Transfer</option>
+      <option value="ussd">USSD Payment</option>
+    </select>
+  </div>
+
+  <!-- CARD FORM -->
+  <div id="card-form" class="form-section">
+    <label>Cardholder Name</label>
+    <input type="text" placeholder="Name on Card" />
+
+    <label>Card Number</label>
+    <input type="number" placeholder="xxxx xxxx xxxx xxxx" />
+
+    <label>Expiry Date</label>
+    <input type="text" placeholder="MM/YY" />
+
+    <label>CVV</label>
+    <input type="number" placeholder="123" />
+
+    <button class="btn" onclick="submitPayment()">Pay ₦5,000</button>
+  </div>
+
+  <!-- BANK TRANSFER -->
+  <div id="transfer-form" class="form-section">
+    <p>Transfer to: <strong>SwapIt Ltd - 1234567890 - Access Bank</strong></p>
+    <label>Your Account Name</label>
+    <input type="text" placeholder="e.g. John Doe" />
+
+    <label>Payment Reference</label>
+    <input type="text" placeholder="Transfer ID or Screenshot ref." />
+
+    <button class="btn" onclick="submitPayment()">I’ve Made Payment</button>
+  </div>
+
+  <!-- USSD FORM -->
+  <div id="ussd-form" class="form-section">
+    <p>Dial this USSD Code: <strong>*737*000*5000#</strong></p>
+    <label>Phone Number Used</label>
+    <input type="tel" placeholder="080xxxxxxxx" />
+
+    <label>Transaction Reference</label>
+    <input type="text" placeholder="e.g. 9001234567" />
+
+    <button class="btn" onclick="submitPayment()">Verify USSD Payment</button>
+  </div>
+
+  <div class="verification" id="verifying">
+    <p>⏳ Verifying payment...</p>
+    <div class="note">Please wait, you’ll be redirected shortly</div>
+  </div>
+</div>
+
+<script>
+  function togglePaymentForm() {
+    const method = document.getElementById("payment-method").value;
+    document.getElementById("card-form").style.display = (method === "card") ? "block" : "none";
+    document.getElementById("transfer-form").style.display = (method === "transfer") ? "block" : "none";
+    document.getElementById("ussd-form").style.display = (method === "ussd") ? "block" : "none";
+    document.getElementById("verifying").style.display = "none";
+  }
+
+  function submitPayment() {
+    document.getElementById("verifying").style.display = "block";
+
+    // Fake verification simulation
+    setTimeout(() => {
+      alert("✅ Payment Verified! Redirecting to Premium Dashboard...");
+      window.location.href = "premium-dashboard.html";
+    }, 3000);
+  }
+</script>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoodSwap Nigeria</title>
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<div class="payment-form">
+  <h2>Complete Your Payment</h2>
+  <p>Selected Plan: <strong>Investor Pro - ₦12,000</strong></p>
+
+  <label>Name</label>
+  <input type="text" placeholder="Full Name" />
+
+  <label>Email</label>
+  <input type="email" placeholder="Email Address" />
+
+  <label>Payment Method</label>
+  <select>
+    <option>Paystack</option>
+    <option>Flutterwave</option>
+    <option>Bank Transfer</option>
+  </select>
+
+  <button onclick="window.location.href='premium-waiting.html'">Submit Payment</button>
+</div>
+
+<style>
+  .payment-form {
+    padding: 16px;
+    font-family: sans-serif;
+  }
+  input, select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  button {
+    background: #2b3a67;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    width: 100%;
+    cursor: pointer;
+  }
+</style>
+</html>
+

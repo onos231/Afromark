@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to SwapIt!</title>
+	<link rel="stylesheet" href="../../css/style.css">
+	
+	<link href="../dist/output.css" rel="stylesheet">
+  
+</head>
+<body class="bg-white text-gray-800 dark:bg-gray-900 transition-colors duration-300" id="app">
+	<header>
+	<div class="intro-header">
+		<img src="../img/top-header/header.png" alt="Project 2" />
+		<div class="intro-logo">
+		<img src="../img/logo/intro-logo.png" alt="Project 2" />
+			</div>
+		</div>
+	</header>
+  
+
+  <!-- Form -->
+	<div class="flex items-start justify-center min-h-screen bg-white-100">
+  <div class="w-[300px] mt-10">
+  
+
+      <form id="loginForm" class="space-y-4">
+        <!-- Username -->
+        <div>
+          <input
+            type="text"
+            id="username"
+            placeholder="Email or phone number"
+            class="w-full bg-gray-100 border dark:border-gray-900 dark:bg-gray-800 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
+            required
+          />
+          <p id="usernameError" class="text-red-500 text-sm hidden mt-1 ">
+            Please enter a valid email or phone number.
+          </p>
+        </div>
+
+        <!-- Password -->
+        <div>
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            class="w-full bg-gray-100 border dark:border-gray-900 dark:bg-gray-800 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
+            required
+          />
+          <p id="passwordError" class="text-red-500 text-sm hidden mt-1">
+            Please enter your password.
+          </p>
+        </div>
+
+        <!-- Terms -->
+        <p class="text-sm text-gray-500 dark:text-white">
+          By proceeding, you accept our
+          <a href="#" class="text-blue-500 dark:text-blue-300">Terms of Use</a> and
+          <a href="#" class="text-blue-500 dark:text-blue-300">Privacy Policy</a>
+        </p>
+
+        <!-- Login Button -->
+        <button
+          type="" onclick="window.location.href='signup.html'"
+          class="w-full bg-orange-500 text-white font-semibold py-2 rounded-md hover:bg-orange-600"
+        >
+          Login
+        </button>
+
+        <div class="text-right">
+          <a href="#" class="text-blue-500 text-sm dark:text-blue-300">Forgot Password</a>
+        </div>
+      </form>
+
+      <!-- Divider -->
+      <div class="flex items-center my-4 mt-4">
+        <hr class="flex-grow border-gray-300" />
+        <span class="mx-2 text-gray-500 text-sm">Or use</span>
+        <hr class="flex-grow border-gray-300" />
+      </div>
+
+      <!-- Voice + Biometrics -->
+      <div class="flex gap-2 mt-4">
+        <button class="flex-1 bg-blue-500 text-white py-2 rounded-md flex items-center justify-center gap-2">
+          <img src="/img/social-icon/voice.png" class="w-6 h-6 object-contain">Voice Login
+        </button>
+        <button class="flex-1 border py-2 rounded-md flex items-center justify-center gap-2 dark:text-white dark:bg-gray-800">
+          <img src="/img/social-icon/biometrics.png" class="w-6 h-6 object-contain">Biometrics
+        </button>
+      </div>
+
+		<!-- Social Login Section -->
+<div class="flex justify-center space-x-4 mt-6">
+  <button onclick="window.location.href='/pages/free/index.html'" class="w-16 py-2 mx-2 flex items-center justify-center border rounded-md dark:bg-gray-800">
+    <img src="/img/social-icon/facebook.png" class="w-6 h-6 object-contain" >
+  </button>
+
+  <button onclick="window.location.href='/pages/free/index.html'" class="w-16 py-2 mx-4 flex items-center justify-center border rounded-md dark:bg-gray-800">
+    <img src="/img/social-icon/google.png" class="w-6 h-6 object-contain">
+  </button>
+
+  <button onclick="window.location.href='/pages/free/index.html'" class="w-16 py-2 flex items-center justify-center border rounded-md dark:bg-gray-800">
+    <img src="/img/social-icon/tiktok.png" class="w-6 h-6 object-contain">
+  </button>
+</div>
+
+      
+
+      <!-- Signup -->
+      <p class="text-center text-sm text-gray-500 mt-4 dark:text-white">
+        Don’t have an account?
+        <a href="signup.html" class="text-orange-500 font-semibold dark:text-gold-900">Signup</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const username = document.getElementById("username");
+      const password = document.getElementById("password");
+      const usernameError = document.getElementById("usernameError");
+      const passwordError = document.getElementById("passwordError");
+
+      let isValid = true;
+
+      // Validate username (basic email/phone check)
+      const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+      const phoneRegex = /^[0-9]{7,15}$/; // basic phone rule
+
+      if (!username.value.trim() || !(emailRegex.test(username.value) || phoneRegex.test(username.value))) {
+        usernameError.classList.remove("hidden");
+        isValid = false;
+      } else {
+        usernameError.classList.add("hidden");
+      }
+
+      // Validate password
+      if (!password.value.trim()) {
+        passwordError.classList.remove("hidden");
+        isValid = false;
+      } else {
+        passwordError.classList.add("hidden");
+      }
+
+      // Redirect if valid
+      if (isValid) {
+        window.location.href = "index.html";
+      }
+    });
+  </script>
+	<script src="../js/script.js"></script>
+	
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - SwapIt</title>
+		<link rel="stylesheet" href="../../css/style.css">	
+	</head>
+	<body>
+			<a class="back-btn" href="premium-dashboard.html">← Onboarding</a>
+<div class="ngo-progress-container">
+  <!-- Tab Navigation -->
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('upload')">Upload Progress</button>
+    <button class="tab-btn" onclick="switchTab('timeline')">Timeline</button>
+    <button class="tab-btn" onclick="switchTab('gallery')">Gallery</button>
+    <button class="tab-btn" onclick="switchTab('comments')">Comments</button>
+  </div>
+
+  <!-- Upload Progress Form -->
+  <div class="tab-content" id="upload">
+    <h3>Upload Progress Update</h3>
+    <label>Status:</label>
+    <select>
+      <option>Started</option>
+      <option>Midpoint</option>
+      <option>Completed</option>
+    </select>
+    <label>Description:</label>
+    <textarea placeholder="Describe the current stage of the project"></textarea>
+    
+    <label>Upload Media:</label>
+    <input type="file" accept="image/*,video/*" capture="environment">
+    
+    <button class="submit-btn">Submit Update</button>
+  </div>
+
+  <!-- Timeline Tracker -->
+  <div class="tab-content hidden" id="timeline">
+    <h3>Project Timeline</h3>
+    <ul class="timeline">
+      <li><strong>Start:</strong> 12 Mar 2025 – Soil Cleared</li>
+      <li><strong>Midpoint:</strong> 2 Apr 2025 – First Crop Sprouting</li>
+      <li><strong>Now:</strong> 5 May 2025 – Harvest in Progress</li>
+    </ul>
+  </div>
+
+  <!-- Multimedia Gallery -->
+  <div class="tab-content hidden" id="gallery">
+    <h3>Project Media</h3>
+    <div class="gallery">
+      <img src="img1.jpg" alt="Stage 1">
+      <img src="img2.jpg" alt="Stage 2">
+      <video controls src="progress1.mp4"></video>
+    </div>
+  </div>
+
+  <!-- Comments Section -->
+  <div class="tab-content hidden" id="comments">
+    <h3>Comments</h3>
+    <div class="comment-box">
+      <p><strong>Investor A:</strong> Great to see this progress!</p>
+      <p><strong>Admin:</strong> Please submit receipts for mid-cycle report.</p>
+    </div>
+    <textarea placeholder="Write a comment..."></textarea>
+    <button class="submit-btn">Post Comment</button>
+  </div>
+</div>
+</body>
+<style>
+.ngo-progress-container { 
+	font-family: sans-serif; 
+	padding: 16px; 
+	}
+.tab-nav { 
+	display: flex; 
+	overflow-x: auto; 
+	margin-bottom: 10px; 
+	}
+.tab-btn.active { 
+	background: lightgreen; 
+	color: #000; 
+	}
+
+.tab-content { 
+	display: none; 
+	}
+.tab-content:not(.hidden) { 
+	display: block; 
+	}
+ .back-btn {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+	  background-color: transparent;
+		  text-align: left;
+    }
+.timeline { 
+	list-style: none; 
+	padding-left: 0; 
+	}
+.timeline li { 
+	padding: 8px 0; 
+	border-bottom: 1px solid #ddd; 
+	}
+
+.gallery img, .gallery video {
+  width: 100%; 
+	margin-top: 10px; 
+	border-radius: 10px;
+}
+
+.comment-box { 
+	background: #f9f9f9; 
+	padding: 10px; 
+	margin-bottom: 10px; 
+	border-radius: 6px; 
+	}
+.submit-btn { 
+	margin-top: 10px; 
+	padding: 10px; 
+	background: #28a745; 
+	border: none; 
+	color: #fff; 
+	border-radius: 6px; 
+	width: 100%; 
+	}
+</style>
+
+<script>
+function switchTab(id) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+  document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+  document.getElementById(id).classList.remove('hidden');
+  event.target.classList.add('active');
+}
+</script>
+
+	
+	

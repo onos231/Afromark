@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Exclusive Marketplace</title>
+	<link rel="stylesheet" href="../../css/style.css">
+	</head>
+ <form id="post-swap-form" class="swap-form">
+  <h2>Post a Swap Offer</h2>
+
+  <label for="item-offered">What item do you have to offer?</label>
+  <input type="text" id="item-offered" placeholder="e.g., 2 bags of rice" required>
+
+  <label for="item-needed">What item do you want in return?</label>
+  <input type="text" id="item-needed" placeholder="e.g., tubers of yam" required>
+
+  <label for="swap-details">Swap Details</label>
+  <textarea id="swap-details" placeholder="Describe the quantity, quality, size, brand, packaging or any specific requirement..." rows="3"></textarea>
+
+  <label for="location">Location</label>
+  <div class="location-input">
+    <button type="button" onclick="useMyLocation()">📍</button>
+    <input type="text" id="location" placeholder="Enter your city or town" required>
+  </div>
+
+  <label for="photo">Upload Item Photo (optional)</label>
+  <input type="file" id="photo" accept="image/*" capture="environment">
+
+  <button type="submit" class="submit-btn">Submit Swap</button>
+</form>
+
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exclusive Marketplace</title>
+	<link rel="stylesheet" href="../../css/style.css">
+	</head>
+<div class="exclusive-submit">
+  <h2>Post an Exclusive Swap</h2>
+  <label>Title</label>
+  <input type="text" placeholder="e.g., Tractor for Rice Supply" />
+  
+  <label>Description</label>
+  <textarea rows="4" placeholder="Describe what you are offering and expecting..."></textarea>
+
+  <label>Category</label>
+  <select>
+    <option>Equipment</option>
+    <option>Bulk Produce</option>
+    <option>Logistics</option>
+    <option>Others</option>
+  </select>
+
+  <label>Upload Photo</label>
+  <input type="file" accept="image/*" capture="environment" />
+  
+  <button >Submit Swap</button>
+</div>
+
+<style>
+  .exclusive-submit {
+    padding: 16px;
+    font-family: sans-serif;
+  }
+  input, textarea, select {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  button {
+    background-color: #2b3a67;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    width: 100%;
+    font-size: 16px;
+  }
+</style>
+</html>

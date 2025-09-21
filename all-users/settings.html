@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings</title>
+  
+<link href="../dist/output.css" rel="stylesheet">
+
+</head>
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300" id="app">
+  <!-- Header -->
+	<header class="flex items-center justify-between px-4 py-3 bg-white shadow">
+    <img src="/img/logo/app-logo.png" alt="SwapIt Logo" class="h-8">
+    <a href="/all-users/profile.html"><div class="w-9 h-9 bg-gray-200 rounded-full flex items-center justify-center">
+      <img src="/img/profile/profile.svg" class="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 15c2.485 0 4.797.758 6.879 2.052M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      
+		</div></a>
+  </header>
+
+  <header class="bg-[#0E4D22] text-white">
+    <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
+      <h1 class="text-center font-semibold dark:text-green-200">Settings</h1>
+      <!-- Close button only (right) -->
+      <button
+        type="button"
+        aria-label="Close"
+        class="absolute right-3 top-5 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition"
+        onclick="alert('Close pressed')">
+        ✕
+      </button>
+    </div>
+    <!-- curved white top like in mock -->
+    <div class="max-w-md mx-auto bg-white dark:bg-gray-900 rounded-t-3xl h-6"></div>
+  </header>
+
+  <div class="p-6 max-w-md mx-auto space-y-6">
+    <!-- Phone Number -->
+    <div>
+      <label class="block mb-1 font-semibold dark:text-green-200">Phone Number</label>
+      <input type="text" id="phoneInput" placeholder="Enter new phone number"
+        class="w-full border dark:bg-gray-800 dark:border-gray-900 rounded px-3 py-2 focus:ring-2 focus:ring-green-500 outline-none" />
+      <button id="updatePhoneBtn"
+        class="mt-3 w-full bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 transition">
+        Update Phone
+      </button>
+    </div>
+
+    <!-- Change Password -->
+    <div>
+      <label class="block mb-1 font-semibold dark:text-green-200">Change Password</label>
+      <div class="relative mb-2">
+        <input type="password" id="oldPassword" placeholder="Enter old password"
+          class="w-full border dark:bg-gray-800 dark:border-gray-900  rounded px-3 py-2 focus:ring-2 focus:ring-green-500 outline-none pr-10" />
+        <button type="button" onclick="togglePassword('oldPassword')"
+          class="absolute inset-y-0 right-3 flex items-center text-gray-500">
+			
+          👁
+        </button>
+      </div>
+      <div class="relative">
+        <input type="password" id="newPassword" placeholder="Enter new password"
+          class="w-full border dark:bg-gray-800 dark:border-gray-900  rounded px-3 py-2 focus:ring-2 focus:ring-green-500 outline-none pr-10" />
+        <button type="button" onclick="togglePassword('newPassword')"
+          class="absolute inset-y-0 right-3 flex items-dark:bg-gray-800 dark:border-gray-900 center text-gray-500">
+          👁
+        </button>
+      </div>
+      <button id="updatePasswordBtn"
+        class="mt-3 w-full bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 transition">
+        Update Password
+      </button>
+    </div>
+
+
+
+	  
+    <!-- Toggles -->
+    <div class="space-y-4">
+      <div class="flex justify-between items-center">
+        <span>Appear Offline</span>
+        <label class="relative inline-flex items-center cursor-pointer">
+          <input type="checkbox" class="sr-only peer">
+          <div
+            class="w-11 h-6 bg-gray-300 rounded-full peer-checked:bg-green-600 after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:h-5 after:w-5 after:rounded-full after:transition-all peer-checked:after:translate-x-full dark:bg-gray-700 dark:border-gray-900 ">
+          </div>
+        </label>
+      </div>
+
+      <div class="flex justify-between items-center">
+        <span>Dark Theme</span>
+        <label class="relative inline-flex items-center cursor-pointer">
+          <input type="checkbox" id="themeToggle" class="sr-only peer">
+          <div
+            class="w-11 h-6 bg-gray-300 rounded-full peer-checked:bg-green-600 after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:h-5 after:w-5 after:rounded-full after:transition-all peer-checked:after:translate-x-full dark:bg-gray-700">
+          </div>
+        </label>
+      </div>
+
+      <div class="flex justify-between items-center">
+        <span>Allow WhatsApp</span>
+        <label class="relative inline-flex items-center cursor-pointer">
+          <input type="checkbox" class="sr-only peer">
+          <div
+            class="w-11 h-6 bg-gray-300 rounded-full peer-checked:bg-green-600 after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:h-5 after:w-5 after:rounded-full after:transition-all peer-checked:after:translate-x-full dark:bg-gray-700">
+          </div>
+        </label>
+      </div>
+
+      <div class="flex justify-between items-center">
+        <span>Allow Phone Calls</span>
+        <label class="relative inline-flex items-center cursor-pointer">
+          <input type="checkbox" class="sr-only peer">
+          <div
+            class="w-11 h-6 bg-gray-300 rounded-full peer-checked:bg-green-600 after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:h-5 after:w-5 after:rounded-full after:transition-all peer-checked:after:translate-x-full dark:bg-gray-700">
+          </div>
+        </label>
+      </div>
+
+      <div class="flex justify-between items-center">
+        <span>Disable Notification</span>
+        <label class="relative inline-flex items-center cursor-pointer">
+          <input type="checkbox" class="sr-only peer">
+          <div
+            class="w-11 h-6 bg-gray-300 rounded-full peer-checked:bg-green-600 after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:h-5 after:w-5 after:rounded-full after:transition-all peer-checked:after:translate-x-full dark:bg-gray-700">
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popup -->
+  <div id="popup"
+    class="hidden fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-6 py-3 rounded shadow">
+    Updated successfully!
+  </div>
+
+  <script>
+    // Toggle password visibility
+    function togglePassword(id) {
+      const input = document.getElementById(id);
+      input.type = input.type === "password" ? "text" : "password";
+    }
+
+    // Popup message
+    function showPopup(message) {
+      const popup = document.getElementById("popup");
+      popup.textContent = message;
+      popup.classList.remove("hidden");
+      setTimeout(() => popup.classList.add("hidden"), 3000);
+    }
+
+    document.getElementById("updatePhoneBtn").addEventListener("click", () => {
+      const phone = document.getElementById("phoneInput").value.trim();
+      if (phone) {
+        showPopup("Phone number updated!");
+      } else {
+        showPopup("Please enter a phone number.");
+      }
+    });
+
+    document.getElementById("updatePasswordBtn").addEventListener("click", () => {
+      const oldPass = document.getElementById("oldPassword").value.trim();
+      const newPass = document.getElementById("newPassword").value.trim();
+      if (oldPass && newPass) {
+        showPopup("Password updated!");
+      } else {
+        showPopup("Please fill both password fields.");
+      }
+    });
+
+	  
+	  
+  </script>
+	
+	<script src="../js/script.js"></script>
+	
+</body>
+</html>

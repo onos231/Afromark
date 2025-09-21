@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwapIt - Home</title>
+
+	<link href="../../dist/output.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 text-black dark:text-white font-sans">
+
+ <!-- Header -->
+	<header class="flex items-center justify-between px-4 py-3 bg-white shadow">
+    <img src="/img/logo/app-logo.png" alt="SwapIt Logo" class="h-8">
+    <a href="/all-users/profile.html"><div class="w-9 h-9 bg-gray-200 rounded-full flex items-center justify-center">
+      <img src="/img/profile/profile.svg" class="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 15c2.485 0 4.797.758 6.879 2.052M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      
+		</div></a>
+  </header>
+
+  <header class="bg-[#0E4D22] text-white">
+    <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
+      <h1 class="text-center font-semibold">For everyone: readers and non-readers.<br>
+      Use typing or voice command.</h1>
+      
+    </div>
+    <!-- curved white top like in mock -->
+    <div class="max-w-md mx-auto bg-white dark:bg-gray-900 rounded-t-3xl h-6"></div>
+  </header>
+	
+
+ 
+
+  <!-- Main Content -->
+  <main class="flex-1 p-6 pb-24">
+    <p class="text-center text-gray-700 font-medium mb-6 dark:text-green-200  dark:border-gray-900">
+      Post a Swap.
+    </p>
+
+    <form id="postForm" class="space-y-6">
+
+      <!-- Item Offer -->
+      <div>
+        <label class="block text-green-700 dark:text-green-200 font-medium mb-1">What item do you have to offer? *</label>
+        <input type="text" placeholder="e.g., 2 bags of rice" required class="w-full border dark:bg-gray-800 dark:border-gray-900 rounded-lg p-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-600">
+        <button type="button" class="w-full mt-2 border dark:border-gray-500 rounded-lg p-2 text-blue-500 flex items-center justify-center">
+          <span class="mr-1"><img src="/img/signup/voice.png" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"></span> Speak Item Name
+        </button>
+      </div>
+
+      <!-- Item in Return -->
+      <div>
+        <label class="block text-green-700 font-medium mb-1 dark:text-green-200 ">What item do you want in return? *</label>
+        <input type="text" placeholder="e.g., tubers of yam" required class="w-full border dark:bg-gray-800  dark:border-gray-900 rounded-lg p-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-600">
+        <button type="button" class="w-full mt-2 border dark:border-gray-500 rounded-lg p-2 text-blue-500 flex items-center justify-center">
+          <span class="mr-1"><img src="/img/signup/voice.png" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"></span> Quantity/Weight
+        </button>
+      </div>
+
+      <!-- Location -->
+      <div>
+        <label class="block text-green-700 font-medium mb-1 dark:text-green-200">Your Location *</label>
+        <input type="text" placeholder="e.g., Begger, Lagos" required class="w-full border dark:bg-gray-800  dark:border-gray-900 rounded-lg p-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-600">
+        <button type="button" class="w-full mt-2 border dark:border-gray-500 rounded-lg p-2 text-blue-500 flex items-center justify-center">
+          <span class="mr-1"><img src="/img/signup/voice.png" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"></span> Speak Location
+        </button>
+      </div>
+
+      <!-- Description -->
+      <div>
+        <label class="block text-green-700 font-medium mb-1 dark:text-green-200">Description *</label>
+        <textarea placeholder="Describe the quantity, size, packaging or any specific requirement..." rows="3" required class="w-full border dark:bg-gray-800  dark:border-gray-900 rounded-lg p-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-600"></textarea>
+        <button type="button" class="w-full mt-2 border dark:border-gray-500 rounded-lg p-2 text-blue-500 flex items-center justify-center">
+          <span class="mr-1"><img src="/img/signup/voice.png" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"></span> Speak Description
+        </button>
+      </div>
+
+      <!-- File Upload -->
+      <div>
+        <label class="block text-green-700 font-medium mb-1 dark:text-green-200">Upload Item or Take Photo *</label>
+        <input type="file" required class="w-full border rounded-lg p-2 text-sm dark:border-gray-900">
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" id="submitBtn" disabled
+      class="w-full bg-yellow-200 text-white font-medium py-2 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-yellow-700 transition">
+      Submit Post
+    </button>
+    </form>
+  </main>
+
+  <script>
+  const form = document.getElementById("postForm");
+  const submitBtn = document.getElementById("submitBtn");
+
+  form.addEventListener("input", () => {
+    // Check if all required inputs are valid
+    if (form.checkValidity()) {
+      submitBtn.disabled = false;
+    } else {
+      submitBtn.disabled = true;
+    }
+  });
+</script>
+<script src="../../js/script.js"></script>
+ 
+</body>
+</html>

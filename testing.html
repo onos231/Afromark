@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Account Navigation - SwapIt</title>
+		<link rel="stylesheet" href="../../css/style.css">	
+	</head>
+<div class="progress-wrapper">
+  <div class="tab-bar">
+    <button onclick="showTab('update')">📌 Update Progress</button>
+    <button onclick="showTab('timeline')">📅 Timeline</button>
+    <button onclick="showTab('gallery')">🖼️ Gallery</button>
+    <button onclick="showTab('feedback')">💬 Feedback</button>
+  </div>
+
+  <!-- Update Progress -->
+  <div id="update" class="tab-content">
+    <h3>📌 Update Your Progress</h3>
+    <label>Stage</label>
+    <select>
+      <option>Started</option>
+      <option>Midpoint</option>
+      <option>Completed</option>
+    </select>
+
+    <label>Description</label>
+    <textarea placeholder="Describe progress made..."></textarea>
+
+    <label>Upload Image/Video</label>
+    <input type="file" accept="image/*,video/*">
+
+    <button class="submit-btn">Submit Update</button>
+  </div>
+
+  <!-- Timeline -->
+  <div id="timeline" class="tab-content" style="display:none;">
+    <h3>📅 Timeline</h3>
+    <ul>
+      <li><strong>Started:</strong> Jan 20, 2025 – Land cleared and planting started.</li>
+      <li><strong>Midpoint:</strong> Feb 20, 2025 – Irrigation setup done.</li>
+      <li><strong>Completed:</strong> March 30, 2025 – Harvest completed.</li>
+    </ul>
+  </div>
+
+  <!-- Gallery -->
+  <div id="gallery" class="tab-content" style="display:none;">
+    <h3>🖼️ Project Media</h3>
+    <img src="midpoint-photo.jpg" alt="Midpoint photo" style="width:100%; border-radius:8px; margin-bottom:10px;">
+    <video controls style="width:100%; border-radius:8px;">
+      <source src="progress-update.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Feedback -->
+  <div id="feedback" class="tab-content" style="display:none;">
+    <h3>💬 Investor Feedback</h3>
+    <div class="comment">
+      <strong>AgriFund:</strong> Impressive setup at midpoint. Ensure timely weeding.
+    </div>
+    <div class="comment">
+      <strong>FarmBoost:</strong> Add final budget usage breakdown in next update.
+    </div>
+  </div>
+</div>
+
+<style>
+  .progress-wrapper {
+    font-family: sans-serif;
+    padding: 16px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+  .tab-bar button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background: #f0f0f0;
+    margin: 2px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .tab-bar {
+    display: flex;
+    margin-bottom: 12px;
+    overflow-x: auto;
+  }
+  .tab-content {
+    background: #fafafa;
+    padding: 16px;
+    border-radius: 8px;
+  }
+  textarea, select, input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  .submit-btn {
+    margin-top: 12px;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    width: 100%;
+    border-radius: 8px;
+  }
+  .comment {
+    background: #fff;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    border-left: 4px solid #007BFF;
+  }
+</style>
+
+<script>
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
+    document.getElementById(tabId).style.display = 'block';
+  }
+</script>
+	
+	<script src="js/script.js"></script>
+</html>

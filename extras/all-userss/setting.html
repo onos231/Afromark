@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings - SwapIt</title>
+	  <link rel="stylesheet" href="../../css/style.css">
+
+</head>
+<body>
+  <div class="header">Settings</div>
+  <div class="container">
+    <div class="form-group">
+      <label for="phone">Change Phone Number</label>
+      <input type="text" id="phone" placeholder="Enter new phone number" />
+      <button onclick="updatePhone()">Update Phone</button>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Change Password</label>
+      <input type="password" id="password" placeholder="Enter new password" />
+      <button onclick="updatePassword()">Update Password</button>
+    </div>
+
+    <div class="toggle-group">
+      <label>Appear Offline</label>
+      <label class="switch">
+        <input type="checkbox" id="offlineMode" onchange="toggleSetting('offlineMode')" />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="toggle-group">
+      <label>Dark Theme</label>
+      <label class="switch">
+        <input type="checkbox" id="darkTheme" onchange="toggleSetting('darkTheme')" />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="toggle-group">
+      <label>Disable Notifications</label>
+      <label class="switch">
+        <input type="checkbox" id="disableNotif" onchange="toggleSetting('disableNotif')" />
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+
+	<script src="js/theme.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    function updatePhone() {
+      const phone = document.getElementById('phone').value;
+      if (!phone) {
+        alert("Please enter a phone number.");
+        return;
+      }
+      console.log("Updated phone:", phone);
+      alert("Phone number updated successfully.");
+    }
+
+    function updatePassword() {
+      const password = document.getElementById('password').value;
+      if (!password) {
+        alert("Please enter a password.");
+        return;
+      }
+      console.log("Updated password:", password);
+      alert("Password updated successfully.");
+    }
+
+    function toggleSetting(setting) {
+      const state = document.getElementById(setting).checked;
+      console.log(`Setting changed: ${setting} =>`, state);
+      alert(`${setting.replace(/([A-Z])/g, ' $1')} ${state ? 'enabled' : 'disabled'}`);
+    }
+  </script>
+</body>
+</html>

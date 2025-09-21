@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investor Registration</title>
+	<link rel="stylesheet" href="../../css/style.css">	
+  
+</head>
+<div class="investor-register-container">
+  <h2>Become an Investor</h2>
+  <form id="investorForm">
+    <label>Full Name / Business Name</label>
+    <input type="text" placeholder="e.g. AgriGrowth Ventures" required>
+
+    <label>Industry / Investment Focus</label>
+    <select required>
+      <option disabled selected>Select focus</option>
+      <option>Agriculture</option>
+      <option>Food Distribution</option>
+      <option>Technology</option>
+      <option>Education</option>
+    </select>
+
+    <label>Investment Capacity (₦)</label>
+    <input type="number" placeholder="₦2,000,000" required>
+
+    <label>Location</label>
+    <input type="text" placeholder="e.g. Abuja, Nigeria" required>
+
+    <label>Years of Experience</label>
+    <input type="number" placeholder="e.g. 5" min="0">
+
+    <label>Upload Profile Photo / Logo</label>
+    <input type="file" accept="image/*" capture="environment">
+
+    <label>Brief Bio</label>
+    <textarea rows="3" placeholder="Tell us more about your work"></textarea>
+
+    <label>Upload ID Document (Optional)</label>
+    <input type="file" accept="image/*,application/pdf" capture="environment">
+
+    <button type="submit" class="submit-btn">Submit for Verification</button>
+  </form>
+</div>
+
+<style>
+  .investor-register-container {
+    padding: 16px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  form label {
+    display: block;
+    margin-top: 12px;
+    font-weight: 600;
+  }
+  input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 4px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  .submit-btn {
+    margin-top: 20px;
+    width: 100%;
+    background: #2e7d32;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+</style>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Donation</title>
+	<link rel="stylesheet" href="../../css/style.css">
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f4f4f4;
+      padding: 16px;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .back-btn {
+      margin-right: 10px;
+      font-size: 18px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    h2 {
+      font-size: 20px;
+      margin: 0;
+    }
+    .form-group {
+      margin-bottom: 14px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    button {
+      background: #4CAF50;
+      color: white;
+      font-weight: bold;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <button class="back-btn" onclick="history.back()">←</button>
+    <h2>Request Donation</h2>
+  </div>
+
+  <form>
+    <div class="form-group">
+      <label>What do you need this for?</label>
+      <textarea placeholder="Explain how the donation will help you or your community"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Optional: Upload Image or Voice Note</label>
+      <input type="file" accept="image/*,audio/*">
+    </div>
+
+    <button type="submit">Submit Request</button>
+  </form>
+
+</body>
+</html>

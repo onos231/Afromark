@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Exclusive Marketplace</title>
+	<link rel="stylesheet" href="../../css/style.css">
+  <style>
+    body { font-family: sans-serif; padding: 16px; background: #f5f5f5; }
+
+    .search-row {
+      display: flex;
+      margin-bottom: 12px;
+    }
+
+    .location-btn {
+		width: 30px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 6px;
+      border-radius: 6px 0 0 6px;
+      cursor: pointer;
+    }
+
+    .search-input-wrapper {
+      flex-grow: 1;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 10px 36px 10px 10px;
+      border: 1px solid #ccc;
+      border-left: none;
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
+    }
+
+    .search-icon {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 18px;
+      color: #777;
+    }
+
+    .filters {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    select {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      flex: 1;
+    }
+
+    .results {
+      background: white;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    .result-header {
+      font-weight: bold;
+    }
+
+    .meta {
+      font-size: 13px;
+      color: gray;
+      margin-top: 4px;
+    }
+
+    .actions button {
+      margin-top: 8px;
+      margin-right: 6px;
+      padding: 6px 10px;
+      font-size: 14px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .btn-profile { background: #2196F3; color: white; }
+    .btn-pitch { background: #9C27B0; color: white; }
+  </style>
+</head>
+<body>
+
+  <div class="search-row">
+    <button class="location-btn" onclick="useMyLocation()">📍</button>
+    <div class="search-input-wrapper">
+      <input type="text" class="search-input" id="searchField" placeholder="Search premium items...">
+      <span class="search-icon">🔍</span>
+    </div>
+  </div>
+
+  <div class="filters">
+    <select id="categorySelect">
+      <option value="">All Categories</option>
+      <option>Equipment</option>
+      <option>Fertilizers</option>
+      <option>Technology</option>
+    </select>
+    <select id="postedSelect">
+      <option value="">Anytime</option>
+      <option>Today</option>
+      <option>This Week</option>
+      <option>Last Month</option>
+    </select>
+  </div>
+
+  <div id="resultsContainer">
+    <!-- Dynamic Results Appear Here -->
+  </div>
+
+  <script>
+    const resultsData = [
+      { name: 'Smart Irrigation Controller', location: 'Abuja', posted: 'Today', distance: '3.5km' },
+      { name: 'Hydroponic Starter Kit', location: 'Enugu', posted: 'This Week', distance: '7.2km' },
+      { name: 'Tractor Lease Plan', location: 'Jos', posted: 'Today', distance: '5.4km' },
+      { name: 'Organic Fertilizer', location: 'Ibadan', posted: 'Last Month', distance: '9.0km' }
+    ];
+
+    function renderResults(filterText = '', category = '', posted = '') {
+      const container = document.getElementById('resultsContainer');
+      container.innerHTML = '';
+
+      const filtered = resultsData.filter(item => {
+        const matchText = filterText === '' || item.name.toLowerCase().includes(filterText.toLowerCase());
+        const matchCategory = category === '' || item.name.toLowerCase().includes(category.toLowerCase());
+        const matchPosted = posted === '' || item.posted === posted;
+        return matchText && matchCategory && matchPosted;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = '<p>No results found.</p>';
+        return;
+      }
+
+      filtered.forEach(item => {
+        const resultCard = document.createElement('div');
+        resultCard.className = 'results';
+        resultCard.innerHTML = `
+          <div class="result-header">${item.name}</div>
+          <div class="meta">📍 ${item.distance} away · Posted ${item.posted}</div>
+          <div class="actions">
+            <button class="btn-profile">View Profile</button>
+            <button class="btn-pitch">Send Premium Pitch</button>
+          </div>
+        `;
+        container.appendChild(resultCard);
+      });
+    }
+
+    document.getElementById('searchField').addEventListener('input', () => {
+      const text = document.getElementById('searchField').value;
+      const cat = document.getElementById('categorySelect').value;
+      const posted = document.getElementById('postedSelect').value;
+      renderResults(text, cat, posted);
+    });
+
+    document.getElementById('categorySelect').addEventListener('change', () => {
+      const text = document.getElementById('searchField').value;
+      renderResults(text, document.getElementById('categorySelect').value, document.getElementById('postedSelect').value);
+    });
+
+    document.getElementById('postedSelect').addEventListener('change', () => {
+      const text = document.getElementById('searchField').value;
+      renderResults(text, document.getElementById('categorySelect').value, document.getElementById('postedSelect').value);
+    });
+
+    function useMyLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((pos) => {
+          alert("Location retrieved: " + pos.coords.latitude + ", " + pos.coords.longitude);
+        }, () => alert("Location access denied."));
+      } else {
+        alert("Geolocation not supported.");
+      }
+    }
+
+    // Initial render
+    renderResults();
+  </script>
+
+</body>
+</html>

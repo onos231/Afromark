@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chat with Donor</title>
+<link rel="stylesheet" href="../../css/style.css">
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    .chat-header {
+      background: #4CAF50;
+      color: white;
+      padding: 16px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .chat-box {
+      flex: 1;
+      padding: 12px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .message {
+      max-width: 70%;
+      padding: 10px;
+      border-radius: 12px;
+      font-size: 14px;
+    }
+    .sent {
+      align-self: flex-end;
+      background-color: #dcf8c6;
+    }
+    .received {
+      align-self: flex-start;
+      background-color: #fff;
+    }
+    .chat-input {
+      display: flex;
+      padding: 10px;
+      background: white;
+      border-top: 1px solid #ccc;
+    }
+    .chat-input input {
+      flex: 1;
+      padding: 10px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+    .chat-input button {
+      margin-left: 10px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="chat-header">Chat with Donor</div>
+
+  <div class="chat-box" id="chat-box">
+    <div class="message received">Hello, you’ve been approved for the rice donation. 🙌</div>
+    <div class="message sent">Thank you! Can I pick it up tomorrow morning?</div>
+    <div class="message received">Sure, 9am works. Address is 22 Makinde Street, Ikeja.</div>
+  </div>
+
+  <div class="chat-input">
+    <input type="text" id="chatMessage" placeholder="Type your message..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+  <script>
+    function sendMessage() {
+      const input = document.getElementById('chatMessage');
+      const msg = input.value.trim();
+      if (msg) {
+        const newMsg = document.createElement('div');
+        newMsg.classList.add('message', 'sent');
+        newMsg.innerText = msg;
+        document.getElementById('chat-box').appendChild(newMsg);
+        input.value = '';
+        document.getElementById('chat-box').scrollTop = document.getElementById('chat-box').scrollHeight;
+      }
+    }
+  </script>
+
+</body>
+</html>

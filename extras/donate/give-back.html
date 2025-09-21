@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to SwapIt</title>
+	
+	
+  
+</head>
+<div style="padding: 16px; font-family: sans-serif;">
+  <h2>🎁 Find Donations Near You</h2>
+
+  <!-- Filter Tabs -->
+  <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+    <select id="filterCategory" onchange="filterResults()" style="flex: 1; margin-right: 6px; padding: 8px;">
+      <option value="">All Categories</option>
+      <option value="food">Food</option>
+      <option value="seeds">Seeds</option>
+      <option value="equipment">Equipment</option>
+      <option value="cash">Cash</option>
+    </select>
+    <select id="filterPosted" onchange="filterResults()" style="flex: 1; padding: 8px;">
+      <option value="">Any Time</option>
+      <option value="today">Today</option>
+      <option value="week">Last Week</option>
+      <option value="month">This Month</option>
+    </select>
+  </div>
+
+  
+  <!-- Search Location Field -->
+  <div style="display: flex; align-items: center; margin-bottom: 16px;">
+    <button onclick="getUserLocation()" style="padding: 7px; background: lightgreen; color: white; border: none; border-top-left-radius: 6px; border-bottom-left-radius: 6px;">📍</button>
+    <input id="locationInput" placeholder="Enter location..." style="flex-grow: 1; padding: 10px; border: 1px solid #ccc; border-left: none;">
+    <button onclick="filterResults()" style="padding: 7px; background: #ccc; color: white; border: none; border-top-right-radius: 6px; border-bottom-right-radius: 6px;">🔍</button>
+  </div>
+
+  <!-- Results Area -->
+  <div id="donationList"></div>
+</div>
+
+<script>
+  const donations = [
+    { type: 'food', location: 'Lagos', description: 'Rice and garri bags', donor: 'FoodAid', posted: 'today' },
+    { type: 'equipment', location: 'Abuja', description: 'Hand tiller machine', donor: 'GreenFarmers', posted: 'week' },
+    { type: 'cash', location: 'Kaduna', description: '₦5,000 farm support', donor: 'GrowNGO', posted: 'month' }
+  ];
+
+  function getUserLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        document.getElementById('locationInput').value = 'Your Area'; // Simulated
+        filterResults();
+      });
+    } else {
+      alert("Geolocation not supported.");
+    }
+  }
+
+  function filterResults() {
+    const type = document.getElementById('filterCategory').value.toLowerCase();
+    const posted = document.getElementById('filterPosted').value;
+    const location = document.getElementById('locationInput').value.toLowerCase();
+
+    const filtered = donations.filter(d => {
+      const matchType = !type || d.type === type;
+      const matchLocation = !location || d.location.toLowerCase().includes(location);
+      const matchPost = !posted || d.posted === posted;
+      return matchType && matchLocation && matchPost;
+    });
+
+    const list = document.getElementById('donationList');
+    list.innerHTML = filtered.map(d => `
+      <div style="background:#fff; padding:12px; margin-bottom:12px; border-radius:10px; box-shadow:0 1px 4px rgba(0,0,0,0.1);">
+        <h4 style="margin:0 0 6px;">${d.description}</h4>
+        <p style="margin: 0;"><strong>Type:</strong> ${d.type}</p>
+        <p style="margin: 0;"><strong>Location:</strong> ${d.location}</p>
+        <p style="margin: 0;"><strong>Donor:</strong> ${d.donor}</p>
+        <button style="margin-top: 10px; padding: 8px 12px; background-color: #4CAF50; color: white; border: none; border-radius: 6px;">Request This</button>
+      </div>
+    `).join('');
+
+    if (!filtered.length) {
+      list.innerHTML = `<p style="color: #777;">No matching donations found.</p>`;
+    }
+  }
+
+  window.onload = filterResults;
+</script>

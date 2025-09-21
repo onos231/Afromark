@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arrange Pickup or Delivery</title>
+	<link rel="stylesheet" href="../../css/style.css">
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f9f9f9;
+      padding: 16px;
+    }
+    h2 {
+      margin-bottom: 16px;
+    }
+    .form-group {
+      margin-bottom: 14px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    textarea { resize: vertical; }
+    .btn {
+      margin-top: 20px;
+      background: #4caf50;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Arrange Pickup or Delivery</h2>
+
+  <form>
+    <div class="form-group">
+      <label for="method">Preferred Method</label>
+      <select id="method" name="method">
+        <option value="pickup">Pickup (I'll come)</option>
+        <option value="delivery">Delivery (Send to me)</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="time">Preferred Date & Time</label>
+      <input type="datetime-local" id="time" name="time" required>
+    </div>
+
+    <div class="form-group">
+      <label for="location">Pickup/Delivery Address</label>
+      <textarea id="location" rows="3" placeholder="Enter your address or pickup location"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="note">Additional Notes (Optional)</label>
+      <textarea id="note" rows="3" placeholder="Any special instruction or clarification?"></textarea>
+    </div>
+
+    <button type="submit" class="btn">Submit Request</button>
+  </form>
+
+</body>
+</html>

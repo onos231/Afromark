@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Payment Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class=" text-gray-900">
+  <!-- Header -->
+	<header class="flex items-center justify-between px-4 py-3 bg-white shadow">
+    <img src="/img/logo/app-logo.png" alt="SwapIt Logo" class="h-8">
+    <div class="w-9 h-9 bg-gray-200 rounded-full flex items-center justify-center">
+      <img src="/img/profile/profile.svg" class="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 15c2.485 0 4.797.758 6.879 2.052M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      
+    </div>
+  </header>
+
+  <header class="bg-[#0E4D22] text-white">
+    <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
+      <h1 class="text-center font-semibold">Payment Portal</h1>
+      <!-- Close button only (right) -->
+      <button
+        type="button"
+        aria-label="Close"
+        class="absolute right-3 top-5 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition"
+        onclick="alert('Close pressed')">
+        ✕
+      </button>
+    </div>
+    <!-- curved white top like in mock -->
+    <div class="max-w-md mx-auto bg-white rounded-t-3xl h-6"></div>
+  </header>
+
+
+
+<body class="bg-gray-50">
+  <div class="max-w-md mx-auto p-4">
+    <div class="w-full bg-gray-200 rounded-full h-2 mb-4">
+      <div id="progressBar" class="bg-green-500 h-2 rounded-full w-1/3"></div>
+    </div>
+    <h2 id="formStepTitle" class="text-xl font-bold mb-4">Step 1 of 3</h2>
+
+    <!-- Step 1: Business Info -->
+    <div id="step1" class="space-y-4">
+      <h3 class="font-semibold mb-2">Business Info</h3>
+      <label class="block">
+        Full Name / Business Name *
+        <input type="text" id="name" class="w-full border rounded p-2" placeholder="e.g. Name of Project" required />
+      </label>
+      <label class="block">
+        Business Category *
+        <select id="category" class="w-full border rounded p-2" required>
+          <option value="">Select Category</option>
+          <option>Organic Farming</option>
+          <option>Food Processing</option>
+          <option>Distribution</option>
+          <option>Others</option>
+        </select>
+      </label>
+      <label class="block">
+        Brief Bio *
+        <textarea id="bio" class="w-full border rounded p-2" placeholder="Tell us about your focus on the investment" required></textarea>
+      </label>
+    </div>
+
+    <!-- Step 2: Investment Info -->
+    <div id="step2" class="space-y-4 hidden">
+      <h3 class="font-semibold mb-2">Investment Info</h3>
+      <label class="block">
+        Industry / Investment Focus *
+        <input type="text" id="focus" class="w-full border rounded p-2" required />
+      </label>
+      <label class="block">
+        Investment Capacity (₦) *
+        <input type="number" id="capacity" class="w-full border rounded p-2" placeholder="e.g. ₦2,000,000" required />
+      </label>
+      <label class="block">
+        Years of Experience *
+        <input type="text" id="experience" class="w-full border rounded p-2" placeholder="e.g. 10 years" required />
+      </label>
+    </div>
+
+    <!-- Step 3: Uploads -->
+    <div id="step3" class="space-y-4 hidden">
+      <h3 class="font-semibold mb-2">Uploads</h3>
+      <label class="block">
+        Upload Profile Photo/Logo *
+        <input type="file" id="photo" accept="image/*" class="w-full border rounded p-2" required />
+      </label>
+      <label class="block">
+        Upload ID Document (Optional)
+        <input type="file" id="idDoc" accept="image/*,.pdf" class="w-full border rounded p-2" />
+      </label>
+      <div class="flex flex-col space-y-2 mt-6">
+        <button id="previewBtn" class="bg-green-500 text-white py-2 px-4 rounded disabled:opacity-50" disabled>Preview</button>
+        <button id="submitBtn" class="bg-orange-500 text-white py-2 px-4 rounded disabled:opacity-50" disabled>Submit</button>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="flex justify-between mt-6">
+      <button id="prevBtn" class="bg-lightgray-500 border py-2 px-4 rounded hidden">Previous</button>
+      <button id="nextBtn" class="bg-green-500 text-white py-2 px-4 rounded ml-auto disabled:opacity-50">Next</button>
+    </div>
+  </div>
+
+  <script>
+    let step = 1;
+    const totalSteps = 3;
+
+    const updateStep = () => {
+      document.querySelectorAll("[id^='step']").forEach((el, index) => {
+        el.classList.toggle("hidden", index + 1 !== step);
+      });
+
+      document.getElementById("formStepTitle").textContent = `Step ${step} of ${totalSteps}`;
+      document.getElementById("progressBar").style.width = `${(step / totalSteps) * 100}%`;
+
+      document.getElementById("prevBtn").classList.toggle("hidden", step === 1);
+      document.getElementById("nextBtn").classList.toggle("hidden", step === totalSteps);
+
+      validateStep();
+    };
+
+    document.getElementById("nextBtn").addEventListener("click", () => {
+      if (step < totalSteps) step++;
+      updateStep();
+    });
+
+    document.getElementById("prevBtn").addEventListener("click", () => {
+      if (step > 1) step--;
+      updateStep();
+    });
+
+    // Validation per step
+    const validateStep = () => {
+      let valid = false;
+      if (step === 1) {
+        valid = document.getElementById("name").value.trim() &&
+                document.getElementById("category").value.trim() &&
+                document.getElementById("bio").value.trim();
+      } else if (step === 2) {
+        valid = document.getElementById("focus").value.trim() &&
+                document.getElementById("capacity").value.trim() &&
+                document.getElementById("experience").value.trim();
+      } else if (step === 3) {
+        valid = document.getElementById("photo").files.length > 0;
+      }
+      document.getElementById("nextBtn").disabled = !valid;
+
+      // Enable Preview/Submit when all fields across steps are valid
+      const allValid = document.getElementById("name").value.trim() &&
+                       document.getElementById("category").value.trim() &&
+                       document.getElementById("bio").value.trim() &&
+                       document.getElementById("focus").value.trim() &&
+                       document.getElementById("capacity").value.trim() &&
+                       document.getElementById("experience").value.trim() &&
+                       document.getElementById("photo").files.length > 0;
+      document.getElementById("previewBtn").disabled = !allValid;
+      document.getElementById("submitBtn").disabled = !allValid;
+    };
+
+    document.querySelectorAll("input, select, textarea").forEach((el) => {
+      el.addEventListener("input", validateStep);
+      el.addEventListener("change", validateStep);
+    });
+
+    
+
+    updateStep();
+	  
+	  // Preview button: save data and open Preview.html
+document.getElementById("previewBtn").addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const data = {
+    name: document.getElementById("name").value,
+    category: document.getElementById("category").value,
+    bio: document.getElementById("bio").value,
+    focus: document.getElementById("focus").value,
+    capacity: document.getElementById("capacity").value,
+    experience: document.getElementById("experience").value,
+  };
+
+  // Handle files
+  const photoFile = document.getElementById("photo").files[0];
+  const idDocFile = document.getElementById("idDoc").files[0];
+
+  if (photoFile) {
+    data.photoName = photoFile.name;
+    data.photoURL = URL.createObjectURL(photoFile);
+  }
+
+  if (idDocFile) {
+    data.idDocName = idDocFile.name;
+    data.idDocType = idDocFile.type;
+    data.idDocURL = URL.createObjectURL(idDocFile);
+  }
+
+  // Save to localStorage
+  localStorage.setItem("investorPreviewData", JSON.stringify(data));
+
+  // Open preview.html in a new tab
+  window.open("preview.html", "Preview", "width=900,height=750,scrollbars=yes");
+});
+
+  </script>
+</body>
+</html>

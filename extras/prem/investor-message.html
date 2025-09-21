@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Message Pitch Owner</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+    }
+
+    .chat-container {
+      padding: 16px;
+    }
+
+    .chat-box {
+      height: 60vh;
+      background: #fff;
+      border-radius: 10px;
+      padding: 12px;
+      overflow-y: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .msg {
+      margin-bottom: 12px;
+      padding: 10px;
+      border-radius: 10px;
+      max-width: 75%;
+    }
+
+    .sent {
+      background: #d1e7dd;
+      margin-left: auto;
+    }
+
+    .received {
+      background: #fff3cd;
+    }
+
+    .input-area {
+      display: flex;
+      margin-top: 16px;
+    }
+
+    .input-area input {
+      flex: 1;
+      padding: 12px;
+      border-radius: 10px 0 0 10px;
+      border: 1px solid #ccc;
+    }
+
+    .input-area button {
+      background: #4CAF50;
+      color: white;
+      padding: 12px 16px;
+      border: none;
+      border-radius: 0 10px 10px 0;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-box" id="chatBox">
+      <div class="msg received">Hello, I saw your pitch and I'm interested.</div>
+      <div class="msg sent">Thank you! I’m happy to provide more details.</div>
+    </div>
+
+    <div class="input-area">
+      <input type="text" id="chatInput" placeholder="Type your message..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    function sendMessage() {
+      const input = document.getElementById('chatInput');
+      const msg = input.value.trim();
+      if (msg) {
+        const box = document.getElementById('chatBox');
+        const div = document.createElement('div');
+        div.className = 'msg sent';
+        div.innerText = msg;
+        box.appendChild(div);
+        input.value = '';
+        box.scrollTop = box.scrollHeight;
+      }
+    }
+  </script>
+</body>
+</html>

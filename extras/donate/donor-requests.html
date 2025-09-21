@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chat with Donor</title>
+<link rel="stylesheet" href="../../css/style.css">
+	</head>
+<div class="donor-requests">
+  <h2>Incoming Donation Requests</h2>
+
+  <div class="request-card">
+    <h3>Maize Seeds</h3>
+    <p><strong>Requested by:</strong> Musa Ibrahim</p>
+    <p><strong>Reason:</strong> Starting a small community farm</p>
+    <p><strong>Location:</strong> Kano</p>
+
+    <div class="media-preview">
+      <img src="voice-note-icon.png" alt="Voice note icon" />
+      <span><a href="#">Listen to voice message</a></span>
+    </div>
+
+    <div class="request-actions">
+      <button class="btn accept">Accept & Chat</button>
+      <button class="btn decline">Decline</button>
+    </div>
+  </div>
+
+  <div class="request-card">
+    <h3>Fertilizer Bags</h3>
+    <p><strong>Requested by:</strong> Amina Yusuf</p>
+    <p><strong>Reason:</strong> Expanding backyard farm project</p>
+    <p><strong>Location:</strong> Kaduna</p>
+
+    <div class="request-actions">
+      <button class="btn accept">Accept & Chat</button>
+      <button class="btn decline">Decline</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .donor-requests {
+    padding: 16px;
+    font-family: sans-serif;
+    background-color: #f9f9f9;
+  }
+  .donor-requests h2 {
+    margin-bottom: 16px;
+  }
+  .request-card {
+    background: #fff;
+    padding: 14px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+  }
+  .media-preview {
+    margin: 10px 0;
+  }
+  .request-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .btn {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .btn.accept {
+    background-color: #4CAF50;
+    color: white;
+  }
+  .btn.decline {
+    background-color: #f44336;
+    color: white;
+  }
+</style>
+</html>
+
+<div class="donor-requests">
+  <h2>Donation Requests</h2>
+
+  <div class="request-card">
+    <h3>Maize Seeds</h3>
+    <p><strong>From:</strong> Musa Ibrahim</p>
+    <p><strong>Reason:</strong> Starting community farm</p>
+    <p><strong>Location:</strong> Kano</p>
+
+    <div class="request-actions">
+      <button onclick="acceptRequest()">Accept & Chat</button>
+      <button onclick="showDecline()">Not Possible</button>
+      <button onclick="markFulfilled()">Mark Fulfilled</button>
+    </div>
+
+    <div class="decline-form" style="display:none; margin-top:10px;">
+      <textarea placeholder="Optional reason (e.g. already given out)"></textarea>
+      <button onclick="submitDecline()">Submit</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function acceptRequest() {
+    alert("Redirecting to chat or delivery arrangement...");
+  }
+  function showDecline() {
+    document.querySelector('.decline-form').style.display = 'block';
+  }
+  function submitDecline() {
+    alert("Marked as not possible. User will be notified.");
+  }
+  function markFulfilled() {
+    alert("Donation marked as fulfilled!");
+  }
+</script>
+
+<style>
+  .donor-requests { padding: 16px; font-family: sans-serif; background-color: #f4f4f4; }
+  .request-card { background: #fff; padding: 14px; border-radius: 10px; box-shadow: 0 1px 6px rgba(0,0,0,0.1); margin-bottom: 16px; }
+  .request-actions button { margin: 6px 6px 0 0; padding: 8px 12px; border-radius: 6px; border: none; cursor: pointer; }
+  .request-actions button:nth-child(1) { background: #4caf50; color: #fff; }
+  .request-actions button:nth-child(2) { background: #f44336; color: #fff; }
+  .request-actions button:nth-child(3) { background: #2196f3; color: #fff; }
+  textarea { width: 100%; padding: 8px; margin-top: 8px; border-radius: 6px; border: 1px solid #ccc; }
+</style>
+
+

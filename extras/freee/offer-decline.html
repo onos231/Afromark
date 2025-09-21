@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swap Request Status - FoodSwap Nigeria</title>
+		<link rel="stylesheet" href="../../css/style.css">	
+
+</head>
+<body>
+  <header>
+    <h2>Swap Request Status</h2>
+  </header>
+
+  <div class="status-container">
+    <div class="status-card">
+      <h3>Your Swap Request Was Declined</h3>
+      <p>Unfortunately, the user has declined your offer to swap <strong>5kg Rice</strong> for <strong>3 Tubers of Yam</strong>.</p>
+      <p>You can try offering to another user or edit your request to attract more interest.</p>
+      <button class="back-btn" onclick="window.location.href='swap-listings.html'">Back to My Swaps</button>
+    </div>
+  </div>
+	
+	<script src="js/theme.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
+
+
+<div class="report-swap-container">
+  <h2>⚠️ Report This Swap</h2>
+  <p>Please tell us why you are reporting this swap. This helps keep Swapit safe for everyone.</p>
+
+  <form>
+    <label for="reason">Select Reason:</label>
+    <select id="reason" name="reason" required>
+      <option value="">-- Choose --</option>
+      <option value="not-met">User didn’t show up</option>
+      <option value="wrong-item">Received wrong/damaged item</option>
+      <option value="suspicious">Suspicious or unsafe behavior</option>
+      <option value="scam">Suspected scam or fraud</option>
+      <option value="other">Other (please describe)</option>
+    </select>
+
+    <label for="details">Additional Details:</label>
+    <textarea id="details" rows="4" placeholder="Describe what happened..." required></textarea>
+
+    <label for="photo">Upload Evidence (optional):</label>
+    <input type="file" id="photo" accept="image/*">
+
+    <button type="submit" class="submit-report">🚨 Submit Report</button>
+  </form>
+</div>
+
+<style>
+.report-swap-container {
+  background: #fff;
+  padding: 16px;
+  font-family: sans-serif;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 20px;
+}
+.report-swap-container h2 {
+  margin-top: 0;
+  color: #d32f2f;
+}
+.report-swap-container label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+.report-swap-container select,
+.report-swap-container textarea,
+.report-swap-container input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+.submit-report {
+  margin-top: 15px;
+  width: 100%;
+  padding: 12px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+</style>

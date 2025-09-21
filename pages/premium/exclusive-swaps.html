@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwapIt - Home</title>
+
+	<link href="../../dist/output.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 text-black dark:text-white font-sans">
+
+ <!-- Header -->
+	<header class="flex items-center justify-between px-4 py-3 bg-white shadow">
+    <img src="/img/logo/app-logo.png" alt="SwapIt Logo" class="h-8">
+    <a href="/all-users/profile.html"><div class="w-9 h-9 bg-gray-200 rounded-full flex items-center justify-center">
+      <img src="/img/profile/profile.svg" class="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 15c2.485 0 4.797.758 6.879 2.052M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      
+		</div></a>
+  </header>
+
+  <header class="bg-[#0E4D22] text-white">
+    <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
+      <h1 class="text-center font-semibold">Find all your swap deals here, accepted, declined and pending.  
+    You can choose to delete declined offers.</h1>
+      
+    </div>
+    <!-- curved white top like in mock -->
+    <div class="max-w-md mx-auto bg-white dark:bg-gray-900 rounded-t-3xl h-6"></div>
+  </header>
+
+
+  <!-- Tabs -->
+  <div class="bg-white border-b flex justify-center dark:bg-gray-900 dark:border-gray-900">
+    <button class="w-1/2 py-3 text-green-700 font-semibold border-b-2 border-green-700 dark:text-green-200">My Swaps</button>
+    <button onclick="window.location.href='/pages/premium/exclusive-post.html'" class="w-1/2 py-3 text-gray-500 dark:border-gray-100 dark:text-gray-400">My Post</button>
+  </div>
+
+  <!-- Info -->
+  <div class="p-4 text-center text-gray-600 text-sm">
+    
+  </div>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-4 pb-24 space-y-6 mb-10">
+
+    <!-- Pending Swap -->
+    <div class="bg-white shadow rounded-lg p-4 dark:bg-gray-800">
+      <div class="flex items-start space-x-3">
+        <img src="../../img/free-swap/onion4.jpg" alt="Item" class="w-16 h-16 rounded object-cover">
+        <div class="flex-1">
+          <p class="font-semibold">Swap Request</p>
+          <p class="text-sm text-gray-600 dark:text-white">They Offer: <span class="font-medium">1 Basket of Onions</span></p>
+          <p class="text-sm text-gray-600 dark:text-white">Requesting: <span class="font-medium">3 Tubers of Yam</span></p>
+          <p class="text-sm mt-1">Status: <span class="text-yellow-500 font-medium">⏳ Pending...</span></p>
+          <p class="text-xs text-gray-500 mt-1 dark:text-blue-300">📍 Lagos - 12km away | 📅 Today</p>
+          <p class="text-xs text-gray-600 mt-1 dark:text-white">Message: Prefer fresh, no rot, old yam and big tubers if possible</p>
+        </div>
+      </div>
+      <button class="mt-3 w-full border border-red-500 text-red-500 py-2 rounded-lg hover:bg-red-50 dark:border-gray-500">
+        Cancel Request
+      </button>
+    </div>
+
+    <!-- Accepted Swap -->
+    <div class="bg-white shadow rounded-lg p-4 dark:bg-gray-800">
+      <div class="flex items-start space-x-3">
+        <img src="../../img/free-swap/onion4.jpg" alt="Item" class="w-16 h-16 rounded object-cover">
+        <div class="flex-1">
+          <div class="flex justify-between">
+            <p class="font-semibold">Swap Accepted</p>
+            <button class="text-xs text-gray-400 underline dark:text-red-500">Report Swap</button>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-white">Offering: <span class="font-medium">1 Basket of Onions</span></p>
+          <p class="text-sm text-gray-600 dark:text-white">Requesting: <span class="font-medium">3 Tubers of Yam</span></p>
+          <p class="text-sm mt-1">Status: <span class="text-green-600 font-medium">✔ Accepted</span></p>
+          <p class="text-xs text-gray-500 mt-1 dark:text-blue-300">📍 Lagos - 12km away | 📅 Today</p>
+          <p class="text-xs text-gray-600 mt-1 dark:text-white">Message: Prefer fresh, no rot, old yam and big tubers if possible</p>
+        </div>
+      </div>
+      <button class="mt-3 w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700">
+        Chat Now
+      </button>
+      <button class="mt-2 w-full border border-red-500 text-red-500 py-2 rounded-lg hover:bg-red-50 dark:border-gray-500">
+        Cancel Request
+      </button>
+    </div>
+
+    <!-- Approved Swap -->
+    <div class="bg-white shadow rounded-lg p-4 dark:bg-gray-800">
+      <div class="flex items-start space-x-3">
+        <img src="../../img/free-swap/onion4.jpg" alt="Item" class="w-16 h-16 rounded object-cover">
+        <div class="flex-1">
+          <div class="flex justify-between">
+            <p class="font-semibold">Swapped with blehing23</p>
+            <button class="text-xs text-gray-400 underline dark:text-red-500">Report Swap</button>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-white">Collected: <span class="font-medium">1 Basket of Onions</span></p>
+          <p class="text-sm text-gray-600 dark:text-white">You offered: <span class="font-medium">3 Tubers of Yam</span></p>
+          <p class="text-sm mt-1">Status: <span class="text-green-600 font-medium">✔ Approved</span></p>
+          <p class="text-xs text-gray-500 mt-1 dark:text-blue-300">📍 Lagos - 12km away | 📅 Today</p>
+          <p class="text-xs text-gray-600 mt-1 dark:text-white">Message: Prefer fresh, no rot, old yam and big tubers if possible</p>
+        </div>
+      </div>
+      <button class="mt-3 w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700">
+        Completed
+      </button>
+      <button class="mt-2 w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">
+        Move to History
+      </button>
+      <button class="mt-2 w-full border border-red-500 text-red-500 py-2 rounded-lg hover:bg-red-50 dark:border-gray-500">
+        Delete Swap
+      </button>
+    </div>
+
+    <!-- Declined Swap -->
+    <div class="bg-white shadow rounded-lg p-4 dark:bg-gray-800">
+      <div class="flex items-start space-x-3">
+        <img src="../../img/free-swap/onion4.jpg" alt="Item" class="w-16 h-16 rounded object-cover">
+        <div class="flex-1">
+          <div class="flex justify-between">
+            <p class="font-semibold">Swap Declined</p>
+            <button class="text-xs text-red-500 underline dark:text-red-500">Report Swap</button>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-white">By: <span class="font-medium">Johndoe</span></p>
+          <p class="text-sm text-gray-600 dark:text-white">They Offer: <span class="font-medium">1 Basket of Onions</span></p>
+          <p class="text-sm mt-1">Status: <span class="text-red-500 font-medium">✘ Declined</span></p>
+          <p class="text-xs text-gray-500 mt-1 dark:text-blue-300">📍 Lagos - 12km away | 📅 Today</p>
+          <p class="text-xs text-gray-600 mt-1 dark:text-white">Declined Reason: Not a fair swap at this time. I would need a better offer.</p>
+        </div>
+      </div>
+      <button class="mt-3 w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700">
+        Browse More Swaps
+      </button>
+      <button class="mt-2 w-full border border-red-500 text-red-500 py-2 rounded-lg hover:bg-red-50 dark:border-gray-500">
+        Delete Swap
+      </button>
+    </div>
+
+  </main>
+
+  <!-- Sticky Bottom Nav -->
+  <nav class="fixed bottom-0 w-full bg-white border-t shadow-md flex justify-around py-2">
+    <a href="home.html" class="flex flex-col items-center text-gray-500 hover:text-green-600">
+      <span class="material-icons">home</span>
+      <span class="text-xs">Home</span>
+    </a>
+    <a href="swap.html" class="flex flex-col items-center text-green-600">
+      <span class="material-icons">swap_horiz</span>
+      <span class="text-xs">Swaps</span>
+    </a>
+    <a href="faq.html" class="flex flex-col items-center text-gray-500 hover:text-green-600">
+      <span class="material-icons">help_outline</span>
+      <span class="text-xs">FAQ</span>
+    </a>
+    <a href="terms.html" class="flex flex-col items-center text-gray-500 hover:text-green-600">
+      <span class="material-icons">description</span>
+      <span class="text-xs">Terms</span>
+    </a>
+  </nav>
+
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script src="../../js/script.js"></script>
+</body>
+</html>
