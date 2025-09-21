@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin – Premium Payments</title>
+		<link rel="stylesheet" href="../../css/style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f1f5f9;
+    }
+
+    .container {
+      padding: 16px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .payment-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .payment-card h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .payment-details {
+      font-size: 14px;
+      margin-top: 8px;
+      color: #555;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      font-size: 12px;
+      border-radius: 6px;
+      margin-top: 8px;
+    }
+
+    .pending { background-color: #ffeb3b; color: #333; }
+    .approved { background-color: #4caf50; color: #fff; }
+    .rejected { background-color: #f44336; color: #fff; }
+
+    .actions {
+      margin-top: 12px;
+    }
+
+    .actions button {
+      margin-right: 8px;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .btn-approve { background-color: #4CAF50; color: white; }
+    .btn-reject { background-color: #f44336; color: white; }
+    .btn-verify { background-color: #2196f3; color: white; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Premium Payment Requests</h2>
+
+  <!-- Payment Card Example -->
+  <div class="payment-card">
+    <h3>John Doe</h3>
+    <div class="payment-details">
+      <p><strong>Method:</strong> Bank Transfer</p>
+      <p><strong>Reference:</strong> TXN123456789</p>
+      <p><strong>Date:</strong> May 15, 2025</p>
+      <p><strong>Amount:</strong> ₦5,000</p>
+      <span class="badge pending">Pending</span>
+    </div>
+    <div class="actions">
+      <button class="btn-approve">Approve</button>
+      <button class="btn-reject">Reject</button>
+      <button class="btn-verify">Verify</button>
+    </div>
+  </div>
+
+  <!-- Repeat for multiple users -->
+  <div class="payment-card">
+    <h3>Fatima Bello</h3>
+    <div class="payment-details">
+      <p><strong>Method:</strong> Credit Card</p>
+      <p><strong>Reference:</strong> CARD9087654</p>
+      <p><strong>Date:</strong> May 14, 2025</p>
+      <p><strong>Amount:</strong> ₦5,000</p>
+      <span class="badge approved">Approved</span>
+    </div>
+    <div class="actions">
+      <button class="btn-reject">Revoke</button>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

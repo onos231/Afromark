@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Finance Dashboard</title>
+	<link rel="stylesheet" href="../../css/style.css">
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #f8f9fb;
+    }
+    header {
+      background: #2b3a67;
+      color: #fff;
+      padding: 16px;
+      text-align: center;
+    }
+    .tabs {
+      display: flex;
+      overflow-x: auto;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+    .tab {
+      flex: 1;
+      padding: 12px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .tab.active {
+      border-bottom: 3px solid #2b3a67;
+      font-weight: bold;
+      color: #2b3a67;
+    }
+    .tab-content {
+      padding: 16px;
+    }
+    .card {
+      background: white;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    }
+    .filter {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+    }
+    select, input[type="date"] {
+      padding: 8px;
+      margin: 4px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #2b3a67;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2>Admin Finance Dashboard</h2>
+  </header>
+
+  <div class="tabs">
+    <div class="tab active" onclick="switchTab(0)">Revenue</div>
+    <div class="tab" onclick="switchTab(1)">Payouts</div>
+    <div class="tab" onclick="switchTab(2)">Transactions</div>
+    <div class="tab" onclick="switchTab(3)">Filters</div>
+  </div>
+
+  <div class="tab-content" id="tab-0">
+    <div class="card">
+      <h4>Total Earnings</h4>
+      <p>₦1,200,000</p>
+    </div>
+    <div class="card">
+      <h4>Premium Partner Fees</h4>
+      <p>₦850,000</p>
+    </div>
+    <div class="card">
+      <h4>Commission from Swaps</h4>
+      <p>₦350,000</p>
+    </div>
+  </div>
+
+  <div class="tab-content" id="tab-1" style="display:none;">
+    <div class="card">
+      <h4>Payout Request - John Doe</h4>
+      <p>₦120,000 - Wallet ID: 01928</p>
+      <button>Approve</button>
+      <button style="background:#f44336;">Decline</button>
+    </div>
+    <div class="card">
+      <h4>Payout Request - NGO WaterAid</h4>
+      <p>₦300,000 - Wallet ID: 04592</p>
+      <button>Approve</button>
+      <button style="background:#f44336;">Decline</button>
+    </div>
+  </div>
+
+  <div class="tab-content" id="tab-2" style="display:none;">
+    <div class="card">
+      <h4>Transaction Log</h4>
+      <p>Paystack: ₦100,000 from Jane Investor (12 May)</p>
+      <p>Flutterwave: ₦50,000 to Swapit Wallet (10 May)</p>
+    </div>
+  </div>
+
+  <div class="tab-content" id="tab-3" style="display:none;">
+    <div class="card">
+      <h4>Filter Reports</h4>
+      <div class="filter">
+        <label>Revenue Source</label>
+        <select>
+          <option>All</option>
+          <option>Premium Fee</option>
+          <option>Swap Commission</option>
+        </select>
+        <label>Date Range</label>
+        <input type="date" />
+        <input type="date" />
+        <button>Generate Report</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function switchTab(tabIndex) {
+      const tabs = document.querySelectorAll('.tab');
+      const contents = document.querySelectorAll('.tab-content');
+      tabs.forEach((tab, i) => {
+        tab.classList.toggle('active', i === tabIndex);
+        contents[i].style.display = i === tabIndex ? 'block' : 'none';
+      });
+    }
+  </script>
+
+</body>
+</html>

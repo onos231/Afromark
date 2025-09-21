@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings</title>
+  
+<link href="../dist/output.css" rel="stylesheet">
+
+</head>
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300" id="app">
+  <!-- Header -->
+	<header class="flex items-center justify-between px-4 py-3 bg-white shadow">
+    <img src="/img/logo/app-logo.png" alt="SwapIt Logo" class="h-8">
+    <a href="/all-users/profile.html"><div class="w-9 h-9 bg-gray-200 rounded-full flex items-center justify-center">
+      <img src="/img/profile/profile.svg" class="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 15c2.485 0 4.797.758 6.879 2.052M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      
+		</div></a>
+  </header>
+
+  <header class="bg-[#0E4D22] text-white">
+    <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
+      <h1 class="text-center font-semibold dark:text-green-200">Terms and Conditions</h1>
+      <!-- Close button only (right) -->
+      <button
+        type="button"
+        aria-label="Close"
+        class="absolute right-3 top-5 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition"
+        onclick="alert('Close pressed')">
+        ✕
+      </button>
+    </div>
+    <!-- curved white top like in mock -->
+    <div class="max-w-md mx-auto bg-white dark:bg-gray-900 rounded-t-3xl h-6"></div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-6 pb-24">
+  
+
+    <div class="space-y-4">
+      <div class="bg-white shadow rounded-xl p-4 dark:bg-gray-800">
+        <h2 class="text-lg font-semibold text-green-600">1. Introduction</h2>
+        <p class="text-gray-600 text-sm mt-1 dark:text-white">
+          Welcome to SwapIt. By registering, you agree to comply with and be bound by the following terms and conditions.
+        </p>
+      </div>
+
+      <div class="bg-white shadow rounded-xl p-4 dark:bg-gray-800">
+        <h2 class="text-lg font-semibold text-green-600">2. User Conduct</h2>
+        <p class="text-gray-600 text-sm mt-1 dark:text-white">
+          You agree to use the platform for lawful purposes only and not for fraudulent or harmful activities.
+        </p>
+      </div>
+
+      <div class="bg-white shadow rounded-xl p-4 dark:bg-gray-800">
+        <h2 class="text-lg font-semibold text-green-600">3. Account Responsibility</h2>
+        <p class="text-gray-600 text-sm mt-1 dark:text-white">
+          You are responsible for maintaining the confidentiality of your login credentials and for all activities that occur under your account.
+        </p>
+      </div>
+
+      <div class="bg-white shadow rounded-xl p-4 dark:bg-gray-800">
+        <h2 class="text-lg font-semibold text-green-600">4. Content Ownership</h2>
+        <p class="text-gray-600 text-sm mt-1 dark:text-white">
+          All content you upload, including food item details and images, must be your own and not infringe on third-party rights.
+        </p>
+      </div>
+
+      <div class="bg-white shadow rounded-xl p-4 dark:bg-gray-800">
+        <h2 class="text-lg font-semibold text-green-600">5. Termination</h2>
+        <p class="text-gray-600 text-sm mt-1 dark:text-white">
+          SwapIt reserves the right to suspend or terminate accounts that violate these terms.
+        </p>
+      </div>
+    </div>
+
+    <!-- Privacy Policy -->
+    <h1 class="text-2xl font-semibold text-green-600 mt-10 mb-6 text-center">Privacy Policy</h1>
+
+    <div class="space-y-4">
+      <div class="bg-white shadow rounded-xl p-4 dark:bg-gray-800">
+        <h2 class="text-lg font-semibold text-green-600">1. Data Collection</h2>
+        <p class="text-gray-600 text-sm mt-1 dark:text-white">
+          We collect only necessary information for account creation, communication, and swap facilitation.
+        </p>
+      </div>
+
+      <div class="bg-white shadow rounded-xl p-4 dark:bg-gray-800">
+        <h2 class="text-lg font-semibold text-green-600">2. Use of Data</h2>
+        <p class="text-gray-600 text-sm mt-1 dark:text-white">
+          Your data is used strictly for account management and to improve your SwapIt experience.
+        </p>
+      </div>
+
+      <div class="bg-white shadow rounded-xl p-4 dark:bg-gray-800">
+        <h2 class="text-lg font-semibold text-green-600">3. Data Sharing</h2>
+        <p class="text-gray-600 text-sm mt-1 dark:text-white">
+          We do not sell or share your personal data with third parties, except as required by law.
+        </p>
+      </div>
+
+      <div class="bg-white shadow rounded-xl p-4 dark:bg-gray-800">
+        <h2 class="text-lg font-semibold text-green-600">4. Security</h2>
+        <p class="text-gray-600 text-sm mt-1 dark:text-white">
+          We implement strong security measures to protect your data from unauthorized access.
+        </p>
+      </div>
+
+      <div class="bg-white shadow rounded-xl p-4 dark:bg-gray-800">
+        <h2 class="text-lg font-semibold text-green-600">5. User Rights</h2>
+        <p class="text-gray-600 text-sm mt-1 dark:text-white">
+          You have the right to access, update, or delete your data at any time via your profile settings.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Sticky Bottom Nav -->
+  <nav class="fixed bottom-0 w-full bg-white border-t shadow-md flex justify-around py-2">
+    <a href="home.html" class="flex flex-col items-center text-gray-500 hover:text-green-600">
+      <span class="material-icons">home</span>
+      <span class="text-xs">Home</span>
+    </a>
+    <a href="swap.html" class="flex flex-col items-center text-gray-500 hover:text-green-600">
+      <span class="material-icons">swap_horiz</span>
+      <span class="text-xs">Swap</span>
+    </a>
+    <a href="faq.html" class="flex flex-col items-center text-gray-500 hover:text-green-600">
+      <span class="material-icons">help_outline</span>
+      <span class="text-xs">FAQ</span>
+    </a>
+    <a href="terms.html" class="flex flex-col items-center text-green-600">
+      <span class="material-icons">description</span>
+      <span class="text-xs">Terms</span>
+    </a>
+  </nav>
+
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</body>
+</html>
