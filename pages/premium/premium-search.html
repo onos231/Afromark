@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swap Search</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800 flex flex-col min-h-screen">
+	
+	<!-- Header -->
+	<header class="flex items-center justify-between px-4 py-3 bg-white shadow">
+    <img src="/img/logo/app-logo.png" alt="SwapIt Logo" class="h-8">
+    <a href="/all-users/profile.html"><div class="w-9 h-9 bg-gray-200 rounded-full flex items-center justify-center">
+      <img src="/img/profile/profile.svg" class="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 15c2.485 0 4.797.758 6.879 2.052M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      
+		</div></a>
+  </header>
+
+  <header class="bg-[#0E4D22] text-white">
+    <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
+      <h1 class="text-center font-semibold">Trade your extra food for what you really need — quick, simple, no cash involved!</h1>
+      
+    </div>
+    <!-- curved white top like in mock -->
+    <div class="max-w-md mx-auto bg-white rounded-t-3xl h-6"></div>
+  </header>
+  
+
+  <!-- Tabs -->
+  <div class="flex justify-between items-center px-20 py-2 border-b">
+    <button onclick="window.location.href='exclusive-swaps.html'" class="text-sm font-medium text-gray-700">Swaps</button>
+    <button onclick="window.location.href='/pages/free/posting.html'" class="px-3 py-1 bg-gray-200 rounded text-sm">+ Post Swap</button>
+  </div>
+	
+<!-- Search Bar -->
+<div class="relative w-full p-3 mb-1 px-3 py-1">
+
+  <input 
+    id="searchInput" 
+    type="text" 
+    placeholder="Food name (e.g., Yam, Beans, Rice)" 
+    class="w-full border rounded-full px-4 pr-10 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+  >
+  <!-- Search Icon inside field -->
+  <button 
+    id="searchBtn" 
+    class="absolute right-6 top-1/2 -translate-y-1/2 text-gray-500 hover:text-green-600"
+  >
+    🔍
+  </button>
+	</div>
+
+  <!-- Suggestions -->
+  <ul id="suggestions" class="hidden mx-4 mt-1 border rounded bg-green-50 shadow text-sm"></ul>
+
+  <!-- Filters -->
+  <div id="filters" class="hidden flex gap-2 px-4 py-2">
+    <select id="categoryFilter" class="border rounded px-2 py-1 text-sm">
+      <option value="">Select Category</option>
+      <option value="grains">Grains</option>
+      <option value="tubers">Tubers</option>
+      <option value="vegetables">Vegetables</option>
+    </select>
+    <select id="sortFilter" class="border rounded px-2 py-1 text-sm">
+      <option value="">Sort by</option>
+      <option value="online">Online</option>
+      <option value="recent">Most Recent</option>
+      <option value="verified">Verified Users</option>
+    </select>
+  </div>
+
+  <!-- Results -->
+  <div id="results" class="flex-grow px-4 py-3 overflow-y-auto">
+    <!-- JS will render cards here -->
+  </div>
+
+  <!-- No Results -->
+  <div id="noResults" class="hidden text-center mt-10">
+    <img src="no-results.png" alt="No results" class="mx-auto w-32 opacity-70 mb-3">
+    <p class="text-gray-600 font-medium">No results found</p>
+    <p class="text-gray-400 text-sm">Try searching with different keywords or categories</p>
+  </div>
+
+  <!-- Bottom Navigation -->
+  <nav class="fixed bottom-0 w-full bg-white shadow-inner flex justify-around py-2">
+    <a href="/pages/free/index.html"><div class="flex flex-col items-center text-gray-700">
+      <img src="/img/buttom-nav/index/Home-black.svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7m-9 2v8m-4 4h8a2 2 0 002-2V9m-6 13h-2a2 2 0 01-2-2v-2" />
+      
+      <p class="text-xs">Home</p>
+		</div></a>
+    <a href="search.html"><div class="flex flex-col items-center text-green-600">
+      <img src="/img/buttom-nav/index/find.svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      
+      <p class="text-xs font-bold">Find</p>
+		</div></a>
+    <a href="/pages/premium/premium.html"><div class="flex flex-col items-center text-gray-600">
+      <img src="/img/buttom-nav/index/premium-black.svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3-1.343 3-3S13.657 2 12 2 9 3.343 9 5s1.343 3 3 3zM4 22h16a2 2 0 002-2v-1c0-2.21-1.79-4-4-4H6c-2.21 0-4 1.79-4 4v1a2 2 0 002 2z" />
+     
+      <p class="text-xs">Premium</p>
+		</div></a>
+    <a href="/donation/donate.html"><div class="flex flex-col items-center text-gray-600">
+      <img src="/img/buttom-nav/index/giveback-black.svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+     
+      <p class="text-xs">Give Back</p>
+		</div></a>
+    <div id="accountBtn" class="flex flex-col items-center text-gray-600">
+      <img src="/img/buttom-nav/index/acc-black.svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 15c2.485 0 4.797.758 6.879 2.052M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      <p class="text-xs">Account</p>
+    </div>
+  </nav>
+
+	<div id="backdrop" class="fixed inset-0 bg-black bg-opacity-40 hidden"></div>
+	
+	<!-- Slide-up Menu -->
+  <div id="accountMenu" class="fixed bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-lg transform translate-y-full transition-transform duration-300">
+    <div class="flex justify-between items-center px-4 py-3 border-b">
+      <h2 class="text-lg font-semibold">Account</h2>
+      <button id="closeMenu" class="text-gray-400 hover:text-gray-600 text-xl">&times;</button>
+    </div>
+    <ul class="p-4 space-y-4 text-gray-700">
+      <a href="/all-users/settings.html"><li class="flex items-center space-x-2 mb-4"><span><img src="/img/account/settings.svg" alt="" class="h-4"></span><span>Settings</span></li></a>
+		<a href="/all-users/faqs.html"><li class="flex items-center space-x-2 mb-4"><span><img src="/img/account/faqs.svg" alt="" class="h-4"></span><span>FAQs</span></li></a>
+		  <a href="/all-users/terms-condition.html"><li class="flex items-center space-x-2 mb-4"><span><img src="/img/account/privacy.svg" alt="" class="h-4"></span><span>Privacy Policy</span></li></a>
+		  <a href="/all-users/how-it-works.html"><li class="flex items-center space-x-2 mb-4"><span><img src="/img/account/how-it-works.svg" alt="" class="h-4"></span><span>How it works</span></li></a>
+		  <a href="/all-users/contact-us.html"><li class="flex items-center space-x-2 mb-4"><span><img src="/img/account/contact.svg" alt="" class="h-4"></span><span>Contact Us</span></li></a>
+		  <a href="/all-users/about-us.html"><li class="flex items-center space-x-2 mb-4"><span><img src="/img/account/about-us.svg" alt="" class="h-3"></span><span>About Us</span></li></a>
+    </ul>
+  </div>
+	<script src="js/script.js"></script>
+	<script src="../../js/script.js"></script>
+	
+</body>
+</html>

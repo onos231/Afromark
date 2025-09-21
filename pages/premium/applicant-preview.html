@@ -1,0 +1,130 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwapIt - Home</title>
+
+	<link href="../../dist/output.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 text-black dark:text-white font-sans">
+
+ <!-- Header -->
+	<header class="flex items-center justify-between px-4 py-3 bg-white shadow">
+    <img src="/img/logo/app-logo.png" alt="SwapIt Logo" class="h-8">
+    <a href="/all-users/profile.html"><div class="w-9 h-9 bg-gray-200 rounded-full flex items-center justify-center">
+      <img src="/img/profile/profile.svg" class="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 15c2.485 0 4.797.758 6.879 2.052M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      
+		</div></a>
+  </header>
+
+  <header class="bg-[#0E4D22] text-white">
+    <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
+      <h1 class="text-center font-semibold">Payment Portal</h1>
+      <!-- Close button only (right) -->
+      <button
+        type="button"
+        aria-label="Close"
+        class="absolute right-3 top-5 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition"
+        onclick="alert('Close pressed')">
+        ✕
+      </button>
+    </div>
+    <!-- curved white top like in mock -->
+    <div class="max-w-md mx-auto bg-white dark:bg-gray-900 rounded-t-3xl h-6"></div>
+  </header>
+
+  
+  <div class="flex flex-col min-h-screen bg-white dark:bg-gray-900">
+
+
+  <!-- Content -->
+  <div class="w-[360px] mx-auto px-4 py-6 mb-10">
+    <!-- Project Image + Title -->
+    <div class="text-center mb-4">
+       <img
+        src="/img/free-swap/farmers2.jpg"
+        alt="Project Image"
+        class="w-20 h-20 mx-auto rounded-lg"
+      />
+      <h2 class="text-xl font-semibold mt-2">Community Rice farm</h2>
+      <span
+        class="mt-2 inline-block bg-blue-500 text-white text-sm px-3 py-1 rounded"
+      >
+        Agriculture | Delta State
+      </span>
+    </div>
+
+    <!-- Requested Amount + Timeline -->
+    <div class="mb-6">
+      <p class="font-semibold text-gray-800">Requested Amount</p>
+      <p class="text-gray-600 dark:text-white">₦300,000 - ₦450,000</p>
+
+      <p class="font-semibold text-gray-800 mt-4 dark:text-white">Timeline</p>
+      <p class="text-gray-600 dark:text-white">14 months</p>
+    </div>
+
+    <!-- Project Summary -->
+    <div class="bg-white shadow rounded-lg p-4 mb-4 dark:bg-gray-800">
+      <h3 class="text-green-600 font-semibold dark:text-green-200">Project Summary</h3>
+      <p class="text-gray-700 text-sm mt-1 dark:text-white">
+        A rice farm aims to scale operations and introduce solar-powered milling
+        equipment for faster production.
+      </p>
+    </div>
+
+    <!-- Problem & Solution -->
+    <div class="bg-white shadow rounded-lg p-4 mb-4 dark:bg-gray-800 ">
+      <h3 class="text-green-600 font-semibold dark:text-green-200">Problem &amp; Solution</h3>
+      <p class="text-gray-700 text-sm mt-1 dark:text-white">
+        A collaborative farming project by smallholder farmers in Kaduna to grow
+        and distribute local rice. Goal is to increase food security and
+        employment.
+      </p>
+    </div>
+
+    <!-- Expected Impact -->
+    <div class="bg-white shadow rounded-lg p-4 mb-4 dark:bg-gray-800">
+      <h3 class="text-green-600 font-semibold dark:text-green-200">Expected Impact</h3>
+      <p class="text-gray-700 text-sm mt-1 dark:text-white">
+        “This initiative aims to empower over 50 smallholder farmers in Kaduna
+        with access to improved rice seedlings and sustainable farming
+        practices.”
+      </p>
+    </div>
+
+    <!-- PDF Link -->
+    <div class="mb-6">
+      <a
+        href="#"
+        class="flex items-center text-blue-500 text-sm font-medium"
+      >
+        📎 View full proposal PDF
+      </a>
+    </div>
+
+    <!-- Buttons -->
+    <div class="space-y-3">
+      <button
+        class="w-full bg-yellow-500 text-white py-3 rounded-lg font-semibold hover:bg-orange-600 transition"
+      >
+        Send Pitch
+      </button>
+      <button
+        class="w-full border border-gray-500 text-red-500 py-3 rounded-lg font-semibold hover:bg-red-600 transition dark:border-gray-500"
+      >
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>
+<script src="../../js/script.js"></script>
+
+
+	</body>
+</html>

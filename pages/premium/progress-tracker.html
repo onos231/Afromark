@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Progress Update</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+<div x-data="progressApp()" class="w-full max-w-sm mx-auto bg-white min-h-screen flex flex-col">
+
+  <!-- Header -->
+	<header class="flex items-center justify-between px-4 py-3 bg-white shadow">
+    <img src="/img/logo/app-logo.png" alt="SwapIt Logo" class="h-8">
+    <div class="w-9 h-9 bg-gray-200 rounded-full flex items-center justify-center">
+      <img src="/img/profile/profile.svg" class="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 15c2.485 0 4.797.758 6.879 2.052M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      
+    </div>
+  </header>
+	<!-- Hero Section -->
+	 <header class="bg-[#0E4D22] text-white">
+    <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
+      <h1 class="text-center font-semibold">Explore exclusive deals, connect with top investors, and access high-value opportunities.</h1>
+      <!-- Close button only (right) -->
+      <button
+        type="button"
+        aria-label="Close"
+        class="absolute right-3 top-5 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition"
+        onclick="alert('Close pressed')">
+        ✕
+      </button>
+    </div>
+    <!-- curved white top like in mock -->
+    <div class="max-w-md mx-auto bg-white rounded-t-3xl h-6"></div>
+  </header>
+
+
+
+  <!-- Step Tabs -->
+  <div class="w-[95%] mx-auto flex justify-between items-center">
+    <button @click="step=1" :class="step===1 ? 'text-green-700 font-bold' : ''">Update Progress</button>
+    <button @click="step=2" :class="step===2 ? 'text-green-700 font-bold' : ''">Timeline</button>
+    <button @click="step=3" :class="step===3 ? 'text-green-700 font-bold' : ''">Gallery</button>
+    <button @click="step=4" :class="step===4 ? 'text-green-700 font-bold' : ''">Feedback</button>
+  </div>
+
+  <!-- Content Area -->
+  <div class="flex-1 p-4 space-y-4 overflow-y-auto">
+
+    <!-- Step 1: Report Progress -->
+    <div x-show="step===1" class="space-y-3">
+      <label class="block text-sm">Select Reason</label>
+      <select x-model="form.reason" class="w-full border rounded p-2 text-sm" required>
+        <option value="">Select Category</option>
+        <option value="arrangements">Arrangements</option>
+        <option value="started">Started</option>
+        <option value="midpoint">Midpoint</option>
+        <option value="completed">Completed</option>
+      </select>
+
+      <label class="block text-sm">Additional Details</label>
+      <textarea x-model="form.details" class="w-full border rounded p-2 text-sm" placeholder="Describe what happened..." required></textarea>
+
+      <label class="block text-sm">Upload Image/Video/Voice</label>
+      <input type="file" @change="handleFileUpload($event, 'form')" class="block w-full text-sm">
+
+      <button @click="submitProgress" :disabled="!isStep1Complete"
+        :class="isStep1Complete ? 'bg-orange-500 text-white' : 'bg-orange-200 text-gray-500 cursor-not-allowed'"
+        class="w-full py-2 rounded text-sm">
+        Submit Report
+      </button>
+    </div>
+
+    <!-- Step 2: Timeline -->
+    <div x-show="step===2" class="space-y-4">
+      <h3 class="font-semibold text-gray-700">Timeline</h3>
+      <template x-for="item in timeline" :key="item.id">
+        <div class="border-b pb-2">
+          <p class="font-bold capitalize" x-text="item.reason"></p>
+          <p class="text-sm text-gray-600" x-text="item.details"></p>
+          <template x-if="item.file && item.fileType.startsWith('image')">
+            <img :src="item.preview" alt="uploaded image" class="mt-2 rounded-lg w-full h-40 object-cover">
+          </template>
+          <template x-if="item.file && item.fileType.startsWith('video')">
+            <video controls class="mt-2 w-full rounded-lg h-40" :src="item.preview"></video>
+          </template>
+          <template x-if="item.file && item.fileType.startsWith('audio')">
+            <audio controls class="mt-2 w-full" :src="item.preview"></audio>
+          </template>
+        </div>
+      </template>
+    </div>
+
+    <!-- Step 3: Gallery -->
+    <div x-show="step===3" class="space-y-4">
+      <label class="block text-sm">Name of Upload</label>
+      <input type="text" x-model="gallery.name" class="w-full border rounded p-2 text-sm" placeholder="e.g. Midpoint photo">
+
+      <label class="block text-sm">Upload Image/Voice/Video</label>
+      <input type="file" @change="handleFileUpload($event, 'gallery')" class="block w-full text-sm">
+
+      <!-- Preview -->
+      <template x-if="gallery.file && gallery.fileType.startsWith('image')">
+        <img :src="gallery.preview" class="mt-2 w-full rounded-lg h-40 object-cover">
+      </template>
+      <template x-if="gallery.file && gallery.fileType.startsWith('video')">
+        <video controls class="mt-2 w-full rounded-lg h-40" :src="gallery.preview"></video>
+      </template>
+      <template x-if="gallery.file && gallery.fileType.startsWith('audio')">
+        <audio controls class="mt-2 w-full" :src="gallery.preview"></audio>
+      </template>
+    </div>
+
+    <!-- Step 4: Feedback -->
+    <div x-show="step===4" class="space-y-3">
+      <h3 class="font-semibold">Investor Feedback</h3>
+      <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1">
+        <li><span class="font-bold">AgriFund:</span> Impressive setup at midpoint. Ensure timely weeding.</li>
+        <li><span class="font-bold">Community Crop Farming:</span> Add final budget usage breakdown in next update.</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function progressApp() {
+  return {
+    step: 1,
+    form: { reason: '', details: '', file: null, preview: '', fileType: '' },
+    gallery: { name: '', file: null, preview: '', fileType: '' },
+    timeline: [],
+    get isStep1Complete() {
+      return this.form.reason && this.form.details;
+    },
+    handleFileUpload(event, target) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = e => {
+          this[target].file = file;
+          this[target].preview = e.target.result;
+          this[target].fileType = file.type;
+        };
+        reader.readAsDataURL(file);
+      }
+    },
+    submitProgress() {
+      this.timeline.push({
+        id: Date.now(),
+        reason: this.form.reason,
+        details: this.form.details,
+        file: this.form.file,
+        preview: this.form.preview,
+        fileType: this.form.fileType
+      });
+      // Reset form
+      this.form.reason = '';
+      this.form.details = '';
+      this.form.file = null;
+      this.form.preview = '';
+      this.form.fileType = '';
+      this.step = 2;
+    }
+  }
+}
+</script>
+
+</body>
+</html>

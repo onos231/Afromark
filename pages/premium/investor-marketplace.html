@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwapIt - Home</title>
+
+	<link href="../../dist/output.css" rel="stylesheet">
+
+</head>
+	
+<body class="bg-gray-50 dark:bg-gray-900 text-black dark:text-white font-sans">
+
+  <div class="max-w-[393px] mx-auto min-h-screen">
+
+    <!-- Header -->
+	<header class="flex items-center justify-between px-4 py-3 bg-white shadow">
+    <img src="/img/logo/app-logo.png" alt="SwapIt Logo" class="h-8">
+    <div class="w-9 h-9 bg-gray-200 rounded-full flex items-center justify-center">
+      <img src="/img/profile/profile.svg" class="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 15c2.485 0 4.797.758 6.879 2.052M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      
+    </div>
+  </header>
+
+  <header class="bg-[#0E4D22] text-white">
+    <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
+      <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
+      <h1 class="text-center font-semibold">Find the right investor for your idea. Use the filter to narrow your results. Connect with funders that match your project focus.</h1>
+      
+    </div>
+      <!-- Close button only (right) -->
+      <button
+        type="button"
+        aria-label="Close"
+        class="absolute right-3 top-5 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition"
+        onclick="alert('Close pressed')">
+        ✕
+      </button>
+    </div>
+	  
+    <!-- curved white top like in mock -->
+    <div class="max-w-md mx-auto bg-white dark:bg-gray-900 rounded-t-3xl h-6"></div>
+  </header>
+
+    <!-- Nav row -->
+    <div class="bg-white rounded-t-2xl -mt-6 p-1 dark:bg-gray-900">
+      <div class="flex justify-between items-center mb-3 px-16 py-2">
+        <div class="text-sm font-medium">Dashboard</div>
+        <button class="bg-gray-200 text-sm px-3 py-1 rounded dark:bg-gray-700">+ Be an Investor</button>
+      </div>
+
+      <!-- Filters -->
+      <div class="flex gap-2 mb-4 w-[360px] mx-auto">
+        <select id="categoryFilter" class="w-1/2 border rounded px-3 py-2 text-sm bg-white dark:bg-gray-800 dark:border-gray-900">
+          <option value="">All Category</option>
+          <option value="food">Foodstock Trade</option>
+          <option value="crop">Crop Farming</option>
+          <option value="animal">Animal Farming</option>
+        </select>
+
+        <select id="sortFilter" class="w-1/2 border rounded px-3 py-2 text-sm bg-white dark:bg-gray-800 dark:border-gray-900">
+          <option value="">Sort by</option>
+          <option value="lowest">Lowest amount</option>
+          <option value="highest">Highest amount</option>
+          <option value="recent">Most recent</option>
+        </select>
+      </div>
+
+      <!-- Cards container -->
+      <div id="cardsWrap" class="space-y-4 pb-32">
+
+        <!-- NO RESULTS placeholder -->
+        <div id="noResults" class="hidden text-center py-12 text-gray-600">
+          <div class="text-lg font-semibold mb-2">No investors found</div>
+          <div class="text-sm">Try a different category or clear filters.</div>
+        </div>
+
+        <!-- Investor Card template (1) -->
+		  
+        <article class="investor-card relative dark:bg-gray-800 bg-white w-[360px] mx-auto rounded-lg p-4 card-shadow border border-transparent "
+                 data-category="crop,food"
+                 data-funding="500000-4000000"
+                 data-date="2025-09-01">
+          <!-- top-left checkbox -->
+          <input type="checkbox" class="absolute left-3 top-3 w-4 h-4 text-green-600 " />
+
+          <!-- report swap top-right -->
+          <a href="../../all-users/report.html" class="absolute right-3 top-3 text-red-500 text-xs">Report Swap</a>
+
+          <div class="flex gap-3 pt-8">
+            <!-- thumbnail left -->
+            <img src="https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=..." 
+                 alt="thumbnail"
+                 class="w-20 h-20 rounded-md object-cover flex-shrink-0" />
+
+            <!-- right content -->
+            <div class="flex-1">
+              <div class="flex items-start justify-between">
+                <h3 class="text-lg font-semibold leading-tight">GreenHarvest Capital</h3>
+
+                <!-- small verified green badge -->
+                <span class="ml-2 inline-flex items-center justify-center w-7 h-7 rounded-full bg-green-600 text-white text-xs">
+                  ✓
+                </span>
+              </div>
+
+              <div class="text-sm text-gray-700 mt-1 dark:text-white">
+                <div><span class="font-semibold">Focus:</span> Crop farming</div>
+                <div class="mt-1"><span class="font-semibold">Funding:</span> ₦500k - ₦4M</div>
+                <div class="mt-1"><span class="font-semibold">Accepts:</span> PDF, Short Video Pitch</div>
+              </div>
+
+              <div class="text-xs text-gray-500 mt-2 flex items-center gap-3 dark:text-blue-300">
+                <span>📍 Ikeja, Lagos</span>
+                <span>● Today</span>
+              </div>
+
+              <p class="text-sm text-gray-700 mt-3 dark:text-white"><span class="font-semibold">Investor Note:</span> I need a step by step detailed information of how you intend to invest...</p>
+
+          
+
+              <!-- actions row: Cancel (left) / Send Pitch (right) -->
+              <div class="flex items-center gap-3 mt-3">
+                <button class="cancel-btn hidden flex-1 border border-gray-300 rounded py-2 p-5 text-sm text-red-500 dark:border-gray-500">Cancel</button>
+                <div class="flex-1"></div>
+                <button class="send-btn bg-green-600 text-white rounded py-2 px-3 text-sm">Send Pitch</button>
+              </div>
+				
+            </div>
+			  
+        
+          </div>
+			<!-- View Profile button centered, width 300px (as requested) -->
+				
+			<div class="mt-4 flex">
+          <button onclick="window.location.href='investor-preview.html'" id="viewProfileBtn" class="w-[320px] py-3 rounded-md bg-sky-600 text-white hover:bg-sky-700">
+            View Investor Profile
+          </button>
+        </div>
+        </article>
+
+        <!-- Investor Card template (2) -->
+        <article class="investor-card relative dark:bg-gray-800 bg-white w-[360px] mx-auto rounded-lg p-4 card-shadow border border-transparent"
+                 data-category="animal"
+                 data-funding="2500000-10000000"
+                 data-date="2025-08-28">
+          <input type="checkbox" class="absolute left-3 top-3 w-4 h-4 text-green-600" />
+          <a href="../../all-users/report.html" class="absolute right-3 top-3 text-red-500 text-xs">Report Swap</a>
+
+          <div class="flex gap-3 pt-8">
+            <img src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=..." 
+                 alt="thumbnail"
+                 class="w-20 h-20 rounded-md object-cover flex-shrink-0" />
+
+            <div class="flex-1">
+              <div class="flex items-start justify-between">
+                <h3 class="text-lg font-semibold leading-tight">AgriTech</h3>
+                <span class="ml-2 inline-flex items-center justify-center w-7 h-7 rounded-full bg-green-600 text-white text-xs">✓</span>
+              </div>
+
+              <div class="text-sm text-gray-700 mt-1 dark:text-white">
+                <div><span class="font-semibold">Focus:</span> Poultry</div>
+                <div class="mt-1"><span class="font-semibold">Funding:</span> ₦2.5M - ₦10M</div>
+                <div class="mt-1"><span class="font-semibold">Accepts:</span> PDF, Pitch proposal</div>
+              </div>
+
+              <div class="text-xs text-gray-500 mt-2 flex items-center gap-3 dark:text-blue-300">
+                <span>📍 Uyo, Akwa Ibom</span>
+                <span>● Last Week</span>
+              </div>
+
+              <p class="text-sm text-gray-700 mt-3 dark:text-white"><span class="font-semibold">Investor Note:</span> Plans to buy reusable crates and hire part-time delivery crew.</p>
+
+             
+
+              <div class="flex items-center gap-3 mt-3">
+                <button class="cancel-btn hidden flex-1 border border-gray-300 rounded py-2 p-5 text-sm text-red-500 dark:border-gray-500">Cancel</button>
+                <div class="flex-1"></div>
+                <button class="send-btn bg-green-600 text-white rounded py-2 px-3 text-sm">Send Pitch</button>
+              </div>
+            </div>
+          </div>
+			<div class="mt-4 flex">
+          <button onclick="window.location.href='investor-preview.html'" id="viewProfileBtn" class="w-[320px] py-3 rounded-md bg-sky-600 text-white hover:bg-sky-700">
+            View Investor Profile
+          </button>
+        </div>
+        </article>
+
+        <!-- Investor Card template (3) -->
+        <article class="investor-card relative dark:bg-gray-800 bg-white w-[360px] mx-auto rounded-lg p-4 card-shadow border border-transparent"
+                 data-category="food,crop"
+                 data-funding="1000000-5000000"
+                 data-date="2025-08-30">
+          <input type="checkbox" class="absolute left-3 top-3 w-4 h-4 text-green-600" />
+          <a href="../../all-users/report.html" class="absolute right-3 top-3 text-red-500 text-xs">Report Swap</a>
+
+          <div class="flex gap-3 pt-8">
+            <img src="https://images.unsplash.com/photo-1506806732259-39c2d0268443?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=..." 
+                 alt="thumbnail"
+                 class="w-20 h-20 rounded-md object-cover flex-shrink-0" />
+
+            <div class="flex-1">
+              <div class="flex items-start justify-between">
+                <h3 class="text-lg font-semibold leading-tight">AgroVision</h3>
+                <span class="ml-2 inline-flex items-center justify-center w-7 h-7 rounded-full bg-green-600 text-white text-xs">✓</span>
+              </div>
+
+              <div class="text-sm text-gray-700 mt-1 dark:text-white">
+                <div><span class="font-semibold">Focus:</span> Animal Farming</div>
+                <div class="mt-1"><span class="font-semibold">Funding:</span> ₦1M - ₦5M</div>
+                <div class="mt-1"><span class="font-semibold">Accepts:</span> PDF, Video</div>
+              </div>
+
+              <div class="text-xs text-gray-500 mt-2 flex items-center gap-3 dark:text-blue-300">
+                <span>📍 Abuja</span>
+                <span>● 2 days ago</span>
+              </div>
+
+              <p class="text-sm text-gray-700 mt-3 dark:text-white"><span class="font-semibold">Investor Note:</span> Looking for innovative farming solutions with quick turnaround.</p>
+
+            
+
+              <div class="flex items-center gap-3 mt-3 ">
+                <button class="cancel-btn hidden flex-1 border border-gray-300 rounded py-2 p-5 text-sm text-red-500 dark:border-gray-500">Cancel</button>
+                <div class="flex-1"></div>
+                <button class="send-btn bg-green-600 text-white rounded py-2 px-3 text-sm">Send Pitch</button>
+              </div>
+            </div>
+          </div>
+			<div class="mt-4 flex">
+          <button onclick="window.location.href='investor-preview.html'" id="viewProfileBtn" class="w-[320px] py-3 rounded-md bg-sky-600 text-white hover:bg-sky-700">
+            View Investor Profile
+          </button>
+        </div>
+        </article>
+
+      </div> <!-- cardsWrap -->
+    </div> <!-- inner white container -->
+  </div>
+
+  <!-- JS: you can move this into ../js/investor-marketplace.js -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const categoryFilter = document.getElementById('categoryFilter');
+    const sortFilter = document.getElementById('sortFilter');
+    const cardsWrap = document.getElementById('cardsWrap');
+    const noResults = document.getElementById('noResults');
+
+    // helper: parse funding like "₦500k - ₦4M" to a numeric average for sorting
+    function parseFundingRange(str) {
+      if (!str) return 0;
+      // remove currency symbol and spaces
+      // we'll try to find data-funding attribute on card instead (numeric range); fallback parse text
+      str = str.replace(/[^\dA-Za-z\-\s\.]/g, '').trim();
+      const parts = str.split('-').map(s => s.trim());
+      function toNum(s) {
+        if (!s) return 0;
+        s = s.toLowerCase();
+        let num = parseFloat(s.replace(/[^\d\.]/g, '')) || 0;
+        if (s.includes('k')) num *= 1000;
+        if (s.includes('m')) num *= 1000000;
+        return num;
+      }
+      if (parts.length === 1) return toNum(parts[0]);
+      return (toNum(parts[0]) + toNum(parts[1])) / 2;
+    }
+
+    // Show/hide and sort cards
+    function filterAndSort() {
+      const cat = categoryFilter.value;
+      const sort = sortFilter.value;
+
+      // collect original card elements (live list)
+      let cards = Array.from(cardsWrap.querySelectorAll('.investor-card'));
+
+      // filter
+      cards.forEach(card => {
+        const cats = (card.dataset.category || '').split(',').map(s => s.trim()).filter(Boolean);
+        if (!cat || cat === '') {
+          card.classList.remove('hidden');
+        } else {
+          if (cats.includes(cat)) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        }
+      });
+
+      // build filtered list for sorting (only visible ones)
+      let visible = Array.from(cardsWrap.querySelectorAll('.investor-card:not(.hidden)'));
+
+      // sort
+      if (sort && visible.length > 0) {
+        visible.sort((a, b) => {
+          if (sort === 'recent') {
+            // use data-date attribute (ISO-ish) -- newer first
+            return new Date(b.dataset.date) - new Date(a.dataset.date);
+          }
+          // use data-funding attribute if present (format: min-max)
+          const aFunding = (a.dataset.funding || '').trim();
+          const bFunding = (b.dataset.funding || '').trim();
+          const aAvg = (aFunding && aFunding.includes('-')) ? parseFloat(aFunding.split('-')[0]) + parseFloat(aFunding.split('-')[1]) : parseFundingRange(aFunding);
+          const bAvg = (bFunding && bFunding.includes('-')) ? parseFloat(bFunding.split('-')[0]) + parseFloat(bFunding.split('-')[1]) : parseFundingRange(bFunding);
+
+          if (sort === 'lowest') {
+            return aAvg - bAvg;
+          }
+          if (sort === 'highest') {
+            return bAvg - aAvg;
+          }
+          return 0;
+        });
+
+        // Re-append in sorted order
+        visible.forEach(c => cardsWrap.appendChild(c));
+      }
+
+      // show NO results if none visible
+      const anyVisible = cardsWrap.querySelectorAll('.investor-card:not(.hidden)').length > 0;
+      if (!anyVisible) {
+        noResults.classList.remove('hidden');
+      } else {
+        noResults.classList.add('hidden');
+      }
+    }
+
+    // hook events
+    categoryFilter.addEventListener('change', filterAndSort);
+    sortFilter.addEventListener('change', filterAndSort);
+
+    // Send / Cancel behavior (per card)
+    cardsWrap.addEventListener('click', function (e) {
+      // Send pitch clicked
+      const sendBtn = e.target.closest('.send-btn');
+      if (sendBtn) {
+        const card = sendBtn.closest('.investor-card');
+        // mark requested visually
+        card.classList.add('requested-border', 'border-green-100');
+        card.classList.add('requested'); // toggle class
+        // show cancel button and change send appearance
+        const cancel = card.querySelector('.cancel-btn');
+        if (cancel) cancel.classList.remove('hidden');
+        sendBtn.textContent = 'Request Sent';
+        sendBtn.classList.remove('bg-green-600", "dark:bg-gray-600');
+        sendBtn.classList.add('bg-gray-200", "dark:bg-gray-300');
+        // slightly dim card text
+        card.querySelectorAll('.message, .send-btn').forEach(i => i.setAttribute('disabled', true));
+        // highlight card background a bit
+        card.style.backgroundColor = '#f8fff7';
+        return;
+      }
+
+      // Cancel clicked
+      const cancelBtn = e.target.closest('.cancel-btn');
+      if (cancelBtn) {
+        const card = cancelBtn.closest('.investor-card');
+        // revert
+        card.classList.remove('requested-border', 'border-green-100', 'requested');
+        cancelBtn.classList.add('hidden');
+        const send = card.querySelector('.send-btn');
+        send.textContent = 'Send Pitch';
+        send.classList.remove('bg-gray-500", "dark:bg-gray-600');
+        send.classList.add('bg-green-600", "dark:bg-gray-600');
+        card.querySelectorAll('.message, .send-btn').forEach(i => i.removeAttribute('disabled'));
+        card.style.backgroundColor = '';
+        return;
+      }
+    });
+
+    // initial run
+    filterAndSort();
+  });
+  </script>
+	
+	<script src="../../js/script.js"></script>
+</body>
+</html>
