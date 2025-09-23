@@ -6,7 +6,7 @@
   <title>Settings</title>
   
 <link href="../dist/output.css" rel="stylesheet">
-<link href="../src/globals.css" rel="stylesheet">
+
 </head>
 <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300" id="app">
   <!-- Header -->
@@ -38,7 +38,7 @@
 	
 
   <div class="w-full max-w-md bg-white dark:bg-gray-900 rounded-xl shadow-md p-6">
-    <h2 class="text-center text-xl font-semibold text-green-700 dark:text-green-200 mb-2">Register on Afromark</h2>
+    <h2 class="text-center text-xl font-semibold text-green-600 mb-2">Register on Afromark</h2>
     <p class="text-gray-500 dark:text-gray-400 text-sm text-center mb-6">
       For everyone: readers and non-readers. Use typing or voice command.
     </p>
@@ -48,7 +48,7 @@
   <div>
     <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Full Name</label>
     <input type="text" id="fullname" required
-      class="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-900 dark:bg-gray-800 text-white dark:text-white px-3 py-2 focus:ring-2 focus:ring-green-500 outline-none"
+      class="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-900 dark:bg-gray-800 dark:text-white px-3 py-2 focus:ring-2 focus:ring-green-500 outline-none"
       placeholder="Your full name">
     <p id="fullnameError" class="text-red-500 text-xs mt-1 hidden">Full name is required.</p>
   </div>
@@ -95,14 +95,7 @@
     Sign Up
   </button>
 </form>
-	  
-	     <!-- Signup -->
-      <p class="text-center text-sm text-gray-500 mt-4 dark:text-white">
-        Don’t have an account?
-        <a href="login.html" class="text-orange-500 font-semibold dark:text-yellow-600">Login</a>
-      </p>
-	</div>
-	
+
 <script>
   const fullname = document.getElementById("fullname");
   const contact = document.getElementById("contact");
@@ -135,11 +128,11 @@
     if (valid) {
       submitBtn.disabled = false;
       submitBtn.classList.remove("bg-gray-400", "cursor-not-allowed");
-      submitBtn.classList.add("bg-yellow-600", "hover:bg-yellow-500");
+      submitBtn.classList.add("bg-orange-500", "hover:bg-orange-600");
     } else {
       submitBtn.disabled = true;
       submitBtn.classList.add("bg-gray-400", "cursor-not-allowed");
-      submitBtn.classList.remove("bg-yellow-600", "hover:bg-yellow-500");
+      submitBtn.classList.remove("bg-orange-500", "hover:bg-orange-600");
     }
   }
 

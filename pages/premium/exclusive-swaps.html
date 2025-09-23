@@ -141,25 +141,55 @@
 
   </main>
 
-  <!-- Sticky Bottom Nav -->
-  <nav class="fixed bottom-0 w-full bg-white border-t shadow-md flex justify-around py-2">
-    <a href="home.html" class="flex flex-col items-center text-gray-500 hover:text-green-600">
-      <span class="material-icons">home</span>
-      <span class="text-xs">Home</span>
-    </a>
-    <a href="swap.html" class="flex flex-col items-center text-green-600">
-      <span class="material-icons">swap_horiz</span>
-      <span class="text-xs">Swaps</span>
-    </a>
-    <a href="faq.html" class="flex flex-col items-center text-gray-500 hover:text-green-600">
-      <span class="material-icons">help_outline</span>
-      <span class="text-xs">FAQ</span>
-    </a>
-    <a href="terms.html" class="flex flex-col items-center text-gray-500 hover:text-green-600">
-      <span class="material-icons">description</span>
-      <span class="text-xs">Terms</span>
-    </a>
+  <!-- Bottom Navigation -->
+  <nav class="fixed bottom-0 w-full bg-gray-50 shadow-inner flex justify-around py-2 dark:bg-gray-800">
+    <a href="../../index.html"><div class="flex flex-col items-center text-gray-600">
+      <img src="/img/buttom-nav/index/Home-green.svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7m-9 2v8m-4 4h8a2 2 0 002-2V9m-6 13h-2a2 2 0 01-2-2v-2" />
+      
+      <p class="text-xs text-gray dark:text-green-200">Home</p>
+		</div></a>
+    <a href="premium-search.html"><div class="flex flex-col items-center text-gray-600">
+      <img src="/img/buttom-nav/index/find.svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      <p class="text-xs text-green-700 dark:text-green-200 font-bold">Find</p>
+		</div></a>
+    <a href=""><div class="flex flex-col items-center text-green-700">
+      <img src="/img/buttom-nav/index/premium-green.svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3-1.343 3-3S13.657 2 12 2 9 3.343 9 5s1.343 3 3 3zM4 22h16a2 2 0 002-2v-1c0-2.21-1.79-4-4-4H6c-2.21 0-4 1.79-4 4v1a2 2 0 002 2z" />
+     
+      <p class="text-xs text-gray-500 dark:text-green-200">Premium</p>
+		</div></a>
+    <a href="/donation/donation-search.html"><div class="flex flex-col items-center text-gray-600">
+      <img src="/img/buttom-nav/index/giveback-green.svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+     
+      <p class="text-xs dark:text-green-200">Give Back</p>
+		</div></a>
+    <div id="accountBtn" class="flex flex-col items-center text-gray-600">
+      <img src="/img/buttom-nav/index/acc-green.svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 15c2.485 0 4.797.758 6.879 2.052M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      <p class="text-xs dark:text-green-200">Account</p>
+    </div>
   </nav>
+
+	<div id="backdrop" class="fixed inset-0 bg-black bg-opacity-40 hidden"></div>
+	
+	<!-- Slide-up Menu -->
+  <div id="accountMenu" class="fixed bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-lg transform translate-y-full transition-transform duration-300 dark:bg-gray-800">
+    <div class="flex justify-between items-center px-4 py-3 border-b border-gray-200 dark:border-gray-700">
+      <h2 class="text-lg font-semibold">Account</h2>
+      <button id="closeMenu" class="text-gray-400 hover:text-gray-600 text-xl">&times;</button>
+    </div>
+    <ul class="p-4 space-y-4 text-gray-700">
+      <a href="/all-users/settings.html"><li class="flex items-center space-x-2 mb-4"><span><img src="/img/account/settings.svg" alt="" class="h-4"></span><span class="dark:text-green-200">Settings</span></li></a>
+		<a href="/all-users/faqs.html"><li class="flex items-center space-x-2 mb-4"><span><img src="/img/account/faqs.svg" alt="" class="h-4"></span><span class="dark:text-green-200">FAQs</span></li></a>
+		  <a href="/all-users/terms-condition.html"><li class="flex items-center space-x-2 mb-4"><span><img src="/img/account/privacy.svg" alt="" class="h-4"></span><span class="dark:text-green-200">Privacy Policy</span></li></a>
+		  <a href="/all-users/how-it-works.html"><li class="flex items-center space-x-2 mb-4"><span><img src="/img/account/how-it-works.svg" alt="" class="h-4"></span><span class="dark:text-green-200">How it works</span></li></a>
+		  <a href="/all-users/contact-us.html"><li class="flex items-center space-x-2 mb-4"><span><img src="/img/account/contact.svg" alt="" class="h-4"></span><span class="dark:text-green-200">Contact Us</span></li></a>
+		  <a href="/all-users/about-us.html"><li class="flex items-center space-x-2 mb-4"><span><img src="/img/account/about-us.svg" alt="" class="h-3"></span><span class="dark:text-green-200">About Us</span></li></a>
+    </ul>
+  </div>
 
   <!-- Google Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

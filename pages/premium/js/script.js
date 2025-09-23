@@ -55,26 +55,26 @@ function renderResults(data) {
 
   data.forEach(item => {
     const card = document.createElement("div");
-    card.className = "border rounded-lg shadow-sm p-3 mb-3 bg-white transition";
+    card.className = "dark:bg-gray-800 dark:border-gray-900 dark:text-white border rounded-lg shadow-sm p-3 mb-3 bg-white transition";
 
     card.innerHTML = `
-      <div class="flex gap-3">
+      <div class="flex gap-3 dark:bg-gray-800 dark:text-white">
         <img 
     src="../../img/free-swap/onions.jpg" 
     alt="Food Item" 
     class="w-24 h-24 object-cover rounded-lg mb-3"
   />
         <div class="flex-grow">
-          <p><span class="font-bold">Offers:</span> ${item.offer} 
-            ${item.verified ? '<span class="text-green-600 text-xs ml-1">✔</span>' : ""}
+          <p class="mt-2"><span class="font-bold opacity-50">Offers:</span> ${item.offer} 
+            ${item.verified ? '<span class="text-green-600 text-xs">✔</span>' : ""}
           </p>
-          <p><span class="font-bold">Wants:</span> ${item.want}</p>
-          <p class="text-xs text-gray-500">📍 ${item.location} · 🗓️ ${item.date}</p>
-          <p class="text-sm text-gray-700 mt-1"><span class="font-bold">Message:</span> ${item.message}</p>
+          <p class="mt-2"><span class="font-bold opacity-50">Wants:</span> ${item.want}</p>
+          <p class="text-xs text-gray-500 dark:text-blue-300 mt-2 opacity-50">📍 ${item.location} · 🗓️ ${item.date}</p>
+          <p class="text-sm text-gray-700 mt-2 dark:text-white"><span class="font-bold">Message:</span> ${item.message}</p>
         </div>
       </div>
       <div class="flex justify-between mt-3">
-        <button class="cancelBtn hidden border border-red-500 text-red-500 px-3 py-1 rounded text-sm">Cancel</button>
+        <button class="cancelBtn hidden border border-red-300 text-red-500 font-light px-3 py-1 rounded text-sm dark:border-gray-500">Cancel</button>
         <button class="sendBtn bg-green-600 text-white px-3 py-1 rounded text-sm ml-auto">Send Request</button>
       </div>
     `;

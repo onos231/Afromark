@@ -4,11 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Investor Profile</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="../../dist/output.css" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-white flex justify-center h-full">
-  <div class="w-[393px] min-h-screen bg-white shadow flex flex-col">
+<body class="bg-gray-50 dark:bg-gray-900 text-black dark:text-white font-sans">
     
    <!-- Header -->
 	<header class="flex items-center justify-between px-4 py-3 bg-white shadow">
@@ -33,7 +32,7 @@
       </button>
     </div>
     <!-- curved white top like in mock -->
-    <div class="max-w-md mx-auto bg-white rounded-t-3xl h-6"></div>
+    <div class="max-w-md mx-auto dark:bg-gray-900 bg-white rounded-t-3xl h-6"></div>
   </header>
 
     <!-- Content -->
@@ -44,54 +43,54 @@
       </div>
 
       <!-- Title -->
-      <h2 class="mt-4 text-lg font-bold text-gray-800">
-        Agriculture: <span class="font-normal">Lagos Mainland</span>
+      <h2 class="mt-4 text-lg font-bold text-gray-800 dark:text-green-200 ">
+        <span class="opacity-50">Agriculture:</span> <span class="font-normal">Lagos Mainland</span>
       </h2>
 
       <!-- About -->
       <div class="mt-4">
-        <h3 class="font-semibold text-gray-700">About</h3>
-        <p class="text-sm text-gray-600 mt-1">
+        <h3 class="font-semibold text-gray-700 dark:text-white opacity-50">About</h3>
+        <p class="text-sm text-gray-600 mt-1 dark:text-white ">
           GreenHarvest Capital is a leading agribusiness-focused investment firm
           dedicated to empowering food entrepreneurs and cooperatives across Nigeria.
         </p>
       </div>
 
       <!-- Investment Focus -->
-      <div class="mt-4">
-        <h3 class="font-semibold text-gray-700">Investment Focus</h3>
+      <div class="mt-4 ">
+        <h3 class="font-semibold text-gray-700 dark:text-white opacity-50">Investment Focus</h3>
         <ul class="mt-2 space-y-2 text-sm text-gray-700">
-          <li class="flex items-center">
-            <i data-lucide="check-square" class="w-5 h-5 text-green-600 mr-2"></i>
+          <li class="flex items-center dark:text-white">
+            <i data-lucide="check-square" class="w-5 h-5 text-green-600 mr-2 dark:text-green-500"></i>
             Crop Farming
           </li>
-          <li class="flex items-center">
-            <i data-lucide="check-square" class="w-5 h-5 text-green-600 mr-2"></i>
+          <li class="flex items-center dark:text-white">
+            <i data-lucide="check-square" class="w-5 h-5 text-green-600 mr-2 "></i>
             Food Processing
           </li>
-          <li class="flex items-center">
-            <i data-lucide="check-square" class="w-5 h-5 text-green-600 mr-2"></i>
+          <li class="flex items-center dark:text-white">
+            <i data-lucide="check-square" class="w-5 h-5 text-green-600 mr-2 "></i>
             Rural Empowerment
           </li>
         </ul>
       </div>
 
       <!-- Funding Capacity -->
-      <div class="mt-4">
-        <h3 class="font-semibold text-gray-700">Funding capacity</h3>
-        <p class="text-sm text-gray-600 mt-1">N500k - N10M</p>
+      <div class="mt-4 ">
+        <h3 class="font-semibold text-gray-700 dark:text-white opacity-50">Funding capacity</h3>
+        <p class="text-sm text-gray-600 mt-1 dark:text-white">N500k - N10M</p>
       </div>
 
       <!-- Project Format -->
       <div class="mt-4">
-        <h3 class="font-semibold text-gray-700">Project Format</h3>
-        <p class="text-sm text-gray-600 mt-1">PDF, Short Video Pitch (2mb Max)</p>
+        <h3 class="font-semibold text-gray-700 dark:text-white opacity-50">Project Format</h3>
+        <p class="text-sm text-gray-600 mt-1 dark:text-white">PDF, Short Video Pitch (2mb Max)</p>
       </div>
 
       <!-- Investor Requirements -->
       <div class="mt-4">
-        <h3 class="font-semibold text-gray-700">Investor Requirements</h3>
-        <p class="text-sm text-gray-600 mt-1">
+        <h3 class="font-semibold text-gray-700 dark:text-white opacity-50">Investor Requirements</h3>
+        <p class="text-sm text-gray-600 mt-1 dark:text-white">
           I need a step by step detailed information of how you intend to invest the money,
           make it as brief as you can. Let me know the time frame.
         </p>
@@ -99,8 +98,8 @@
 
       <!-- Available Funding Windows -->
       <div class="mt-4">
-        <h3 class="font-semibold text-gray-700">Available Funding Windows</h3>
-        <ul class="list-disc list-inside text-sm text-gray-600 mt-1 space-y-1">
+        <h3 class="font-semibold text-gray-700 dark:text-white opacity-50">Available Funding Windows</h3>
+        <ul class="list-disc list-inside text-sm text-gray-600 mt-1 space-y-1 dark:text-white">
           <li>Quarterly Agricultural Grants</li>
           <li>Rapid Response Agro Support (RRAS)</li>
         </ul>
@@ -113,10 +112,12 @@
         Submit
       </button>
     </div>
-  </div>
+  
 
   <script>
     lucide.createIcons();
   </script>
+	
+	<script src="../../js/script.js"></script>
 </body>
 </html>

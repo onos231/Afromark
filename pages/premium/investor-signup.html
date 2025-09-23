@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Payment Portal</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="../../dist/output.css" rel="stylesheet">
 </head>
-<body class=" text-gray-900">
+<body class="bg-gray-50 dark:bg-gray-900 text-black dark:text-white font-sans">
   <!-- Header -->
 	<header class="flex items-center justify-between px-4 py-3 bg-white shadow">
     <img src="/img/logo/app-logo.png" alt="SwapIt Logo" class="h-8">
@@ -19,7 +19,7 @@
 
   <header class="bg-[#0E4D22] text-white">
     <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
-      <h1 class="text-center font-semibold">Payment Portal</h1>
+      <h1 class="text-center font-semibold">Become an Investor</h1>
       <!-- Close button only (right) -->
       <button
         type="button"
@@ -30,28 +30,26 @@
       </button>
     </div>
     <!-- curved white top like in mock -->
-    <div class="max-w-md mx-auto bg-white rounded-t-3xl h-6"></div>
+    <div class="max-w-md mx-auto dark:bg-gray-900 bg-white rounded-t-3xl h-6"></div>
   </header>
 
 
-
-<body class="bg-gray-50">
   <div class="max-w-md mx-auto p-4">
     <div class="w-full bg-gray-200 rounded-full h-2 mb-4">
       <div id="progressBar" class="bg-green-500 h-2 rounded-full w-1/3"></div>
     </div>
-    <h2 id="formStepTitle" class="text-xl font-bold mb-4">Step 1 of 3</h2>
+    <h2 id="formStepTitle" class="text-xl font-bold mb-4 dark:text-green-200 font-bold">Step 1 of 3</h2>
 
     <!-- Step 1: Business Info -->
     <div id="step1" class="space-y-4">
       <h3 class="font-semibold mb-2">Business Info</h3>
-      <label class="block">
+      <label class="block dark:text-gray-500">
         Full Name / Business Name *
-        <input type="text" id="name" class="w-full border rounded p-2" placeholder="e.g. Name of Project" required />
+        <input type="text" id="name" class="w-full border dark:bg-gray-800 rounded-md dark:border-gray-900 p-2" placeholder="e.g. Name of Project" required />
       </label>
-      <label class="block">
+      <label class="block dark:text-gray-500">
         Business Category *
-        <select id="category" class="w-full border rounded p-2" required>
+        <select id="category" class="w-full border dark:bg-gray-800 rounded-md dark:border-gray-900 rounded p-2" required>
           <option value="">Select Category</option>
           <option>Organic Farming</option>
           <option>Food Processing</option>
@@ -59,50 +57,50 @@
           <option>Others</option>
         </select>
       </label>
-      <label class="block">
+      <label class="block dark:text-gray-500">
         Brief Bio *
-        <textarea id="bio" class="w-full border rounded p-2" placeholder="Tell us about your focus on the investment" required></textarea>
+        <textarea id="bio" class="w-full border dark:bg-gray-800 rounded-md dark:border-gray-900 rounded p-2" placeholder="Tell us about your focus on the investment" required></textarea>
       </label>
     </div>
 
     <!-- Step 2: Investment Info -->
     <div id="step2" class="space-y-4 hidden">
       <h3 class="font-semibold mb-2">Investment Info</h3>
-      <label class="block">
+      <label class="block dark:text-green-200">
         Industry / Investment Focus *
-        <input type="text" id="focus" class="w-full border rounded p-2" required />
+        <input type="text" id="focus" class="w-full border dark:bg-gray-800 rounded-md dark:border-gray-900  rounded p-2" placeholder="Type of investment"  required />
       </label>
-      <label class="block">
+      <label class="block dark:text-green-200">
         Investment Capacity (₦) *
-        <input type="number" id="capacity" class="w-full border rounded p-2" placeholder="e.g. ₦2,000,000" required />
+        <input type="number" id="capacity" class="w-full border dark:bg-gray-800 rounded-md dark:border-gray-900 rounded p-2" placeholder="e.g. ₦2,000,000" required />
       </label>
-      <label class="block">
+      <label class="block dark:text-green-200">
         Years of Experience *
-        <input type="text" id="experience" class="w-full border rounded p-2" placeholder="e.g. 10 years" required />
+        <input type="text" id="experience" class="w-full border dark:bg-gray-800 rounded-md dark:border-gray-900 rounded p-2" placeholder="e.g. 10 years" required />
       </label>
     </div>
 
     <!-- Step 3: Uploads -->
     <div id="step3" class="space-y-4 hidden">
       <h3 class="font-semibold mb-2">Uploads</h3>
-      <label class="block">
+      <label class="block dark:text-green-200">
         Upload Profile Photo/Logo *
-        <input type="file" id="photo" accept="image/*" class="w-full border rounded p-2" required />
+        <input type="file" id="photo" accept="image/*" class="w-full border dark:bg-gray-800 dark:text-white rounded-md dark:border-gray-900 rounded p-4" required />
       </label>
-      <label class="block">
+      <label class="block dark:text-green-200">
         Upload ID Document (Optional)
-        <input type="file" id="idDoc" accept="image/*,.pdf" class="w-full border rounded p-2" />
+        <input type="file" id="idDoc" accept="image/*,.pdf" class="w-full border dark:bg-gray-800 dark:text-white rounded-md dark:border-gray-900 rounded p-4" />
       </label>
       <div class="flex flex-col space-y-2 mt-6">
-        <button id="previewBtn" class="bg-green-500 text-white py-2 px-4 rounded disabled:opacity-50" disabled>Preview</button>
-        <button id="submitBtn" class="bg-orange-500 text-white py-2 px-4 rounded disabled:opacity-50" disabled>Submit</button>
+        <button id="previewBtn" class="bg-blue-500 text-white py-2 px-4 rounded disabled:opacity-50" disabled>Preview</button>
+        <button id="submitBtn" class="bg-orange-500 text-white py-2 px-4 dark:bg-yellow-600 rounded-md dark:border-gray-900 rounded disabled:opacity-50" disabled>Submit</button>
       </div>
     </div>
 
     <!-- Navigation -->
     <div class="flex justify-between mt-6">
-      <button id="prevBtn" class="bg-lightgray-500 border py-2 px-4 rounded hidden">Previous</button>
-      <button id="nextBtn" class="bg-green-500 text-white py-2 px-4 rounded ml-auto disabled:opacity-50">Next</button>
+      <button id="prevBtn" class="bg-lightgray-500 border py-2 px-4 rounded hidden dark:text-green-200 dark:border-gray-900">Previous</button>
+      <button id="nextBtn" class="dark:text-green-200 text-white py-2 px-4 rounded ml-auto disabled:opacity-50">Next</button>
     </div>
   </div>
 
@@ -207,5 +205,7 @@ document.getElementById("previewBtn").addEventListener("click", (e) => {
 });
 
   </script>
+	
+	<script src="../../js/script.js"></script>
 </body>
 </html>

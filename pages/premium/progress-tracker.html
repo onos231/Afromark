@@ -5,9 +5,9 @@
   <title>Progress Update</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="../../dist/output.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100">
+<body class="bg-white text-gray-900 dark:bg-gray-900">
 
 <div x-data="progressApp()" class="w-full max-w-sm mx-auto bg-white min-h-screen flex flex-col">
 
@@ -34,26 +34,27 @@
       </button>
     </div>
     <!-- curved white top like in mock -->
-    <div class="max-w-md mx-auto bg-white rounded-t-3xl h-6"></div>
+    <div class="max-w-md mx-auto bg-white dark:bg-gray-900 rounded-t-3xl h-6"></div>
   </header>
 
 
 
   <!-- Step Tabs -->
-  <div class="w-[95%] mx-auto flex justify-between items-center">
-    <button @click="step=1" :class="step===1 ? 'text-green-700 font-bold' : ''">Update Progress</button>
-    <button @click="step=2" :class="step===2 ? 'text-green-700 font-bold' : ''">Timeline</button>
-    <button @click="step=3" :class="step===3 ? 'text-green-700 font-bold' : ''">Gallery</button>
-    <button @click="step=4" :class="step===4 ? 'text-green-700 font-bold' : ''">Feedback</button>
-  </div>
+	<div class="dark:bg-gray-800">
+  <div class="w-[95%] mx-auto flex justify-between items-center dark:bg-gray-900">
+    <button @click="step=1" :class="step===1 ? 'text-green-700 font-bold' : ''" class="dark:text-green-200">Update Progress</button>
+    <button @click="step=2" :class="step===2 ? 'text-green-700 font-bold' : ''" class="dark:text-green-200">Timeline</button>
+    <button @click="step=3" :class="step===3 ? 'text-green-700 font-bold' : ''"  class="dark:text-green-200">Gallery</button>
+    <button @click="step=4" :class="step===4 ? 'text-green-700 font-bold' : ''" class="dark:text-green-200">Feedback</button>
+  </div></div>
 
   <!-- Content Area -->
-  <div class="flex-1 p-4 space-y-4 overflow-y-auto">
+  <div class="flex-1 p-4 space-y-4 overflow-y-auto dark:bg-gray-900">
 
     <!-- Step 1: Report Progress -->
     <div x-show="step===1" class="space-y-3">
-      <label class="block text-sm">Select Reason</label>
-      <select x-model="form.reason" class="w-full border rounded p-2 text-sm" required>
+      <label class="block text-sm dark:text-gray-500 ">Select Reason</label>
+      <select x-model="form.reason" class="w-full border dark:bg-gray-800 dark:border-gray-900 dark:text-white rounded p-2 text-sm" required>
         <option value="">Select Category</option>
         <option value="arrangements">Arrangements</option>
         <option value="started">Started</option>
@@ -61,14 +62,14 @@
         <option value="completed">Completed</option>
       </select>
 
-      <label class="block text-sm">Additional Details</label>
-      <textarea x-model="form.details" class="w-full border rounded p-2 text-sm" placeholder="Describe what happened..." required></textarea>
+      <label class="block text-sm dark:text-gray-500">Additional Details</label>
+      <textarea x-model="form.details" class="w-full border dark:bg-gray-800 dark:border-gray-900 dark:text-white  rounded p-2 text-sm" placeholder="Describe what happened..." required></textarea>
 
-      <label class="block text-sm">Upload Image/Video/Voice</label>
-      <input type="file" @change="handleFileUpload($event, 'form')" class="block w-full text-sm">
+      <label class="block text-sm dark:text-gray-500">Upload Image/Video/Voice</label>
+      <input type="file" @change="handleFileUpload($event, 'form')" class="block w-full text-sm dark:text-gray-500">
 
       <button @click="submitProgress" :disabled="!isStep1Complete"
-        :class="isStep1Complete ? 'bg-orange-500 text-white' : 'bg-orange-200 text-gray-500 cursor-not-allowed'"
+        :class="isStep1Complete ? 'bg-yellow-600 text-white' : 'bg-orange-200 text-gray-500 cursor-not-allowed'"
         class="w-full py-2 rounded text-sm">
         Submit Report
       </button>
@@ -76,7 +77,7 @@
 
     <!-- Step 2: Timeline -->
     <div x-show="step===2" class="space-y-4">
-      <h3 class="font-semibold text-gray-700">Timeline</h3>
+      <h3 class="font-semibold text-gray-700 dark:text-gray-500">Timeline</h3>
       <template x-for="item in timeline" :key="item.id">
         <div class="border-b pb-2">
           <p class="font-bold capitalize" x-text="item.reason"></p>
@@ -96,11 +97,11 @@
 
     <!-- Step 3: Gallery -->
     <div x-show="step===3" class="space-y-4">
-      <label class="block text-sm">Name of Upload</label>
-      <input type="text" x-model="gallery.name" class="w-full border rounded p-2 text-sm" placeholder="e.g. Midpoint photo">
+      <label class="block text-sm dark:text-gray-500">Name of Upload</label>
+      <input type="text" x-model="gallery.name" class="w-full border dark:bg-gray-800 dark:border-gray-900 rounded p-2 text-sm" placeholder="e.g. Midpoint photo">
 
-      <label class="block text-sm">Upload Image/Voice/Video</label>
-      <input type="file" @change="handleFileUpload($event, 'gallery')" class="block w-full text-sm">
+      <label class="block text-sm dark:text-gray-500">Upload Image/Voice/Video</label>
+      <input type="file" @change="handleFileUpload($event, 'gallery')" class="block w-full text-sm dark:text-gray-500 dark:bg-gray-800 p-4">
 
       <!-- Preview -->
       <template x-if="gallery.file && gallery.fileType.startsWith('image')">
@@ -116,10 +117,10 @@
 
     <!-- Step 4: Feedback -->
     <div x-show="step===4" class="space-y-3">
-      <h3 class="font-semibold">Investor Feedback</h3>
+      <h3 class="font-semibold dark:text-gray-500">Investor Feedback</h3>
       <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1">
-        <li><span class="font-bold">AgriFund:</span> Impressive setup at midpoint. Ensure timely weeding.</li>
-        <li><span class="font-bold">Community Crop Farming:</span> Add final budget usage breakdown in next update.</li>
+        <li class="dark:text-white"><span class="font-bold dark:text-green-200">AgriFund:</span> Impressive setup at midpoint. Ensure timely weeding.</li>
+        <li class="dark:text-white"><span class="font-bold dark:text-green-200">Community Crop Farming:</span> Add final budget usage breakdown in next update.</li>
       </ul>
     </div>
 
@@ -168,6 +169,7 @@ function progressApp() {
   }
 }
 </script>
-
+<script src="js/script.js"></script>
+	<script src="../../js/script.js"></script>
 </body>
 </html>

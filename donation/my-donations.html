@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="../../dist/output.css" rel="stylesheet">
+	
   <title>My Post</title>
 </head>
 	
@@ -31,108 +32,133 @@
       </button>
     </div>
     <!-- curved white top like in mock -->
-    <div class="max-w-md mx-auto bg-white rounded-t-3xl h-6"></div>
+    <div class="max-w-md mx-auto bg-white dark:bg-gray-900 rounded-t-3xl h-6"></div>
   </header>
-<body class="bg-gray-100">
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300" id="app">
 
   <!-- Header Tabs -->
-  <div class="bg-white border-b flex justify-center">
-    <button onclick="window.location.href='my-request.html'" class="w-1/2 py-3 text-gray-500">My Request</button>
-	  <button class="w-1/2 py-3 text-green-700 font-semibold border-b-2 border-green-700">Donations</button>
+  <div class="flex justify-between items-center px-2 py-2 border-b dark:border-gray-900">
+    <button onclick="window.location.href='my-request.html'" class="w-1/2 py-3 text-gray-500 dark:text-gray-400">My Request</button>
+	  <button class="w-1/2 py-3 text-green-200 dark:bg-gray-800 font-semibold border-b-900 border-green-100">Donations</button>
   </div>
 
   <div class="p-4 text-center">
     <p class="text-gray-600 text-sm">
-      Find all your swap deals here, accepted, declined and pending.
-      You can choose to delete declined offers
-    </p>
+
   </div>
 
-  <div class="space-y-6 p-4 mb-20">
+  <main class="flex-1 p-4 pb-24 space-y-6 mb-10">
 
-    <!-- Card 1: Swap request received -->
-    <div class="bg-white p-4 rounded-lg shadow space-y-3">
-      <div class="flex justify-between text-sm text-gray-500">
-        <a href="#" class="text-blue-500">Share Location</a>
-        <button class="text-red-500">Report Swap</button>
+    <!-- Pending Swap -->
+    <div class="bg-white shadow dark:bg-gray-800 rounded-lg p-4">
+      <div class="flex items-start space-x-3">
+        <img src="../img/rice/bags-of-rice.jpg" alt="Item" class="w-16 h-16 rounded object-cover">
+        <div class="flex-1">
+          <p class="font-semibold dark:text-white opacity-50">Requesting Donation</p>
+          <p class="text-sm text-gray-600 dark:text-white mt-2"><span class="opacity-50">From:</span> <span class="font-medium">John Doe</span></p>
+			<p class="text-sm text-gray-600 dark:text-white mt-2"><span class="opacity-50">Donating:</span> <span class="font-medium">2 Bag of Rice</span></p>
+          
+          <p class="text-sm mt-1 mt-2"><span class="opacity-50">Status:</span> <span class="text-yellow-600 font-medium">⏳ Pending...</span></p>
+          <p class="text-xs text-blue-500 opacity-50 mt-2">📍 Lagos - 12km away | 📅 Today</p>
+			<p class="text-xs text-gray-600 dark:text-white mt-2"><span class="font-bold text-blue-200">Message</span>: Prefer fresh, no rot, old yam and big tubers if possible</p>
+         
+        </div>
       </div>
-      <p class="font-semibold text-gray-700">Swap request received</p>
-      <p class="text-sm text-gray-600">From: JohnDoe</p>
-      <p class="text-sm text-gray-600">You offered: 1 Basket of Onions</p>
-      <p class="text-sm text-gray-600">You want: 3 Tubers of Yam</p>
-      <p class="text-sm text-gray-600">
-        <span class="font-semibold">Message:</span> Prefer fresh, no rot, old yam and big tubers if possible
-      </p>
-
-      <div class="space-y-2">
-        <button class="w-full bg-green-500 text-white py-2 rounded">Accept</button>
-        <button class="w-full border border-red-500 text-red-500 py-2 rounded">Decline</button>
-      </div>
+		<button class="mt-3 w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700">
+        Accept
+      </button>
+      <button class="mt-3 w-full border border-gray-500 dark:border-gray-500 text-red-500 font-light py-2 rounded-lg hover:bg-red-50">
+        Cancel Request
+      </button>
     </div>
 
-    <!-- Card 2: Swap request accepted -->
-    <div class="bg-white p-4 rounded-lg shadow space-y-3">
-      <div class="flex justify-between text-sm text-gray-500">
-        <a href="#" class="text-blue-500">Share Location</a>
-        <button class="text-red-500">Report Swap</button>
+    <!-- Accepted Swap -->
+    <div class="bg-white shadow dark:bg-gray-800 rounded-lg p-4">
+      <div class="flex items-start space-x-3">
+        <img src="../img/rice/bags-of-rice.jpg" alt="Item" class="w-16 h-16 rounded object-cover">
+        <div class="flex-1">
+          <div class="flex justify-between">
+            <p class="font-semibold opacity-50">Requesting Donation</p>
+			  
+            <button class="text-xs text-red-500 font-light">Report Swap</button>
+          </div>
+         
+          <p class="text-sm text-gray-600 dark:text-white mt-2"><span class="opacity-50">From:</span> <span class="font-medium">John Doe</span></p>
+			<p class="text-sm text-gray-600 dark:text-white mt-2"><span class="opacity-50">Donating:</span> <span class="font-medium">2 Bag of Rice</span></p>
+          
+          <p class="text-sm mt-1 mt-2"><span class="opacity-50">Status:</span><span class="text-green-600 font-medium">✔ Approved</span></p>
+          <p class="text-xs text-blue-500 mt-2 opacity-50">📍 Lagos - 12km away | 📅 Today</p>
+          <p class="text-xs text-gray-600 dark:text-white mt-2"><span class="font-bold text-blue-200">Message</span>: Prefer fresh, no rot, old yam and big tubers if possible</p>
+        </div>
       </div>
-      <p class="font-semibold text-gray-700">Swap request accepted</p>
-      <p class="text-sm text-gray-600">You offered: 1 Basket of Onions</p>
-      <p class="text-sm text-gray-600">You want: 3 Tubers of Yam</p>
-      <p class="text-sm text-gray-600">Status: <span class="text-blue-500">Concluding Swap</span></p>
-      <p class="text-sm text-gray-600">
-        <span class="font-semibold">Message:</span> Prefer fresh, no rot, old yam and big tubers if possible
-      </p>
-
-      <div class="space-y-2">
-        <button class="w-full bg-green-500 text-white py-2 rounded">Chat Now</button>
-        <button class="w-full bg-blue-500 text-white py-2 rounded">Mark as Completed</button>
-        <button class="w-full border border-red-500 text-red-500 py-2 rounded">Decline</button>
-      </div>
+      <button class="mt-3 w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700">
+        Chat Now
+      </button>
+		<button class="mt-3 w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-green-700">
+        Mark as Collected
+      </button>
+      <button class="mt-2 w-full border border-gray-300 dark:border-gray-500 text-red-500 font-light py-2 rounded-lg hover:bg-red-50">
+        Decline
+      </button>
     </div>
 
-    <!-- Card 3: Swapped (Approved) -->
-    <div class="bg-white p-4 rounded-lg shadow space-y-3">
-      <div class="flex justify-between text-sm text-gray-500">
-        <a href="#" class="text-blue-500">Share Location</a>
-        <button class="text-red-500">Report Swap</button>
+    <!-- Approved Swap -->
+    <div class="bg-white shadow dark:bg-gray-800 rounded-lg p-4">
+      <div class="flex items-start space-x-3">
+        <img src="../img/rice/bags-of-rice.jpg" alt="Item" class="w-16 h-16 rounded object-cover">
+        <div class="flex-1">
+          <div class="flex justify-between">
+            <p class="font-semibold opacity-50">Requesting Donation</p>
+			  
+            <button class="text-xs text-red-500 font-light">Report Swap</button>
+          </div>
+         
+          <p class="text-sm text-gray-600 dark:text-white mt-2"><span class="opacity-50">From:</span> <span class="font-medium">John Doe</span></p>
+			<p class="text-sm text-gray-600 dark:text-white mt-2"><span class="opacity-50">Donating:</span> <span class="font-medium">Donated 2 Bag of Rice</span></p>
+          
+          <p class="text-sm mt-1 mt-2"><span class="opacity-50">Status:</span><span class="text-green-600 font-medium">✔ Donated</span></p>
+          <p class="text-xs text-blue-500 opacity-50 mt-2">📍 Lagos - 12km away | 📅 Today</p>
+			<p class="text-xs text-gray-600 dark:text-white mt-2"><span class="font-bold text-blue-200">Message:</span> Prefer fresh, no rot, old yam and big tubers if possible</p>
+        </div>
       </div>
-      <p class="font-semibold text-gray-700">Swaped with JohnDoe</p>
-      <p class="text-sm text-gray-600">You offered: 1 Basket of Onions</p>
-      <p class="text-sm text-gray-600">Collected: 3 Tubers of Yam</p>
-      <p class="text-sm text-gray-600">Status: <span class="text-green-600 font-semibold">Approved</span></p>
-      <p class="text-sm text-gray-600">
-        <span class="font-semibold">Message:</span> Prefer fresh, no rot, old yam and big tubers if possible
-      </p>
-
-      <div class="space-y-2">
-        <button class="w-full bg-green-500 text-white py-2 rounded">Completed</button>
-        <button class="w-full bg-blue-500 text-white py-2 rounded">Move to History</button>
-        <button class="w-full border border-red-500 text-red-500 py-2 rounded">Delete Swap</button>
-      </div>
+      <button class="mt-2 w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">
+        Move to History
+      </button>
+      <button class="mt-2 w-full border border-gray-300 dark:border-gray-500 text-red-500 font-light py-2 rounded-lg hover:bg-red-50">
+        Delete Swap
+      </button>
     </div>
 
-    <!-- Card 4: Declined -->
-    <div class="bg-white p-4 rounded-lg shadow space-y-3">
-      <div class="flex justify-between text-sm text-gray-500">
-        <a href="#" class="text-blue-500">Share Location</a>
-        <button class="text-red-500">Report Swap</button>
+    <!-- Declined Swap -->
+    <div class="bg-white shadow dark:bg-gray-800 rounded-lg p-4">
+      <div class="flex items-start space-x-3">
+        <img src="../img/rice/bags-of-rice.jpg" alt="Item" class="w-16 h-16 rounded object-cover">
+        <div class="flex-1">
+          <div class="flex justify-between">
+            <p class="font-semibold opacity-50">Requesting Donation</p>
+			  
+            <button class="text-xs text-red-500 font-light">Report Swap</button>
+          </div>
+         
+          <p class="text-sm text-gray-600 dark:text-white mt-2"><span class="opacity-50">From:</span> <span class="font-medium">John Doe</span></p>
+			<p class="text-sm text-gray-600 dark:text-white mt-2"><span class="opacity-50">Donating:</span> <span class="font-medium">Donated 2 Bag of Rice</span></p>
+          
+          <p class="text-sm mt-1 mt-2"><span class="opacity-50">Status:</span><span class="text-red-500 font-medium font-medium">✘ Declined</span></p>
+          <p class="text-xs text-blue-500 opacity-50 mt-2">📍 Lagos - 12km away | 📅 Today</p>
+			<p class="text-xs text-gray-600 dark:text-white mt-2"><span class="font-bold text-blue-200">Reason:</span> Not a fair swap at this time. I would need a better offer.</p>
+        </div>
       </div>
-      <p class="font-semibold text-gray-700">Swap Declined</p>
-      <p class="text-sm text-gray-600">From: JohnDoe</p>
-      <p class="text-sm text-gray-600">You offered: 1 Basket of Onions</p>
-      <p class="text-sm text-gray-600">Status: <span class="text-red-600 font-semibold">Declined</span></p>
-      <p class="text-sm text-gray-600">
-        <span class="font-semibold">Reasons:</span> Not a fair swap at this time. I would need a better offer
-      </p>
-
-      <div class="space-y-2">
-        <button class="w-full bg-green-500 text-white py-2 rounded">View Other Request</button>
-        <button class="w-full border border-red-500 text-red-500 py-2 rounded">Delete Swap</button>
-      </div>
+      <button class="mt-3 w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-green-700">
+        Browse Other Donations
+      </button>
+      <button class="mt-2 w-full border border-gray-300 dark:border-gray-500 text-red-500 font-light py-2 rounded-lg hover:bg-red-50">
+        Delete Swap
+      </button>
     </div>
-  </div>
 
+  </main>
+<script src="js/script.js"></script>
+	<script src="../../js/script.js"></script>
 </body>
 </html>
 

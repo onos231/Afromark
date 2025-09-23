@@ -1,13 +1,15 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Payment Portal</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swap Search</title>
+  <link href="../../dist/output.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 text-gray-900">
+	
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white transition-colors duration-300" id="app">
+	
   <!-- Header -->
 	<header class="flex items-center justify-between px-4 py-3 bg-white shadow">
     <img src="/img/logo/app-logo.png" alt="SwapIt Logo" class="h-8">
@@ -20,7 +22,7 @@
 
   <header class="bg-[#0E4D22] text-white">
     <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
-      <h1 class="text-center font-semibold">Payment Portal</h1>
+      <h1 class="text-center font-semibold">Food, seeds, farm tools, or essentials - your donations help people in real need.</h1>
       <!-- Close button only (right) -->
       <button
         type="button"
@@ -31,24 +33,24 @@
       </button>
     </div>
     <!-- curved white top like in mock -->
-    <div class="max-w-md mx-auto bg-white rounded-t-3xl h-6"></div>
+    <div class="max-w-md mx-auto bg-white dark:bg-gray-900  rounded-t-3xl h-6"></div>
   </header>
-<div class="w-full max-w-[360px] mx-auto bg-white min-h-screen shadow-md">
+<!--<div class="w-full max-w-[360px] mx-auto bg-white min-h-screen shadow-md">-->
  
 
   <!-- Content -->
-  <div class="p-4">
-    <h2 class="text-center text-base font-bold">Afromark Community Values Your Donations.</h2>
+  <div class="p-4 dark:bg-gray-900">
+    <h2 class="text-center text-base font-bold dark:text-green-200">Afromark Community Values Your Donations.</h2>
     <p class="text-center text-sm text-gray-600 mb-6">
-      Food, seeds, farm tools, or essentials — your donations help people in real need.
+      
     </p>
 
     <form id="donateForm" class="space-y-4">
       <!-- Type of Donation -->
       <div>
-        <label for="donationType" class="block text-sm font-medium text-gray-700">Type of Donation <span class="text-red-500">*</span></label>
+        <label for="donationType" class="block text-sm font-medium text-gray-700 dark:text-green-200">Type of Donation <span class="text-red-500">*</span></label>
         <select id="donationType" name="donationType" required
-          class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-green-600 focus:border-green-600 text-sm">
+          class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-green-600 focus:border-green-600 text-sm dark:bg-gray-800 border-gray-900">
           <option value="">Select Category</option>
           <option value="Food Item">Food Item</option>
           <option value="Farm Equipment">Farm Equipment</option>
@@ -59,16 +61,16 @@
 
       <!-- Location -->
       <div>
-        <label for="location" class="block text-sm font-medium text-gray-700">Location <span class="text-red-500">*</span></label>
+        <label for="location" class="block text-sm font-medium text-gray-700 dark:text-green-200">Location <span class="text-red-500">*</span></label>
         <input id="location" name="location" type="text" required placeholder="Enter location"
-          class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-green-600 focus:border-green-600 text-sm" />
+          class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-green-600 focus:border-green-600 text-sm dark:bg-gray-800 border-gray-900" />
       </div>
 
       <!-- Description -->
       <div>
-        <label for="description" class="block text-sm font-medium text-gray-700">Description <span class="text-red-500">*</span></label>
+        <label for="description" class="block text-sm font-medium text-gray-700 dark:text-green-200">Description <span class="text-red-500">*</span></label>
         <textarea id="description" name="description" required rows="3" maxlength="50" placeholder="What are you donating..."
-          class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-green-600 focus:border-green-600 text-sm"></textarea>
+          class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-green-600 focus:border-green-600 text-sm dark:bg-gray-800 dark:border-gray-900"></textarea>
         <p class="text-right text-xs text-gray-400">Max 50</p>
       </div>
 
@@ -87,7 +89,7 @@
       </button>
     </form>
   </div>
-</div>
+<!--</div>-->
 
 <script>
   const form = document.getElementById("donateForm");
@@ -103,5 +105,8 @@
     }
   });
 </script>
+	
+	<script src="js/script.js"></script>
+	<script src="../../js/script.js"></script>
 	</body>
 </html>
