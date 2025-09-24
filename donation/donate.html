@@ -13,34 +13,39 @@
   <!-- Header -->
 	<header class="flex items-center justify-between px-4 py-3 bg-white shadow">
     <img src="/img/logo/app-logo.png" alt="SwapIt Logo" class="h-8">
-    <div class="w-9 h-9 bg-gray-200 rounded-full flex items-center justify-center">
+    <a href="/all-users/profile.html"><div class="w-9 h-9 bg-gray-200 rounded-full flex items-center justify-center">
       <img src="/img/profile/profile.svg" class="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 15c2.485 0 4.797.758 6.879 2.052M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
       
-    </div>
+		</div></a>
   </header>
-
-  <header class="bg-[#0E4D22] text-white">
+<header class="bg-[#0E4D22] text-white">
     <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
-      <h1 class="text-center font-semibold">Food, seeds, farm tools, or essentials - your donations help people in real need.</h1>
+      <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
+      <h1 class="text-center font-semibold mt-4">Food, seeds, farm tools, or essentials - your donations help people in real need.</h1>
+      
+    </div>
       <!-- Close button only (right) -->
       <button
         type="button"
         aria-label="Close"
-        class="absolute right-3 top-5 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition"
-        onclick="alert('Close pressed')">
-        ✕
+        class="absolute left-3 top-5 w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20 transition"
+        onclick="window.location.href='donation-search.html'">
+        <img src="../../img/nav/back-arrow-1.png" alt="SwapIt Logo" class="h-3">
       </button>
     </div>
+	  
     <!-- curved white top like in mock -->
-    <div class="max-w-md mx-auto bg-white dark:bg-gray-900  rounded-t-3xl h-6"></div>
+    <div class="max-w-md mx-auto bg-white dark:bg-gray-900 rounded-t-3xl h-6"></div>
   </header>
+
+  
 <!--<div class="w-full max-w-[360px] mx-auto bg-white min-h-screen shadow-md">-->
  
 
   <!-- Content -->
   <div class="p-4 dark:bg-gray-900">
-    <h2 class="text-center text-base font-bold dark:text-green-200">Afromark Community Values Your Donations.</h2>
+    <h2 class="text-center text-base font-bold dark:text-green-200 px-4">Afromark Community Values Your Donations.</h2>
     <p class="text-center text-sm text-gray-600 mb-6">
       
     </p>
@@ -48,9 +53,9 @@
     <form id="donateForm" class="space-y-4">
       <!-- Type of Donation -->
       <div>
-        <label for="donationType" class="block text-sm font-medium text-gray-700 dark:text-green-200">Type of Donation <span class="text-red-500">*</span></label>
+        <label for="donationType" class="block text-sm font-medium text-gray-700 text-green-700 dark:text-green-200">Type of Donation <span class="text-red-500">*</span></label>
         <select id="donationType" name="donationType" required
-          class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-green-600 focus:border-green-600 text-sm dark:bg-gray-800 border-gray-900">
+          class="mt-1 block w-full border rounded-lg px-3 py-2 focus:ring-green-600 focus:border-green-600 text-sm dark:bg-gray-800 border-gray-300">
           <option value="">Select Category</option>
           <option value="Food Item">Food Item</option>
           <option value="Farm Equipment">Farm Equipment</option>
@@ -61,14 +66,14 @@
 
       <!-- Location -->
       <div>
-        <label for="location" class="block text-sm font-medium text-gray-700 dark:text-green-200">Location <span class="text-red-500">*</span></label>
+        <label for="location" class="block text-sm font-medium text-gray-700 text-green-700 dark:text-green-200">Location <span class="text-red-500">*</span></label>
         <input id="location" name="location" type="text" required placeholder="Enter location"
-          class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-green-600 focus:border-green-600 text-sm dark:bg-gray-800 border-gray-900" />
+          class="mt-1 block w-full border rounded-lg px-3 py-2 focus:ring-green-600 focus:border-green-600 text-sm dark:bg-gray-800 border-gray-300" />
       </div>
 
       <!-- Description -->
       <div>
-        <label for="description" class="block text-sm font-medium text-gray-700 dark:text-green-200">Description <span class="text-red-500">*</span></label>
+        <label for="description" class="block text-sm font-medium text-gray-700 text-green-700 dark:text-green-200">Description <span class="text-red-500">*</span></label>
         <textarea id="description" name="description" required rows="3" maxlength="50" placeholder="What are you donating..."
           class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-green-600 focus:border-green-600 text-sm dark:bg-gray-800 dark:border-gray-900"></textarea>
         <p class="text-right text-xs text-gray-400">Max 50</p>
@@ -76,9 +81,9 @@
 
       <!-- Upload File -->
       <div>
-        <label for="fileUpload" class="block text-sm font-medium text-gray-700">Upload Image/Video <span class="text-red-500">*</span></label>
+        <label for="fileUpload" class="block text-sm font-medium text-green-700">Upload Image/Video <span class="text-red-500">*</span></label>
         <input id="fileUpload" name="fileUpload" type="file" required
-          class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-green-600 file:text-white hover:file:bg-green-700" />
+          class="mt-1 block w-full text-sm text-gray-500 file:mr-4 mt-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-green-600 file:text-white hover:file:bg-green-700" />
       </div>
 
       <!-- Submit Button -->

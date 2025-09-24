@@ -19,27 +19,32 @@
 		</div></a>
   </header>
 
-  <header class="bg-[#0E4D22] text-white">
-    <div class="max-w-md mx-auto relative px-12 pt-6 pb-5">
-      <h1 class="text-center font-semibold">Track all your swap and donation requests in one place.
-		See statuses like Pending, Accepted, or Declined, and manage your ongoing activities.</h1>
+	<header class="bg-[#0E4D22] text-white">
+    <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
+      <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
+      <h1 class="text-center font-semibold w-60 mt-4">Track all your swap and donation requests in one place.
+		See statuses like Pending, Accepted, or Declined, and manage your ongoing activities</h1>
+      
+    </div>
       <!-- Close button only (right) -->
       <button
         type="button"
         aria-label="Close"
-        class="absolute right-3 top-5 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition"
-        onclick="alert('Close pressed')">
-        ✕
+        class="absolute left-3 top-5 w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20 transition"
+        onclick="window.location.href='donation-search.html'">
+        <img src="../../img/nav/back-arrow-1.png" alt="SwapIt Logo" class="h-3">
       </button>
     </div>
+	  
     <!-- curved white top like in mock -->
     <div class="max-w-md mx-auto bg-white dark:bg-gray-900 rounded-t-3xl h-6"></div>
   </header>
+  
 
 
   <!-- Tabs -->
   <div class="flex justify-between items-center px-2 py-2 border-b dark:border-gray-900">
-	  <button class="w-1/2 py-3 text-green-200 dark:bg-gray-800 font-semibold border-b-900 border-green-100">My Request</button>
+	  <button class="w-1/2 py-3 text-green-700 bg-gray-50 dark:bg-gray-800 font-semibold border-b-900 border-green-100">My Request</button>
 	  <button onclick="window.location.href='my-donations.html'" class="w-1/2 py-3 text-gray-500 dark:text-gray-400">Donations</button>
   </div>
 
@@ -52,7 +57,7 @@
   <main class="flex-1 p-4 pb-24 space-y-6 mb-10">
 
     <!-- Pending Swap -->
-    <div class="bg-white shadow dark:bg-gray-800 rounded-lg p-4">
+    <div class="bg-gray-50 shadow dark:bg-gray-800 rounded-lg p-4">
       <div class="flex items-start space-x-3">
         <img src="../img/rice/bags-of-rice.jpg" alt="Item" class="w-16 h-16 rounded object-cover">
         <div class="flex-1">
@@ -61,7 +66,7 @@
           
           <p class="text-sm mt-1 mt-2"><span class="opacity-50">Status:</span> <span class="text-yellow-600 font-medium">⏳ Pending...</span></p>
           <p class="text-xs text-blue-500 opacity-50 mt-2">📍 Lagos - 12km away | 📅 Today</p>
-          <p class="text-xs text-gray-600 dark:text-white mt-2">Message: Prefer fresh, no rot, old yam and big tubers if possible</p>
+          <p class="text-xs rounded-md bg-green-100 py-2 px-2 dark:text-white mt-2">Message: Prefer fresh, no rot, old yam and big tubers if possible</p>
         </div>
       </div>
       <button class="mt-3 w-full border border-gray-500 dark:border-gray-500 text-red-500 font-light py-2 rounded-lg hover:bg-red-50">
@@ -70,7 +75,7 @@
     </div>
 
     <!-- Accepted Swap -->
-    <div class="bg-white shadow dark:bg-gray-800 rounded-lg p-4">
+    <div class="bg-gray-50 shadow dark:bg-gray-800 rounded-lg p-4">
       <div class="flex items-start space-x-3">
         <img src="../img/rice/bags-of-rice.jpg" alt="Item" class="w-16 h-16 rounded object-cover">
         <div class="flex-1">
@@ -95,7 +100,7 @@
     </div>
 
     <!-- Approved Swap -->
-    <div class="bg-white shadow dark:bg-gray-800 rounded-lg p-4">
+    <div class="bg-gray-50 shadow dark:bg-gray-800 rounded-lg p-4">
       <div class="flex items-start space-x-3">
         <img src="../img/rice/bags-of-rice.jpg" alt="Item" class="w-16 h-16 rounded object-cover">
         <div class="flex-1">
@@ -122,7 +127,7 @@
     </div>
 
     <!-- Declined Swap -->
-    <div class="bg-white shadow dark:bg-gray-800 rounded-lg p-4">
+    <div class="bg-gray-50 shadow dark:bg-gray-800 rounded-lg p-4">
       <div class="flex items-start space-x-3">
         <img src="../img/rice/bags-of-rice.jpg" alt="Item" class="w-16 h-16 rounded object-cover">
         <div class="flex-1">
@@ -147,25 +152,6 @@
 
   </main>
 
-  <!-- Sticky Bottom Nav -->
-  <nav class="fixed bottom-0 w-full bg-white border-t shadow-md flex justify-around py-2">
-    <a href="home.html" class="flex flex-col items-center text-gray-500 hover:text-green-600">
-      <span class="material-icons">home</span>
-      <span class="text-xs">Home</span>
-    </a>
-    <a href="swap.html" class="flex flex-col items-center text-green-600">
-      <span class="material-icons">swap_horiz</span>
-      <span class="text-xs">Swaps</span>
-    </a>
-    <a href="faq.html" class="flex flex-col items-center text-gray-500 hover:text-green-600">
-      <span class="material-icons">help_outline</span>
-      <span class="text-xs">FAQ</span>
-    </a>
-    <a href="terms.html" class="flex flex-col items-center text-gray-500 hover:text-green-600">
-      <span class="material-icons">description</span>
-      <span class="text-xs">Terms</span>
-    </a>
-  </nav>
 
   <!-- Google Material Icons -->
 	

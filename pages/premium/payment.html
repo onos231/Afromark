@@ -24,9 +24,9 @@
       <button
         type="button"
         aria-label="Close"
-        class="absolute right-3 top-5 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition"
-        onclick="alert('Close pressed')">
-        ✕
+        class="absolute left-3 top-5 w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20 transition"
+        onclick="window.location.href='payment-plan.html'">
+        <img src="../../img/nav/back-arrow-1.png" alt="SwapIt Logo" class="h-3">
       </button>
     </div>
     <!-- curved white top like in mock -->
@@ -44,7 +44,7 @@
 
     <!-- Step 1 / Step 2: custom dropdown -->
     <div class="mb-6">
-      <label class="block text-sm dark:text-green-200 font-semibold mb-2">Choose Payment Method</label>
+      <label class="block text-sm text-green-700 dark:text-green-200 font-semibold mb-2">Choose Payment Method</label>
 
       <!-- Trigger -->
       <button id="pmTrigger"

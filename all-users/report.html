@@ -27,7 +27,7 @@
         type="button"
         aria-label="Close"
         class="absolute right-3 top-5 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition"
-        onclick="alert('Close pressed')">
+        onclick="window.location.href='contact-us.html'">
         ✕
       </button>
     </div>
@@ -39,7 +39,7 @@
 
   <!-- Content -->
   <div class="p-4">
-    <h2 class="text-center text-base font-bold">Please tell us why you are reporting this swap. This helps keep Afromark safe for everyone.</h2>
+    <h2 class="text-center text-base px-6">Please tell us why you are reporting this swap. This helps keep Afromark safe for everyone.</h2>
     <p class="text-center text-sm text-gray-600 mb-6">
      
     </p>
@@ -47,7 +47,7 @@
     <form id="donateForm" class="space-y-4">
       <!-- Type of Donation -->
       <div>
-        <label for="donationType" class="block text-sm font-medium text-gray-700 dark:text-green-200">Select Reasons <span class="text-red-500">*</span></label>
+        <label for="donationType" class="block text-sm font-medium text-gray-700 text-green-700 dark:text-green-200">Select Reasons <span class="text-red-500">*</span></label>
         <select id="donationType" name="donationType" required
           class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2 dark:bg-gray-800 dark:border-gray-900 focus:ring-green-600 focus:border-green-600 text-sm">
           <option value="">Select Type</option>
@@ -61,7 +61,7 @@
 
       <!-- Description -->
       <div>
-        <label for="description" class="block text-sm font-medium text-gray-700 dark:text-green-200">Additional Details <span class="text-red-500">*</span></label>
+        <label for="description" class="block text-sm font-medium text-gray-700 text-green-700 dark:text-green-200">Additional Details <span class="text-red-500">*</span></label>
         <textarea id="description" name="description" required rows="3" maxlength="50" placeholder="What are you donating..."
           class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-green-600 dark:bg-gray-800 dark:border-gray-900 focus:border-green-600 text-sm dark:text-white"></textarea>
         <p class="text-right text-xs text-gray-400 dark:text-white">Max 50</p>
@@ -69,9 +69,9 @@
 		
 		 <!-- Upload File -->
       <div>
-        <label for="fileUpload" class="block text-sm font-medium text-gray-700 dark:text-green-200">Upload Image/Video <span class="text-red-500">*</span></label>
+        <label for="fileUpload" class="block text-sm font-medium text-gray-700 text-green-700 dark:text-green-200">Upload Image/Video <span class="text-red-500">*</span></label>
         <input id="fileUpload" name="fileUpload" type="file" required
-          class="mt-1 block w-full text-sm text-gray-500 dark:text-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-green-600 file:text-white hover:file:bg-green-700" />
+          class="mt-4 block w-full text-sm text-gray-500 dark:text-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-green-600 file:text-white hover:file:bg-green-700" />
       </div>
 
       <!-- Submit Button -->
