@@ -53,7 +53,7 @@ function renderResults(data) {
 
   data.forEach(item => {
     const card = document.createElement("div");
-    card.className = "border dark:bg-gray-800 dark:border-gray-900 dark:text-white rounded-lg shadow-sm p-3 mb-3 bg-white transition";
+    card.className = "border dark:bg-gray-800 dark:border-gray-900 dark:text-white rounded-lg shadow-sm p-3 mb-3 bg-gray-100 transition mt-4 mb-4";
 
     card.innerHTML = `
       <div class="flex gap-3 dark:bg-gray-800 dark:text-white">
