@@ -50,52 +50,52 @@
 	  </div>
     <!-- Steps container -->
 	
-    <form id="pitchForm" class="space-y-6 p-4 bg-gray-100">
+    <form id="pitchForm" class="space-y-6 p-4 bg-gray-100 dark:bg-gray-800">
 
       <!-- Step 1 -->
       <div class="step" id="step1 bg-gray-100">
-		  <label class="block text-green-700 font-medium mb-1 dark:text-gray-500">Name of Project *</label>
+		  <label class="block text-green-700 font-medium mb-1 dark:text-gray-400">Name of Project *</label>
         <input id="projectTitle" type="text" placeholder="Project Title" required
-          class="w-full border rounded px-3 py-2 mb-4 outline-none dark:bg-gray-800 dark:border-gray-900"/>
+          class="w-full border rounded px-3 py-2 mb-4 outline-none dark:bg-gray-900 dark:border-gray-900"/>
         
-		  <label class="block text-green-700 font-medium mb-1 dark:text-gray-500 ">Project Category *</label>
+		  <label class="block text-green-700 font-medium mb-1 dark:text-gray-400 ">Project Category *</label>
         <select id="projectCategory" required
-          class="w-full border rounded px-3 py-2 mb-4 outline-none dark:bg-gray-800 dark:border-gray-900">
+          class="w-full border rounded px-3 py-2 mb-4 outline-none dark:bg-gray-900 dark:border-gray-900">
           <option value="">Select Category</option>
           <option>Organic Farming</option>
           <option>Food Processing</option>
           <option>Distribution</option>
           <option>Others</option>
         </select>
-<label class="block text-green-700 font-medium mb-1 dark:text-gray-500 ">Funds Needed *</label>
+<label class="block text-green-700 font-medium mb-1 dark:text-gray-400 ">Funds Needed *</label>
         <input id="fundsNeeded" type="number" placeholder="Funds Needed (₦)" required
-          class="w-full border rounded px-3 py-2 mb-4 outline-none dark:bg-gray-800 dark:border-gray-900"/>
+          class="w-full border rounded px-3 py-2 mb-4 outline-none dark:bg-gray-900 dark:border-gray-900"/>
 
         <div class="flex justify-end">
           <button type="button" id="next1"
-            class="px-4 py-2 text-green-600 opacity-50 cursor-not-allowed dark:text-green-200">
+            class="px-4 py-2 text-green-600 opacity-50 cursor-not-allowed dark:text-green-200 dark:text-gray-400">
             Next &gt;
           </button>
         </div>
       </div>
 
       <!-- Step 2 -->
-      <div class="step hidden" id="step2">
-		  <label class="block text-green-700 font-medium mb-1 dark:text-green-200">Project Summary*</label>
+      <div class="step hidden" id="step2 py-4 px-4">
+		  <label class="block text-green-700 font-medium mb-1 dark:text-gray-400">Project Summary*</label>
         <textarea id="summary" placeholder="Project Summary *" required
-          class="w-full border rounded px-3 py-2 mb-4 outline-none dark:bg-gray-800 dark:border-gray-900"></textarea>
+          class="w-full border rounded px-3 py-2 mb-4 outline-none dark:bg-gray-900 dark:border-gray-900"></textarea>
         
-		  <label class="block text-green-700 font-medium mb-1 dark:text-green-200">What are the Problems & Solutions *</label>
+		  <label class="block text-green-700 font-medium mb-1 dark:text-gray-400">What are the Problems & Solutions *</label>
         <textarea id="solution" placeholder="Problem & Solution *" required
-          class="w-full border rounded px-3 py-2 mb-4 outline-none dark:bg-gray-800 dark:border-gray-900"></textarea>
+          class="w-full border rounded px-3 py-2 mb-4 outline-none dark:bg-gray-900 dark:border-gray-900"></textarea>
         
-		  <label class="block text-green-700 font-medium mb-1 dark:text-green-200">Expected Impact *</label>
+		  <label class="block text-green-700 font-medium mb-1 dark:text-gray-400">Expected Impact *</label>
         <textarea id="impact" placeholder="Expected Impact *" required
-          class="w-full border rounded px-3 py-2 mb-4 outline-none dark:bg-gray-800 dark:border-gray-900"></textarea>
+          class="w-full border rounded px-3 py-2 mb-4 outline-none dark:bg-gray-900 dark:border-gray-900"></textarea>
 
-		  <label class="block text-green-700 font-medium mb-1 dark:text-green-200">Timeline of Project *</label>
+		  <label class="block text-green-700 font-medium mb-1 dark:text-gray-400">Timeline of Project *</label>
         <input id="timeline" type="text" placeholder="Timeline (e.g. 3 months)" required
-          class="w-full border rounded px-3 py-2 mb-4 outline-none dark:bg-gray-800 dark:border-gray-900"/>
+          class="w-full border rounded px-3 py-2 mb-4 outline-none dark:bg-gray-900 dark:border-gray-900"/>
 
         <div class="flex justify-between">
           <button type="button" id="prev2" class="px-4 py-2 text-green-600 dark:text-green-200">&lt; Prev</button>
@@ -107,18 +107,18 @@
       </div>
 
       <!-- Step 3 -->
-      <div class="step hidden" id="step3">
-        <label class="block mb-2">Upload Business Proposal (PDF Image) *</label>
+      <div class="step hidden" id="step3 py-4 px-4">
+        <label class="block dark:text-gray-400">Upload Business Proposal (PDF Image) *</label>
         <input id="proposal" type="file" accept="application/pdf,image/*" required
-          class="w-full mb-4 py-4 dark:bg-gray-800"/>
+          class="w-full mb-8 py-2 dark:bg-gray-800"/>
 
-        <label class="block mb-2">Upload Cover Photo (Optional)</label>
-        <input id="coverPhoto" type="file" accept="image/*" class="w-full mb-4 py-4 dark:bg-gray-800"/>
+        <label class="block dark:text-gray-400">Upload Cover Photo (Optional)</label>
+        <input id="coverPhoto" type="file" accept="image/*" class="w-full mb-8 py-4 dark:bg-gray-800"/>
 
-        <label class="block mb-2">Pitch Video (Optional)</label>
+        <label class="block dark:text-gray-400">Pitch Video (Optional)</label>
         <input id="video" type="file" accept="video/*" class="w-full mb-4 py-4 dark:bg-gray-800"/>
 
-        <label class="block mb-2">Record Voice Pitch (Optional)</label>
+        <label class="block dark:text-gray-400">Record Voice Pitch (Optional)</label>
         <input id="voice" type="file" accept="audio/*" class="w-full mb-4 py-4 dark:bg-gray-800"/>
 
         <div class="flex flex-col gap-3 py-6">
