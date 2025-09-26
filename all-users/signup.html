@@ -10,30 +10,23 @@
 </head>
 <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300" id="app">
   <!-- Header -->
-	<header class="flex items-center justify-between px-4 py-3 bg-white shadow">
-    <img src="/img/logo/app-logo.png" alt="SwapIt Logo" class="h-8">
-    <div id="myDiv" class="w-9 h-9 bg-gray-200 rounded-full flex items-center justify-center">
-      <img src="/img/profile/profile.svg" class="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 15c2.485 0 4.797.758 6.879 2.052M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-      
-		</div>
-  </header>
+	<header class="bg-[#0E4D22] text-white flex flex-col items-center justify-center pt-8 relative">
+  <!-- Logo -->
+  <div class="intro-logo">
+    <img src="../img/logo/intro-logo.png" alt="Project Logo" class="w-20 h-20 object-contain" />
+  </div>
 
-  <header class="bg-[#0E4D22] text-white">
-    <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
-      <h1 class="text-center font-semibold dark:text-green-200">Signup</h1>
-      <!-- Close button only (right) -->
-      <button
-        type="button"
-        aria-label="Close"
-        class="absolute left-3 top-5 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition"
-        onclick="window.location.href='login.html'">
-        <img src="../../img/nav/back-arrow-1.png" alt="SwapIt Logo" class="h-3">
-      </button>
-    </div>
-    <!-- curved white top like in mock -->
-    <div class="max-w-md mx-auto bg-white dark:bg-gray-900 rounded-t-3xl h-6"></div>
-  </header>
+  <!-- Caption below logo -->
+  <p class="mt-2 text-sm text-white">Your Logo Caption Here</p>
+
+  <!-- Signup Title -->
+  <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
+    <h1 class="text-center font-semibold dark:text-green-200">Login</h1>
+  </div>
+
+  <!-- Curved bottom separator -->
+  <div class="w-full max-w-md bg-white dark:bg-gray-900 rounded-t-3xl h-6"></div>
+</header>
 	
 	
 
@@ -43,7 +36,7 @@
       For everyone: readers and non-readers. Use typing or voice command.
     </p>
 
-    <form id="registerForm" class="space-y-4 bg-gray-100 dark:bg-gray-800 px-4 py-4">
+    <form id="registerForm" class="space-y-4 dark:bg-gray-800 py-4 px-4">
   <!-- Full Name -->
   <div>
     <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Full Name</label>
@@ -67,7 +60,7 @@
     <label for="password" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Password</label>
     <div class="relative">
       <input id="password" type="password" placeholder="Choose a password"
-        class="block w-full px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-base leading-normal 
+        class="block w-full px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-900 bg-white dark:bg-gray-900 text-base leading-normal 
                focus:outline-none focus:ring-2 focus:ring-green-500 box-border"
         autocomplete="new-password" />
 
@@ -83,7 +76,7 @@
   </div>
 
   <!-- Terms -->
-  <p class="text-xs text-gray-500 dark:text-gray-400 text-center">
+  <p class="text-xs text-gray-500 dark:text-gray-400 text-center px-4 ">
     By proceeding, you accept our 
     <a href="#" class="text-blue-500">Terms of Use</a> and 
     <a href="#" class="text-blue-500">Privacy Policy</a>

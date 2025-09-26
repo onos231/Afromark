@@ -44,12 +44,12 @@
      
     </p>
 
-    <form id="donateForm" class="space-y-4">
+    <form id="donateForm" class="space-y-4 py-4 px-4 dark:bg-gray-800">
       <!-- Type of Donation -->
       <div>
-        <label for="donationType" class="block text-sm font-medium text-gray-700 text-green-700 dark:text-green-200">Select Reasons <span class="text-red-500">*</span></label>
+        <label for="donationType" class="block text-sm font-medium text-gray-700 text-green-700 dark:text-gray-400">Select Reasons <span class="text-red-500">*</span></label>
         <select id="donationType" name="donationType" required
-          class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2 dark:bg-gray-800 dark:border-gray-900 focus:ring-green-600 focus:border-green-600 text-sm">
+          class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2 dark:bg-gray-900 dark:border-gray-900 focus:ring-green-600 focus:border-green-600 text-sm">
           <option value="">Select Type</option>
           <option value="Food Item">User didn't show up</option>
           <option value="Farm Equipment">Wrong item</option>
@@ -61,22 +61,22 @@
 
       <!-- Description -->
       <div>
-        <label for="description" class="block text-sm font-medium text-gray-700 text-green-700 dark:text-green-200">Additional Details <span class="text-red-500">*</span></label>
+        <label for="description" class="block text-sm font-medium text-gray-700 text-green-700 dark:text-gray-400">Additional Details <span class="text-red-500">*</span></label>
         <textarea id="description" name="description" required rows="3" maxlength="50" placeholder="What are you donating..."
-          class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-green-600 dark:bg-gray-800 dark:border-gray-900 focus:border-green-600 text-sm dark:text-white"></textarea>
+          class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-green-600 dark:bg-gray-900 dark:border-gray-900 focus:border-green-600 text-sm dark:text-white"></textarea>
         <p class="text-right text-xs text-gray-400 dark:text-white">Max 50</p>
       </div>
 		
 		 <!-- Upload File -->
       <div>
-        <label for="fileUpload" class="block text-sm font-medium text-gray-700 text-green-700 dark:text-green-200">Upload Image/Video <span class="text-red-500">*</span></label>
+        <label for="fileUpload" class="block text-sm font-medium text-gray-700 text-green-700 dark:text-gray-400">Upload Image/Video <span class="text-red-500">*</span></label>
         <input id="fileUpload" name="fileUpload" type="file" required
           class="mt-4 block w-full text-sm text-gray-500 dark:text-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-green-600 file:text-white hover:file:bg-green-700" />
       </div>
 
       <!-- Submit Button -->
       <button type="submit" id="submitBtn" disabled
-        class="w-full text-white font-medium py-2 rounded-lg transition"
+        class="w-full text-white mt-10 font-medium py-2 rounded-lg transition"
         style="background-color: rgba(255, 152, 0, 0.3);">
         Submit Donation
       </button>

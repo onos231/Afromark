@@ -4,25 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to SwapIt!</title>
-	<link rel="stylesheet" href="../../css/style.css">
 	
 	<link href="../dist/output.css" rel="stylesheet">
   
 </head>
 <body class="bg-white text-gray-800 dark:bg-gray-900 transition-colors duration-300" id="app">
-	<header>
-	<div class="intro-header">
-		<img src="../img/top-header/header.png" alt="Project 2" />
-		<div class="intro-logo">
-		<img src="../img/logo/intro-logo.png" alt="Project 2" />
-			</div>
-		</div>
-	</header>
+	<header class="bg-[#0E4D22] text-white flex flex-col items-center justify-center pt-8 relative">
+  <!-- Logo -->
+  <div class="intro-logo">
+    <img src="../img/logo/intro-logo.png" alt="Project Logo" class="w-20 h-20 object-contain" />
+  </div>
+
+  <!-- Caption below logo -->
+  <p class="mt-2 text-sm text-white">Your Logo Caption Here</p>
+
+  <!-- Signup Title -->
+  <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
+    <h1 class="text-center font-semibold dark:text-green-200">Login</h1>
+  </div>
+
+  <!-- Curved bottom separator -->
+  <div class="w-full max-w-md bg-white dark:bg-gray-900 rounded-t-3xl h-6"></div>
+</header>
+
+	
+
+	
+	
   
 
   <!-- Form -->
 	<div class="flex items-start justify-center bg-white-100">
-  <div class="space-y-6 p-4 mt-10">
+  <div class="space-y-6 py-4 px-4 mt-10">
   
 
       <form id="loginForm" class="space-y-4 dark:bg-gray-800 py-4 px-4">
@@ -33,7 +46,7 @@
             type="text"
             id="username"
             placeholder="Email or phone number"
-            class="w-full bg-gray-50 border dark:border-gray-900 dark:bg-gray-900 text-sm rounded-md px-2 py-1 focus:outline-none"
+            class="w-full bg-gray-50 border dark:border-gray-900 dark:bg-gray-900 text-sm rounded-md px-3 py-2 focus:outline-none"
             required
           />
           <p id="usernameError" class="text-red-500 text-sm hidden mt-1 ">
@@ -47,7 +60,7 @@
             type="password"
             id="password"
             placeholder="Password"
-            class="w-full bg-gray-50 border dark:border-gray-900 dark:bg-gray-900 rounded-md px-2 py-1 focus:outline-none text-sm"
+            class="w-full bg-gray-50 border dark:border-gray-900 dark:bg-gray-900 rounded-md px-3 py-2 focus:outline-none text-sm"
             required
           />
           <p id="passwordError" class="text-red-500 text-sm hidden mt-1">
@@ -88,22 +101,22 @@
         <button class="flex-1 bg-blue-500 text-white py-2 rounded-md flex items-center justify-center gap-2">
           <img src="../img/social-icon/voice.png" class="w-6 h-6 object-contain">Voice Login
         </button>
-        <button class="flex-1 border py-2 rounded-md flex items-center justify-center gap-2 dark:text-white dark:bg-gray-800">
+        <button class="flex-1 border py-2 dark:border-gray-900  rounded-md flex items-center justify-center gap-2 dark:text-white dark:bg-gray-800">
           <img src="../img/social-icon/biometrics.png" class="w-6 h-6 object-contain">Biometrics
         </button>
       </div>
 
 		<!-- Social Login Section -->
 <div class="flex justify-center space-x-4 mt-6">
-  <button onclick="window.location.href='/pages/free/index.html'" class="w-16 py-2 mx-2 flex items-center justify-center border rounded-md dark:bg-gray-800">
+  <button onclick="window.location.href='/pages/free/index.html'" class="w-16 py-2 mx-2 flex items-center justify-center border dark:border-gray-900 rounded-md dark:bg-gray-800">
     <img src="../img/social-icon/facebook.png" class="w-6 h-6 object-contain" >
   </button>
 
-  <button onclick="window.location.href='/pages/free/index.html'" class="w-16 py-2 mx-4 flex items-center justify-center border rounded-md dark:bg-gray-800">
+  <button onclick="window.location.href='/pages/free/index.html'" class="w-16 py-2 mx-4 flex items-center justify-center border dark:border-gray-900 rounded-md dark:bg-gray-800">
     <img src="../img/social-icon/google.png" class="w-6 h-6 object-contain">
   </button>
 
-  <button onclick="window.location.href='/pages/free/index.html'" class="w-16 py-2 flex items-center justify-center border rounded-md dark:bg-gray-800">
+  <button onclick="window.location.href='/pages/free/index.html'" class="w-16 py-2 flex items-center justify-center border dark:border-gray-900 rounded-md dark:bg-gray-800">
     <img src="../img/social-icon/tiktok.png" class="w-6 h-6 object-contain">
   </button>
 </div>

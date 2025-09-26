@@ -4,27 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to SwapIt!</title>
-	<link rel="stylesheet" href="../../css/style.css">
+
 	
 	<link href="../dist/output.css" rel="stylesheet">
   
 </head>
 <body class="bg-white text-gray-800 dark:bg-gray-900 transition-colors duration-300" id="app">
-	<header>
-	<div class="intro-header">
-		<img src="../img/top-header/header.png" alt="Project 2" />
-		<div class="intro-logo">
-		<img src="../img/logo/intro-logo.png" alt="Project 2" />
-			</div>
-		</div>
-	</header>
-  <div class="container">
-    <h2 class="dark:text-green-200">Welcome to SwapIt!</h2>
-    <div class="intro-box bg-gray-100 dark:bg-gray-800 dark:text-white">
+	
+<header class="bg-[#0E4D22] text-white flex flex-col items-center justify-center pt-8 relative">
+  <!-- Logo -->
+  <div class="intro-logo">
+    <img src="../img/logo/intro-logo.png" alt="Project Logo" class="w-20 h-20 object-contain" />
+  </div>
+
+  <!-- Caption below logo -->
+  <p class="mt-2 text-sm text-white"></p>
+
+  <!-- Signup Title -->
+  <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
+    <h1 class="text-center font-semibold dark:text-green-200">Introduction</h1>
+  </div>
+
+  <!-- Curved bottom separator -->
+  <div class="w-full max-w-md bg-white dark:bg-gray-900 rounded-t-3xl h-6"></div>
+</header>
+  <div class="container p-4">
+    <h2 class="dark:text-green-200 text-center mt-10">Welcome to SwapIt!</h2>
+    <div class="intro-box bg-gray-100 dark:bg-gray-800 dark:text-white py-4 px-4 mt-4">
       <p><strong>SwapIt</strong> is a simple and smart platform that helps people exchange food items directly with others in their community. Have extra rice and need yam? Post it, find a match, and swap with ease.</p>
       <p>This app is made for everyone — whether you can read and write or prefer to speak, we’ve got you covered. Just tap, talk, and trade!</p>
       <p><em>Save money, reduce waste, and help your neighbors — one food swap at a time.</em></p>
-      <button class="get-started-btn py-2 bg-yellow-600" onclick="window.location.href='signup.html'">Get Started</button>
+		<button
+          type="" onclick="window.location.href='../index.html'"
+          class="w-full bg-orange-400 text-white font-semibold py-2 mt-10 rounded-md hover:bg-orange-600"
+        >
+          Get Started
+        </button>
+      
     </div>
   </div>
 	
