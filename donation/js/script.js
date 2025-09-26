@@ -58,21 +58,24 @@ function renderResults(data) {
     card.innerHTML = `
       <div class="flex gap-3 dark:bg-gray-800 dark:text-white">
         <img 
-    src="/img/rice/bags-of-rice.jpg" 
+    src="../img/rice/bags-of-rice.jpg" 
     alt="Food Item" 
     class="w-24 h-24 object-cover rounded-lg mb-3"
   />
         <div class="flex-grow">
-          <p><span class="font-bold mt-2 opacity-50">${item.offer} </span> 
+          <p><span class="font-bold mt-2 text-blue-500 font-bold">${item.offer} </span> 
             ${item.verified ? '<span class="text-green-600 text-xs ml-2 dark:text-green-700">✔</span>' : ""}
           </p>
-          <p class="mt-2"><span class="font-bold mt-2 opacity-50">Donor:</span> ${item.Donor}</p>
-          <p class="text-xs text-blue-300 opacity-50 mt-2">📍 ${item.location} · 🗓️ ${item.date}</p>
-          <p class="text-sm text-gray-700 dark:text-white mt-2"><span class="font-bold class="mt-2 ">Message:</span> ${item.message}</p>
+          <p class="mt-2"><span class="font-bold mt-2 text-green-700">Donor:</span> ${item.Donor}</p>
+          <p class="text-xs text-gray-700 opacity-50 mt-2">📍 ${item.location} · 🗓️ ${item.date}</p>
+          
         </div>
       </div>
+<p class="font-Kodchasan text-xl text-yellow-600 dark:text-white mt-2"><span class="font-bold mt-2">Message:</span> ${item.message}</p>
+
       <div class="flex justify-between mt-3">
-        <button class="cancelBtn hidden border border-gray-500 text-red-500 font-light px-3 py-1 rounded text-sm font-light">Cancel</button>
+
+        <button class="cancelBtn hidden border border-gray-500 text-blue-500 font-forte px-3 py-1 rounded text-sm font-light">Cancel</button>
         <button class="sendBtn bg-green-600 text-white px-3 py-1 rounded text-sm ml-auto">Send Request</button>
       </div>
     `;

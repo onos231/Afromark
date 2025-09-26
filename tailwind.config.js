@@ -3,7 +3,8 @@ module.exports = {
     "./*.html",
     "./pages/**/*.{html,js}",
     "./components/**/*.{html,js}",
-    "./js/**/*.js"
+    "./js/**/*.js",
+	  "./donation/js/**/*.{html,js}",
   ],
   darkMode: "class",
   safelist: [
@@ -13,7 +14,16 @@ module.exports = {
     },
 ],
   theme: {
-    extend: {},
+    extend: {
+		fontFamily: {
+        forte: ['Forte', 'cursive'],
+        roboto: ['Roboto', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
+			Kodchasan: ['Kodchasan', 'Regular'],
+			Kodchasan: ['Kodchasan', 'SemiBoldItalic'],
+      },
+	},
   },
   plugins: [],
 }
+

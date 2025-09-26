@@ -21,11 +21,11 @@
   
 
   <!-- Form -->
-	<div class="flex items-start justify-center bg-white-100 mt-10">
-  <div class="w-[320px] mt-10">
+	<div class="flex items-start justify-center bg-white-100">
+  <div class="space-y-6 p-4 mt-10">
   
 
-      <form id="loginForm" class="space-y-4">
+      <form id="loginForm" class="space-y-4 dark:bg-gray-800 py-4 px-4">
         <!-- Username -->
         <div>
 			
@@ -33,7 +33,7 @@
             type="text"
             id="username"
             placeholder="Email or phone number"
-            class="w-full bg-gray-50 border dark:border-gray-900 dark:bg-gray-800 text-sm rounded-md px-2 py-1 focus:outline-none"
+            class="w-full bg-gray-50 border dark:border-gray-900 dark:bg-gray-900 text-sm rounded-md px-2 py-1 focus:outline-none"
             required
           />
           <p id="usernameError" class="text-red-500 text-sm hidden mt-1 ">
@@ -47,7 +47,7 @@
             type="password"
             id="password"
             placeholder="Password"
-            class="w-full bg-gray-50 border dark:border-gray-900 dark:bg-gray-800 rounded-md px-2 py-1 focus:outline-none text-sm"
+            class="w-full bg-gray-50 border dark:border-gray-900 dark:bg-gray-900 rounded-md px-2 py-1 focus:outline-none text-sm"
             required
           />
           <p id="passwordError" class="text-red-500 text-sm hidden mt-1">
@@ -76,6 +76,7 @@
       </form>
 
       <!-- Divider -->
+	  <div class="px-4">
       <div class="flex items-center my-4 mt-4">
         <hr class="flex-grow border-gray-300" />
         <span class="mx-2 text-gray-500 text-sm">Or use</span>
@@ -85,25 +86,25 @@
       <!-- Voice + Biometrics -->
       <div class="flex gap-2 mt-4">
         <button class="flex-1 bg-blue-500 text-white py-2 rounded-md flex items-center justify-center gap-2">
-          <img src="/img/social-icon/voice.png" class="w-6 h-6 object-contain">Voice Login
+          <img src="../img/social-icon/voice.png" class="w-6 h-6 object-contain">Voice Login
         </button>
         <button class="flex-1 border py-2 rounded-md flex items-center justify-center gap-2 dark:text-white dark:bg-gray-800">
-          <img src="/img/social-icon/biometrics.png" class="w-6 h-6 object-contain">Biometrics
+          <img src="../img/social-icon/biometrics.png" class="w-6 h-6 object-contain">Biometrics
         </button>
       </div>
 
 		<!-- Social Login Section -->
 <div class="flex justify-center space-x-4 mt-6">
   <button onclick="window.location.href='/pages/free/index.html'" class="w-16 py-2 mx-2 flex items-center justify-center border rounded-md dark:bg-gray-800">
-    <img src="/img/social-icon/facebook.png" class="w-6 h-6 object-contain" >
+    <img src="../img/social-icon/facebook.png" class="w-6 h-6 object-contain" >
   </button>
 
   <button onclick="window.location.href='/pages/free/index.html'" class="w-16 py-2 mx-4 flex items-center justify-center border rounded-md dark:bg-gray-800">
-    <img src="/img/social-icon/google.png" class="w-6 h-6 object-contain">
+    <img src="../img/social-icon/google.png" class="w-6 h-6 object-contain">
   </button>
 
   <button onclick="window.location.href='/pages/free/index.html'" class="w-16 py-2 flex items-center justify-center border rounded-md dark:bg-gray-800">
-    <img src="/img/social-icon/tiktok.png" class="w-6 h-6 object-contain">
+    <img src="../img/social-icon/tiktok.png" class="w-6 h-6 object-contain">
   </button>
 </div>
 
@@ -114,6 +115,7 @@
         Don’t have an account?
         <a href="signup.html" class="text-orange-500 font-semibold dark:text-gold-900">Signup</a>
       </p>
+		  </div>
     </div>
   </div>
 

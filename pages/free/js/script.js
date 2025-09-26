@@ -70,11 +70,12 @@ function renderResults(data) {
           </p>
           <p class="mt-2"><span class="font-bold opacity-50">Wants:</span> ${item.want}</p>
           <p class="text-xs text-gray-500 dark:text-blue-300 mt-2 opacity-50">📍 ${item.location} · 🗓️ ${item.date}</p>
-          <p class="text-sm text-gray-700 mt-2 dark:text-white"><span class="font-bold">Message:</span> ${item.message}</p>
+
         </div>
       </div>
+<p class="font-Kodchasan text-xl text-yellow-600 dark:text-white mt-2 py-2 px-2"><span class="font-bold mt-2">Message:</span> ${item.message}</p>
       <div class="flex justify-between mt-3">
-        <button class="cancelBtn hidden border border-red-300 text-red-500 font-light px-3 py-1 rounded text-sm dark:border-gray-500">Cancel</button>
+        <button class="cancelBtn hidden border border-red-300 text-red-300 font-light px-3 py-1 rounded text-sm dark:border-gray-500">Cancel</button>
         <button class="sendBtn bg-green-600 text-white px-3 py-1 rounded text-sm ml-auto">Send Request</button>
       </div>
     `;
@@ -146,7 +147,7 @@ searchInput.addEventListener("input", () => {
   suggestions.innerHTML = "";
   matches.forEach(item => {
     const li = document.createElement("li");
-    li.className = "px-3 py-2 hover:bg-green-100 cursor-pointer";
+    li.className = "px-3 py-2 hover:bg-green-100 hover:dark:bg-gray-800 cursor-pointer";
     li.textContent = item.name;
     li.addEventListener("click", () => {
       searchInput.value = item.name;
