@@ -43,12 +43,12 @@
     </section>
 
     <!-- Step 1 / Step 2: custom dropdown -->
-    <div class="mb-6">
+    <div class="mb-6 py-4 px-4 dark:bg-gray-800 bg-gray-100">
       <label class="block text-sm text-green-700 dark:text-green-200 font-semibold mb-2">Choose Payment Method</label>
 
       <!-- Trigger -->
       <button id="pmTrigger"
-        class="w-full flex items-center justify-between rounded border border-gray-300 bg-white dark:bg-gray-800 dark:border-gray-900 px-3 py-2 text-sm"
+        class="w-full flex items-center justify-between rounded border border-gray-300 bg-white dark:bg-gray-900 dark:border-gray-900 px-3 py-2 text-sm"
         type="button" aria-haspopup="listbox" aria-expanded="false">
         <span id="pmSelected" class="text-gray-500 dark:text-white">-- Select Payment Method --</span>
         <svg class="h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -71,38 +71,38 @@
     </div>
 
     <!-- Step 3: Credit Card form -->
-    <form id="cardForm" class="hidden" novalidate>
+    <form id="cardForm" class="hidden py-4 px-4 dark:bg-gray-800 bg-gray-100" novalidate>
       <h2 class="text-green-600 font-semibold text-lg text-center mb-3 dark:text-green-200">Credit Card</h2>
 
-      <label class="block text-xs font-medium text-gray-600 mb-1">Cardholder Name <span class="text-red-500">*</span></label>
+      <label class="block text-xs font-medium text-gray-600 mb-1 dark:text-gray-300">Cardholder Name <span class="text-red-500">*</span></label>
       <input required name="holder"
-        class="w-full mb-3 dark:bg-gray-800 dark:border-gray-900 rounded border border-gray-300 px-3 py-2 text-sm"
+        class="w-full mb-3 dark:bg-gray-900 dark:border-gray-900 rounded border border-gray-300 px-3 py-2 text-sm"
         placeholder="John Doe" />
 
-      <label class="block text-xs font-medium text-gray-600 mb-1">Card Number <span class="text-red-500">*</span></label>
+      <label class="block text-xs font-medium text-gray-600 mb-1 dark:text-gray-300">Card Number <span class="text-red-500">*</span></label>
       <input required name="number" inputmode="numeric" pattern="^[0-9 ]{12,19}$"
-        class="w-full mb-3 dark:bg-gray-800 dark:border-gray-900 rounded border border-gray-300 px-3 py-2 text-sm"
+        class="w-full mb-3 dark:bg-gray-900 dark:border-gray-900 rounded border border-gray-300 px-3 py-2 text-sm"
         placeholder="0000 1111 2222 3333" />
 
       <div class="grid grid-cols-2 gap-3">
         <div>
-          <label class="block text-xs font-medium text-gray-600 mb-1">Expiry Date <span class="text-red-500">*</span></label>
+          <label class="block text-xs font-medium text-gray-600 mb-1 dark:text-gray-300">Expiry Date <span class="text-red-500">*</span></label>
           <input required name="exp" pattern="^(0[1-9]|1[0-2])\/\d{2}$"
-            class="w-full dark:bg-gray-800 dark:border-gray-900 rounded border border-gray-300 px-3 py-2 text-sm"
+            class="w-full dark:bg-gray-900 dark:border-gray-900 rounded border border-gray-300 px-3 py-2 text-sm"
             placeholder="01/26" />
         </div>
         <div>
-          <label class="block text-xs font-medium text-gray-600 mb-1">Cvv <span class="text-red-500">*</span></label>
+          <label class="block text-xs font-medium text-gray-600 mb-1 dark:text-gray-300">Cvv <span class="text-red-500">*</span></label>
           <input required name="cvv" inputmode="numeric" pattern="^\d{3,4}$"
-            class="w-full dark:bg-gray-800 dark:border-gray-900 rounded border border-gray-300 px-3 py-2 text-sm"
+            class="w-full dark:bg-gray-900 dark:border-gray-900 rounded border border-gray-300 px-3 py-2 text-sm"
             placeholder="123" />
         </div>
       </div>
 
-      <p class="mt-4 text-center text-[11px] text-gray-500">
+      <p class="mt-4 px-4 text-center text-[11px] text-gray-500 dark:text-gray-300">
         By proceeding, you accept our
-        <a href="#" class="text-green-600 underline">Terms of Use</a> and
-        <a href="#" class="text-green-600 underline">Privacy Policy</a>.
+        <a href="#" class="text-green-200 underline">Terms of Use</a> and
+        <a href="#" class="text-green-200 underline">Privacy Policy</a>.
       </p>
 
       <button id="cardBtn" disabled
@@ -112,19 +112,19 @@
     </form>
 
     <!-- Step 4: Bank Transfer -->
-    <form id="bankForm" class="hidden" novalidate>
-      <label class="block text-xs font-medium text-gray-600 mb-1">Transfer to:</label>
+    <form id="bankForm" class="hidden py-4 px-4 dark:bg-gray-800 bg-gray-100" novalidate>
+      <label class="block text-xs font-medium text-gray-600 mb-1 dark:text-gray-300">Transfer to:</label>
       <p class="text-green-700 text-sm font-medium dark:text-green-200">Afromark Swap Ltd.</p>
       <p class="text-green-700 text-sm mb-3 dark:text-green-200">Zenith bank · 0123456789</p>
 
-      <label class="block text-xs font-medium text-gray-600 mb-1">Account Name</label>
+      <label class="block text-xs font-medium text-gray-600 mb-1 dark:text-gray-300">Account Name</label>
       <input required name="acctName"
-        class="w-full mb-3 dark:bg-gray-800 dark:border-gray-900 rounded border border-gray-300 px-3 py-2 text-sm"
+        class="w-full mb-3 dark:bg-gray-900 dark:border-gray-900 rounded border border-gray-300 px-3 py-2 text-sm"
         placeholder="e.g. John Doe" />
 
-      <label class="block text-xs font-medium text-gray-600 mb-1">Payment Reference <span class="text-red-500">*</span></label>
+      <label class="block text-xs font-medium text-gray-600 mb-1 dark:text-gray-300">Payment Reference <span class="text-red-500">*</span></label>
       <input required name="ref"
-        class="w-full mb-4 dark:bg-gray-800 dark:border-gray-900 rounded border border-gray-300 px-3 py-2 text-sm"
+        class="w-full mb-4 dark:bg-gray-900 dark:border-gray-900 rounded border border-gray-300 px-3 py-2 text-sm"
         placeholder="Transfer ID or Screenshot ref." />
 
       <button id="bankBtn" disabled
@@ -134,19 +134,19 @@
     </form>
 
     <!-- Step 5: USSD Payment -->
-    <form id="ussdForm" class="hidden" novalidate>
+    <form id="ussdForm" class="hidden py-4 px-4 dark:bg-gray-800 bg-gray-100" novalidate>
       <p class="text-green-700 text-sm mb-3 dark:text-green-200">
         Dial this USSD Code: <span class="font-semibold">*</span>737*000*5000#
       </p>
 
-      <label class="block text-xs font-medium text-gray-600 mb-1">Phone Number Used</label>
+      <label class="block text-xs font-medium text-gray-600 mb-1 dark:text-gray-300">Phone Number Used</label>
       <input required name="phone"
-        class="w-full mb-3 dark:bg-gray-800 dark:border-gray-900 rounded border border-gray-300 px-3 py-2 text-sm"
+        class="w-full mb-3 dark:bg-gray-900 dark:border-gray-900 rounded border border-gray-300 px-3 py-2 text-sm"
         placeholder="080 xxxx xxxx" />
 
-      <label class="block text-xs font-medium text-gray-600 mb-1">Transaction Reference <span class="text-red-500">*</span></label>
+      <label class="block text-xs font-medium text-gray-600 mb-1 dark:text-gray-300">Transaction Reference <span class="text-red-500">*</span></label>
       <input required name="txref"
-        class="w-full mb-4 dark:bg-gray-800 dark:border-gray-900 rounded border border-gray-300 px-3 py-2 text-sm"
+        class="w-full mb-4 dark:bg-gray-900 dark:border-gray-900 rounded border border-gray-300 px-3 py-2 text-sm"
         placeholder="Transaction no." />
 
       <button id="ussdBtn" disabled

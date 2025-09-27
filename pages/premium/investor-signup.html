@@ -41,14 +41,14 @@
     <h2 id="formStepTitle" class="text-xl font-bold mb-4 dark:text-green-200 font-bold">Step 1 of 3</h2>
 
     <!-- Step 1: Business Info -->
-    <div id="step1" class="space-y-4 py-4 px-4 dark:bg-gray-800">
+    <div id="step1" class="space-y-4 py-4 px-4 bg-gray-100 dark:bg-gray-800">
       <h3 class="font-semibold mb-2">Business Info</h3>
       <label class="block dark:text-gray-300">
-        Full Name / Business Name *
-        <input type="text" id="name" class="w-full border dark:bg-gray-900 rounded-md dark:border-gray-900 p-2" placeholder="e.g. Name of Project" required />
+        <div class="px-4">Full Name / Business Name *</div>
+        <input type="text" id="name" class="w-full border dark:bg-gray-900 px-4 rounded-md dark:border-gray-900 p-2" placeholder="e.g. Name of Project" required />
       </label>
       <label class="block dark:text-gray-300">
-        Business Category *
+		  <div class="px-4">Business Category *</div>
         <select id="category" class="w-full border dark:bg-gray-900 rounded-md dark:border-gray-900 rounded p-2" required>
           <option value="">Select Category</option>
           <option>Organic Farming</option>
@@ -58,13 +58,13 @@
         </select>
       </label>
       <label class="block dark:text-gray-300">
-        Brief Bio *
-        <textarea id="bio" class="w-full border dark:bg-gray-900 rounded-md dark:border-gray-900 rounded p-2" placeholder="Tell us about your focus on the investment" required></textarea>
+		  <div class="px-4">Brief Bio *</div>
+        <textarea id="bio" class="w-full border dark:bg-gray-900 rounded-md dark:border-gray-900 rounded p-2 px-4" placeholder="Tell us about your focus on the investment" required></textarea>
       </label>
     </div>
 
     <!-- Step 2: Investment Info -->
-    <div id="step2" class="space-y-4 hidden py-4 px-4 dark:bg-gray-800">
+    <div id="step2" class="space-y-4 hidden py-4 px-4 dark:bg-gray-800 bg-gray-100">
       <h3 class="font-semibold mb-2 dark:text-green-200">Investment Info</h3>
       <label class="block dark:text-gray-400">
         Industry / Investment Focus *
@@ -81,7 +81,7 @@
     </div>
 
     <!-- Step 3: Uploads -->
-    <div id="step3" class="space-y-4 hidden py-4 px-4 dark:bg-gray-800">
+    <div id="step3" class="space-y-4 hidden py-4 px-4 dark:bg-gray-800 bg-gray-100">
       <h3 class="font-semibold mb-2">Uploads</h3>
       <label class="block dark:text-gray-400">
         Upload Profile Photo/Logo *
@@ -99,8 +99,8 @@
 
     <!-- Navigation -->
     <div class="flex justify-between mt-6">
-      <button id="prevBtn" class="bg-lightgray-500 border py-2 px-4 rounded hidden dark:text-green-200 dark:border-gray-900">Previous</button>
-      <button id="nextBtn" class="dark:text-green-200 text-white py-2 px-4 rounded ml-auto disabled:opacity-50">Next</button>
+      <button id="prevBtn" class="bg-lightgray-500 border py-2 px-4 rounded hidden dark:text-green-200 dark:border-gray-900 text-green-700">Previous</button>
+      <button id="nextBtn" class="dark:text-green-200 text-green-700 py-2 px-4 rounded ml-auto disabled:opacity-50">Next</button>
     </div>
   </div>
 

@@ -47,19 +47,19 @@
   <!-- Step Tabs -->
 	<div class="dark:bg-gray-800">
   <div class="w-[95%] mx-auto flex justify-between items-center dark:bg-gray-900">
-    <button @click="step=1" :class="step===1 ? 'text-green-700 font-bold' : ''" class="dark:text-green-200">Update Progress</button>
-    <button @click="step=2" :class="step===2 ? 'text-green-700 font-bold' : ''" class="dark:text-green-200">Timeline</button>
-    <button @click="step=3" :class="step===3 ? 'text-green-700 font-bold' : ''"  class="dark:text-green-200">Gallery</button>
-    <button @click="step=4" :class="step===4 ? 'text-green-700 font-bold' : ''" class="dark:text-green-200">Feedback</button>
+    <button @click="step=1" :class="step===1 ? 'text-green-700 dark:bg-gray-800 px-4 py-4 font-bold' : ''" class="dark:text-green-200 ">Update <br>Progress</button>
+    <button @click="step=2" :class="step===2 ? 'text-green-700 dark:bg-gray-800 px-4 py-4 font-bold' : ''" class="dark:text-green-200">Timeline</button>
+    <button @click="step=3" :class="step===3 ? 'text-green-700 dark:bg-gray-800 px-4 py-4 font-bold' : ''"  class="dark:text-green-200">Gallery</button>
+    <button @click="step=4" :class="step===4 ? 'text-green-700 dark:bg-gray-800 px-4 py-4 font-bold' : ''" class="dark:text-green-200">Feedback</button>
   </div></div>
 
   <!-- Content Area -->
   <div class="flex-1 p-4 space-y-4 overflow-y-auto dark:bg-gray-900">
 
     <!-- Step 1: Report Progress -->
-    <div x-show="step===1" class="space-y-3">
-      <label class="block text-sm dark:text-gray-500 ">Select Reason</label>
-      <select x-model="form.reason" class="w-full border dark:bg-gray-800 dark:border-gray-900 dark:text-white rounded p-2 text-sm" required>
+    <div x-show="step===1" class="space-y-3 py-4 px-4 dark:bg-gray-800">
+      <label class="block text-sm dark:text-gray-300 ">Select Reason</label>
+      <select x-model="form.reason" class="w-full border dark:bg-gray-900 dark:border-gray-900 dark:text-white rounded p-2 text-sm" required>
         <option value="">Select Category</option>
         <option value="arrangements">Arrangements</option>
         <option value="started">Started</option>
@@ -67,11 +67,11 @@
         <option value="completed">Completed</option>
       </select>
 
-      <label class="block text-sm dark:text-gray-500">Additional Details</label>
-      <textarea x-model="form.details" class="w-full border dark:bg-gray-800 dark:border-gray-900 dark:text-white  rounded p-2 text-sm" placeholder="Describe what happened..." required></textarea>
+      <label class="block text-sm dark:text-gray-300">Additional Details</label>
+      <textarea x-model="form.details" class="w-full border dark:bg-gray-900 dark:border-gray-900 dark:text-white  rounded p-2 text-sm" placeholder="Describe what happened..." required></textarea>
 
-      <label class="block text-sm dark:text-gray-500">Upload Image/Video/Voice</label>
-      <input type="file" @change="handleFileUpload($event, 'form')" class="block w-full text-sm dark:text-gray-500">
+      <label class="block text-sm dark:text-gray-300">Upload Image/Video/Voice</label>
+      <input type="file" @change="handleFileUpload($event, 'form')" class="block w-full text-sm dark:text-gray-500 px-4 py-4">
 
       <button @click="submitProgress" :disabled="!isStep1Complete"
         :class="isStep1Complete ? 'bg-yellow-600 text-white' : 'bg-orange-200 text-gray-500 cursor-not-allowed'"
