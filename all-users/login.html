@@ -12,15 +12,15 @@
 	<header class="bg-[#0E4D22] text-white flex flex-col items-center justify-center pt-8 relative">
   <!-- Logo -->
   <div class="intro-logo">
-    <img src="../img/logo/intro-logo.png" alt="Project Logo" class="w-20 h-20 object-contain" />
+    <img src="../img/logo/intro-logo.png" alt="Project Logo" class="w-16 object-contain" />
   </div>
 
   <!-- Caption below logo -->
-  <p class="mt-2 text-sm text-white">Your Logo Caption Here</p>
+ 
 
   <!-- Signup Title -->
   <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
-    <h1 class="text-center font-semibold dark:text-green-200">Login</h1>
+    
   </div>
 
   <!-- Curved bottom separator -->
@@ -32,20 +32,21 @@
 	
 	
   
-
+<h1 class="text-center font-semibold dark:text-green-200">Login</h1>
   <!-- Form -->
 	<div class="flex items-start justify-center bg-white-100">
-  <div class="space-y-6 py-4 px-4 mt-10">
+  <div class="space-y-6 py-4 px-4 mt-1">
   
 
       <form id="loginForm" class="space-y-4 dark:bg-gray-800 py-4 px-4 bg-gray-100">
         <!-- Username -->
+		  
         <div>
-			
+			<h3 class="font-semibold mb-2 mt-4 dark:text-gray-300">Email or Phone number</h3>
           <input
             type="text"
             id="username"
-            placeholder="Email or phone number"
+            placeholder="e.g. johndoe@gmail.com"
             class="w-full bg-white border dark:border-gray-900 dark:bg-gray-900 text-sm rounded-md px-3 py-2 focus:outline-none"
             required
           />
@@ -55,7 +56,9 @@
         </div>
 
         <!-- Password -->
+		 
         <div>
+			 <h3 class="font-semibold mb-2 dark:text-gray-300">Password</h3>
    <input
             type="password"
             id="password"
@@ -91,9 +94,9 @@
       <!-- Divider -->
 	  <div class="px-4">
       <div class="flex items-center my-4 mt-4">
-        <hr class="flex-grow border-gray-300" />
-        <span class="mx-2 text-gray-500 text-sm">Or use</span>
-        <hr class="flex-grow border-gray-300" />
+        <hr class="flex-grow border-gray-700" />
+        <span class="mx-2 text-gray-500 dark:text-gray-300 text-sm">Or use</span>
+        <hr class="flex-grow border-gray-700" />
       </div>
 
       <!-- Voice + Biometrics -->
@@ -124,9 +127,9 @@
       
 
       <!-- Signup -->
-      <p class="text-center text-sm text-gray-500 mt-4 dark:text-white">
+      <p class="text-center text-sm text-gray-500 mt-6 dark:text-white">
         Don’t have an account?
-        <a href="signup.html" class="text-orange-500 font-semibold dark:text-gold-900">Signup</a>
+        <a href="signup.html" class="text-orange-500 font-semibold dark:text-orange-400">Signup</a>
       </p>
 		  </div>
     </div>
