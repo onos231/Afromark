@@ -45,11 +45,11 @@
       <h3 class="font-semibold mb-2">Business Info</h3>
       <label class="block dark:text-gray-300">
         <div class="px-4">Full Name / Business Name *</div>
-        <input type="text" id="name" class="w-full border dark:bg-gray-900 px-4 rounded-md dark:border-gray-900 p-2" placeholder="e.g. Name of Project" required />
+        <input type="text" id="name" class="w-full border dark:bg-gray-900 dark:text-whitedark:text-white px-4 rounded-md dark:border-gray-900 p-2" placeholder="e.g. Name of Project" required />
       </label>
       <label class="block dark:text-gray-300">
 		  <div class="px-4">Business Category *</div>
-        <select id="category" class="w-full border dark:bg-gray-900 rounded-md dark:border-gray-900 rounded p-2" required>
+        <select id="category" class="w-full border dark:bg-gray-900 rounded-md dark:text-white dark:border-gray-900 rounded p-2" required>
           <option value="">Select Category</option>
           <option>Organic Farming</option>
           <option>Food Processing</option>
@@ -59,47 +59,47 @@
       </label>
       <label class="block dark:text-gray-300">
 		  <div class="px-4">Brief Bio *</div>
-        <textarea id="bio" class="w-full border dark:bg-gray-900 rounded-md dark:border-gray-900 rounded p-2 px-4" placeholder="Tell us about your focus on the investment" required></textarea>
+        <textarea id="bio" class="w-full border dark:bg-gray-900 dark:text-white rounded-md dark:border-gray-900 rounded p-2 px-4" placeholder="Tell us about your focus on the investment" required></textarea>
       </label>
     </div>
 
     <!-- Step 2: Investment Info -->
     <div id="step2" class="space-y-4 hidden py-4 px-4 dark:bg-gray-800 bg-gray-100">
       <h3 class="font-semibold mb-2 dark:text-green-200">Investment Info</h3>
-      <label class="block dark:text-gray-400">
+      <label class="block dark:text-gray-300">
         Industry / Investment Focus *
-        <input type="text" id="focus" class="w-full border dark:bg-gray-900 rounded-md dark:border-gray-900  rounded p-2" placeholder="Type of investment"  required />
+        <input type="text" id="focus" class="w-full border dark:bg-gray-900 dark:text-white rounded-md dark:border-gray-900  rounded p-2" placeholder="Type of investment"  required />
       </label>
-      <label class="block dark:text-gray-400">
+      <label class="block dark:text-gray-300">
         Investment Capacity (₦) *
-        <input type="number" id="capacity" class="w-full border dark:bg-gray-900 rounded-md dark:border-gray-900 rounded p-2" placeholder="e.g. ₦2,000,000" required />
+        <input type="number" id="capacity" class="w-full border dark:bg-gray-900 dark:text-white rounded-md dark:border-gray-900 rounded p-2" placeholder="e.g. ₦2,000,000" required />
       </label>
-      <label class="block dark:text-gray-400">
+      <label class="block dark:text-gray-300">
         Years of Experience *
-        <input type="text" id="experience" class="w-full border dark:bg-gray-900 rounded-md dark:border-gray-900 rounded p-2" placeholder="e.g. 10 years" required />
+        <input type="text" id="experience" class="w-full border dark:bg-gray-900 dark:text-white rounded-md dark:border-gray-900 rounded p-2" placeholder="e.g. 10 years" required />
       </label>
     </div>
 
     <!-- Step 3: Uploads -->
     <div id="step3" class="space-y-4 hidden py-4 px-4 dark:bg-gray-800 bg-gray-100">
       <h3 class="font-semibold mb-2">Uploads</h3>
-      <label class="block dark:text-gray-400">
+      <label class="block dark:text-gray-300">
         Upload Profile Photo/Logo *
         <input type="file" id="photo" accept="image/*" class="w-full border dark:bg-gray-800 dark:text-white rounded-md dark:border-gray-900 rounded p-4" required />
       </label>
-      <label class="block dark:text-gray-400">
+      <label class="block dark:text-gray-300">
         Upload ID Document (Optional)
         <input type="file" id="idDoc" accept="image/*,.pdf" class="w-full border dark:bg-gray-800 dark:text-white rounded-md dark:border-gray-900 rounded p-4" />
       </label>
       <div class="flex flex-col space-y-2 mt-6">
         <button id="previewBtn" class="bg-blue-500 text-white py-2 px-4 rounded disabled:opacity-50" disabled>Preview</button>
-        <button id="submitBtn" class="bg-orange-500 text-white py-2 px-4 dark:bg-yellow-600 rounded-md dark:border-gray-900 rounded disabled:opacity-50" disabled>Submit</button>
+        <button id="submitBtn" class="bg-orange-500 text-white py-2 px-4 dark:bg-orange-400 rounded-md dark:border-gray-900 rounded disabled:opacity-50" disabled>Submit</button>
       </div>
     </div>
 
     <!-- Navigation -->
     <div class="flex justify-between mt-6">
-      <button id="prevBtn" class="bg-lightgray-500 border py-2 px-4 rounded hidden dark:text-green-200 dark:border-gray-900 text-green-700">Previous</button>
+      <button id="prevBtn" class="bg-lightgray-500 border py-2 px-4 rounded hidden dark:text-green-200 dark:border-gray-900 text-green-700">Prev</button>
       <button id="nextBtn" class="dark:text-green-200 text-green-700 py-2 px-4 rounded ml-auto disabled:opacity-50">Next</button>
     </div>
   </div>
