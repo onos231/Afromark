@@ -30,12 +30,12 @@
 
       <form id="loginForm" class="dark:bg-gray-800 py-6 px-4 bg-gray-100">
 		  
-		   <button onclick="window.location.href='../index.html'" class="w-full flex-1 bg-yellow-500 py-2 rounded-md flex items-center justify-center gap-2 hover:bg-yellow-600">
+		   <button onclick="window.location.href='../index.html'" class="w-full flex-1 border border-yellow-500 py-2 rounded-md flex dark:text-gray-300 items-center justify-center gap-2 hover:border-yellow-600">
          Create an account
         </button>
         <!-- Username -->
 		  <!-- Terms -->
-        <p class="text-sm text-center text-gray-500 dark:text-white px-6 mt-2 pt-0">
+        <p class="text-sm text-center text-gray-500 dark:text-white px-6 mt-2 font-bold opacity-70">
           By proceeding, you accept our
           <a href="#" class="text-blue-500 dark:text-blue-300">Terms of Use</a> and
           <a href="#" class="text-blue-500 dark:text-blue-300">Privacy Policy</a>
@@ -49,7 +49,7 @@
             type="text"
             id="username"
             placeholder="e.g. johndoe@gmail.com"
-            class="w-full bg-white border dark:border-gray-900 dark:bg-gray-900 text-sm rounded-md px-3 py-2 focus:outline-none"
+            class="w-full bg-white border dark:border-gray-900 dark:bg-gray-900 dark:text-gray-300 text-sm rounded-md px-3 py-2 focus:outline-none"
             required
           />
           <p id="usernameError" class="text-red-500 text-sm hidden mt-1 ">
@@ -65,7 +65,7 @@
             type="password"
             id="password"
             placeholder="Password"
-            class="w-full bg-white border dark:border-gray-900 dark:bg-gray-900 rounded-md px-3 py-2 focus:outline-none text-sm"
+            class="w-full bg-white border dark:border-gray-900 dark:bg-gray-900 dark:text-gray-300 rounded-md px-3 py-2 focus:outline-none text-sm"
             required
           />
           <p id="passwordError" class="text-red-500 text-sm hidden mt-1">
@@ -78,7 +78,7 @@
         <!-- Login Button -->
         <button
           type="" onclick="window.location.href='../index.html'"
-          class="w-full bg-yellow-500 font-semibold py-2 rounded-md hover:bg-yellow-600"
+          class="w-full bg-yellow-500 py-2 dark:text-white rounded-md hover:bg-yellow-600"
         >
           Login
         </button>
@@ -99,13 +99,13 @@
           <img src="../img/social-icon/voice.png" class="w-6 h-6 object-contain">Voice Login
         </button>
 		  <button onclick="window.location.href='../index.html'" class="w-full flex-1 border dark:border-gray-900  bg-white dark:bg-gray-900 dark:text-gray-300 py-2 rounded-md flex items-center justify-center gap-2">
-          <img src="../img/social-icon/facebook.png" class="w-6 h-6 object-contain" >Sign in with Facebook
+			  <img src="../img/social-icon/facebook.png" class="w-5 h-5 object-contain" ><span class="text-sm">Sign in with Facebook</span>
         </button>
 		  <button onclick="window.location.href='../index.html'" class="w-full flex-1 border dark:border-gray-900 bg-white dark:bg-gray-900 dark:text-gray-300 py-2 rounded-md flex items-center justify-center gap-2">
-          <img src="../img/social-icon/google.png" class="w-7 h-7 object-contain">Sign in with Google
+          <img src="../img/social-icon/google.png" class="w-7 h-7 object-contain"><span class="text-sm">Sign in with Google</span>
         </button>
 		  <button onclick="window.location.href='../index.html'" class="w-full flex-1 border bg-white dark:border-gray-900 dark:bg-gray-900 dark:text-gray-300 py-2 rounded-md flex items-center justify-center gap-2">
-          <img src="../img/social-icon/tiktok.png" class="w-6 h-6 object-contain">Sign in with Tiktok
+			  <img src="../img/social-icon/tiktok.png" class="w-5 h-5 object-contain"><span class="text-sm">Sign in with Tiktok</span>
         </button>
 		  </div>
       </form>

@@ -71,10 +71,10 @@
       <textarea x-model="form.details" class="w-full border dark:bg-gray-900 dark:border-gray-900 dark:text-white  rounded p-2 text-sm" placeholder="Describe what happened..." required></textarea>
 
       <label class="block text-sm dark:text-gray-300">Upload Image/Video/Voice</label>
-      <input type="file" @change="handleFileUpload($event, 'form')" class="block w-full text-sm dark:text-gray-500 px-4 py-4">
+      <input type="file" @change="handleFileUpload($event, 'form')" class="block w-full text-sm dark:text-gray-300 px-4 py-4">
 
       <button @click="submitProgress" :disabled="!isStep1Complete"
-        :class="isStep1Complete ? 'bg-yellow-600 text-white' : 'bg-orange-200 text-gray-500 cursor-not-allowed'"
+        :class="isStep1Complete ? 'bg-yellow-500 dark:text-white' : 'bg-yellow-500 text-gray-500 cursor-not-allowed'"
         class="w-full py-2 rounded text-sm">
         Submit Report
       </button>
@@ -82,7 +82,7 @@
 
     <!-- Step 2: Timeline -->
     <div x-show="step===2" class="space-y-4">
-      <h3 class="font-semibold text-gray-700 dark:text-gray-500">Timeline</h3>
+      <h3 class="font-semibold text-gray-700 dark:text-gray-300">Timeline</h3>
       <template x-for="item in timeline" :key="item.id">
         <div class="border-b pb-2">
           <p class="font-bold capitalize" x-text="item.reason"></p>
@@ -102,11 +102,11 @@
 
     <!-- Step 3: Gallery -->
     <div x-show="step===3" class="space-y-4">
-      <label class="block text-sm dark:text-gray-500">Name of Upload</label>
-      <input type="text" x-model="gallery.name" class="w-full border dark:bg-gray-800 dark:border-gray-900 rounded p-2 text-sm" placeholder="e.g. Midpoint photo">
+      <label class="block text-sm dark:text-gray-300">Name of Upload</label>
+      <input type="text" x-model="gallery.name" class="w-full border dark:bg-gray-800 dark:text-gray-300 dark:border-gray-900 rounded p-2 text-sm" placeholder="e.g. Midpoint photo">
 
-      <label class="block text-sm dark:text-gray-500">Upload Image/Voice/Video</label>
-      <input type="file" @change="handleFileUpload($event, 'gallery')" class="block w-full text-sm dark:text-gray-500 dark:bg-gray-800 p-4">
+      <label class="block text-sm dark:text-gray-300">Upload Image/Voice/Video</label>
+      <input type="file" @change="handleFileUpload($event, 'gallery')" class="block w-full text-sm dark:text-gray-300 dark:bg-gray-800 p-4">
 
       <!-- Preview -->
       <template x-if="gallery.file && gallery.fileType.startsWith('image')">
@@ -122,10 +122,10 @@
 
     <!-- Step 4: Feedback -->
     <div x-show="step===4" class="space-y-3">
-      <h3 class="font-semibold dark:text-gray-500">Investor Feedback</h3>
+      <h3 class="font-semibold dark:text-gray-300">Investor Feedback</h3>
       <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1">
-        <li class="dark:text-white"><span class="font-bold dark:text-green-200">AgriFund:</span> Impressive setup at midpoint. Ensure timely weeding.</li>
-        <li class="dark:text-white"><span class="font-bold dark:text-green-200">Community Crop Farming:</span> Add final budget usage breakdown in next update.</li>
+        <li class="dark:text-white"><span class="font-bold dark:text-gray-300">AgriFund:</span> Impressive setup at midpoint. Ensure timely weeding.</li>
+        <li class="dark:text-white"><span class="font-bold dark:text-gray-300">Community Crop Farming:</span> Add final budget usage breakdown in next update.</li>
       </ul>
     </div>
 
