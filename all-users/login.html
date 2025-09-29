@@ -9,19 +9,26 @@
   
 </head>
 <body class="bg-gray-100 text-gray-800 dark:bg-gray-800 transition-colors duration-300" id="app">
-	<header class="flex items-center justify-between px-4 py-3 bg-white shadow">
-    <img src="../img/logo/app-logo.png" alt="SwapIt Logo" class="h-8">
-    <a href="settings.html"><div class="max-w-md mx-auto text-center relative">
-    Login
-  </div></a>
-  </header>
-	
-	
-	
+	<header class="flex items-center justify-between px-4 py-2 shadow-md bg-white">
+  <!-- Logo + Brand -->
+  <img src="../img/logo/app-logo.png" alt="SwapIt Logo" class="h-8">
 
-	
-	
-  
+  <!-- Right side: Search + Login -->
+  <div class="flex items-center space-x-3">
+    <!-- Search icon (your image) -->
+    <button onclick="window.location.href='visitor-search.html'" class="py-2 px-2">
+      <img src="../img/search/search.svg" 
+           alt="Search" 
+           class="h-6 w-6 object-contain" />
+    </button>
+
+    <!-- Login text -->
+    <a href="./login.html"
+       class="text-gray-600 font-medium hover:text-green-700 dark:hover:text-green-400">
+      Login
+    </a>
+  </div>
+</header>
 
   <!-- Form -->
 	<div class="flex items-start justify-center bg-white-100">
@@ -29,7 +36,7 @@
   <div class="space-y-6 py-">
   <header class="bg-[#0E4D22] text-white px-4">
     <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
-       <button onclick="window.location.href='signup.html'" class="w-full flex-1 border bg-white dark:bg-gray-900 dark:border-gray-500 py-2 rounded-md flex text-gray-900 dark:text-gray-300 items-center justify-center gap-2 hover:border-yellow-600 mt-2">
+       <button onclick="window.location.href='signup.html'" class="w-full flex-1 border bg-white dark:bg-gray-900 dark:border-gray-900 py-2 rounded-md flex text-gray-900 dark:text-gray-300 items-center justify-center gap-2 hover:border-yellow-600 mt-2">
          Create an account
         </button>
         <!-- Username -->
@@ -51,28 +58,16 @@
 		  
 		   
 		  <div class="space-y-3 mt-4">
-        <div>
-			
-          <input
-            type="text"
-            id="username"
-            placeholder="e.g. johndoe@gmail.com"
-            class="w-full bg-white border dark:border-gray-900 dark:bg-gray-900 dark:text-gray-300 text-sm rounded-md px-3 py-2 focus:outline-none"
-            required
-          />
-          <p id="usernameError" class="text-red-500 text-sm hidden mt-1 ">
-            Please enter a valid email or phone number.
-          </p>
-        </div>
+      
 
         <!-- Password -->
 		 
         <div>
 			
    <input
-            type="password"
+            type="text"
             id="password"
-            placeholder="Password"
+            placeholder="Enter phone number"
             class="w-full bg-white border dark:border-gray-900 dark:bg-gray-900 dark:text-gray-300 rounded-md px-3 py-2 focus:outline-none text-sm"
             required
           />
