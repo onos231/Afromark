@@ -60,7 +60,7 @@ function renderResults(data) {
     card.innerHTML = `
       <div class="flex gap-3 dark:bg-gray-800 dark:text-white">
         <img 
-    src="../../img/free-swap/onions.jpg" 
+    src="../img/free-swap/onions.jpg" 
     alt="Food Item" 
     class="w-24 h-24 object-cover rounded-lg mb-3"
   />
@@ -69,7 +69,7 @@ function renderResults(data) {
             ${item.verified ? '<span class="text-green-600 text-xs">✔</span>' : ""}
           </p>
           <p class="mt-2"><span class="font-bold opacity-50">Wants:</span> ${item.want}</p>
-          <p class="text-xs text-gray-500 dark:text-blue-300 mt-2 opacity-50">📍 ${item.location} · 🗓️ ${item.date}</p>
+          <p class="text-xs text-gray-900 dark:text-blue-300 mt-2 opacity-50">📍 ${item.location} · 🗓️ ${item.date}</p>
 
         </div>
       </div>
