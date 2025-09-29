@@ -13,8 +13,8 @@
 
  <!-- Header -->
 	<header class="flex items-center justify-between px-4 py-3 bg-white shadow">
-    <img src="../../img/logo/app-logo.png" alt="SwapIt Logo" class="h-8">
-    <a href="../../all-users/settings.html"><div class="w-9 h-9 bg-gray-200 rounded-full flex items-center justify-center">
+    <img src="../../img/logo/app-logo.png" alt="SwapIt Logo" class="h-6">
+    <a href="../../all-users/settings.html"><div class="w-7 h-7 bg-gray-200 rounded-full flex items-center justify-center">
       <img src="../../img/profile/profile.svg" class="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 15c2.485 0 4.797.758 6.879 2.052M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
       
@@ -27,22 +27,34 @@
 
 	
 <!-- Search Bar -->
-<div class="relative w-full p-3 mb-1 px-3 py-1 mt-2">
+	<div class="relative w-full p-3 mb-1 px-3 py-1 mt-2 flex items-center space-x-3">
 
-  <input 
-    id="searchInput" 
-    type="text" 
-    placeholder="Food name (e.g., Yam, Beans, Rice)" 
-    class="w-full border rounded-full px-4 pr-10 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-gray-800 dark:border-gray-900"
-  >
-  <!-- Search Icon inside field -->
-  <button 
-    id="searchBtn" 
-    class="absolute right-6 top-1/2 -translate-y-1/2 text-gray-500 hover:text-green-600"
-  >
-    <img src="../../img/search/search.svg" alt="No results" class="mx-auto h-6 opacity-70">
-  </button>
-	</div>
+  <!-- Back button (icon only) -->
+  <a href="login.html" 
+     class="flex items-center text-gray-600 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400">
+    <img src="../../img/nav/back-arrow-1.png" alt="SwapIt Logo" class="h-3">
+  </a>
+
+  <!-- Search input -->
+  <div class="relative flex-1">
+    <input 
+      id="searchInput" 
+      type="text" 
+      placeholder="Food name (e.g., Yam, Beans, Rice)" 
+      class="w-full border rounded-full px-4 pr-10 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-gray-800 dark:border-gray-900"
+    >
+    <!-- Search Icon inside field -->
+    <button 
+      id="searchBtn" 
+      class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-green-600"
+    >
+      <img src="../../img/search/search.svg" alt="Search" class="mx-auto h-6 opacity-70">
+    </button>
+  </div>
+</div>
+
+	
+
 
   <!-- Suggestions -->
   <ul id="suggestions" class="hidden mx-4 mt-1 border rounded bg-green-50 shadow text-sm dark:bg-gray-700 dark:text-white dark:border-gray-900"></ul>
