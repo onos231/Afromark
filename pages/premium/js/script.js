@@ -75,7 +75,7 @@ function renderResults(data) {
       </div>
 <p class="font-Kodchasan text-xl text-gray-700 dark:text-white mt-2 py-2 px-2"><span class="font-bold mt-2">Message:</span> ${item.message}</p>
       <div class="flex justify-between mt-3">
-        <button class="cancelBtn hidden border border-red-300 text-red-300 font-light px-3 py-1 rounded text-sm dark:border-gray-500">Cancel</button>
+        <button class="cancelBtn hidden border border-red-300 text-red-500 dark:text-red-300 font-light px-3 py-1 rounded text-sm dark:border-gray-500">Cancel</button>
         <button class="sendBtn bg-green-600 text-white px-3 py-1 rounded text-sm ml-auto">Send Request</button>
       </div>
     `;
