@@ -22,9 +22,9 @@
   </header>
 	<!-- Hero Section -->
 	<header class="bg-[#0E4D22] text-white">
-    <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
+    <div class="max-w-md mx-auto relative px-4 pt-6 pb-1">
       <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
-      <h1 class="text-center font-semibold mt-4">Explore exclusive deals, connect with top investors, and access high-value opportunities</h1>
+      <h1 class="text-center font-semibold mt-2">Explore exclusive deals, connect with top investors, and access high-value opportunities</h1>
       
     </div>
       <!-- Close button only (right) -->
@@ -86,9 +86,9 @@
       <template x-for="item in timeline" :key="item.id">
         <div class="border-b pb-2">
           <p class="font-bold capitalize" x-text="item.reason"></p>
-          <p class="text-sm text-gray-600" x-text="item.details"></p>
+          <p class="text-sm text-gray-600 dark:text-gray-300" x-text="item.details"></p>
           <template x-if="item.file && item.fileType.startsWith('image')">
-            <img :src="item.preview" alt="uploaded image" class="mt-2 rounded-lg w-full h-40 object-cover">
+            <img :src="item.preview" alt="uploaded image" class="mt-2 rounded-lg w-full h-40 object-contain">
           </template>
           <template x-if="item.file && item.fileType.startsWith('video')">
             <video controls class="mt-2 w-full rounded-lg h-40" :src="item.preview"></video>
