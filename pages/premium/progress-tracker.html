@@ -74,7 +74,7 @@
       <input type="file" @change="handleFileUpload($event, 'form')" class="block w-full text-sm dark:text-gray-300 px-4 py-4">
 
       <button @click="submitProgress" :disabled="!isStep1Complete"
-        :class="isStep1Complete ? 'bg-yellow-500 dark:text-white' : 'bg-yellow-500 text-gray-500 cursor-not-allowed'"
+        :class="isStep1Complete ? 'bg-yellow-500 dark:text-white' : 'bg-yellow-500 dark:text-white cursor-not-allowed'"
         class="w-full py-2 rounded text-sm">
         Submit Report
       </button>
@@ -88,7 +88,7 @@
           <p class="font-bold capitalize" x-text="item.reason"></p>
           <p class="text-sm text-gray-600 dark:text-gray-300" x-text="item.details"></p>
           <template x-if="item.file && item.fileType.startsWith('image')">
-            <img :src="item.preview" alt="uploaded image" class="mt-2 rounded-lg w-full h-40 object-contain">
+            <img :src="item.preview" alt="uploaded image" class="mt-2 rounded-lg w-full h-80 object-contain">
           </template>
           <template x-if="item.file && item.fileType.startsWith('video')">
             <video controls class="mt-2 w-full rounded-lg h-40" :src="item.preview"></video>
