@@ -60,7 +60,7 @@ function renderResults(data) {
     card.innerHTML = `
       <div class="flex gap-3 dark:bg-gray-800 dark:text-white">
         <img 
-    src="../img/free-swap/onions.jpg" 
+    src="../../img/free-swap/onions.jpg" 
     alt="Food Item" 
     class="w-24 h-24 object-cover rounded-lg mb-3"
   />
@@ -69,16 +69,18 @@ function renderResults(data) {
             ${item.verified ? '<span class="text-green-600 text-xs">✔</span>' : ""}
           </p>
           <p class="mt-2"><span class="font-bold opacity-50">Wants:</span> ${item.want}</p>
-          <p class="text-xs text-gray-900 dark:text-blue-300 mt-2 opacity-50">📍 ${item.location} · 🗓️ ${item.date}</p>
+          <p class="text-xs text-blue-500 dark:text-blue-500 mt-2 opacity-70">📍 ${item.location} · 🗓️ ${item.date}</p>
 
         </div>
       </div>
-<p class="font-Kodchasan text-xl text-gray-700 dark:text-white mt-2 py-2 px-2"><span class="font-bold mt-2">Message:</span> ${item.message}</p>
+<p class="font-Kodchasan text-xl dark:text-white mt-2 py-2 px-2"><span class="font-bold text-blue-500 mt-2">Message: </span>${item.message}</p>
       <div class="flex justify-between mt-3">
-        <button class="cancelBtn hidden border border-red-300 text-red-300 font-light px-3 py-1 rounded text-sm dark:border-gray-500">Cancel</button>
-        <button onclick="window.location.href='login.html'" class="sendBtn bg-green-600 text-white px-3 py-1 rounded text-sm ml-auto">Send Request</button>
+        <button class="cancelBtn hidden border border-gray-300 text-red-500 font-light px-3 py-1 rounded text-sm dark:border-gray-500">Cancel</button>
+        <button onclick="window.location.href='login.html'"  class="sendBtn bg-green-600 text-white px-3 py-1 rounded text-sm ml-auto">Send Request</button>
       </div>
     `;
+
+
 
     const sendBtn = card.querySelector(".sendBtn");
     const cancelBtn = card.querySelector(".cancelBtn");

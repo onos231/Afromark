@@ -67,11 +67,11 @@ function renderResults(data) {
             ${item.verified ? '<span class="text-green-600 text-xs ml-2 dark:text-green-700">✔</span>' : ""}
           </p>
           <p class="mt-2"><span class="font-bold mt-2 text-green-700">Donor:</span> ${item.Donor}</p>
-          <p class="text-xs text-gray-700 opacity-50 mt-2">📍 ${item.location} · 🗓️ ${item.date}</p>
+          <p class="text-xs text-blue-500 opacity-70 mt-2">📍 ${item.location} · 🗓️ ${item.date}</p>
           
         </div>
       </div>
-<p class="font-Kodchasan text-xl text-gray-700 dark:text-white mt-2"><span class="font-bold mt-2">Message:</span> ${item.message}</p>
+<p class="font-Kodchasan text-xl dark:text-white mt-2"><span class="font-bold mt-2 text-blue-500">Message:</span> ${item.message}</p>
 
       <div class="flex justify-between mt-3">
 
