@@ -22,6 +22,11 @@ module.exports = {
 			Kodchasan: ['Kodchasan', 'Regular'],
 			Kodchasan: ['Kodchasan', 'SemiBoldItalic'],
       },
+		boxShadow: {
+    'soft': '0 2px 5px rgba(0, 0, 0, 0.15)',
+    'deep': '0 8px 20px rgba(0, 0, 0, 0.25)',
+	'glow': "0 0 15px rgba(255,255,255,0.15)", // for dark mode glow
+  },
 	},
   },
   plugins: [],
