@@ -60,9 +60,9 @@ function renderResults(data) {
     card.innerHTML = `
       <div class="flex gap-3 dark:bg-gray-800 dark:text-white">
         <img 
-    src="../../img/free-swap/onions.jpg" 
+    src="../img/free-swap/onions.jpg" 
     alt="Food Item" 
-    class="w-24 h-24 object-cover rounded-lg mb-3"
+    class="w-20 h-20 object-cover rounded-lg mb-3"
   />
         <div class="flex-grow">
           <p class="mt-2"><span class="font-bold opacity-50">Offers:</span> ${item.offer} 
@@ -86,14 +86,14 @@ function renderResults(data) {
     const cancelBtn = card.querySelector(".cancelBtn");
 
     sendBtn.addEventListener("click", () => {
-      card.classList.add("bg-green-50");
+      card.classList.add("bg-green-50", "dark:bg-green-900");
       sendBtn.textContent = "Sent";
       sendBtn.disabled = true;
       cancelBtn.classList.remove("hidden");
     });
 
     cancelBtn.addEventListener("click", () => {
-      card.classList.remove("bg-green-50");
+      card.classList.remove("bg-green-50", "dark:bg-green-900");
       sendBtn.textContent = "Send Request";
       sendBtn.disabled = false;
       cancelBtn.classList.add("hidden");

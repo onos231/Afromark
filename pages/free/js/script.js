@@ -84,14 +84,14 @@ function renderResults(data) {
     const cancelBtn = card.querySelector(".cancelBtn");
 
     sendBtn.addEventListener("click", () => {
-      card.classList.add("bg-green-50");
+      card.classList.add("bg-green-50", "dark:bg-green-900");
       sendBtn.textContent = "Sent";
       sendBtn.disabled = true;
       cancelBtn.classList.remove("hidden");
     });
 
     cancelBtn.addEventListener("click", () => {
-      card.classList.remove("bg-green-50");
+      card.classList.remove("bg-green-50", "dark:bg-green-900");
       sendBtn.textContent = "Send Request";
       sendBtn.disabled = false;
       cancelBtn.classList.add("hidden");
