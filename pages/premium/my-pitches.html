@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwapIt - Home</title>
+
+	<link href="../../dist/output.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-white dark:bg-gray-900 text-black dark:text-white font-sans">
+
+ <!-- Header -->
+	<header class="flex items-center justify-between px-4 py-3 bg-white shadow">
+    <img src="/img/logo/app-logo.png" alt="SwapIt Logo" class="h-8">
+    <a href="/all-users/profile.html"><div class="w-9 h-9 bg-gray-200 rounded-full flex items-center justify-center">
+      <img src="/img/profile/profile.svg" class="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 15c2.485 0 4.797.758 6.879 2.052M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      
+		</div></a>
+  </header>
+<header class="bg-[#0E4D22] text-white">
+    <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
+      <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
+      <h1 class="text-center font-semibold mt-4">Track the status of your pitches, view feedback, and connect with interested investors.</h1>
+      
+    </div>
+      <!-- Close button only (right) -->
+      <button
+        type="button"
+        aria-label="Close"
+        class="absolute left-3 top-5 w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20 transition"
+        onclick="window.location.href='premium-search.html'">
+        <img src="../../img/nav/back-arrow-1.png" alt="SwapIt Logo" class="h-3">
+      </button>
+    </div>
+	  
+    <!-- curved white top like in mock -->
+    <div class="max-w-md mx-auto bg-white dark:bg-gray-900 rounded-t-3xl h-6"></div>
+  </header>
+	
+
+
+  <!-- Tabs -->
+  <div class="bg-white border-b flex justify-center dark:bg-gray-900 dark:border-gray-900">
+    <button class="w-1/2 py-3 text-green-700 font-semibold border-b bg-gray-100 dark:border-gray-900 dark:bg-gray-800 dark:text-green-200">My Pitches</button>
+    <button onclick="window.location.href='investment.html'" class="w-1/2 py-3 text-gray-500 dark:text-gray-400">Investment</button>
+  </div>
+
+  <!-- Info -->
+  <div class="p-4 text-center text-gray-600 text-sm">
+    
+  </div>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-4 pb-24 space-y-6 mb-10">
+
+    <!-- Pending Swap -->
+    <div class="bg-gray-100 shadow rounded-lg p-4 dark:bg-gray-800">
+      <div class="flex items-start space-x-3">
+        <img src="../../img/investor-market/farmers1.jpg" alt="Item" class="w-16 h-16 rounded object-cover">
+        <div class="flex-1">
+          <p class="font-semibold opacity-50">Community Rice Farm</p>
+          <p class="text-sm text-gray-900 dark:text-white mt-2"><span class="opacity-70">Focus:</span><span class="font-medium">Crop farming</span></p>
+          <p class="text-sm text-gray-900 dark:text-white mt-2"><span class="opacity-70">Investor:</span><span class="font-medium">GreenHarvest Carpital</span></p>
+          <p class="text-sm mt-2">Status: <span class="text-yellow-500 font-medium">⏳ Pending...</span></p>
+          <p class="text-xs text-gray-900 mt-2 dark:text-blue-300 opacity-70">📍 Akure, Ondo State | 📅 Today</p>
+         
+        </div>
+      </div>
+		<p class="text-xl dark:text-white mt-2 px-4 py-4"><span class="font-bold text-blue-500 font-Kodchasan">Admin:</span> Awaiting investor review</p>
+		
+		<!--<div class="max-w-2xl mx-auto p-4">
+  <div class="grid grid-cols-2 gap-4">
+    
+    <!-- File 1 -->
+    <!--<a href="file1-preview.html" 
+       class="flex flex-col items-center justify-center space-y-2 p-4 border rounded-lg shadow hover:bg-gray-50 dark:hover:bg-gray-800 transition">
+      <!-- File Icon -->
+      <!--<div class="w-12 h-12 flex items-center justify-center bg-blue-100 text-blue-600 rounded-md text-2xl">
+        📄
+      </div>
+      <!-- File Info -->
+      <!--<div class="text-center">
+        <p class="text-sm font-semibold text-gray-700 dark:text-white">File One.pdf</p>
+        <p class="text-xs text-gray-500">Click to preview</p>
+      </div>
+    </a>
+
+    <!-- File 2 -->
+   <!-- <a href="file2-preview.html" 
+       class="flex flex-col items-center justify-center space-y-2 p-4 border rounded-lg shadow hover:bg-gray-50 dark:hover:bg-gray-800 transition">
+      <!-- File Icon -->
+     <!-- <div class="w-12 h-12 flex items-center justify-center bg-green-100 text-green-600 rounded-md text-2xl">
+        📄
+      </div>
+      <!-- File Info -->
+      <!--<div class="text-center">
+        <p class="text-sm font-semibold text-gray-700 dark:text-white">File Two.docx</p>
+        <p class="text-xs text-gray-500">Click to preview</p>
+      </div>
+    </a>
+
+  </div>
+</div>-->
+
+
+		<!-- Two-file row (exact: icon left, text right) -->
+
+		
+		<div class="grid grid-cols-2 gap-2 px-4">
+		<a href="file1-preview.html" target="_blank"
+   class="flex items-center space-x-2 py-2  dark:bg-gray-800 shadow-sm hover:shadow-md transition">
+  <!-- icon -->
+  <div class="w-10 h-10 flex items-center justify-center bg-transparent m-0 p-0 border-0">
+    <img src="../../img/investor-market/file.svg" alt="PDF" class="w-6 h-6 object-contain m-0 p-0 border-0" />
+  </div>
+
+  <!-- text -->
+  <div class="flex-1 min-w-0 m-0 p-0 border-0">
+    <p class="text-sm font-semibold text-gray-500 dark:text-white truncate m-0 p-0">My Pitch.pdf</p>
+    
+  </div>
+</a>
+		
+		<a href="file1-preview.html" target="_blank"
+   class="flex items-center space-x-2 py-2 dark:bg-gray-800 shadow-sm hover:shadow-md transition">
+  <!-- icon -->
+  <div class="w-10 h-10 flex items-center justify-center bg-transparent m-0 p-0 border-0">
+    <img src="../../img/investor-market/image.svg" alt="PDF" class="w-6 h-6 object-contain m-0 p-0 border-0" />
+  </div>
+
+  <!-- text -->
+  <div class="flex-1 min-w-0 m-0 p-0 border-0">
+    <p class="text-sm font-semibold text-gray-500 dark:text-white truncate m-0 p-0">Image.pdf</p>
+    
+  </div>
+</a>
+		</div>
+
+		
+		
+      <button class="mt-3 w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700">
+        Awaiting Approval
+      </button>
+		
+		 <button class="mt-3 w-full border border-gray-300 bg-white text-red-500 dark:text-red-300 text- py-2 rounded-lg hover:bg-red-50 dark:bg-gray-800 dark:border-gray-500 font-light">
+        Cancel Request
+      </button>
+    </div>
+
+    <!-- Accepted Swap -->
+	  
+	  <div class="bg-gray-100 shadow rounded-lg p-4 dark:bg-gray-800">
+      <div class="flex items-start space-x-3">
+        <img src="../../img/investor-market/farmers1.jpg" alt="Item" class="w-16 h-16 rounded object-cover">
+        <div class="flex-1">
+          <p class="font-semibold opacity-50">Community Rice Farm</p>
+          <p class="text-sm text-gray-900 dark:text-white mt-2"><span class="opacity-70">Focus:</span><span class="font-medium">Crop farming</span></p>
+          <p class="text-sm text-gray-900 dark:text-white mt-2"><span class="opacity-70">Investor:</span><span class="font-medium">GreenHarvest Carpital</span></p>
+          <p class="text-sm mt-2">Status: <span class="text-green-600 font-medium">✔ Accepted</span></p>
+          <p class="text-xs text-gray-900 mt-2 dark:text-blue-300 opacity-70">📍 Akure, Ondo State | 📅 Today</p>
+         
+        </div>
+      </div>
+		<p class="text-xl dark:text-white mt-2 px-4 py-4"><span class="font-bold text-blue-500 font-Kodchasan">Admin:</span> You can now chat directly with the investor</p>
+
+		
+		<div class="grid grid-cols-2 gap-2 px-4">
+		<a href="file1-preview.html" target="_blank"
+   class="flex items-center space-x-2 py-2  dark:bg-gray-800 shadow-sm hover:shadow-md transition">
+  <!-- icon -->
+  <div class="w-10 h-10 flex items-center justify-center bg-transparent m-0 p-0 border-0">
+    <img src="../../img/investor-market/file.svg" alt="PDF" class="w-6 h-6 object-contain m-0 p-0 border-0" />
+  </div>
+
+  <!-- text -->
+  <div class="flex-1 min-w-0 m-0 p-0 border-0">
+    <p class="text-sm font-semibold text-gray-500 dark:text-white truncate m-0 p-0">My Pitch.pdf</p>
+    
+  </div>
+</a>
+		
+		<a href="file1-preview.html" target="_blank"
+   class="flex items-center space-x-2 py-2 dark:bg-gray-800 shadow-sm hover:shadow-md transition">
+  <!-- icon -->
+  <div class="w-10 h-10 flex items-center justify-center bg-transparent m-0 p-0 border-0">
+    <img src="../../img/investor-market/image.svg" alt="PDF" class="w-6 h-6 object-contain m-0 p-0 border-0" />
+  </div>
+
+  <!-- text -->
+  <div class="flex-1 min-w-0 m-0 p-0 border-0">
+    <p class="text-sm font-semibold text-gray-500 dark:text-white truncate m-0 p-0">Image.pdf</p>
+    
+  </div>
+</a>
+		</div>
+
+		
+		
+      <button class="mt-3 w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700">
+        Awaiting Approval
+      </button>
+		
+		 <button class="mt-3 w-full border border-gray-300 bg-white text-red-500 dark:text-red-300 text- py-2 rounded-lg hover:bg-red-50 dark:bg-gray-800 dark:border-gray-500 font-light">
+        Cancel Request
+      </button>
+    </div>
+	  
+	  
+	  <div class="bg-gray-100 shadow rounded-lg p-4 dark:bg-gray-800">
+      <div class="flex items-start space-x-3">
+        <img src="../../img/investor-market/farmers1.jpg" alt="Item" class="w-16 h-16 rounded object-cover">
+        <div class="flex-1">
+          <p class="font-semibold opacity-50">Community Rice Farm</p>
+          <p class="text-sm text-gray-900 dark:text-white mt-2"><span class="opacity-70">Focus:</span><span class="font-medium">Crop farming</span></p>
+          <p class="text-sm text-gray-900 dark:text-white mt-2"><span class="opacity-70">Investor:</span><span class="font-medium">GreenHarvest Carpital</span></p>
+          <p class="text-sm mt-2 text-red-500">Status: <span class="text-gray-600 font-medium"> Info requested</span></p>
+          <p class="text-xs text-gray-900 mt-2 dark:text-blue-300 opacity-70">📍 Akure, Ondo State | 📅 Today</p>
+         
+        </div>
+      </div>
+		<p class="text-xl dark:text-white mt-2 px-4 py-4"><span class="font-bold text-blue-500 font-Kodchasan">Admin:</span> Please provide a detailed breakdown of how the ₦750,000 will be allocated, especially for equipment and labor costs.</p>
+
+		
+		<div class="grid grid-cols-2 gap-2 px-4">
+		<a href="file1-preview.html" target="_blank"
+   class="flex items-center space-x-2 py-2  dark:bg-gray-800 shadow-sm hover:shadow-md transition">
+  <!-- icon -->
+  <div class="w-10 h-10 flex items-center justify-center bg-transparent m-0 p-0 border-0">
+    <img src="../../img/investor-market/file.svg" alt="PDF" class="w-6 h-6 object-contain m-0 p-0 border-0" />
+  </div>
+
+  <!-- text -->
+  <div class="flex-1 min-w-0 m-0 p-0 border-0">
+    <p class="text-sm font-semibold text-gray-500 dark:text-white truncate m-0 p-0">My Pitch.pdf</p>
+    
+  </div>
+</a>
+		
+		<a href="file1-preview.html" target="_blank"
+   class="flex items-center space-x-2 py-2 dark:bg-gray-800 shadow-sm hover:shadow-md transition">
+  <!-- icon -->
+  <div class="w-10 h-10 flex items-center justify-center bg-transparent m-0 p-0 border-0">
+    <img src="../../img/investor-market/image.svg" alt="PDF" class="w-6 h-6 object-contain m-0 p-0 border-0" />
+  </div>
+
+  <!-- text -->
+  <div class="flex-1 min-w-0 m-0 p-0 border-0">
+    <p class="text-sm font-semibold text-gray-500 dark:text-white truncate m-0 p-0">Image.pdf</p>
+    
+  </div>
+</a>
+		</div>
+
+		
+		
+      <button class="mt-3 w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700">
+        Edit Pitch and Resubmit
+      </button>
+		
+		 <button class="mt-3 w-full border border-gray-300 bg-white text-red-500 dark:text-red-300 text- py-2 rounded-lg hover:bg-red-50 dark:bg-gray-800 dark:border-gray-500 font-light">
+        Cancel Request
+      </button>
+    </div>
+	  
+	  <!-- Declined Swap -->
+	  <div class="bg-gray-100 shadow rounded-lg p-4 dark:bg-gray-800">
+      <div class="flex items-start space-x-3">
+        <img src="../../img/investor-market/farmers1.jpg" alt="Item" class="w-16 h-16 rounded object-cover">
+        <div class="flex-1">
+          <p class="font-semibold opacity-50">Community Rice Farm</p>
+          <p class="text-sm text-gray-900 dark:text-white mt-2"><span class="opacity-70">Focus:</span><span class="font-medium">Crop farming</span></p>
+          <p class="text-sm text-gray-900 dark:text-white mt-2"><span class="opacity-70">Investor:</span><span class="font-medium">GreenHarvest Carpital</span></p>
+         <p class="text-sm mt-2">
+  <span class="opacity-70">Status:</span>
+  <span class="text-red-500 dark:text-red-300 font-medium">✘ Pitch Declined</span>
+</p>
+          <p class="text-xs text-gray-900 mt-2 dark:text-blue-300 opacity-70">📍 Akure, Ondo State | 📅 Today</p>
+         
+        </div>
+      </div>
+		<p class="text-xl dark:text-white mt-2 px-4 py-4"><span class="font-bold text-blue-500 font-Kodchasan">Admin:</span> Please provide a detailed breakdown of how the ₦750,000 will be allocated, especially for equipment and labor costs.</p>
+
+		
+		<div class="grid grid-cols-2 gap-2 px-4">
+		<a href="file1-preview.html" target="_blank"
+   class="flex items-center space-x-2 py-2  dark:bg-gray-800 shadow-sm hover:shadow-md transition">
+  <!-- icon -->
+  <div class="w-10 h-10 flex items-center justify-center bg-transparent m-0 p-0 border-0">
+    <img src="../../img/investor-market/file.svg" alt="PDF" class="w-6 h-6 object-contain m-0 p-0 border-0" />
+  </div>
+
+  <!-- text -->
+  <div class="flex-1 min-w-0 m-0 p-0 border-0">
+    <p class="text-sm font-semibold text-gray-500 dark:text-white truncate m-0 p-0">My Pitch.pdf</p>
+    
+  </div>
+</a>
+		
+		<a href="file1-preview.html" target="_blank"
+   class="flex items-center space-x-2 py-2 dark:bg-gray-800 shadow-sm hover:shadow-md transition">
+  <!-- icon -->
+  <div class="w-10 h-10 flex items-center justify-center bg-transparent m-0 p-0 border-0">
+    <img src="../../img/investor-market/image.svg" alt="PDF" class="w-6 h-6 object-contain m-0 p-0 border-0" />
+  </div>
+
+  <!-- text -->
+  <div class="flex-1 min-w-0 m-0 p-0 border-0">
+    <p class="text-sm font-semibold text-gray-500 dark:text-white truncate m-0 p-0">Image.pdf</p>
+    
+  </div>
+</a>
+		</div>
+
+		
+		
+      <button class="mt-3 w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-green-700">
+        Browse other Investment
+      </button>
+		
+		 <button class="mt-3 w-full border border-gray-300 bg-white text-red-500 dark:text-red-300 text- py-2 rounded-lg hover:bg-red-50 dark:bg-gray-800 dark:border-gray-500 font-light">
+        Delete
+      </button>
+    </div>
+	  
+    
+
+  </main>
+
+  
+
+	
+	
+	<!-- Slide-up Menu -->
+  <div id="accountMenu" class="fixed bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-lg transform translate-y-full transition-transform duration-300 dark:bg-gray-800">
+    <div class="flex justify-between items-center px-4 py-3 border-b border-gray-200 dark:border-gray-700">
+      <h2 class="text-lg font-semibold">Account</h2>
+      <button id="closeMenu" class="text-gray-400 hover:text-gray-600 text-xl">&times;</button>
+    </div>
+    <ul class="p-4 space-y-4 text-gray-700">
+      <a href="/all-users/settings.html"><li class="flex items-center space-x-2 mb-4"><span><img src="/img/account/settings.svg" alt="" class="h-4"></span><span class="dark:text-green-200">Settings</span></li></a>
+		<a href="/all-users/faqs.html"><li class="flex items-center space-x-2 mb-4"><span><img src="/img/account/faqs.svg" alt="" class="h-4"></span><span class="dark:text-green-200">FAQs</span></li></a>
+		  <a href="/all-users/terms-condition.html"><li class="flex items-center space-x-2 mb-4"><span><img src="/img/account/privacy.svg" alt="" class="h-4"></span><span class="dark:text-green-200">Privacy Policy</span></li></a>
+		  <a href="/all-users/how-it-works.html"><li class="flex items-center space-x-2 mb-4"><span><img src="/img/account/how-it-works.svg" alt="" class="h-4"></span><span class="dark:text-green-200">How it works</span></li></a>
+		  <a href="/all-users/contact-us.html"><li class="flex items-center space-x-2 mb-4"><span><img src="/img/account/contact.svg" alt="" class="h-4"></span><span class="dark:text-green-200">Contact Us</span></li></a>
+		  <a href="/all-users/about-us.html"><li class="flex items-center space-x-2 mb-4"><span><img src="/img/account/about-us.svg" alt="" class="h-3"></span><span class="dark:text-green-200">About Us</span></li></a>
+    </ul>
+  </div>
+
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script src="../../js/script.js"></script>
+</body>
+</html>
