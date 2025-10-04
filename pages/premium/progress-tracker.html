@@ -110,7 +110,7 @@
 
       <!-- Preview -->
       <template x-if="gallery.file && gallery.fileType.startsWith('image')">
-        <img :src="gallery.preview" class="mt-2 w-full rounded-lg h-40 object-cover">
+        <img :src="gallery.preview" class="mt-2 w-full rounded-lg h-80 object-cover">
       </template>
       <template x-if="gallery.file && gallery.fileType.startsWith('video')">
         <video controls class="mt-2 w-full rounded-lg h-40" :src="gallery.preview"></video>
