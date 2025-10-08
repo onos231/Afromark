@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Forte';
-  src: url('../fonts/Forte.ttf') format('truetype');
+  src: url('../fonts/Forte-cursive.ttf') format('truetype');
 }
 
 @font-face {
@@ -21,7 +21,25 @@
   font-weight: 700;
 }
 
+@font-face {
+  font-family: "Delmon";
+  src: url("../fonts/Delmon-Delicate.ttf") format("truetype");
+  font-weight: 700;
+}
 
+@font-face {
+  font-family: "Rosemartin";
+  src: url("../fonts/Rosemartin.otf") 
+  format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Quantum";
+  src: url("../fonts/Quantum-Bold.otf") 
+  format("truetype");
+  font-weight: 700;
+}
 
 
 @tailwind base;

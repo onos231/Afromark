@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Forte';
 
-  src: url('../fonts/Forte.ttf') format('truetype');
+  src: url('../fonts/Forte-cursive.ttf') format('truetype');
 }
 
 @font-face {
@@ -24,6 +24,32 @@
   font-family: "Kodchasan";
 
   src: url("../fonts/Kodchasan-SemiBoldItalic.ttf") format("truetype");
+
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Delmon";
+
+  src: url("../fonts/Delmon-Delicate.ttf") format("truetype");
+
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Rosemartin";
+
+  src: url("../fonts/Rosemartin.otf") 
+  format("truetype");
+
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Quantum";
+
+  src: url("../fonts/Quantum-Bold.otf") 
+  format("truetype");
 
   font-weight: 700;
 }
@@ -848,6 +874,10 @@ video {
   height: 2rem;
 }
 
+.h-80 {
+  height: 20rem;
+}
+
 .h-9 {
   height: 2.25rem;
 }
@@ -862,10 +892,6 @@ video {
 
 .h-px {
   height: 1px;
-}
-
-.h-80 {
-  height: 20rem;
 }
 
 .max-h-80 {
@@ -914,6 +940,10 @@ video {
 
 .w-4 {
   width: 1rem;
+}
+
+.w-40 {
+  width: 10rem;
 }
 
 .w-5 {
@@ -1060,6 +1090,10 @@ video {
 
 .justify-around {
   justify-content: space-around;
+}
+
+.gap-1 {
+  gap: 0.25rem;
 }
 
 .gap-2 {
@@ -16089,10 +16123,6 @@ video {
 
 .disabled\:opacity-50:disabled {
   opacity: 0.5;
-}
-
-.dark\:border:is(.dark *) {
-  border-width: 1px;
 }
 
 .dark\:border-blue-100:is(.dark *) {

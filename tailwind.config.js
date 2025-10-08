@@ -21,6 +21,9 @@ module.exports = {
         montserrat: ['Montserrat', 'sans-serif'],
 			Kodchasan: ['Kodchasan', 'Regular'],
 			Kodchasan: ['Kodchasan', 'SemiBoldItalic'],
+			Delmon: ['Delmon', 'Delicate'],
+			Quantum: ['Quantum', 'Bold'],
+			Rosemartin: ['Rosemartin', 'Rosemartin'],
       },
 		boxShadow: {
     'soft': '0 2px 5px rgba(0, 0, 0, 0.15)',
