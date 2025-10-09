@@ -41,6 +41,11 @@
   font-weight: 700;
 }
 
+select {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
 
 @tailwind base;
 @tailwind components;
