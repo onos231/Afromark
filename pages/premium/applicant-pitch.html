@@ -57,8 +57,39 @@
 		  <label class="block text-green-700 font-medium mb-1 dark:text-gray-400">Name of Project *</label>
         <input id="projectTitle" type="text" placeholder="Project Title" required
           class="w-full border rounded px-3 py-2 mb-4 outline-none dark:bg-gray-900 dark:border-gray-900"/>
-        
-		  <label class="block text-green-700 font-medium mb-1 dark:text-gray-400 ">Project Category *</label>
+        <div>
+		<label for="donationType" class="block font-medium text-gray-700 text-green-700 dark:text-green-200">Project Category *</label>
+		
+		<div class="relative">
+			 
+  <select 
+    id="projectCategory" 
+    name="projectCategory" 
+    required
+    class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm 
+           bg-white dark:bg-gray-900 dark:border-gray-900 focus:ring-green-600 focus:border-green-600 
+           text-gray-700 dark:text-gray-300 appearance-none leading-tight h-[42px]"
+  >
+    <option value="">Select Category</option>
+          <option>Organic Farming</option>
+          <option>Food Processing</option>
+          <option>Distribution</option>
+          <option>Others</option>
+  </select>
+
+  <!-- Custom dropdown arrow -->
+  <svg 
+    class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none" 
+    xmlns="http://www.w3.org/2000/svg" 
+    fill="none" 
+    viewBox="0 0 24 24" 
+    stroke="currentColor"
+  >
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+  </svg>
+</div>
+</div>
+		  <!--<label class="block text-green-700 font-medium mb-1 dark:text-gray-400 ">Project Category *</label>
         <select id="projectCategory" required
           class="w-full border rounded px-3 py-2 mb-4 outline-none dark:bg-gray-900 dark:border-gray-900 appearance-none leading-tight">
           <option value="">Select Category</option>
@@ -66,7 +97,7 @@
           <option>Food Processing</option>
           <option>Distribution</option>
           <option>Others</option>
-        </select>
+        </select>-->
 <label class="block text-green-700 font-medium mb-1 dark:text-gray-400 ">Funds Needed *</label>
         <input id="fundsNeeded" type="number" placeholder="Funds Needed (₦)" required
           class="w-full border rounded px-3 py-2 mb-4 outline-none dark:bg-gray-900 dark:border-gray-900"/>

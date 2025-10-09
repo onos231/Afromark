@@ -51,7 +51,11 @@
     </p>
 
     <form id="donateForm" class="space-y-4 py-4 px-4 dark:bg-gray-800 bg-gray-50">
+		<div>
+		<label for="donationType" class="block text-sm font-medium text-gray-700 text-green-700 dark:text-green-200">Type of Donation <span class="text-red-500">*</span></label>
+		
 		<div class="relative">
+			 
   <select 
     id="donationType" 
     name="donationType" 
@@ -78,9 +82,9 @@
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
   </svg>
 </div>
-
+</div>
       <!-- Type of Donation -->
-      <div>
+      <!--<div>
         <label for="donationType" class="block text-sm font-medium text-gray-700 text-green-700 dark:text-green-200">Type of Donation <span class="text-red-500">*</span></label>
         <select id="donationType" name="donationType" required
           class="mt-1 block w-full border dark:border-gray-900 rounded-lg px-2 py-2 focus:ring-green-600 focus:border-green-600 text-sm bg-white dark:bg-gray-900 border-gray-300 appearance-none leading-tight">
@@ -90,7 +94,7 @@
           <option value="Fertilizers">Fertilizers</option>
           <option value="Farm Support">Farm Support</option>
         </select>
-      </div>
+      </div>-->
 
       <!-- Location -->
       <div>
@@ -131,7 +135,7 @@
   form.addEventListener("input", () => {
     if (form.checkValidity()) {
       submitBtn.disabled = false;
-      submitBtn.style.backgroundColor = "rgba(255, 152, 0, 1)";
+      submitBtn.style.backgroundColor = "rgba(236, 178, 62, 1)";
     } else {
       submitBtn.disabled = true;
       submitBtn.style.backgroundColor = "rgba(255, 152, 0, 0.3)";

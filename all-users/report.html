@@ -45,8 +45,41 @@
     </p>
 
     <form id="donateForm" class="space-y-4 py-4 px-4 dark:bg-gray-800 shadow-deep">
+		
+		<div>
+		<label for="donationType" class="block text-sm font-medium  text-green-700 dark:text-green-200">Business Category *</label>
+		
+		<div class="relative">
+			 
+  <select 
+    id="category" 
+    name="category" 
+    required
+    class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm 
+           bg-white dark:bg-gray-900 dark:border-gray-900 focus:ring-green-600 focus:border-green-600 
+           text-gray-700 dark:text-gray-300 appearance-none leading-tight h-[42px]"
+  >
+   <option value="">Select Type</option>
+          <option value="Food Item">User didn't show up</option>
+          <option value="Farm Equipment">Wrong item</option>
+          <option value="Fertilizers">Damaged item</option>
+          <option value="Farm Support">Suspected scam</option>
+  </select>
+
+  <!-- Custom dropdown arrow -->
+  <svg 
+    class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none" 
+    xmlns="http://www.w3.org/2000/svg" 
+    fill="none" 
+    viewBox="0 0 24 24" 
+    stroke="currentColor"
+  >
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+  </svg>
+</div>
+</div>
       <!-- Type of Donation -->
-      <div>
+      <!--<div>
         <label for="donationType" class="block text-sm font-medium text-gray-700 text-green-700 dark:text-gray-400">Select Reasons <span class="text-red-500">*</span></label>
         <select id="donationType" name="donationType" required
           class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2 text-base
@@ -58,7 +91,7 @@
           <option value="Fertilizers">Damaged item</option>
           <option value="Farm Support">Suspected scam</option>
         </select>
-      </div>
+      </div>-->
 
 
       <!-- Description -->
@@ -78,7 +111,7 @@
 
       <!-- Submit Button -->
       <button type="submit" id="submitBtn" disabled
-        class="w-full mt-10 font-medium py-2 rounded-lg transition bg-orange-100"
+        class="w-full mt-10 font-medium py-2 rounded-lg transition bg-yellow-200"
         >
         Submit Donation
       </button>
@@ -95,7 +128,7 @@
   form.addEventListener("input", () => {
     if (form.checkValidity()) {
       submitBtn.disabled = false;
-      submitBtn.style.backgroundColor = "rgba(255, 152, 0, 1)";
+      submitBtn.style.backgroundColor = "rgba(236, 178, 62, 1)";
     } else {
       submitBtn.disabled = true;
       submitBtn.style.backgroundColor = "rgba(255, 152, 0, 0.3)";
