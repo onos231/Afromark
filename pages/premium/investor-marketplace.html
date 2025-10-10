@@ -24,12 +24,8 @@
   </header>
 
   <header class="bg-[#0E4D22] text-white">
-    <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
-      <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
-      <h1 class="text-center font-semibold">Find the right investor for your idea. Use the filter to narrow your results. Connect with funders that match your project focus.</h1>
-      
-    </div>
-      <!-- Close button only (right) -->
+	  <div class="max-w-md mx-auto relative pb-2">
+    
       <button
         type="button"
         aria-label="Close"
@@ -37,6 +33,16 @@
         onclick="window.location.href='premium.html'">
         ✕
       </button>
+    </div>
+    <div class="max-w-md mx-auto relative px-4 pt-6">
+      <div class="max-w-md mx-auto relative text-sm px-4 pt-6 pb-5">
+      <h1 class="text-center font-semibold">Find the right investor for your idea. Use the filter to narrow your results. Connect with funders that match your project focus.</h1>
+      
+    </div>
+      <!-- Close button only (right) -->
+ 
+	
+		
     </div>
 	  
     <!-- curved white top like in mock -->
@@ -46,12 +52,71 @@
     <!-- Nav row -->
     <div class="bg-white rounded-t-2xl -mt-6 p-1 dark:bg-gray-900">
       <div class="flex justify-between items-center mb-3 px-16 py-2">
-        <a href="my-pitches.html"><div class="text-sm text-green-700 font-medium dark:text-green-200 font-Kodchasan">Dashboard</div></a>
-        <button onclick="window.location.href='investor-signup.html'" class="shadow-deep text-sm px-3 py-1 rounded text-green-700 dark:bg-gray-700 dark:text-green-200 font-Kodchasan">+ Be an Investor</button>
+        <a href="my-pitches.html"><div class="text-sm text-green-700 font-bold dark:text-green-200 font-Kodchasan">Dashboard</div></a>
+        <button onclick="window.location.href='investor-signup.html'" class="shadow-soft text-sm font-bold px-3 py-1 rounded text-green-700 dark:bg-gray-700 dark:text-green-200 font-Kodchasan">+ Be an Investor</button>
       </div>
 
       <!-- Filters -->
-      <div class="flex gap-2 mx-auto px-4">
+		
+		<div class="flex gap-2 mx-auto px-4">
+	<div class="relative w-full">
+			 
+  <select 
+    id="categoryFilter" 
+    name="category" 
+    required
+    class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm 
+           bg-white dark:bg-gray-900 dark:border-gray-900 focus:ring-green-600 focus:border-green-600 
+           text-gray-700 dark:text-gray-300 appearance-none leading-tight h-[42px]"
+  >
+   <option value="">All Category</option>
+          <option value="food">Foodstock Trade</option>
+          <option value="crop">Crop Farming</option>
+          <option value="animal">Animal Farming</option>
+  </select>
+
+  <!-- Custom dropdown arrow -->
+  <svg 
+    class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none" 
+    xmlns="http://www.w3.org/2000/svg" 
+    fill="none" 
+    viewBox="0 0 24 24" 
+    stroke="currentColor"
+  >
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+  </svg>
+</div>
+	
+	<div class="relative w-full">
+			 
+  <select 
+    id="sortFilter" 
+    name="category" 
+    required
+    class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm 
+           bg-white dark:bg-gray-900 dark:border-gray-900 focus:ring-green-600 focus:border-green-600 
+           text-gray-700 dark:text-gray-300 appearance-none leading-tight h-[42px]"
+  >
+   <option value="">Sort by</option>
+          <option value="lowest">Lowest amount</option>
+          <option value="highest">Highest amount</option>
+          <option value="recent">Most recent</option>
+  </select>
+
+  <!-- Custom dropdown arrow -->
+  <svg 
+    class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none" 
+    xmlns="http://www.w3.org/2000/svg" 
+    fill="none" 
+    viewBox="0 0 24 24" 
+    stroke="currentColor"
+  >
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+  </svg>
+</div>
+	</div>
+		
+      <!--<div class="flex gap-2 mx-auto px-4">
         <select id="categoryFilter" class="w-1/2 border rounded px-3 py-2 text-sm bg-white dark:bg-gray-800 dark:border-gray-900">
           <option value="">All Category</option>
           <option value="food">Foodstock Trade</option>
@@ -65,7 +130,7 @@
           <option value="highest">Highest amount</option>
           <option value="recent">Most recent</option>
         </select>
-      </div>
+      </div>-->
 
       <!-- Cards container -->
       <div id="cardsWrap" class="space-y-4 pb-32">

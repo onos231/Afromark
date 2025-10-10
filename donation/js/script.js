@@ -56,7 +56,7 @@ function renderResults(data) {
     card.className = "dark:bg-gray-800 dark:text-white rounded-lg p-3 mb-3 transition shadow-deep dark:shadow-none";
 
     card.innerHTML = `
-      <div class="flex gap-3 dark:text-white">
+      <div class="flex gap-3 dark:text-white py-4 px-4">
         <img 
     src="../img/rice/bags-of-rice.jpg" 
     alt="Food Item" 
