@@ -33,195 +33,81 @@
     <div class="max-w-md mx-auto bg-gray-50 dark:bg-gray-900 rounded-t-3xl h-6"></div>
   </header>
 	
-<div class="p-4">
-  <form id="postForm" class="space-y-6 px-4 py-4 dark:bg-gray-800">
 
-  <!-- Item Offer -->
-  <div>
-    <label class="block text-green-700 dark:text-gray-400 font-medium mb-1">
-      What item do you have to offer? *
-    </label>
-    <input id="offerItem" type="text" placeholder="e.g., 2 bags of rice" required
-      class="w-full border dark:bg-gray-900 dark:border-gray-900 rounded-lg p-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-600">
-  </div>
+ 
 
-  <!-- Item in Return -->
-  <div>
-    <label class="block text-green-700 font-medium mb-1 dark:text-gray-400">
-      What item do you want in return? *
-    </label>
-    <input id="wantItem" type="text" placeholder="e.g., tubers of yam" required
-      class="w-full border dark:bg-gray-900 border-gray-300 dark:border-gray-900 rounded-lg p-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-600">
-  </div>
+  <!-- Main Content -->
+  <main class="flex-1 dark:bg-gray-900 p-4 pb-24">
+    <p class="text-center text-gray-700 font-medium mb-6 dark:text-green-200  text-green-700 dark:border-gray-900 font-Kodchasan">
+      Post a Swap
+    </p>
 
-  <!-- Location -->
-  <div>
-    <label class="block text-green-700 font-medium mb-1 dark:text-gray-400">Your Location *</label>
-    <input id="location" type="text" placeholder="e.g., Begger, Lagos" required
-      class="w-full border dark:bg-gray-900 dark:border-gray-900 rounded-lg p-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-600">
-  </div>
+    <form id="postForm" class="space-y-6  px-4 py-4 dark:bg-gray-800">
 
-  <!-- Description -->
-  <div>
-    <label class="block text-green-700 font-medium mb-1 dark:text-gray-400">Description *</label>
-    <textarea id="description" rows="3" placeholder="Describe the quantity, size, packaging or any specific requirement..."
-      required class="w-full border dark:bg-gray-900 dark:border-gray-900 rounded-lg p-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-600"></textarea>
-  </div>
+      <!-- Item Offer -->
+      <div>
+        <label class="block text-green-700 dark:text-gray-400 font-medium mb-1">What item do you have to offer? *</label>
+        <input type="text" placeholder="e.g., 2 bags of rice" required class="w-full border dark:bg-gray-900 dark:border-gray-900 rounded-lg p-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-600">
+        <button type="button" class="w-full mt-2 border border-gray-300 dark:border-gray-500 rounded-lg p-2 text-blue-500 dark:text-blue-300 flex items-center justify-center">
+          <span class="mr-1"><img src="../../img/signup/voice.png" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"></span> Speak Item Name
+        </button>
+      </div>
 
-  <!-- File Upload -->
-  <div>
-    <label class="block text-green-700 font-medium mb-1 dark:text-gray-400">Upload Item or Take Photo *</label>
-    <input id="itemImage" type="file" accept="image/*" required
-      class="w-full border rounded-lg p-2 text-sm dark:border-gray-900">
+      <!-- Item in Return -->
+      <div>
+        <label class="block text-green-700 font-medium mb-1 dark:text-gray-400">What item do you want in return? *</label>
+        <input type="text" placeholder="e.g., tubers of yam" required class="w-full border dark:bg-gray-900 border-gray-300 dark:border-gray-900 rounded-lg p-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-600">
+        <button type="button" class="w-full mt-2 border dark:border-gray-500 rounded-lg p-2 text-blue-500 dark:text-blue-300 flex items-center justify-center">
+          <span class="mr-1"><img src="../../img/signup/voice.png" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"></span> Quantity/Weight
+        </button>
+      </div>
 
-    <!-- Image preview box -->
-    <div id="imagePreviewBox" class="hidden mt-3 w-24 h-24 border rounded-lg overflow-hidden cursor-pointer">
-      <img id="imagePreview" src="" alt="Preview" class="w-full h-full object-cover">
-    </div>
-  </div>
+      <!-- Location -->
+      <div>
+        <label class="block text-green-700 font-medium mb-1 dark:text-gray-400">Your Location *</label>
+        <input type="text" placeholder="e.g., Begger, Lagos" required class="w-full border dark:bg-gray-900  dark:border-gray-900 rounded-lg p-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-600">
+        <button type="button" class="w-full mt-2 border border-gray-300 dark:border-gray-500 rounded-lg p-2 text-blue-500 dark:text-blue-300 flex items-center justify-center">
+          <span class="mr-1"><img src="../../img/signup/voice.png" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"></span> Speak Location
+        </button>
+      </div>
 
-  <!-- Buttons -->
-  <div class="flex flex-col gap-3 pt-4">
-    <button type="button" id="previewBtn"
-      class="w-full bg-green-600 text-white py-2 rounded-lg opacity-50 cursor-not-allowed">
-      Preview Post
-    </button>
+      <!-- Description -->
+      <div>
+        <label class="block text-green-700 font-medium mb-1 dark:text-gray-400">Description *</label>
+        <textarea placeholder="Describe the quantity, size, packaging or any specific requirement..." rows="3" required class="w-full border dark:bg-gray-900  dark:border-gray-900 rounded-lg p-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-600"></textarea>
+        <button type="button" class="w-full mt-2 border border-gray-300 dark:border-gray-500 rounded-lg p-2 text-blue-500 dark:text-blue-300 flex items-center justify-center">
+          <span class="mr-1"><img src="../../img/signup/voice.png" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"></span> Speak Description
+        </button>
+      </div>
 
-    <button type="submit" id="submitBtn" disabled
+      <!-- File Upload -->
+      <div>
+        <label class="block text-green-700 font-medium mb-1 dark:text-gray-400">Upload Item or Take Photo *</label>
+        <input type="file" required class="w-full border rounded-lg p-2 text-sm dark:border-gray-900">
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" id="submitBtn" disabled
       class="w-full bg-yellow-500 font-medium py-2 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-yellow-600 transition">
       Submit Post
     </button>
+    </form>
+  </main>
 
-    <button type="button" id="clearAllBtn"
-      class="w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition">
-      Clear All
-    </button>
-  </div>
-</form>
+  <script>
+  const form = document.getElementById("postForm");
+  const submitBtn = document.getElementById("submitBtn");
 
-<!-- 🔹 Popup image modal -->
-<div id="imageModal"
-  class="hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
-  <div class="relative bg-white rounded-lg shadow-lg max-w-sm w-full p-4">
-    <button id="closeModal" class="absolute top-2 right-2 text-gray-600 hover:text-black">✖</button>
-    <img id="modalImage" src="" class="w-full h-auto rounded-md">
-  </div>
-</div>
-
-<script>
-const fields = ["offerItem", "wantItem", "location", "description"];
-const imageInput = document.getElementById("itemImage");
-const previewBox = document.getElementById("imagePreviewBox");
-const previewImg = document.getElementById("imagePreview");
-const modal = document.getElementById("imageModal");
-const modalImg = document.getElementById("modalImage");
-const closeModal = document.getElementById("closeModal");
-const previewBtn = document.getElementById("previewBtn");
-const submitBtn = document.getElementById("submitBtn");
-const clearAllBtn = document.getElementById("clearAllBtn");
-
-// Restore saved data
-window.addEventListener("load", () => {
-  const saved = localStorage.getItem("postFormData");
-  if (!saved) return;
-  const data = JSON.parse(saved);
-
-  // Restore text fields
-  fields.forEach(id => {
-    if (data[id]) document.getElementById(id).value = data[id];
+  form.addEventListener("input", () => {
+    // Check if all required inputs are valid
+    if (form.checkValidity()) {
+      submitBtn.disabled = false;
+    } else {
+      submitBtn.disabled = true;
+    }
   });
-
-  // Restore image
-  if (data.imageURL) {
-    previewImg.src = data.imageURL;
-    previewBox.classList.remove("hidden");
-    previewBox.dataset.savedURL = data.imageURL;
-  }
-
-  validateForm(); // ✅ ensure validation runs AFTER restoration
-});
-
-// Save form data
-function saveData() {
-  const data = {};
-  fields.forEach(id => data[id] = document.getElementById(id).value);
-
-  if (imageInput.files.length > 0) {
-    const file = imageInput.files[0];
-    data.imageURL = URL.createObjectURL(file);
-  } else if (previewBox.dataset.savedURL) {
-    data.imageURL = previewBox.dataset.savedURL;
-  }
-
-  localStorage.setItem("postFormData", JSON.stringify(data));
-}
-
-// Validate function
-function validateForm() {
-  const allFilled = fields.every(id => document.getElementById(id).value.trim()) &&
-                    (!!imageInput.files.length || !!previewBox.dataset.savedURL);
-
-  [previewBtn, submitBtn].forEach(btn => {
-    btn.disabled = !allFilled;
-    btn.classList.toggle("opacity-50", !allFilled);
-    btn.classList.toggle("cursor-not-allowed", !allFilled);
-  });
-}
-
-// Input + textarea listeners
-document.querySelectorAll("input, textarea").forEach(el => {
-  el.addEventListener("input", () => { saveData(); validateForm(); });
-  el.addEventListener("change", () => { saveData(); validateForm(); });
-});
-
-// Handle image upload + preview
-imageInput.addEventListener("change", e => {
-  const file = e.target.files[0];
-  if (file) {
-    const imgURL = URL.createObjectURL(file);
-    previewImg.src = imgURL;
-    previewBox.classList.remove("hidden");
-    previewBox.dataset.savedURL = imgURL;
-    saveData();
-    validateForm();
-  }
-});
-
-// Modal image view
-previewBox.addEventListener("click", () => {
-  modal.classList.remove("hidden");
-  modalImg.src = previewImg.src;
-});
-closeModal.addEventListener("click", () => modal.classList.add("hidden"));
-
-// Preview button
-previewBtn.addEventListener("click", e => {
-  e.preventDefault();
-  saveData();
-  window.location.href = "post-preview.html";
-});
-
-// Clear All button
-clearAllBtn.addEventListener("click", () => {
-  if (confirm("Clear all entered data?")) {
-    localStorage.removeItem("postFormData");
-    window.location.reload();
-  }
-});
-
-// Submit
-document.getElementById("postForm").addEventListener("submit", e => {
-  e.preventDefault();
-  alert("Post submitted successfully!");
-  localStorage.removeItem("postFormData");
-  e.target.reset();
-  previewBox.classList.add("hidden");
-  delete previewBox.dataset.savedURL;
-  validateForm();
-});
 </script>
-
-
-
-	
-	<script src="../../js/script.js"></script>
+<script src="../../js/script.js"></script>
+ 
+</body>
+</html>
