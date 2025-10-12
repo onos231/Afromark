@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investor Profile</title>
+  <link href="../../dist/output.css" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-black dark:text-white font-sans">
+    
+   <!-- Header -->
+
+
+  <header class="bg-[#0E4D22] text-white">
+    <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
+      <h1 class="text-center font-semibold">Investor Profile</h1>
+      <!-- Close button only (right) -->
+      <button
+        type="button"
+        aria-label="Close"
+        class="absolute right-3 top-5 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition"
+        onclick="window.location.href='investor-marketplace.html'">
+        ✕
+      </button>
+    </div>
+    <!-- curved white top like in mock -->
+    <div class="max-w-md mx-auto dark:bg-gray-900 bg-white rounded-t-3xl h-6"></div>
+  </header>
+
+    <!-- Content -->
+    <div class="px-6 py-4 flex-1">
+      <!-- Avatar -->
+      <div class="flex flex-col items-center">
+        <img src="/img/investor-market/farmers1.jpg" alt="Investor" class="h-16 w-16 rounded-full object-cover border" /> <!-- replace -->
+      </div>
+
+      <!-- Title -->
+      <h2 class="mt-4 text-lg font-bold text-gray-800 dark:text-green-200 ">
+        <span class="opacity-50 font-Kodchasan">Agriculture:</span> <span class="font-normal">Lagos Mainland</span>
+      </h2>
+
+      <!-- About -->
+      <div class="mt-4 py-4 px-4 shadow-deep dark:bg-gray-800">
+        <h3 class="font-semibold dark:text-white opacity-50">About</h3>
+        <p class="text-sm  mt-1 dark:text-white ">
+          GreenHarvest Capital is a leading agribusiness-focused investment firm
+          dedicated to empowering food entrepreneurs and cooperatives across Nigeria.
+        </p>
+      </div>
+
+      <!-- Investment Focus -->
+      <div class="mt-4 py-4 px-4 dark:bg-gray-800">
+        <h3 class="font-semibold dark:text-white opacity-50">Investment Focus</h3>
+        <ul class="mt-2 space-y-2 text-sm text-gray-700">
+          <li class="flex items-center dark:text-white">
+            <i data-lucide="check-square" class="w-5 h-5 text-green-600 mr-2 dark:text-green-500"></i>
+            Crop Farming
+          </li>
+          <li class="flex items-center dark:text-white">
+            <i data-lucide="check-square" class="w-5 h-5 text-green-600 mr-2 "></i>
+            Food Processing
+          </li>
+          <li class="flex items-center dark:text-white">
+            <i data-lucide="check-square" class="w-5 h-5 text-green-600 mr-2 "></i>
+            Rural Empowerment
+          </li>
+        </ul>
+      </div>
+
+      <!-- Funding Capacity -->
+      <div class="mt-4 py-4 px-4 dark:bg-gray-800">
+        <h3 class="font-semibold dark:text-white opacity-50">Funding capacity</h3>
+        <p class="text-sm mt-1 dark:text-white">N500k - N10M</p>
+      </div>
+
+      <!-- Project Format -->
+      <div class="mt-4 py-4 px-4 dark:bg-gray-800">
+        <h3 class="font-semibold dark:text-white opacity-50">Project Format</h3>
+        <p class="text-sm mt-1 dark:text-white">PDF, Short Video Pitch (2mb Max)</p>
+      </div>
+
+      <!-- Investor Requirements -->
+      <div class="mt-4 py-4 px-4 shadow-deep dark:bg-gray-800">
+        <h3 class="font-semibold dark:text-white opacity-50">Investor Requirements</h3>
+        <p class="text-sm mt-1 dark:text-white">
+          I need a step by step detailed information of how you intend to invest the money,
+          make it as brief as you can. Let me know the time frame.
+        </p>
+      </div>
+
+      <!-- Available Funding Windows -->
+      <div class="mt-4 py-4 px-4  dark:bg-gray-800">
+        <h3 class="font-semibold dark:text-white opacity-50">Available Funding Windows</h3>
+        <ul class="list-disc list-inside text-sm  mt-1 space-y-1 dark:text-white">
+          <li>Quarterly Agricultural Grants</li>
+          <li>Rapid Response Agro Support (RRAS)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="px-6 py-4 mb-4">
+      <button class="w-full bg-yellow-500 dark:text-white font-medium py-2 rounded">
+        Submit
+      </button>
+    </div>
+  
+
+  <script>
+    lucide.createIcons();
+  </script>
+	
+	<script src="../../js/script.js"></script>
+</body>
+</html>

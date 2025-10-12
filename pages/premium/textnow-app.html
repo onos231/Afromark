@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwapIt - Home</title>
+
+	<link href="../../dist/output.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-white dark:bg-gray-900 text-black dark:text-white font-sans">
+
+ <!-- Header -->
+	<header class="flex items-center justify-between px-4 py-3 bg-white shadow">
+    <img src="/img/logo/app-logo.png" alt="SwapIt Logo" class="h-8">
+    <a href="../../all-users/settings.html"><div class="w-9 h-9 bg-gray-200 rounded-full flex items-center justify-center">
+      <img src="/img/profile/profile.svg" class="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 15c2.485 0 4.797.758 6.879 2.052M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      
+		</div></a>
+  </header>
+<header class="bg-[#0E4D22] text-white">
+    <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
+      <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
+      <h1 class="text-center font-semibold mt-4">For everyone: readers and non-readers.<br>
+      Use typing or voice command.</h1>
+      
+    </div>
+      <!-- Close button only (right) -->
+      <button
+        type="button"
+        aria-label="Close"
+        class="absolute left-3 top-5 w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20 transition"
+        onclick="window.location.href='investor-marketplace.html'">
+        <img src="../../img/nav/back-arrow-1.png" alt="SwapIt Logo" class="h-3">
+      </button>
+    </div>
+	  
+    <!-- curved white top like in mock -->
+    <div class="max-w-md mx-auto bg-white dark:bg-gray-900 rounded-t-3xl h-6"></div>
+  </header>
+   
+	   <!-- Progress Bar -->
+	<div class="p-4">
+	  <div class="max-w-md mx-auto p-4">
+    <div class="w-full bg-gray-200 rounded-full h-2 mb-4" >
+      <div id="progressBar" class="bg-green-600 h-2 rounded-full w-1/3"></div>
+    </div>
+	  </div>
+    <!-- Steps container -->
+	
+    <form id="pitchForm" class="space-y-6 p-4 dark:bg-gray-800">
+
+      <!-- Step 1 -->
+      <div class="step" id="step1">
+		  <label class="block text-green-700 font-medium mb-1 dark:text-gray-400">Name of Project *</label>
+        <input id="projectTitle" type="text" placeholder="Project Title" required
+          class="w-full border rounded px-3 py-2 mb-4 outline-none dark:bg-gray-900 dark:border-gray-900"/>
+        <div>
+		<label for="donationType" class="block font-medium text-gray-700 text-green-700 dark:text-gray-400">Project Category *</label>
+		
+		<div class="relative">
+			 
+  <select 
+    id="projectCategory" 
+    name="projectCategory" 
+    required
+    class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm 
+           bg-white dark:bg-gray-900 dark:border-gray-900 focus:ring-green-600 focus:border-green-600 
+           text-gray-700 dark:text-gray-300 appearance-none leading-tight h-[42px]"
+  >
+    <option value="">Select Category</option>
+          <option>Organic Farming</option>
+          <option>Food Processing</option>
+          <option>Distribution</option>
+          <option>Others</option>
+  </select>
+
+  <!-- Custom dropdown arrow -->
+  <svg 
+    class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none" 
+    xmlns="http://www.w3.org/2000/svg" 
+    fill="none" 
+    viewBox="0 0 24 24" 
+    stroke="currentColor"
+  >
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+  </svg>
+</div>
+</div>
+		  <!--<label class="block text-green-700 font-medium mb-1 dark:text-gray-400 ">Project Category *</label>
+        <select id="projectCategory" required
+          class="w-full border rounded px-3 py-2 mb-4 outline-none dark:bg-gray-900 dark:border-gray-900 appearance-none leading-tight">
+          <option value="">Select Category</option>
+          <option>Organic Farming</option>
+          <option>Food Processing</option>
+          <option>Distribution</option>
+          <option>Others</option>
+        </select>-->
+<label class="block text-green-700 font-medium mb-1 dark:text-gray-400 ">Funds Needed *</label>
+        <input id="fundsNeeded" type="number" placeholder="Funds Needed (₦)" required
+          class="w-full border rounded px-3 py-2 mb-4 outline-none dark:bg-gray-900 dark:border-gray-900"/>
+
+        <div class="flex justify-end">
+          <button type="button" id="next1"
+            class="px-4 py-2 text-green-600 opacity-50 cursor-not-allowed dark:text-green-200 dark:text-gray-400">
+            Next &gt;
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step hidden" id="step2 py-4 px-4">
+		  <label class="block text-green-700 font-medium mb-1 dark:text-gray-400">Project Summary*</label>
+        <textarea id="summary" placeholder="Project Summary *" required
+          class="w-full border rounded px-3 py-2 mb-4 outline-none dark:bg-gray-900 dark:border-gray-900"></textarea>
+        
+		  <label class="block text-green-700 font-medium mb-1 dark:text-gray-400">What are the Problems & Solutions *</label>
+        <textarea id="solution" placeholder="Problem & Solution *" required
+          class="w-full border rounded px-3 py-2 mb-4 outline-none dark:bg-gray-900 dark:border-gray-900"></textarea>
+        
+		  <label class="block text-green-700 font-medium mb-1 dark:text-gray-400">Expected Impact *</label>
+        <textarea id="impact" placeholder="Expected Impact *" required
+          class="w-full border rounded px-3 py-2 mb-4 outline-none dark:bg-gray-900 dark:border-gray-900"></textarea>
+
+		  <label class="block text-green-700 font-medium mb-1 dark:text-gray-400">Timeline of Project *</label>
+        <input id="timeline" type="text" placeholder="Timeline (e.g. 3 months)" required
+          class="w-full border rounded px-3 py-2 mb-4 outline-none dark:bg-gray-900 dark:border-gray-900"/>
+
+        <div class="flex justify-between">
+          <button type="button" id="prev2" class="px-4 py-2 text-green-600 dark:text-green-200">&lt; Prev</button>
+          <button type="button" id="next2"
+            class="px-4 py-2 text-green-600 opacity-50 cursor-not-allowed dark:text-green-200">
+            Next &gt;
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step hidden" id="step3 py-4 px-4">
+        <label class="block dark:text-gray-400">Upload Business Proposal (PDF Image) *</label>
+        <input id="proposal" type="file" accept="application/pdf,image/*" required
+          class="w-full mb-8 py-2 dark:bg-gray-800"/>
+
+        <label class="block dark:text-gray-400">Upload Cover Photo (Optional)</label>
+        <input id="coverPhoto" type="file" accept="image/*" class="w-full mb-8 py-4 dark:bg-gray-800"/>
+
+        <label class="block dark:text-gray-400">Pitch Video (Optional)</label>
+        <input id="video" type="file" accept="video/*" class="w-full mb-4 py-4 dark:bg-gray-800"/>
+
+        <label class="block dark:text-gray-400">Record Voice Pitch (Optional)</label>
+        <input id="voice" type="file" accept="audio/*" class="w-full mb-4 py-4 dark:bg-gray-800"/>
+
+        <div class="flex flex-col gap-3 py-6">
+          <button type="button" id="previewBtn"
+            class="w-full bg-green-600 py-2 rounded opacity-50 cursor-not-allowed">
+            Preview Business Proposal
+          </button>
+          <button type="submit" id="submitBtn"
+            class="w-full bg-yellow-500 dark:text-white py-2 rounded opacity-50 cursor-not-allowed">
+            Submit Pitch
+          </button>
+        </div>
+
+        <div class="flex justify-start mt-4">
+          <button type="button" id="prev3" class="px-4 py-2 text-green-600 dark:text-green-200">&lt; Prev</button>
+        </div>
+      </div>
+
+    </form>
+		</div>
+ 
+	
+	<script>
+	document.addEventListener("DOMContentLoaded", () => {
+  const steps = [...document.querySelectorAll(".step")];
+
+  // Step 1 inputs
+  const projectTitle = document.getElementById("projectTitle");
+  const projectCategory = document.getElementById("projectCategory");
+  const fundsNeeded = document.getElementById("fundsNeeded");
+  const next1 = document.getElementById("next1");
+
+  // Step 2 inputs
+  const summary = document.getElementById("summary");
+  const solution = document.getElementById("solution");
+  const impact = document.getElementById("impact");
+  const timeline = document.getElementById("timeline");
+  const next2 = document.getElementById("next2");
+  const prev2 = document.getElementById("prev2");
+
+  // Step 3 inputs
+  const proposal = document.getElementById("proposal");
+  const previewBtn = document.getElementById("previewBtn");
+  const submitBtn = document.getElementById("submitBtn");
+  const prev3 = document.getElementById("prev3");
+
+  let currentStep = 0;
+
+  function showStep(stepIndex) {
+    steps.forEach((step, idx) => {
+      step.classList.toggle("hidden", idx !== stepIndex);
+    });
+    currentStep = stepIndex;
+	  
+	  // update progress bar (3 steps total)
+    const percent = ((stepIndex + 1) / steps.length) * 100;
+    progressBar.style.width = percent + "%";
+  }
+
+  // Validation Step 1
+  function validateStep1() {
+    if (projectTitle.value && projectCategory.value && fundsNeeded.value) {
+      next1.classList.remove("opacity-50", "cursor-not-allowed");
+    } else {
+      next1.classList.add("opacity-50", "cursor-not-allowed");
+    }
+  }
+  [projectTitle, projectCategory, fundsNeeded].forEach(input =>
+    input.addEventListener("input", validateStep1)
+  );
+
+  // Validation Step 2
+  function validateStep2() {
+    if (summary.value && solution.value && impact.value && timeline.value) {
+      next2.classList.remove("opacity-50", "cursor-not-allowed");
+    } else {
+      next2.classList.add("opacity-50", "cursor-not-allowed");
+    }
+  }
+  [summary, solution, impact, timeline].forEach(input =>
+    input.addEventListener("input", validateStep2)
+  );
+
+  // Validation Step 3
+  proposal.addEventListener("change", () => {
+    if (proposal.files.length > 0) {
+      previewBtn.classList.remove("opacity-50", "cursor-not-allowed");
+      submitBtn.classList.remove("opacity-50", "cursor-not-allowed");
+    } else {
+      previewBtn.classList.add("opacity-50", "cursor-not-allowed");
+      submitBtn.classList.add("opacity-50", "cursor-not-allowed");
+    }
+  });
+
+  // Navigation
+  next1.addEventListener("click", () => {
+    if (!next1.classList.contains("cursor-not-allowed")) showStep(1);
+  });
+
+  next2.addEventListener("click", () => {
+    if (!next2.classList.contains("cursor-not-allowed")) showStep(2);
+  });
+
+  prev2.addEventListener("click", () => showStep(0));
+  prev3.addEventListener("click", () => showStep(1));
+
+  // Preview Business Proposal
+  previewBtn.addEventListener("click", () => {
+    if (!previewBtn.classList.contains("cursor-not-allowed")) {
+      window.location.href = "applicant-preview.html";
+    }
+  });
+
+  // Submit Pitch
+  document.getElementById("pitchForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (!submitBtn.classList.contains("cursor-not-allowed")) {
+      alert("Pitch submitted successfully!");
+    }
+  });
+});
+
+	</script>
+
+	<script src="../../js/script.js"></script>
+</body>
+</html>

@@ -40,7 +40,7 @@
 	  
     <div class="flex justify-between items-center mb-4">
       <h2 class="text-lg font-bold font-Kodchasan">Investor Signup</h2>
-      <button id="clearAllBtn" class="text-sm text-red-500 underline">Clear All</button>
+      <button id="clearAllBtn" class="text-sm text-red-500 dark:text-red-300 underline">Clear All</button>
     </div>
 
     <div id="formStepTitle" class="text-xl font-bold mb-4 dark:text-green-200 font-bold font-Kodchasan">Step 1 of 3</div>
@@ -260,7 +260,7 @@
     document.getElementById("previewBtn").addEventListener("click", e => {
       e.preventDefault();
       saveData();
-      window.open("preview.html", "Preview", "width=900,height=750,scrollbars=yes");
+      window.open("investor-preview.html", "Preview", "width=900,height=750,scrollbars=yes");
     });
 
     // Clear All Button
@@ -273,6 +273,7 @@
 
     updateStep();
   </script>
+	<script src="../../js/script.js"></script>
 </body>
 </html>
 
