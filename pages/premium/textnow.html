@@ -25,30 +25,22 @@
         type="button"
         aria-label="Close"
         class="absolute right-3 top-5 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition"
-        onclick="window.location.href='investor-marketplace.html'">
+        onclick="window.location.href='premium-search.html'">
         ✕
       </button>
     </div>
     <!-- curved white top like in mock -->
     <div class="max-w-md mx-auto dark:bg-gray-900 bg-white rounded-t-3xl h-6"></div>
   </header>
-	
-<div class="max-w-md mx-auto p-4">
-    
 
-  <div class="max-w-2xl mx-auto mt-8 bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
-	  
-    <div class="flex justify-between items-center mb-4">
-      <h2 class="text-lg font-bold font-Kodchasan">Investor Signup</h2>
-      <button id="clearAllBtn" class="text-sm text-red-500 underline">Clear All</button>
-    </div>
 
-    <div id="formStepTitle" class="text-xl font-bold mb-4 dark:text-green-200 font-bold font-Kodchasan">Step 1 of 3</div>
+  <div class="max-w-md mx-auto p-4">
     <div class="w-full bg-gray-200 rounded-full h-2 mb-4">
-      <div id="progressBar" class="bg-green-600 h-2 rounded-full" style="width: 33%;"></div>
+      <div id="progressBar" class="bg-green-500 h-2 rounded-full w-1/3"></div>
     </div>
+    <h2 id="formStepTitle" class="text-xl font-bold mb-4 dark:text-green-200 font-bold font-Kodchasan">Step 1 of 3</h2>
 
-    <!-- Step 1 -->
+    <!-- Step 1: Business Info -->
     <div id="step1" class="space-y-4 py-4 px-4 dark:bg-gray-800">
       <h3 class="font-semibold mb-2">Business Info</h3>
       <label class="block dark:text-gray-300">
@@ -122,100 +114,81 @@
         <input type="text" id="experience" class="w-full border dark:bg-gray-900 dark:text-white rounded-md dark:border-gray-900 rounded p-2" placeholder="e.g. 10 years" required />
       </label>
     </div>
+	  
+<!-- Step 3: Uploads -->
+<div id="step3" class="space-y-4 hidden py-4 px-4 dark:bg-gray-800">
+  <h3 class="font-semibold mb-2">Uploads</h3>
 
-    <!-- Step 3 -->
-    <div id="step3" class="space-y-4 hidden py-4 px-4">
+  <label class="block dark:text-gray-300">
+    Upload Profile Photo/Logo *
+    <input 
+      type="file" 
+      id="photo" 
+      accept="image/png, image/jpeg" 
+      class="w-full border dark:bg-gray-800 dark:text-white rounded-md dark:border-gray-900 p-4" 
+      required 
+    />
+    <small class="text-xs text-gray-500">Accepted formats: JPEG, PNG</small>
+  </label>
+
+  <label class="block dark:text-gray-300">
+    Upload ID Document (Optional)
+    <input 
+      type="file" 
+      id="idDoc" 
+      accept="application/pdf, image/png, image/jpeg" 
+      class="w-full border dark:bg-gray-800 dark:text-white rounded-md dark:border-gray-900 p-4" 
+    />
+    <small class="text-xs text-gray-500">Accepted formats: PDF, JPEG, PNG</small>
+  </label>
+
+  <div class="flex flex-col space-y-2 mt-6">
+    <button id="previewBtn" class="bg-blue-500 text-white py-2 px-4 rounded disabled:opacity-50" disabled>Preview</button>
+    <button id="submitBtn" class="bg-yellow-500 py-2 px-4 rounded-md dark:bg-yellow-500 disabled:opacity-50" disabled>Submit</button>
+  </div>
+</div>
+
+    <!-- Step 3: Uploads -->
+   <!-- <div id="step3" class="space-y-4 hidden py-4 px-4 dark:bg-gray-800">
       <h3 class="font-semibold mb-2">Uploads</h3>
-      <label class="block">
+      <label class="block dark:text-gray-300">
         Upload Profile Photo/Logo *
-        <input type="file" id="photo" accept="image/png, image/jpeg" class="w-full border rounded-md p-4 dark:bg-gray-900 dark:border-gray-700" required />
-        <small class="text-xs text-gray-500">Accepted formats: JPEG, PNG</small>
+        <input type="file" id="photo" accept="image/*" class="w-full border dark:bg-gray-800 dark:text-white rounded-md dark:border-gray-900 rounded p-4" required />
       </label>
-      <label class="block">
+      <label class="block dark:text-gray-300">
         Upload ID Document (Optional)
-        <input type="file" id="idDoc" accept="application/pdf, image/png, image/jpeg" class="w-full border rounded-md p-4 dark:bg-gray-900 dark:border-gray-700" />
-        <small class="text-xs text-gray-500">Accepted formats: PDF, JPEG, PNG</small>
+        <input type="file" id="idDoc" accept="image/*,.pdf" class="w-full border dark:bg-gray-800 dark:text-white rounded-md dark:border-gray-900 rounded p-4" />
       </label>
-
       <div class="flex flex-col space-y-2 mt-6">
         <button id="previewBtn" class="bg-blue-500 text-white py-2 px-4 rounded disabled:opacity-50" disabled>Preview</button>
-        <button id="submitBtn" class="bg-yellow-500 py-2 px-4 rounded-md dark:bg-yellow-500 disabled:opacity-50" disabled>Submit</button>
+        <button id="submitBtn" class="bg-yellow-500 py-2 px-4 dark:bg-yellow-500 rounded-md dark:border-gray-900 rounded disabled:opacity-50" disabled>Submit</button>
       </div>
-    </div>
+    </div>-->
 
     <!-- Navigation -->
     <div class="flex justify-between mt-6">
-      <button id="prevBtn" class="border py-2 px-4 rounded hidden dark:text-green-200 dark:border-gray-700 text-green-700">Prev</button>
+      <button id="prevBtn" class="bg-lightgray-500 border py-2 px-4 rounded hidden dark:text-green-200 dark:border-gray-900 text-green-700">Prev</button>
       <button id="nextBtn" class="dark:text-green-200 text-green-700 py-2 px-4 rounded ml-auto disabled:opacity-50">Next</button>
     </div>
   </div>
-	</div>
-	
+
   <script>
     let step = 1;
     const totalSteps = 3;
-
-    const fields = ["name", "category", "bio", "focus", "capacity", "experience"];
-    const fileFields = ["photo", "idDoc"];
-
-    // Restore data if exists
-    window.addEventListener("load", async () => {
-      const saved = localStorage.getItem("investorPreviewData");
-      if (!saved) return;
-      const data = JSON.parse(saved);
-
-      fields.forEach(id => {
-        if (data[id]) document.getElementById(id).value = data[id];
-      });
-
-      // Restore images (base64 or blob URL)
-      if (data.photoURL) {
-        const photoEl = document.getElementById("photo");
-        photoEl.dataset.savedURL = data.photoURL;
-        photoEl.dataset.savedName = data.photoName;
-      }
-      if (data.idDocURL) {
-        const idDocEl = document.getElementById("idDoc");
-        idDocEl.dataset.savedURL = data.idDocURL;
-        idDocEl.dataset.savedName = data.idDocName;
-      }
-
-      validateStep();
-      updateStep();
-    });
 
     const updateStep = () => {
       document.querySelectorAll("[id^='step']").forEach((el, index) => {
         el.classList.toggle("hidden", index + 1 !== step);
       });
+
       document.getElementById("formStepTitle").textContent = `Step ${step} of ${totalSteps}`;
       document.getElementById("progressBar").style.width = `${(step / totalSteps) * 100}%`;
+
       document.getElementById("prevBtn").classList.toggle("hidden", step === 1);
       document.getElementById("nextBtn").classList.toggle("hidden", step === totalSteps);
+
       validateStep();
     };
-
-    const validateStep = () => {
-      let valid = false;
-      if (step === 1) valid = fields.slice(0,3).every(id => document.getElementById(id).value.trim());
-      else if (step === 2) valid = fields.slice(3).every(id => document.getElementById(id).value.trim());
-      else if (step === 3) {
-        const photo = document.getElementById("photo");
-        valid = (photo.files.length > 0 || photo.dataset.savedURL);
-      }
-
-      document.getElementById("nextBtn").disabled = !valid;
-
-      const allValid = fields.every(id => document.getElementById(id).value.trim()) &&
-        (document.getElementById("photo").files.length > 0 || document.getElementById("photo").dataset.savedURL);
-      document.getElementById("previewBtn").disabled = !allValid;
-      document.getElementById("submitBtn").disabled = !allValid;
-    };
-
-    document.querySelectorAll("input, select, textarea").forEach(el => {
-      el.addEventListener("input", validateStep);
-      el.addEventListener("change", validateStep);
-    });
 
     document.getElementById("nextBtn").addEventListener("click", () => {
       if (step < totalSteps) step++;
@@ -227,54 +200,94 @@
       updateStep();
     });
 
-    // Save to localStorage continuously
-    const saveData = () => {
-      const data = {};
-      fields.forEach(id => data[id] = document.getElementById(id).value);
-      const photo = document.getElementById("photo");
-      const idDoc = document.getElementById("idDoc");
-
-      if (photo.files.length > 0) {
-        const f = photo.files[0];
-        data.photoName = f.name;
-        data.photoURL = URL.createObjectURL(f);
-      } else if (photo.dataset.savedURL) {
-        data.photoName = photo.dataset.savedName;
-        data.photoURL = photo.dataset.savedURL;
+    // Validation per step
+    const validateStep = () => {
+      let valid = false;
+      if (step === 1) {
+        valid = document.getElementById("name").value.trim() &&
+                document.getElementById("category").value.trim() &&
+                document.getElementById("bio").value.trim();
+      } else if (step === 2) {
+        valid = document.getElementById("focus").value.trim() &&
+                document.getElementById("capacity").value.trim() &&
+                document.getElementById("experience").value.trim();
+      } else if (step === 3) {
+        valid = document.getElementById("photo").files.length > 0;
       }
+      document.getElementById("nextBtn").disabled = !valid;
 
-      if (idDoc.files.length > 0) {
-        const f = idDoc.files[0];
-        data.idDocName = f.name;
-        data.idDocType = f.type;
-        data.idDocURL = URL.createObjectURL(f);
-      } else if (idDoc.dataset.savedURL) {
-        data.idDocName = idDoc.dataset.savedName;
-        data.idDocURL = idDoc.dataset.savedURL;
-      }
-
-      localStorage.setItem("investorPreviewData", JSON.stringify(data));
+      // Enable Preview/Submit when all fields across steps are valid
+      const allValid = document.getElementById("name").value.trim() &&
+                       document.getElementById("category").value.trim() &&
+                       document.getElementById("bio").value.trim() &&
+                       document.getElementById("focus").value.trim() &&
+                       document.getElementById("capacity").value.trim() &&
+                       document.getElementById("experience").value.trim() &&
+                       document.getElementById("photo").files.length > 0;
+      document.getElementById("previewBtn").disabled = !allValid;
+      document.getElementById("submitBtn").disabled = !allValid;
     };
 
-    document.querySelectorAll("input, textarea").forEach(el => el.addEventListener("change", saveData));
-    document.getElementById("previewBtn").addEventListener("click", e => {
-      e.preventDefault();
-      saveData();
-      window.open("preview.html", "Preview", "width=900,height=750,scrollbars=yes");
+    document.querySelectorAll("input, select, textarea").forEach((el) => {
+      el.addEventListener("input", validateStep);
+      el.addEventListener("change", validateStep);
     });
 
-    // Clear All Button
-    document.getElementById("clearAllBtn").addEventListener("click", () => {
-      if (confirm("Are you sure you want to clear all data?")) {
-        localStorage.removeItem("investorPreviewData");
-        window.location.reload();
-      }
-    });
+    
 
     updateStep();
+	  
+	  // Preview button: save data and open Preview.html
+document.getElementById("previewBtn").addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const data = {
+    name: document.getElementById("name").value,
+    category: document.getElementById("category").value,
+    bio: document.getElementById("bio").value,
+    focus: document.getElementById("focus").value,
+    capacity: document.getElementById("capacity").value,
+    experience: document.getElementById("experience").value,
+  };
+
+  // Handle files
+  const photoFile = document.getElementById("photo").files[0];
+  const idDocFile = document.getElementById("idDoc").files[0];
+
+  if (photoFile) {
+    data.photoName = photoFile.name;
+    data.photoURL = URL.createObjectURL(photoFile);
+  }
+
+  if (idDocFile) {
+    data.idDocName = idDocFile.name;
+    data.idDocType = idDocFile.type;
+    data.idDocURL = URL.createObjectURL(idDocFile);
+  }
+
+  // Save to localStorage
+  localStorage.setItem("investorPreviewData", JSON.stringify(data));
+
+  // Open preview.html in a new tab
+  window.open("preview.html", "Preview", "width=900,height=750,scrollbars=yes");
+});
+
+	  // Prefill saved data when returning from preview
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem("investorPreviewData");
+  if (!saved) return;
+  const data = JSON.parse(saved);
+
+  if (data.name) document.getElementById("name").value = data.name;
+  if (data.category) document.getElementById("category").value = data.category;
+  if (data.bio) document.getElementById("bio").value = data.bio;
+  if (data.focus) document.getElementById("focus").value = data.focus;
+  if (data.capacity) document.getElementById("capacity").value = data.capacity;
+  if (data.experience) document.getElementById("experience").value = data.experience;
+});
+
   </script>
+	
+	<script src="../../js/script.js"></script>
 </body>
 </html>
-
-
-

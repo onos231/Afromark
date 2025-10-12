@@ -97,8 +97,74 @@
       </button>
     </div>
   </footer>
+	
+	<script>
+  // Retrieve saved data
+  const raw = localStorage.getItem('investorPreviewData');
+  let data = {};
+  try { data = raw ? JSON.parse(raw) : {}; } catch (e) {}
 
-  <script>
+  // Fill preview fields
+  const set = (id, text) => { const el = document.getElementById(id); if (el) el.textContent = text || '—'; };
+  set('pName', data.name);
+  set('pCategory', data.category);
+  set('pBio', data.bio);
+  set('pFocus', data.focus);
+  set('pCapacity', data.capacity);
+  set('pExperience', data.experience);
+
+  // Show uploaded photo
+  if (data.photoURL) {
+    const img = document.getElementById('photoImg');
+    img.src = data.photoURL;
+    document.getElementById('photoName').textContent = data.photoName || '';
+    document.getElementById('photoBlock').classList.remove('hidden');
+  }
+
+  // Show uploaded document (PDF or Image)
+  if (data.idDocURL) {
+    const isPdf = (data.idDocType || '').includes('pdf') || (data.idDocName || '').toLowerCase().endsWith('.pdf');
+    const pdf = document.getElementById('docPdf');
+    const img = document.getElementById('docImg');
+    if (isPdf) {
+      pdf.src = data.idDocURL;
+      pdf.classList.remove('hidden');
+    } else {
+      img.src = data.idDocURL;
+      img.classList.remove('hidden');
+    }
+    document.getElementById('docName').textContent = data.idDocName || '';
+    document.getElementById('docBlock').classList.remove('hidden');
+  }
+
+  // Buttons
+  document.getElementById('closeBtn').onclick = () => window.close();
+
+  // ✅ EDIT BUTTON: Go back to form, retaining data
+  document.getElementById('editBtn').onclick = () => {
+    // Just navigate back without clearing data
+    if (window.opener && !window.opener.closed) {
+      window.opener.focus();
+    } else {
+      window.open("investor-signup.html", "_self");
+    }
+    window.close();
+  };
+
+  // ✅ SUBMIT BUTTON
+  document.getElementById('submitBtn').onclick = () => {
+    if (window.opener && !window.opener.closed) {
+      window.opener.postMessage('SUBMIT_INVESTOR_FORM', '*');
+    }
+    window.close();
+  };
+
+  // ❌ Do NOT remove localStorage on unload
+  // (Removed: localStorage.removeItem('investorPreviewData');)
+</script>
+
+
+ <!-- <script>
     // Read data
     const raw = localStorage.getItem('investorPreviewData');
     let data = {};
@@ -151,7 +217,7 @@
     window.addEventListener('unload', () => {
       localStorage.removeItem('investorPreviewData');
     });
-  </script>
+  </script>-->
 	
 	<script src="js/script.js"></script>
 	<script src="../../js/script.js"></script>
