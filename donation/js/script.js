@@ -75,7 +75,7 @@ function renderResults(data) {
 
       <div class="flex justify-between mt-3">
 
-        <button class="cancelBtn hidden border border-gray-500 text-red-300 font-forte px-3 py-1 rounded text-sm font-light">Cancel</button>
+        <button class="cancelBtn hidden border border-gray-300 text-red-300 px-3 py-1 rounded text-sm font-light">Cancel</button>
         <button class="sendBtn bg-green-600 text-white px-3 py-1 rounded text-sm ml-auto">Send Request</button>
       </div>
     `;

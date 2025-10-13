@@ -44,97 +44,188 @@
      
     </p>
 
-    <form id="donateForm" class="space-y-4 py-4 px-4 dark:bg-gray-800 shadow-deep">
-		
-		<div>
-		<label for="donationType" class="block text-sm font-medium  text-green-700 dark:text-green-200">Business Category *</label>
-		
-		<div class="relative">
-			 
-  <select 
-    id="category" 
-    name="category" 
-    required
-    class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm 
-           bg-white dark:bg-gray-900 dark:border-gray-900 focus:ring-green-600 focus:border-green-600 
-           text-gray-700 dark:text-gray-300 appearance-none leading-tight h-[42px]"
-  >
-   <option value="">Select Type</option>
-          <option value="Food Item">User didn't show up</option>
-          <option value="Farm Equipment">Wrong item</option>
-          <option value="Fertilizers">Damaged item</option>
-          <option value="Farm Support">Suspected scam</option>
-  </select>
+    <form id="reportForm" class="space-y-4 py-4 px-4 dark:bg-gray-800 shadow-deep">
 
-  <!-- Custom dropdown arrow -->
-  <svg 
-    class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none" 
-    xmlns="http://www.w3.org/2000/svg" 
-    fill="none" 
-    viewBox="0 0 24 24" 
-    stroke="currentColor"
-  >
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-  </svg>
-</div>
-</div>
-      <!-- Type of Donation -->
-      <!--<div>
-        <label for="donationType" class="block text-sm font-medium text-gray-700 text-green-700 dark:text-gray-400">Select Reasons <span class="text-red-500">*</span></label>
-        <select id="donationType" name="donationType" required
-          class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2 text-base
-         dark:bg-gray-900 dark:border-gray-900 focus:ring-green-600 focus:border-green-600
-         text-sm appearance-none leading-tight">
-          <option value="">Select Type</option>
-          <option value="Food Item">User didn't show up</option>
-          <option value="Farm Equipment">Wrong item</option>
-          <option value="Fertilizers">Damaged item</option>
-          <option value="Farm Support">Suspected scam</option>
-        </select>
-      </div>-->
+  <!-- Business Category -->
+  <div>
+    <label for="category" class="block text-sm font-medium text-green-700 dark:text-green-200">
+      Report Type <span class="text-red-500">*</span>
+    </label>
+    <div class="relative">
+      <select id="category" required
+        class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm 
+               bg-white dark:bg-gray-900 dark:border-gray-900 focus:ring-green-600 focus:border-green-600 
+               text-gray-700 dark:text-gray-300 appearance-none leading-tight h-[42px]">
+        <option value="">Select Type</option>
+        <option value="User didn't show up">User didn't show up</option>
+        <option value="Wrong item">Wrong item</option>
+        <option value="Damaged item">Damaged item</option>
+        <option value="Suspected scam">Suspected scam</option>
+      </select>
 
+      <!-- Dropdown icon -->
+      <svg class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none"
+        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </div>
+  </div>
 
-      <!-- Description -->
-      <div>
-        <label for="description" class="block text-sm font-medium text-gray-700 text-green-700 dark:text-gray-400">Additional Details <span class="text-red-500">*</span></label>
-        <textarea id="description" name="description" required rows="3" maxlength="50" placeholder="What are you donating..."
-          class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-green-600 dark:bg-gray-900 dark:border-gray-900 focus:border-green-600 text-sm dark:text-white"></textarea>
-        <p class="text-right text-xs text-gray-400 dark:text-white">Max 50</p>
-      </div>
-		
-		 <!-- Upload File -->
-      <div>
-        <label for="fileUpload" class="block text-sm font-medium text-gray-700 text-green-700 dark:text-gray-400">Upload Image/Video <span class="text-red-500">*</span></label>
-        <input id="fileUpload" name="fileUpload" type="file" required
-          class="mt-4 block w-full text-sm text-gray-900 dark:text-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-green-600 file:text-white hover:file:bg-green-700 mb-4" />
-      </div>
+  <!-- Additional Details -->
+  <div>
+    <label for="description" class="block text-sm font-medium text-green-700 dark:text-green-200">
+      Additional Details <span class="text-red-500">*</span>
+    </label>
+    <textarea id="description" rows="3" maxlength="50" required
+      placeholder="Provide details about the issue..."
+      class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2 
+             focus:ring-green-600 focus:border-green-600 text-sm dark:bg-gray-900 dark:border-gray-900 dark:text-white"></textarea>
+    <p class="text-right text-xs text-gray-400 dark:text-gray-300">Max 50</p>
+  </div>
 
-      <!-- Submit Button -->
-      <button type="submit" id="submitBtn" disabled
-        class="w-full mt-10 py-2 rounded-lg transition bg-yellow-200 "
-        >
-        Submit Donation
-      </button>
-    </form>
+  <!-- Upload (optional) -->
+  <div class="py-6">
+    <label for="fileUpload" class="block text-sm font-medium text-green-700 dark:text-green-200">
+      Upload Image/Video (optional)
+    </label>
+    <input id="fileUpload" type="file" accept=".jpg,.jpeg,.png,.pdf,.mp4"
+      class="mt-2 block w-full text-sm text-gray-900 dark:text-white 
+             file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 
+             file:text-sm file:font-semibold file:bg-green-600 file:text-white 
+             hover:file:bg-green-700 mb-3" />
+
+    <!-- Image preview box -->
+    <div id="imagePreviewBox" class="hidden mt-3 w-24 h-24 border rounded-lg overflow-hidden cursor-pointer">
+      <img id="imagePreview" src="" alt="Preview" class="w-full h-full object-cover">
+    </div>
+  </div>
+
+  <!-- Buttons -->
+  <div class="flex flex-col gap-3 pt-4">
+    <button type="button" id="clearAllBtn"
+      class="w-full border border-gray-300 text-red-500 dark:text-red-300 py-2 rounded-lg hover:bg-red-50 dark:hover:bg-red-900 transition">
+      Clear All
+    </button>
+
+    <button type="submit" id="submitBtn" disabled
+      class="w-full bg-yellow-500 py-2 rounded-lg opacity-50 cursor-not-allowed transition hover:bg-yellow-500">
+      Submit Report
+    </button>
+  </div>
+</form>
+
+<!-- Popup modal -->
+<div id="imageModal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+  <div class="relative bg-white rounded-lg shadow-lg max-w-sm w-full p-4">
+    <button id="closeModal" class="absolute top-2 right-2 text-gray-600 hover:text-black">✖</button>
+    <img id="modalImage" src="" class="w-full h-auto rounded-md">
   </div>
 </div>
-	
-	
 
 <script>
-  const form = document.getElementById("donateForm");
+  const fields = ["category", "description"];
+  const fileInput = document.getElementById("fileUpload");
+  const previewBox = document.getElementById("imagePreviewBox");
+  const previewImg = document.getElementById("imagePreview");
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  const closeModal = document.getElementById("closeModal");
   const submitBtn = document.getElementById("submitBtn");
+  const clearAllBtn = document.getElementById("clearAllBtn");
 
-  form.addEventListener("input", () => {
-    if (form.checkValidity()) {
-      submitBtn.disabled = false;
-      submitBtn.style.backgroundColor = "rgba(236, 178, 62, 1)";
-    } else {
-      submitBtn.disabled = true;
-      submitBtn.style.backgroundColor = "rgba(255, 152, 0, 0.3)";
+  // Restore saved data
+  window.addEventListener("load", () => {
+    const saved = localStorage.getItem("reportFormData");
+    if (!saved) return;
+    const data = JSON.parse(saved);
+
+    fields.forEach(id => {
+      if (data[id]) document.getElementById(id).value = data[id];
+    });
+
+    if (data.fileURL) {
+      previewImg.src = data.fileURL;
+      previewBox.classList.remove("hidden");
+      previewBox.dataset.savedURL = data.fileURL;
+    }
+
+    validateForm();
+  });
+
+  // Save data
+  function saveData() {
+    const data = {};
+    fields.forEach(id => data[id] = document.getElementById(id).value);
+
+    if (fileInput.files.length > 0) {
+      const file = fileInput.files[0];
+      if (file.type.startsWith("image/")) {
+        data.fileURL = URL.createObjectURL(file);
+      }
+      data.fileName = file.name;
+    } else if (previewBox.dataset.savedURL) {
+      data.fileURL = previewBox.dataset.savedURL;
+    }
+
+    localStorage.setItem("reportFormData", JSON.stringify(data));
+  }
+
+  // Validate form
+  function validateForm() {
+    const allFilled = fields.every(id => document.getElementById(id).value.trim());
+    submitBtn.disabled = !allFilled;
+
+    submitBtn.classList.toggle("opacity-50", !allFilled);
+    submitBtn.classList.toggle("cursor-not-allowed", !allFilled);
+  }
+
+  document.querySelectorAll("input, textarea, select").forEach(el => {
+    el.addEventListener("input", () => { saveData(); validateForm(); });
+    el.addEventListener("change", () => { saveData(); validateForm(); });
+  });
+
+  // Image upload + preview
+  fileInput.addEventListener("change", e => {
+    const file = e.target.files[0];
+    if (file && file.type.startsWith("image/")) {
+      const imgURL = URL.createObjectURL(file);
+      previewImg.src = imgURL;
+      previewBox.classList.remove("hidden");
+      previewBox.dataset.savedURL = imgURL;
+      saveData();
+      validateForm();
     }
   });
+
+  // Click to view modal
+  previewBox.addEventListener("click", () => {
+    modal.classList.remove("hidden");
+    modalImg.src = previewImg.src;
+  });
+
+  closeModal.addEventListener("click", () => {
+    modal.classList.add("hidden");
+  });
+
+  // Clear All
+  clearAllBtn.addEventListener("click", () => {
+    if (confirm("Clear all entered data?")) {
+      localStorage.removeItem("reportFormData");
+      document.getElementById("reportForm").reset();
+      previewBox.classList.add("hidden");
+      validateForm();
+    }
+  });
+
+  // Submit form
+  document.getElementById("reportForm").addEventListener("submit", e => {
+    e.preventDefault();
+    alert("Report submitted successfully!");
+    localStorage.removeItem("reportFormData");
+    window.location.href = "donation-search.html";
+  });
 </script>
+
 	
 	<script src="../js/script.js"></script>
 	

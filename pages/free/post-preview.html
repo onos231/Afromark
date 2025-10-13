@@ -64,8 +64,8 @@
 <script>
   const data = JSON.parse(localStorage.getItem("postFormData"));
   if (data) {
-    document.getElementById("previewOffer").textContent = data.offerItem;
-    document.getElementById("previewWant").textContent = "Wants in return: " + data.wantItem;
+    document.getElementById("previewOffer").textContent = "Offer: " + data.offerItem;
+    document.getElementById("previewWant").textContent = "Wants: " + data.wantItem;
     document.getElementById("previewLocation").textContent = "Location: " + data.location;
     document.getElementById("previewDescription").textContent = data.description;
     document.getElementById("previewImage").src = data.imageURL || "";

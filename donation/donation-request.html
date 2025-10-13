@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Donation | Afromark</title>
+  <link href="../dist/output.css" rel="stylesheet">
+</head>
+
+<body class="bg-white dark:bg-gray-900 dark:text-gray-200 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-[#0E4D22] text-white">
+    <div class="max-w-md mx-auto relative px-4 pt-6">
+      <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
+      <h1 class="text-center font-semibold mt-4 font-Kodchasan">Fill this short form to request a listed donation. Be clear and specific — it helps donors decide faster and respond kindly.
+      You can include photos or a voice message if needed.</h1>
+      
+    </div>
+      <!-- Close button only (right) -->
+      <button
+        type="button"
+        aria-label="Close"
+        class="absolute left-3 top-5 w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20 transition"
+        onclick="window.location.href='donation-search.html'">
+        <img src="../img/nav/back-arrow-1.png" alt="SwapIt Logo" class="h-3">
+      </button>
+    </div>
+	  
+    <!-- curved white top like in mock -->
+    <div class="max-w-md mx-auto bg-white dark:bg-gray-900 rounded-t-3xl h-6"></div>
+  </header>
+
+  <!-- Content -->
+  <main class="flex-grow px-6 py-8 mt-10">
+    <!--<h2 class="text-center text-xl font-Kodchasan px-12 text-gray-900 dark:text-white mb-2">
+      Let Donors Know What You Truly Need
+    </h2>
+    <p class="text-center text-gray-500 dark:text-gray-400 text-sm mb-6">
+      Fill this short form to request a listed donation. Be clear and specific — it helps donors decide faster and respond kindly.
+      You can include photos or a voice message if needed.
+    </p>-->
+
+    <form id="donationForm" class="space-y-5 py-6 px-4 dark:bg-gray-800">
+
+      <!-- Name -->
+      <div>
+        <label for="donorName" class="block text-green-700 dark:text-gray-300 font-medium mb-1">Name <span class="text-red-500">*</span></label>
+        <input id="donorName" type="text" placeholder="Enter your name"
+          class="w-full border border-gray-300 dark:border-gray-700 dark:bg-gray-900 rounded-lg p-2 focus:ring-2 focus:ring-green-600 focus:outline-none">
+      </div>
+
+      <!-- Location -->
+      <div>
+        <label for="location" class="block text-green-700 dark:text-gray-300 font-medium mb-1">Location <span class="text-red-500">*</span></label>
+        <input id="location" type="text" placeholder="Enter location"
+          class="w-full border border-gray-300 dark:border-gray-700 dark:bg-gray-900 rounded-lg p-2 focus:ring-2 focus:ring-green-600 focus:outline-none">
+      </div>
+
+      <!-- Purpose -->
+      <div>
+        <label for="purpose" class="block text-green-700 dark:text-gray-300 font-medium mb-1">What do you need this for? <span class="text-red-500">*</span></label>
+        <textarea id="purpose" rows="3" placeholder="Explain how the donation will help you or your community..."
+          class="w-full border border-gray-300 dark:border-gray-700 dark:bg-gray-900 rounded-lg p-2 focus:ring-2 focus:ring-green-600 focus:outline-none"></textarea>
+      </div>
+
+      <!-- Upload -->
+      <div class="py-4">
+        <label for="uploadFile" class="block text-green-700 dark:text-green-200 font-medium mb-1">
+          Upload Image / PDF (optional)
+        </label>
+        <input id="uploadFile" type="file" accept=".jpg,.jpeg,.png,.pdf"
+          class="w-full border border-gray-300 dark:border-gray-700 dark:bg-gray-900 rounded-lg p-2 text-sm">
+
+        <!-- Preview box -->
+        <div id="filePreviewBox" class="hidden mt-3 w-24 h-24 border rounded-lg overflow-hidden cursor-pointer">
+          <img id="filePreviewImage" src="" class="w-full h-full object-cover" alt="Preview">
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="flex flex-col gap-3 pt-4">
+        <button type="submit" id="submitBtn" disabled
+          class="w-full bg-yellow-500 font-medium py-2 rounded-lg text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-yellow-600 transition">
+          Submit Donation
+        </button>
+        <button type="button" id="clearAllBtn"
+          class="w-full border border-gray-400 text-gray-600 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+          Clear All
+        </button>
+      </div>
+
+    </form>
+  </main>
+
+  <!-- Image Modal -->
+  <div id="imageModal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+    <div class="relative bg-white rounded-lg shadow-lg max-w-sm w-full p-4">
+      <button id="closeModal" class="absolute top-2 right-2 text-gray-600 hover:text-black">✖</button>
+      <img id="modalImage" src="" class="w-full h-auto rounded-md" alt="Full Preview">
+    </div>
+  </div>
+
+  <script>
+    const fields = ["donorName", "location", "purpose"];
+    const fileInput = document.getElementById("uploadFile");
+    const previewBox = document.getElementById("filePreviewBox");
+    const previewImg = document.getElementById("filePreviewImage");
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    const closeModal = document.getElementById("closeModal");
+    const submitBtn = document.getElementById("submitBtn");
+    const clearBtn = document.getElementById("clearAllBtn");
+
+    // Restore saved data
+    window.addEventListener("load", () => {
+      const saved = localStorage.getItem("donationFormData");
+      if (!saved) return;
+      const data = JSON.parse(saved);
+      fields.forEach(id => {
+        if (data[id]) document.getElementById(id).value = data[id];
+      });
+      if (data.fileURL) {
+        previewImg.src = data.fileURL;
+        previewBox.classList.remove("hidden");
+        previewBox.dataset.savedURL = data.fileURL;
+      }
+      validateForm();
+    });
+
+    // Save data
+    function saveData() {
+      const data = {};
+      fields.forEach(id => data[id] = document.getElementById(id).value);
+      if (fileInput.files.length > 0) {
+        const f = fileInput.files[0];
+        if (f.type.startsWith("image/")) {
+          data.fileURL = URL.createObjectURL(f);
+          data.fileType = f.type;
+        }
+      } else if (previewBox.dataset.savedURL) {
+        data.fileURL = previewBox.dataset.savedURL;
+      }
+      localStorage.setItem("donationFormData", JSON.stringify(data));
+    }
+
+    // Validate form
+    function validateForm() {
+      const allFilled = fields.every(id => document.getElementById(id).value.trim());
+      submitBtn.disabled = !allFilled;
+      submitBtn.classList.toggle("opacity-50", !allFilled);
+      submitBtn.classList.toggle("cursor-not-allowed", !allFilled);
+    }
+
+    document.querySelectorAll("input, textarea").forEach(el => {
+      el.addEventListener("input", () => { saveData(); validateForm(); });
+      el.addEventListener("change", () => { saveData(); validateForm(); });
+    });
+
+    // Handle file upload
+    fileInput.addEventListener("change", e => {
+      const file = e.target.files[0];
+      if (file && file.type.startsWith("image/")) {
+        const imgURL = URL.createObjectURL(file);
+        previewImg.src = imgURL;
+        previewBox.classList.remove("hidden");
+        previewBox.dataset.savedURL = imgURL;
+        saveData();
+      }
+    });
+
+    // Show image modal
+    previewBox.addEventListener("click", () => {
+      modal.classList.remove("hidden");
+      modalImg.src = previewImg.src;
+    });
+
+    closeModal.addEventListener("click", () => {
+      modal.classList.add("hidden");
+    });
+
+    // Submit form
+    document.getElementById("donationForm").addEventListener("submit", e => {
+      e.preventDefault();
+      saveData();
+      window.location.href = "donation-search.html";
+    });
+
+    // Clear all
+    clearBtn.addEventListener("click", () => {
+      if (confirm("Clear all entered data?")) {
+        localStorage.removeItem("donationFormData");
+        window.location.reload();
+      }
+    });
+  </script>
+
+		<script src="js/script.js"></script>
+	<script src="../js/script.js"></script>
+</body>
+</html>
