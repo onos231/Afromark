@@ -128,6 +128,122 @@
     <p class="text-gray-600 font-medium">No results found</p>
     <p class="text-gray-400 text-sm">Try searching with different keywords or categories</p>
   </div>
+	
+	
+	<!-- ==== FIXED AI ICON BUTTON (with soft pulsing glow) ==== -->
+<style>
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6);
+    }
+    50% {
+      box-shadow: 0 0 20px 8px rgba(16, 185, 129, 0.3);
+    }
+  }
+</style>
+
+<!--<button
+  id="aiButton"
+  onclick="goToAI()"
+  class="fixed bottom-5 right-3 z-50 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full w-14 h-14 flex items-center justify-center animate-[pulseGlow_2s_infinite] transition-transform duration-200 hover:scale-105">
+  <!-- AI Spark Icon -->
+  <!--<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+    stroke-width="2" stroke="currentColor" class="w-7 h-7">
+    <path stroke-linecap="round" stroke-linejoin="round"
+      d="M12 3v3m0 12v3m9-9h-3M6 12H3m13.5-6.5L18 6m-12 12l1.5 1.5m0-12L6 6m12 12l-1.5 1.5" />
+  </svg>
+</button>
+
+<script>
+  function goToAI() {
+    // Example: check if user is premium (you can replace with real logic)
+    const isPremiumUser = true; // Set this dynamically in your system
+    if (isPremiumUser) {
+      window.location.href = "ai-interface.html";
+    } else {
+      alert("✨ Afromark AI Assistant is available for premium users only.");
+    }
+  }
+</script>-->
+<!-- ==== FLOATING AI VOICE BUTTON ==== -->
+<style>
+  @keyframes pulseGlow {
+    0%,100% { box-shadow: 0 0 0 0 rgba(16,185,129,0.6); }
+    50% { box-shadow: 0 0 20px 8px rgba(16,185,129,0.3); }
+  }
+</style>
+
+<button id="voiceAI"
+  class="fixed bottom-5 right-3 z-50 w-14 h-14 bg-green-200 rounded-full bg-gradient-to-r py-2 px-2 from-green-500 to-emerald-600 dark:text-white flex items-center justify-center animate-[pulseGlow_2s_infinite] hover:scale-105 transition-transform duration-200">
+  <!-- Microphone icon -->
+  <svg id="micIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+       stroke-width="2" stroke="currentColor" class="w-7 h-7">
+    <path stroke-linecap="round" stroke-linejoin="round"
+          d="M12 1.5a3 3 0 013 3v6a3 3 0 11-6 0v-6a3 3 0 013-3zM19.5 10.5a7.5 7.5 0 01-15 0M12 18v4" />
+  </svg>
+</button>
+
+<script>
+  const aiBtn = document.getElementById('voiceAI');
+  const micIcon = document.getElementById('micIcon');
+
+  // Check browser support
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  let listening = false;
+
+  if (!SpeechRecognition) {
+    aiBtn.addEventListener('click', () => alert('Voice commands not supported in this browser.'));
+  } else {
+    const recognition = new SpeechRecognition();
+    recognition.lang = 'en-US';
+    recognition.continuous = false;
+    recognition.interimResults = false;
+
+    aiBtn.addEventListener('click', () => {
+      if (listening) {
+        recognition.stop();
+        listening = false;
+        micIcon.classList.remove('animate-ping');
+      } else {
+        recognition.start();
+        listening = true;
+        micIcon.classList.add('animate-ping');
+      }
+    });
+
+    recognition.onresult = (event) => {
+      const command = event.results[0][0].transcript.toLowerCase().trim();
+      console.log('Heard:', command);
+      listening = false;
+      micIcon.classList.remove('animate-ping');
+
+      if (command.includes('open ai')) {
+        window.location.href = 'ai-interface.html';
+      } else if (command.startsWith('find')) {
+        const query = command.replace('find', '').trim();
+        const input = document.querySelector('input[type="search"], #searchInput');
+        if (input) {
+          input.value = query;
+          alert(`Searching for: ${query}`);
+        } else {
+          alert(`Looking for ${query} (no search box found on this page).`);
+        }
+      } else if (command.includes('help')) {
+        alert('Afromark Assistant:\nSay "find rice", "open AI", or "help" anytime.');
+      } else {
+        alert(`You said: "${command}" — no matching action yet.`);
+      }
+    };
+
+    recognition.onerror = (e) => {
+      listening = false;
+      micIcon.classList.remove('animate-ping');
+      alert('Voice recognition error: ' + e.error);
+    };
+  }
+</script>
+
+
 
   <!-- Bottom Navigation -->
   <nav class="fixed bottom-0 w-full bg-white shadow-inner flex justify-around py-2 dark:bg-gray-800">
@@ -179,6 +295,9 @@
 		  <a href="../../all-users/about-us.html"><li class="flex items-center space-x-2 mb-4"><span><img src="../../img/account/about-us.svg" alt="" class="h-3"></span><span class="dark:text-green-200">About Us</span></li></a>
     </ul>
   </div>
+	
+	
+	
 	<script src="js/script.js"></script>
 	<script src="../../js/script.js"></script>
 	
