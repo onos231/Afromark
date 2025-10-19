@@ -223,12 +223,12 @@
        z-index: 999999;
        display: flex;
        align-items: center;
-	   border-radius: 20px;
+       border-radius: 20px;
        gap: 8px;
-	   padding: 2px 6px;
-		background-color: #EDEDED;
+       padding: 2px 6px;
+       background-color: #EDEDED;
        pointer-events: auto;">
-  
+
   <div style="
         color: #15803d;
         padding: 2px;
@@ -244,22 +244,18 @@
             height: 26px;
             border-radius: 50%;
             background: white;
-            color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-				 padding: 8px;
+            padding: 8px;
             border: none;
             cursor: pointer;">
-    <img src="../../img/premium/ai.svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <img src="../../img/premium/ai.svg" class="h-6 w-6" alt="AI">
   </button>
 </div>
 
-	
-<!-- ==== SCRIPT (Voice recognition) ==== -->
 <script>
   const aiBtn = document.getElementById('voiceAI');
-  const micIcon = document.getElementById('micIcon');
   const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
   let listening = false;
 
@@ -276,11 +272,10 @@
       if (listening) {
         recognition.stop();
         listening = false;
-        micIcon.classList.remove('animate-ping');
       } else {
         recognition.start();
         listening = true;
-        micIcon.classList.add('animate-ping');
+        console.log('Listening...');
       }
     });
 
@@ -288,7 +283,6 @@
       const command = event.results[0][0].transcript.toLowerCase().trim();
       console.log('Heard:', command);
       listening = false;
-      micIcon.classList.remove('animate-ping');
 
       if (command.includes('open ai')) {
         window.location.href = 'ai-interface.html';
@@ -310,11 +304,11 @@
 
     recognition.onerror = (e) => {
       listening = false;
-      micIcon.classList.remove('animate-ping');
       alert('Voice recognition error: ' + e.error);
     };
   }
 </script>
+
 	
 	<script src="js/script.js"></script>
 	<script src="../../js/script.js"></script>
