@@ -1,5 +1,7 @@
 module.exports = {
   content: [
+	  "./**/*.html",
+    "./**/*.js",
     "./*.html",
     "./pages/**/*.{html,js}",
     "./components/**/*.{html,js}",

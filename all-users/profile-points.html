@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Payment Portal</title>
+  <link href="../dist/output.css" rel="stylesheet">
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:bg-gray-900 transition-colors duration-300" id="app">
+  
+	<!-- Header -->
+
+  <header class="bg-[#0E4D22] text-white">
+    <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
+      <h1 class="text-center font-semibold">My Points</h1>
+      <!-- Close button only (right) -->
+      <button
+        type="button"
+        aria-label="Close"
+        class="absolute right-3 top-5 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition"
+        onclick="window.location.href='profile.html'">
+        ✕
+      </button>
+    </div>
+    <!-- curved white top like in mock -->
+    <div class="max-w-md mx-auto bg-white dark:bg-gray-900 rounded-t-3xl h-6"></div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="p-4 space-y-5">
+
+    <!-- Points Summary Card -->
+    <div class="bg-gradient to-emerald-600 bg-green-200 dark:text-white dark:bg-gray-700 rounded-2xl p-5 flex justify-between items-center shadow-md">
+      <div>
+        <h2 class="text-base font-semibold">Your Points</h2>
+        <p class="text-xs opacity-90">Earn from swaps, reviews & referrals</p>
+      </div>
+      <div class="text-right">
+        <p id="totalPoints" class="text-3xl font-extrabold">2,450</p>
+        <p class="text-sm opacity-90">A-Points</p>
+      </div>
+    </div>
+
+    <!-- Tier & Progress -->
+    <div class="bg-white rounded-xl p-4 border shadow-sm flex justify-between items-center dark:text-white dark:bg-gray-800">
+      <div>
+        <p class="text-gray-700 font-semibold dark:text-white">
+          Current Tier:
+          <span id="tierName" class="text-green-600 dark:text-white">Silver Trader 🥈</span>
+        </p>
+        <p class="text-xs text-gray-500 dark:text-white">
+          Next tier at <span id="nextTier ">3,000</span> pts
+        </p>
+      </div>
+      <div class="w-24 h-2 bg-gray-200 rounded-full overflow-hidden">
+        <div id="tierProgress" class="h-full bg-green-500 w-3/4"></div>
+      </div>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="bg-white rounded-xl border shadow-sm dark:text-white dark:bg-gray-800">
+      <h3 class="p-3 text-gray-700 font-semibold border-b  dark:text-white">
+        Recent Activity
+      </h3>
+      <ul id="activityList" class="divide-y text-sm">
+        <li class="flex justify-between p-3">
+          <span>Completed verified swap</span>
+          <span class="text-green-600 font-bold">+100</span>
+        </li>
+        <li class="flex justify-between p-3">
+          <span>Referral bonus (Akpofure A.)</span>
+          <span class="text-green-600 font-bold">+150</span>
+        </li>
+        <li class="flex justify-between p-3">
+          <span>5-star rating</span>
+          <span class="text-green-600 font-bold">+25</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="flex gap-3">
+      <button onclick="location.href='redeem.html'"
+              class="flex-1 bg-green-600 text-white py-3 rounded-lg font-semibold shadow-md hover:bg-green-700 transition">
+        Redeem Points
+      </button>
+      <button onclick="location.href='invite.html'"
+              class="flex-1 bg-emerald-50 text-green-700 border border-green-200 py-3 rounded-lg font-semibold shadow-md hover:bg-emerald-100 transition">
+        Invite & Earn
+      </button>
+    </div>
+
+  </main>
+
+	
+	
+  <!-- Simple JS Mock Data -->
+  <script>
+    // Example dynamic data for testing
+    const userPoints = {
+      total: 2450,
+      tier: "Silver Trader 🥈",
+      nextTierAt: 3000,
+      progress: 0.82,
+      history: [
+        { action: "Completed verified swap", amount: 100 },
+        { action: "Referral bonus (Akpofure A.)", amount: 150 },
+        { action: "5-star rating", amount: 25 }
+      ]
+    };
+
+    document.getElementById("totalPoints").textContent = userPoints.total.toLocaleString();
+    document.getElementById("tierName").textContent = userPoints.tier;
+    document.getElementById("nextTier").textContent = userPoints.nextTierAt.toLocaleString();
+    document.getElementById("tierProgress").style.width = (userPoints.progress * 100) + "%";
+
+    const list = document.getElementById("activityList");
+    list.innerHTML = userPoints.history.map(
+      item => `
+        <li class="flex justify-between p-3">
+          <span>${item.action}</span>
+          <span class="text-green-600 font-bold">+${item.amount}</span>
+        </li>`
+    ).join("");
+  </script>
+
+	<script src="../donation/js/script.js"></script>
+	
+	<script src="../js/script.js"></script>
+</body>
+</html>
