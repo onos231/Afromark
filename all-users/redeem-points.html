@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Payment Portal</title>
+  <link href="../dist/output.css" rel="stylesheet">
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:bg-gray-900 transition-colors duration-300" id="app">
+
+  <!-- Header -->
+  <div class="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
+    <button onclick="history.back()" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800">
+      <img src="../img/nav/back-arrow-1.png" class="h-3">
+    </button>
+    <h1 class="font-semibold text-lg dark:text-white">Redeem Points</h1>
+    <div class="w-8"></div>
+  </div>
+
+  <!-- Points Summary -->
+  <section class="text-center mt-6">
+    <p class="text-sm text-gray-500 dark:text-gray-400 dark:text-white">Your available balance</p>
+    <h2 class="text-4xl font-bold text-green-600 dark:text-green-400 mt-2">2,230 A-Points</h2>
+  </section>
+
+  <!-- Redeem Options -->
+  <section class="mt-8 space-y-4 px-4">
+    <div class="bg-white dark:bg-gray-800 rounded-xl p-4 shadow-md hover:shadow-lg transition">
+      <div class="flex items-center justify-between">
+        <div>
+          <h3 class="font-semibold dark:text-gray-400">Free Premium Access (1 Month)</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400 dark:text-white">Cost: 1,000 A-Points</p>
+        </div>
+        <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 text-sm">Redeem</button>
+      </div>
+    </div>
+
+    <div class="bg-white dark:bg-gray-800 rounded-xl p-4 shadow-md hover:shadow-lg transition">
+      <div class="flex items-center justify-between">
+        <div>
+          <h3 class="font-semibold dark:text-gray-400">Swap Boost (5 free swaps)</h3>
+          <p class="text-sm text-gray-500 dark:text-white">Cost: 500 A-Points</p>
+        </div>
+        <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 text-sm">Redeem</button>
+      </div>
+    </div>
+
+    <div class="bg-white dark:bg-gray-800 rounded-xl p-4 shadow-md hover:shadow-lg transition">
+      <div class="flex items-center justify-between">
+        <div>
+          <h3 class="font-semibold dark:text-gray-400">Gift Card Voucher ($5)</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400 dark:text-white">Cost: 1,200 A-Points</p>
+        </div>
+        <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 text-sm">Redeem</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Note -->
+  <p class="text-center text-xs text-gray-400 mt-8 px-6">
+    Points redemptions are verified instantly. Rewards may vary by region.
+  </p>
+
+	
+	<script src="../js/script.js"></script>
+</body>
+</html>
