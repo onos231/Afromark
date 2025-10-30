@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Swap Chat</title>
+  <link href="../dist/output.css" rel="stylesheet" />
+</head>
+
+<body class="h-full flex flex-col bg-gray-100 dark:bg-gray-900">
+
+  <!-- HEADER -->
+  <header class="flex items-center gap-3 p-4 bg-white dark:bg-gray-800 shadow">
+    <button onclick="history.back()" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700">
+      <img src="../img/nav/back-arrow-1.png" class="h-4">
+    </button>
+    <div>
+      <h2 class="text-lg font-semibold text-gray-800 dark:text-white">Chat to trade</h2>
+      <p class="text-xs text-gray-500 dark:text-gray-400">Swap: Rice ↔ Beans</p>
+    </div>
+  </header>
+
+  <!-- CHAT AREA (THIS IS THE CRITICAL PART) -->
+  <main id="chatBox" class="flex-1 flex flex-col justify-end overflow-y-auto px-4 py-3 space-y-3">
+
+    <!-- Test Existing Messages -->
+    <div class="flex items-start gap-2 max-w-[80%]">
+      <img src="../img/profile/profile-icon.png" class="w-8 h-8 rounded-full object-cover">
+      <div class="bg-white dark:bg-gray-800 px-3 py-2 rounded-xl shadow text-sm">
+        Hi, thanks for accepting the swap!
+        <div class="text-[10px] text-gray-400 mt-1">12:10 PM</div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- INPUT BAR -->
+  <footer class="p-3 bg-white dark:bg-gray-800 flex items-center gap-2 shadow">
+    <input 
+      id="messageInput"
+      type="text"
+      placeholder="Type a message..."
+      class="flex-1 px-3 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white outline-none text-sm"
+    >
+    <button id="sendBtn" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full text-sm">
+      Send
+    </button>
+  </footer>
+
+<script>
+  const chatBox = document.getElementById("chatBox");
+  const input = document.getElementById("messageInput");
+  const sendBtn = document.getElementById("sendBtn");
+
+  function formatTime() {
+    const now = new Date();
+    return now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+  }
+
+  function sendMessage() {
+    const text = input.value.trim();
+    if (!text) return;
+
+    const bubble = document.createElement("div");
+    bubble.className = "flex items-start justify-end gap-2 max-w-[80%] ml-auto";
+    bubble.innerHTML = `
+      <div class="bg-green-600 text-white px-3 py-2 rounded-xl shadow text-sm">
+        ${text}
+        <div class="text-[10px] text-white/80 mt-1 text-right">${formatTime()}</div>
+      </div>
+      <img src="../img/profile/profile-icon.png" class="w-8 h-8 rounded-full object-cover">
+    `;
+
+    chatBox.appendChild(bubble);
+    input.value = "";
+
+    // ✅ ALWAYS scroll to latest message
+    setTimeout(() => chatBox.scrollTop = chatBox.scrollHeight, 50);
+  }
+
+  sendBtn.addEventListener("click", sendMessage);
+  input.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") sendMessage();
+  });
+
+  // ✅ First load — start at bottom
+  chatBox.scrollTop = chatBox.scrollHeight;
+</script>
+
+</body>
+</html>
