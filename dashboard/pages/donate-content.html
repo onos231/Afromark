@@ -1,0 +1,269 @@
+<!-- Top Cards -->
+<section class="space-y-6">
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="rounded-xl bg-white p-4 shadow-sm border border-gray-100 dark:border-gray-900 dark:bg-gray-800">
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-xs text-gray-500 dark:text-gray-300">A-Points Balance</div>
+                <div class="text-2xl font-semibold text-green-700 dark:text-green-200" id="pointsBalance">2,230</div>
+                <div class="text-xs text-gray-400 mt-1 dark:text-gray-300">Points available</div>
+              </div>
+              <div class="flex flex-col items-end">
+                <button class="bg-green-600 text-white px-3 py-1 rounded-md text-sm">Redeem</button>
+                <a href="profile-points.html" class="text-xs text-gray-500 mt-2 hover:text-green-700 dark:text-gray-300">View history</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-white p-4 shadow-sm border border-gray-100 dark:border-gray-900 dark:bg-gray-800">
+            <div class="text-xs text-gray-500">Trust Score</div>
+            <div class="flex items-center gap-3 mt-2">
+              <div class="text-3xl font-semibold">4.7</div>
+              <div class="text-xs text-gray-400">Based on 128 swaps</div>
+            </div>
+            <div class="mt-3">
+              <div class="w-full bg-gray-100 rounded-full h-2">
+                <div id="trustBar" class="bg-green-600 h-2 rounded-full" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-white p-4 shadow-sm border border-gray-100 dark:border-gray-900 dark:bg-gray-800">
+            <div class="text-xs text-gray-500 dark:text-white">Recent Activity</div>
+            <div class="mt-3 text-sm text-gray-700">
+              <div id="recentActivity" class="dark:text-gray-300">3 swaps confirmed in last 7 days</div>
+            </div>
+            <div class="mt-3">
+              <a href="redeem-points.html" class="inline-block bg-green-50 text-green-700 px-3 py-1 rounded-full text-sm">Redeem Rewards</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Main split: Recent Swaps / Pending Negotiations + Invite -->
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+ 
+			<!-- Recent Swaps (main column) REPLACED WITH TABS -->
+<div class="lg:col-span-2 space-y-4">
+
+  <div class="rounded-xl bg-white p-4 shadow-sm border border-gray-100">
+
+    <!-- ✅ TABS -->
+    <div class="flex border-b mb-4 text-sm">
+      <button class="swapTab activeTab px-4 py-2 border-b-2 border-green-600 font-medium" data-tab="completed">Completed Swaps</button>
+      <button class="swapTab px-4 py-2 text-gray-500" data-tab="pending">Pending Negotiations</button>
+      <button class="swapTab px-4 py-2 text-gray-500" data-tab="cancelled">Cancelled Swaps</button>
+    </div>
+
+    <!-- ✅ WHERE CONTENT WILL BE DISPLAYED -->
+    <div id="donateContent" class="space-y-3"></div>
+
+  </div>
+
+</div>
+
+
+
+          <!-- Tabbed swaps block -->
+<div class="rounded-xl bg-white p-4 shadow-sm border border-gray-100">
+
+  <!-- TABS -->
+  <div class="flex items-center justify-start gap-4 border-b pb-3 mb-4 text-sm">
+    <button class="swapTab activeTab px-4 py-2" data-tab="completed">Completed Swaps</button>
+    <button class="swapTab px-4 py-2" data-tab="pending">Pending Negotiations</button>
+    <button class="swapTab px-4 py-2" data-tab="cancelled">Cancelled Swaps</button>
+  </div>
+
+  <!-- TAB CONTENT HOLDER -->
+  <div id="donateContent" class="space-y-3"></div>
+
+</div>
+
+
+
+          <!-- Right Column: Invite + Quick Actions -->
+          <aside class="space-y-4">
+
+            <div class="rounded-xl bg-white p-4 shadow-sm border border-gray-100 dark:border-gray-900 dark:bg-gray-800">
+              <div class="flex items-start justify-between">
+                <div>
+                  <h4 class="font-semibold text-gray-800 dark:text-white">Invite & Earn</h4>
+                  <p class="text-xs text-gray-500 mt-1 dark:text-gray-300">Share your code to earn A-Points</p>
+                </div>
+                <div class="text-right">
+                  <div class="text-sm font-semibold text-green-700">AFM-7392-QJD</div>
+                  <button onclick="copyInvite()" class="mt-2 text-xs bg-green-600 text-white px-3 py-1 rounded-md">Copy</button>
+                </div>
+              </div>
+
+              <div class="mt-3">
+                <button onclick="shareWhatsApp()" class="w-full inline-flex items-center gap-2 justify-center bg-green-600 text-white px-3 py-2 rounded-lg text-sm">
+                  <img src="../img/social/whatsapp.svg" alt="whatsapp" class="w-4 h-4"> Share via WhatsApp
+                </button>
+                <button onclick="shareX()" class="w-full mt-2 inline-flex items-center gap-2 justify-center bg-sky-500 text-white px-3 py-2 rounded-lg text-sm">
+                  <img src="../img/social/twitter.svg" alt="x" class="w-4 h-4"> Share on X
+                </button>
+              </div>
+            </div>
+
+            <div class="rounded-xl bg-white p-4 shadow-sm border border-gray-100 dark:border-gray-900 dark:bg-gray-800">
+              <h4 class="font-semibold ">Quick Actions</h4>
+              <div class="mt-3 grid grid-cols-2 gap-2">
+                <a href="profile-points.html" class="block text-center px-3 py-2 rounded-md bg-gray-50 hover:bg-gray-100 text-sm dark:bg-gray-800 border dark:border-gray-700 dark:bg-gray-800">My Points</a>
+                <a href="redeem-points.html" class="block text-center px-3 py-2 rounded-md bg-gray-50 hover:bg-gray-100 text-sm border dark:border-gray-700 dark:bg-gray-800">Redeem</a>
+                <a href="invite-earn.html" class="block text-center px-3 py-2 rounded-md bg-gray-50 hover:bg-gray-100 text-sm border dark:border-gray-700 dark:bg-gray-800">Invite</a>
+                <a href="messages.html" class="block text-center px-3 py-2 rounded-md bg-gray-50 hover:bg-gray-100 text-sm border dark:border-gray-700 dark:bg-gray-800">Messages</a>
+              </div>
+            </div>
+
+            <div class="rounded-xl bg-white p-4 shadow-sm border border-gray-100 text-sm border dark:border-gray-700 dark:bg-gray-800">
+              <h4 class="font-semibold mb-2">Help & Safety</h4>
+              <p class="text-xs text-gray-500 dark:text-gray-300">Guides on safe swaps, meeting in public places, and dispute resolution.</p>
+              <a href="#" class="text-xs text-green-700 mt-2 inline-block">Learn more →</a>
+            </div>
+
+          </aside>
+
+        </section>
+</section>
+
+<script>
+  const recentSwaps = [
+    { title: 'Rice ↔ Beans', counterparty: 'Chisom', date: '2025-10-15', status: 'Completed' },
+    { title: 'Onions ↔ Plantain', counterparty: 'Olu', date: '2025-10-11', status: 'Completed' }
+  ];
+
+  const pending = [
+    { title: 'Tomato ↔ Pepper', counterparty: 'Aisha', date: '2025-10-29', status: 'Pending' }
+  ];
+
+  function renderRecent() {
+    const container = document.getElementById("recentSwapsList");
+    if (!container) return;
+    container.innerHTML = "";
+    recentSwaps.forEach(s => {
+      container.innerHTML += `
+        <div class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 flex justify-between hover:shadow-sm">
+          <div>
+            <div class="font-medium">${s.title}</div>
+            <div class="text-xs text-gray-500 dark:text-gray-400">With ${s.counterparty} · ${s.date}</div>
+          </div>
+          <div class="text-sm ${s.status === 'Completed' ? 'text-green-600' : 'text-yellow-600'}">${s.status}</div>
+        </div>`;
+    });
+  }
+
+  function renderPending() {
+    const container = document.getElementById("pendingList");
+    if (!container) return;
+    container.innerHTML = "";
+    pending.forEach(p => {
+      container.innerHTML += `
+        <div class="p-3 rounded-lg border border-yellow-200 dark:border-gray-600 flex justify-between bg-yellow-50/40 dark:bg-gray-800 hover:shadow-sm">
+          <div>
+            <div class="font-medium">${p.title}</div>
+            <div class="text-xs text-gray-600 dark:text-gray-400">With ${p.counterparty} · ${p.date}</div>
+          </div>
+          <button class="px-3 py-1 bg-green-600 text-white rounded-md text-xs">Chat</button>
+        </div>`;
+    });
+  }
+
+  // ✅ FIX: Wait until page is injected
+  document.addEventListener("DOMContentLoaded", () => {
+    renderRecent();
+    renderPending();
+  });
+</script>
+
+<script>
+const completedSwaps = [
+  { title: "Rice ↔ Beans", user: "Chisom", date: "2025-06-15" },
+  { title: "Yam ↔ Garri", user: "Olu", date: "2025-08-22" },
+  { title: "Tomatoes ↔ Garri", user: "Emeka", date: "2025-10-25" }
+];
+
+const pendingSwaps = [
+  { title: "Cassava ↔ Corn", user: "Aisha", date: "2025-10-29" }
+];
+
+const cancelledSwaps = [
+  { title: "Rice ↔ Beans", user: "Chisom", date: "2025-05-11" }
+];
+
+function buildHeader(type) {
+  if (type === "completed") {
+    return `
+      <div class="flex items-center justify-between mb-2">
+        <h3 class="font-semibold text-gray-800">Recent Swaps</h3>
+        <a href="#" class="text-xs text-gray-500 hover:text-green-700">See all</a>
+      </div>`;
+  }
+  if (type === "pending") {
+    return `
+      <div class="flex items-center justify-between mb-2">
+        <h3 class="font-semibold text-gray-800">Pending Negotiations</h3>
+        <span class="text-xs text-gray-500">Respond quickly to close swaps</span>
+      </div>`;
+  }
+  return `
+    <div class="flex items-center justify-between mb-2">
+      <h3 class="font-semibold text-gray-800">Declined Swaps</h3>
+      <div class="text-xs flex items-center gap-3">
+        <button id="deleteAllCancelled" class="text-red-600 hover:underline">Delete All</button>
+        <a href="#" class="text-gray-500 hover:text-green-700">See All</a>
+      </div>
+    </div>`;
+}
+
+function renderList(data) {
+  return data.map(item => `
+    <div class="p-3 rounded-lg border border-gray-200 bg-white flex justify-between hover:shadow-sm">
+      <div>
+        <div class="font-medium">${item.title}</div>
+        <div class="text-xs text-gray-500">With ${item.user} • ${item.date}</div>
+      </div>
+      <button class="px-3 py-1 text-xs bg-green-600 text-white rounded-md">View</button>
+    </div>
+  `).join("");
+}
+
+function renderSwaps(type) {
+  const container = document.getElementById("donateContent");
+  if (!container) return;
+  container.innerHTML = buildHeader(type);
+
+  if (type === "completed") container.innerHTML += renderList(completedSwaps);
+  else if (type === "pending") container.innerHTML += renderList(pendingSwaps);
+  else container.innerHTML += renderList(cancelledSwaps);
+
+  const deleteBtn = document.getElementById("deleteAllCancelled");
+  if (deleteBtn) deleteBtn.onclick = () => {
+    cancelledSwaps.length = 0;
+    renderSwaps("cancelled");
+  };
+}
+
+document.querySelectorAll(".swapTab").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".swapTab").forEach(b => b.classList.remove("activeTab"));
+    btn.classList.add("activeTab");
+    renderSwaps(btn.dataset.tab);
+  });
+});
+
+renderSwaps("completed");
+</script>
+
+
+<style>
+  .activeTab {
+    color: #0E4D22 !important;
+    border-bottom: 2px solid #0E4D22 !important;
+    font-weight: 600;
+  }
+</style>
+
+
+
+

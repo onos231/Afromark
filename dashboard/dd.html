@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Afromark — Dashboard</title>
+  <!-- Link to your compiled Tailwind CSS -->
+  <link href="../dist/output.css" rel="stylesheet">
+</head>
+<body class=" dark:bg-gray-900 text-black dark:text-white font-sans">
+
+  <div class="min-h-screen flex">
+
+    <!-- SIDEBAR -->
+    <aside id="sidebar" class="hidden md:flex md:flex-col w-72 bg-white dark:bg-gray-900 border-r border-gray-200  dark:border-gray-700 p-5 space-y-6">
+      <div class="flex items-center gap-3">
+        <!-- Replace with your SVG logo or <img> -->
+        <div class="w-10 h-10 rounded-full bg-green-700 flex items-center justify-center text-white font-bold">A</div>
+        <div>
+          <h1 class="text-lg font-semibold">Afromark</h1>
+          <p class="text-xs text-gray-500 dark:text-gray-300">Community Trade</p>
+        </div>
+      </div>
+
+      <nav class="flex-1">
+        <ul class="space-y-2 text-sm">
+          <li>
+			  <button onclick="loadDashboardPage('pages/overview.html')" 
+class="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-left hover:bg-gray-50 dark:hover:bg-gray-800">
+   <svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3 9 4-18 3 9h4"/></svg>
+  <span class="font-medium">Dashboard Overview</span>
+</button>
+            
+          </li>
+          <li>
+	<button onclick="loadDashboardPage('pages/listings.html')" 
+class="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-left hover:bg-gray-50 dark:hover:bg-gray-800"><svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18"/></svg>
+  Your Active Listings
+</button>
+
+       
+          </li>
+          <li>
+            <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
+              <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16h6"/></svg>
+              <span>Swap Offers & Negotiations</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50dark:hover:bg-gray-800">
+              <svg class="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+              <span>Chats & Messaging</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-green-50 dark:bg-gray-900 border border-green-100 dark:border-green-200">
+              <svg class="w-5 h-5 text-green-700" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 8c1.657 0 3 1.567 3 3.5S13.657 15 12 15s-3-1.567-3-3.5S10.343 8 12 8z"/><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
+              <span class="font-medium">A-Points & Rewards</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
+              <svg class="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 10-8 0v4"/></svg>
+              <span>Invite Friends & Earn Points</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
+              <svg class="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3v1M12 20v1M4 7l1 12a2 2 0 002 2h10a2 2 0 002-2l1-12"/></svg>
+              <span>Account & Security Settings</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="mt-auto">
+        <button class="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-50 text-sm text-red-600 dark:text-red-300">Logout</button>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="flex-1 flex flex-col ">
+
+      <!-- TOPBAR (mobile hamburger + search + profile) -->
+      <header class="flex items-center justify-between gap-4 px-4 py-3 bg-white dark:bg-gray-900 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+        <div class="flex items-center gap-3">
+          <!-- Hamburger for small screens -->
+          <button id="openSidebarBtn" class="block md:hidden p-2 rounded-md bg-gray-100">
+            <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+
+          <div class="relative hidden sm:block">
+            <input type="search" placeholder="Search swaps, users, items..." class="w-80 px-3 py-2 rounded-lg border dark:bg-gray-800 border-gray-200 dark:border-gray-900 bg-gray-50 text-sm focus:ring-1 focus:ring-green-200 outline-none">
+            <svg class="absolute right-3 top-2.5 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 111.998-14.978"/></svg>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button class="p-2 rounded-md hover:bg-gray-50" title="Notifications">
+            <svg class="w-5 h-5 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 10-12 0v3.159a2.032 2.032 0 01-.595 1.436L4 17h5"/></svg>
+          </button>
+
+          <!-- Profile / My Account -->
+          <div class="flex items-center gap-2 p-1 rounded-md hover:bg-gray-50 cursor-pointer">
+            <img src="../img/profile/profile-pic.jpg" alt="Profile" class="w-8 h-8 rounded-full object-cover">
+            <div class="text-sm text-right">
+              <div class="font-medium">My Account</div>
+              <div class="text-xs text-gray-500">Manage profile</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- DASHBOARD GRID -->
+      <main class="p-6 space-y-6" id="dashboardContent">
+
+        
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Mobile overlay sidebar (simple) -->
+  <div id="mobileSidebar" class="fixed inset-0 z-40 md:hidden hidden">
+    <div class="absolute inset-0 bg-black/40" onclick="closeMobileSidebar()"></div>
+    <div class="absolute left-0 top-0 h-full w-72 bg-white p-5 dark:bg-gray-900">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 rounded-full bg-green-700 flex items-center justify-center text-white font-bold">A</div>
+        <div>
+          <h2 class="font-semibold">Afromark</h2>
+          <p class="text-xs text-gray-500">Community Trade</p>
+        </div>
+      </div>
+      <nav class="space-y-3 text-sm">
+        <!-- Reuse same menu items -->
+        <a href="#" class="block px-2 py-2 rounded-md hover:bg-gray-50 dark:bg-gray-800">Dashboard Overview</a>
+        <a href="#" class="block px-2 py-2 rounded-md hover:bg-gray-50 dark:bg-gray-800">Your Active Listings</a>
+        <a href="#" class="block px-2 py-2 rounded-md hover:bg-gray-50 dark:bg-gray-800">Swap Offers & Negotiations</a>
+        <a href="#" class="block px-2 py-2 rounded-md hover:bg-gray-50 dark:bg-gray-800">Chats & Messaging</a>
+        <a href="#" class="block px-2 py-2 rounded-md hover:bg-gray-50 dark:bg-gray-800">A-Points & Rewards</a>
+        <a href="#" class="block px-2 py-2 rounded-md hover:bg-gray-50 dark:bg-gray-800">Invite Friends & Earn Points</a>
+        <a href="#" class="block px-2 py-2 rounded-md hover:bg-gray-50 dark:bg-gray-800">Account & Security Settings</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- SCRIPT: sample data + simple interactivity -->
+  <script>
+    // Sidebar toggle
+    document.getElementById('openSidebarBtn').addEventListener('click', () => {
+      document.getElementById('mobileSidebar').classList.remove('hidden');
+    });
+    function closeMobileSidebar() {
+      document.getElementById('mobileSidebar').classList.add('hidden');
+    }
+
+    // Sample data - replace with real API calls
+    const recentSwaps = [
+      { id: 's1', title: 'Rice ↔ Beans', counterparty: 'Chisom', date: '2025-10-15', status: 'Completed' },
+      { id: 's2', title: 'Onions ↔ Plantain', counterparty: 'Olu', date: '2025-10-11', status: 'Completed' },
+      { id: 's3', title: 'Yam ↔ Garri', counterparty: 'Emeka', date: '2025-09-29', status: 'Completed' },
+    ];
+
+    const pending = [
+      { id: 'p1', title: 'Tomato ↔ Pepper', counterparty: 'Aisha', date: '2025-10-29', status: 'Pending' },
+      { id: 'p2', title: 'Maize ↔ Flour', counterparty: 'Bayo', date: '2025-10-28', status: 'Pending' },
+    ];
+
+    function renderRecent() {
+  const out = document.getElementById('recentSwapsList');
+  out.innerHTML = '';
+  recentSwaps.forEach(s => {
+    out.innerHTML += `
+      <div class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 hover:shadow-sm flex items-center justify-between bg-white dark:bg-gray-800">
+        <div>
+          <div class="text-sm font-medium text-gray-800 dark:text-gray-100">${s.title}</div>
+          <div class="text-xs text-gray-500 dark:text-gray-400">With: ${s.counterparty} • ${s.date}</div>
+        </div>
+        <div class="text-sm ${s.status === 'Completed' ? 'text-green-600 dark:text-green-400' : 'text-gray-500'}">
+          ${s.status}
+        </div>
+      </div>`;
+  });
+}
+
+
+    function renderPending() {
+  const out = document.getElementById('pendingList');
+  out.innerHTML = '';
+  pending.forEach(p => {
+    out.innerHTML += `
+      <div class="p-3 rounded-lg border bg-yellow-50/60 dark:bg-gray-800 dark:border-gray-700 flex items-center justify-between hover:shadow-sm">
+        <div>
+          <div class="text-sm font-medium text-gray-800 dark:text-gray-100">${p.title}</div>
+          <div class="text-xs text-gray-600 dark:text-gray-400">With: ${p.counterparty} • ${p.date}</div>
+        </div>
+        <button class="px-3 py-1 text-sm rounded-md bg-green-600 text-white hover:bg-green-700" onclick="openChat('${p.id}', '${p.counterparty}')">Open Chat</button>
+      </div>`;
+  });
+}
+
+
+    // Invite copy + share
+    function copyInvite() {
+      navigator.clipboard.writeText('AFM-7392-QJD').then(() => {
+        alert('Invite code copied!');
+      });
+    }
+    function shareWhatsApp() {
+      const message = "Join me on Afromark — use code AFM-7392-QJD to earn A-Points! https://afromark.com";
+      window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, '_blank');
+    }
+    function shareX() {
+      const message = "Join me on Afromark — use code AFM-7392-QJD to earn A-Points! https://afromark.com";
+      window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(message)}`, '_blank');
+    }
+
+    // Chat open helper (for pending swaps)
+    function openChat(swapId, counterparty) {
+      // In real app: create/fetch chat_id for the two users on the backend then navigate
+      // Temporary behavior for prototype: open chat.html with query params
+      const chatId = 'chat-' + swapId; // placeholder
+      window.location.href = `chat.html?chat_id=${chatId}&with=${encodeURIComponent(counterparty)}`;
+    }
+
+    // Init
+    renderRecent();
+    renderPending();
+
+    // Mock dynamic values (smoother demo)
+    document.getElementById('pointsBalance').textContent = '2,230';
+    document.getElementById('recentActivity').textContent = '3 swaps confirmed in the last 7 days';
+
+  </script>
+	
+	
+	<script>
+function loadDashboardPage(pageFile) {
+  fetch(pageFile)
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('dashboardContent').innerHTML = html;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    })
+    .catch(err => {
+      document.getElementById('dashboardContent').innerHTML =
+        `<div class="text-red-600 text-sm">Failed to load page.</div>`;
+    });
+}
+		
+		loadDashboardPage('pages/overview.html');
+
+</script>
+
+	
+	<script src="donation/js/script.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>

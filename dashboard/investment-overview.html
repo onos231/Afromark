@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Afromark — Dashboard</title>
+  <!-- Link to your compiled Tailwind CSS -->
+  <link href="../dist/output.css" rel="stylesheet">
+</head>
+<body class="h-full bg-gray-50 text-gray-800">
+
+  <div class="min-h-screen flex">
+
+    <!-- SIDEBAR -->
+    <aside id="sidebar" class="hidden md:flex md:flex-col w-72 bg-white border-r border-gray-200 p-5 space-y-6">
+      <div class="flex items-center gap-3">
+        <!-- Replace with your SVG logo or <img> -->
+        <div class="w-10 h-10 rounded-full bg-green-700 flex items-center justify-center text-white font-bold">A</div>
+        <div>
+          <h1 class="text-lg font-semibold">Afromark</h1>
+          <p class="text-xs text-gray-500">Community Trade</p>
+        </div>
+      </div>
+
+      <nav class="flex-1">
+  <ul class="space-y-2 text-sm">
+    <li>
+      <a href="index.html" data-page="index"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+		  <svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3 9 4-18 3 9h4"/></svg>
+        <span>Home</span>
+      </a>
+    </li>
+    <li>
+      <a href="dashboard.html" data-page="dashboard"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+		  <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18"/></svg>
+        <span>Dashboard Overview</span>
+      </a>
+    </li>
+	  <li>
+      <a href="donate.html" data-page="donations"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+		  <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18"/></svg>
+        <span>Donations & Request</span>
+      </a>
+    </li>
+	  <li>
+      <a href="donate.html" data-page="investment"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+		  <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18"/></svg>
+        <span>Pitches & Investment</span>
+      </a>
+    </li>
+    <li>
+      <a href="redeem-points.html" data-page="profile-points"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+		  <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18"/></svg>
+        <span>A-Points & Rewards</span>
+      </a>
+    </li>
+    
+    <li>
+      <a href="premium.html" data-page="premium"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+		  <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18"/></svg>
+        <span>Premium Offers</span>
+      </a>
+    </li>
+    <li>
+      <a href="settings.html" data-page="settings"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50"><svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18"/></svg>
+        <span>Accounts & Settings</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+
+      <div class="mt-auto">
+        <button class="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-50 text-sm text-red-600">Logout</button>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="flex-1 flex flex-col">
+
+      <!-- TOPBAR (mobile hamburger + search + profile) -->
+      <header class="hidden md:flex items-center justify-between px-6 py-4 bg-white border-b border-gray-200">
+
+        <div class="flex items-center gap-3">
+          <!-- Hamburger for small screens -->
+         <button id="openSidebarBtn" class="block md:hidden p-2 rounded-md bg-gray-100">
+            <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+
+
+          <div class="relative hidden sm:block">
+            <input type="search" placeholder="Search swaps, users, items..." class="w-80 px-3 py-2 rounded-lg border border-gray-200 bg-gray-50 text-sm focus:ring-1 focus:ring-green-200 outline-none">
+            <svg class="absolute right-3 top-2.5 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 111.998-14.978"/></svg>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button class="p-2 rounded-md hover:bg-gray-50" title="Notifications">
+            <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 10-12 0v3.159a2.032 2.032 0 01-.595 1.436L4 17h5"/></svg>
+          </button>
+
+          <!-- Profile / My Account -->
+          <div class="flex items-center gap-2 p-1 rounded-md hover:bg-gray-50 cursor-pointer">
+            <img src="../img/profile/profile-pic.jpg" alt="Profile" class="w-8 h-8 rounded-full object-cover">
+            <div class="text-sm text-right">
+              <div class="font-medium">My Account</div>
+              <div class="text-xs text-gray-500">Manage profile</div>
+            </div>
+          </div>
+        </div>
+      </header>
+		
+		<header class="block md:hidden bg-[#0E4D22] text-white">
+    
+    <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
+      <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
+      <h1 class="text-center font-semibold mt-4">Track the status of your pitches, view feedback, and connect with interested investors.</h1>
+      
+    </div>
+      <!-- Close button only (right) -->
+      <button
+        type="button"
+        aria-label="Close"
+        class="absolute left-3 top-5 w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20 transition"
+        onclick="window.location.href='dashboard-mobile.html'">
+        <img src="../../img/nav/back-arrow-1.png" alt="SwapIt Logo" class="h-3">
+      </button>
+		<div class="flex justify-center dark:border-gray-900">
+  </div>
+
+    </div>
+  
+    <!-- curved white top like in mock -->
+    <div class="max-w-md mx-auto bg-white dark:bg-gray-900 rounded-t-3xl h-6"></div>
+  </header>
+
+      <!-- DASHBOARD GRID -->
+      <main class="p-6 space-y-6">
+
+        <!-- Top Cards -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="rounded-xl bg-white p-4 shadow-sm border border-gray-100">
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-xs text-gray-500">A-Points Balance</div>
+                <div class="text-2xl font-semibold text-green-700" id="pointsBalance">2,230</div>
+                <div class="text-xs text-gray-400 mt-1">Points available</div>
+              </div>
+              <div class="flex flex-col items-end">
+                <button class="bg-green-600 text-white px-3 py-1 rounded-md text-sm">Redeem</button>
+                <a href="profile-points.html" class="text-xs text-gray-500 mt-2 hover:text-green-700">View history</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-white p-4 shadow-sm border border-gray-100">
+            <div class="text-xs text-gray-500">Trust Score</div>
+            <div class="flex items-center gap-3 mt-2">
+              <div class="text-3xl font-semibold">4.7</div>
+              <div class="text-xs text-gray-400">Based on 128 swaps</div>
+            </div>
+            <div class="mt-3">
+              <div class="w-full bg-gray-100 rounded-full h-2">
+                <div id="trustBar" class="bg-green-600 h-2 rounded-full" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-white p-4 shadow-sm border border-gray-100">
+            <div class="text-xs text-gray-500">Recent Activity</div>
+            <div class="mt-3 text-sm text-gray-700">
+              <div id="recentActivity">3 swaps confirmed in last 7 days</div>
+            </div>
+            <div class="mt-3">
+              <a href="redeem-points.html" class="inline-block bg-green-50 text-green-700 px-3 py-1 rounded-full text-sm">Redeem Rewards</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Main split: Recent Swaps / Pending Negotiations + Invite -->
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+  <!-- Recent Swaps / Pending / Cancelled (Tabs) -->
+  <div class="lg:col-span-2 space-y-4">
+
+    <div class="rounded-xl bg-white p-4 shadow-sm border border-gray-100">
+<div class="py-4 px-4 bg-green-600 text-white">My Investment</div>
+      <!-- TABS -->
+      <div class="flex border-b mb-4 text-sm">
+		  
+        <button class="swapTab activeTab px-4 py-2" data-tab="completed">My Pitches</button>
+        <button class="swapTab px-4 py-2" data-tab="pending">Approvals</button>
+        <button class="swapTab px-4 py-2" data-tab="cancelled">Investment</button>
+      </div>
+
+      <!-- Dynamic Tab Content -->
+      <div id="swapContent" class="space-y-3"></div>
+    </div>
+  </div>
+
+
+
+          <!-- Right Column: Invite + Quick Actions -->
+          <aside class="space-y-4">
+
+            <div class="rounded-xl bg-white p-4 shadow-sm border border-gray-100">
+              <div class="flex items-start justify-between">
+                <div>
+                  <h4 class="font-semibold text-gray-800">Invite & Earn</h4>
+                  <p class="text-xs text-gray-500 mt-1">Share your code to earn A-Points</p>
+                </div>
+                <div class="text-right">
+                  <div class="text-sm font-semibold text-green-700">AFM-7392-QJD</div>
+                  <button onclick="copyInvite()" class="mt-2 text-xs bg-green-600 text-white px-3 py-1 rounded-md">Copy</button>
+                </div>
+              </div>
+
+              <div class="mt-3">
+                <button onclick="shareWhatsApp()" class="w-full inline-flex items-center gap-2 justify-center bg-green-600 text-white px-3 py-2 rounded-lg text-sm">
+                  <img src="../img/social/whatsapp.svg" alt="whatsapp" class="w-4 h-4"> Share via WhatsApp
+                </button>
+                <button onclick="shareX()" class="w-full mt-2 inline-flex items-center gap-2 justify-center bg-sky-500 text-white px-3 py-2 rounded-lg text-sm">
+                  <img src="../img/social/twitter.svg" alt="x" class="w-4 h-4"> Share on X
+                </button>
+              </div>
+            </div>
+
+            <div class="rounded-xl bg-white p-4 shadow-sm border border-gray-100">
+              <h4 class="font-semibold">Quick Actions</h4>
+              <div class="mt-3 grid grid-cols-2 gap-2">
+                <a href="profile-points.html" class="block text-center px-3 py-2 rounded-md bg-gray-50 hover:bg-gray-100 text-sm">My Points</a>
+                <a href="redeem-points.html" class="block text-center px-3 py-2 rounded-md bg-gray-50 hover:bg-gray-100 text-sm">Redeem</a>
+                <a href="invite-earn.html" class="block text-center px-3 py-2 rounded-md bg-gray-50 hover:bg-gray-100 text-sm">Invite</a>
+                <a href="messages.html" class="block text-center px-3 py-2 rounded-md bg-gray-50 hover:bg-gray-100 text-sm">Messages</a>
+              </div>
+            </div>
+
+            <div class="rounded-xl bg-white p-4 shadow-sm border border-gray-100 text-sm">
+              <h4 class="font-semibold mb-2">Help & Safety</h4>
+              <p class="text-xs text-gray-500">Guides on safe swaps, meeting in public places, and dispute resolution.</p>
+              <a href="#" class="text-xs text-green-700 mt-2 inline-block">Learn more →</a>
+            </div>
+
+          </aside>
+
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Mobile overlay sidebar (simple) -->
+  <div id="mobileSidebar" class="fixed inset-0 z-40 md:hidden hidden">
+    <div class="absolute inset-0 bg-black/40" onclick="closeMobileSidebar()"></div>
+    <div class="absolute left-0 top-0 h-full w-72 bg-white p-5">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 rounded-full bg-green-700 flex items-center justify-center text-white font-bold">A</div>
+        <div>
+          <h2 class="font-semibold">Afromark</h2>
+          <p class="text-xs text-gray-500">Community Trade</p>
+        </div>
+      </div>
+      <nav class="space-y-3 text-sm">
+        <!-- Reuse same menu items -->
+        <a href="../index.html" data-page="index" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-2 py-2 rounded-lg hover:bg-gray-50"><svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3 9 4-18 3 9h4"/></svg><span>Home</span></a>
+		  
+        <a href="dashboard.html" data-page="dashboard" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-2 py-2 rounded-lg hover:bg-gray-50"><svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3 9 4-18 3 9h4"/></svg><span>Dashboard Overview</span></a>
+		  
+		  <a href="donate-overview.html" data-page="donations" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-2 py-2 rounded-lg hover:bg-gray-50"><svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3 9 4-18 3 9h4"/></svg><span>Donations & Request</span></a>
+		  
+		  <a href="investment-overview.html" data-page="investment" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-2 py-2 rounded-lg hover:bg-gray-50"><svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3 9 4-18 3 9h4"/></svg><span>Pitches & Investment</span></a>
+		  
+		  <a href="#" data-page="points" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-2 py-2 rounded-lg hover:bg-gray-50"><svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3 9 4-18 3 9h4"/></svg><span>Points & Rewards</span></a>
+		  
+		  <a href="../pages/premium/premium.html" data-page="premium" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-2 py-2 rounded-lg hover:bg-gray-50"><svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3 9 4-18 3 9h4"/></svg><span>Premium Offers</span></a>
+		  
+		  <a href="../all-users/settings.html" data-page="settings" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-2 py-2 rounded-lg hover:bg-gray-50"><svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3 9 4-18 3 9h4"/></svg><span>Accounts & Settings</span></a>
+        
+        
+      </nav>
+    </div>
+  </div>
+
+  <!-- SCRIPT: sample data + simple interactivity -->
+  <script>
+	    // Sidebar toggle
+    document.getElementById('openSidebarBtn').addEventListener('click', () => {
+      document.getElementById('mobileSidebar').classList.remove('hidden');
+    });
+    function closeMobileSidebar() {
+      document.getElementById('mobileSidebar').classList.add('hidden');
+    }
+	  
+  // demo data
+  let completedSwaps = [
+    { title: "Crop Farming", user: "AgroCapital Investment", date: "2025-06-15" },
+    { title: "Yam Farming", user: "Ojemine Ltd.", date: "2025-08-22" },
+    { title: "Tomatoes Farming", user: "NGO", date: "2025-10-25" }
+  ];
+
+  let pendingSwaps = [
+    { title: "Garri Production", user: "GreenHarvest", date: "2025-10-29" }
+  ];
+
+  let cancelledSwaps = [
+    { title: "Banana Plantation", user: "Maco & Co.", date: "2025-05-11" }
+  ];
+
+  // build header row per tab
+  function buildHeader(type) {
+    if (type === "completed") {
+      return `
+        <div class="flex items-start justify-between mb-2">
+          <h3 class="font-semibold text-gray-800">Recent Swaps</h3>
+          <a href="#" class="text-xs text-gray-500 hover:text-green-700">See all</a>
+        </div>`;
+    }
+    if (type === "pending") {
+      return `
+        <div class="flex items-start justify-between mb-2">
+          <h3 class="font-semibold text-gray-800">Pending Negotiations</h3>
+          <span class="text-xs text-gray-500">Respond quickly to close swaps</span>
+        </div>`;
+    }
+    // cancelled
+    return `
+      <div class="flex items-start justify-between mb-2">
+        <h3 class="font-semibold text-gray-800">Declined Swaps</h3>
+        <div class="text-xs flex items-center gap-4">
+          <button id="deleteAllCancelledBtn" class="text-red-600 hover:underline">Delete All</button>
+          <a href="#" class="text-gray-500 hover:text-green-700">See all</a>
+        </div>
+      </div>`;
+  }
+
+  // render list per type with per-item actions
+  function renderSwaps(type) {
+    const container = document.getElementById("swapContent");
+    if (!container) return;
+    container.innerHTML = buildHeader(type);
+
+    let listHtml = "";
+    if (type === "completed") {
+      listHtml = completedSwaps.map((item, i) => `
+        <div class="p-3 border border-gray-200 rounded-lg flex justify-between items-center hover:shadow-sm bg-white">
+          <div>
+            <div class="font-medium text-gray-800">${item.title}</div>
+            <div class="text-xs text-gray-500">With ${item.user} • ${item.date}</div>
+          </div>
+          <div class="flex gap-2">
+            <button onclick="viewSwap('completed', ${i})" class="px-3 py-1 text-xs bg-green-600 text-white rounded-md">View</button>
+            <button onclick="deleteCompleted(${i})" class="px-3 py-1 text-xs text-gray-500 hover:underline">Delete</button>
+          </div>
+        </div>
+      `).join("");
+    } else if (type === "pending") {
+      listHtml = pendingSwaps.map((item, i) => `
+        <div class="p-3 border border-yellow-200 rounded-lg flex justify-between items-center hover:shadow-sm bg-yellow-50/40">
+          <div>
+            <div class="font-medium text-gray-800">${item.title}</div>
+            <div class="text-xs text-gray-600">With ${item.user} • ${item.date}</div>
+          </div>
+          <div class="flex gap-2">
+            <button onclick="viewSwap('pending', ${i})" class="px-3 py-1 text-xs bg-green-600 text-white rounded-md">View</button>
+            <button onclick="cancelPending(${i})" class="px-3 py-1 text-xs text-red-600 rounded-md border border-red-100 hover:bg-red-50">Cancel</button>
+          </div>
+        </div>
+      `).join("");
+    } else { // cancelled
+      listHtml = cancelledSwaps.map((item, i) => `
+        <div class="p-3 border border-gray-200 rounded-lg flex justify-between items-center hover:shadow-sm bg-white">
+          <div>
+            <div class="font-medium text-gray-800">${item.title}</div>
+            <div class="text-xs text-gray-500">With ${item.user} • ${item.date}</div>
+          </div>
+          <div class="flex gap-2">
+            <button onclick="viewSwap('cancelled', ${i})" class="px-3 py-1 text-xs bg-green-600 text-white rounded-md hover:bg-gray-50">View</button>
+            <button onclick="deleteCancelled(${i})" class="px-3 py-1 text-xs text-red-600 hover:underline">Delete</button>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    container.insertAdjacentHTML('beforeend', `<div id="swapList" class="space-y-3 mt-2">${listHtml || `<div class="p-4 text-sm text-gray-500">No ${type} swaps found.</div>`}</div>`);
+
+    // wire Delete All button for cancelled
+    const deleteAllBtn = document.getElementById("deleteAllCancelledBtn");
+    if (deleteAllBtn) {
+      deleteAllBtn.onclick = () => {
+        if (!confirm("Delete all cancelled swaps?")) return;
+        cancelledSwaps = [];
+        renderSwaps('cancelled');
+      };
+    }
+  }
+
+  // action helpers
+  function viewSwap(type, idx) {
+    // placeholder - replace with real nav to swap details
+    const item = (type === 'completed') ? completedSwaps[idx] : (type === 'pending') ? pendingSwaps[idx] : cancelledSwaps[idx];
+    alert(`View: ${item ? item.title + " with " + (item.user||'') : 'Not found'}`);
+  }
+
+  function cancelPending(idx) {
+    const item = pendingSwaps[idx];
+    if (!item) return;
+    if (!confirm(`Cancel this pending swap: "${item.title}" with ${item.user}?`)) return;
+    // move to cancelled array
+    cancelledSwaps.push(item);
+    // remove from pending
+    pendingSwaps.splice(idx, 1);
+    // re-render pending tab
+    renderSwaps('pending');
+  }
+
+  function deleteCancelled(idx) {
+    if (!confirm('Delete this cancelled swap?')) return;
+    cancelledSwaps.splice(idx, 1);
+    renderSwaps('cancelled');
+  }
+
+  function deleteCompleted(idx) {
+    if (!confirm('Delete this completed swap?')) return;
+    completedSwaps.splice(idx, 1);
+    renderSwaps('completed');
+  }
+
+  // tab click handlers
+  document.querySelectorAll(".swapTab").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".swapTab").forEach(b => b.classList.remove("activeTab"));
+      btn.classList.add("activeTab");
+      renderSwaps(btn.dataset.tab);
+    });
+  });
+
+  // initial render
+  renderSwaps("completed");
+</script>
+	
+	<script>
+  const currentPage = window.location.pathname.split("/").pop().replace(".html", "");
+
+  document.querySelectorAll(".nav-link").forEach(link => {
+    if (link.dataset.page === currentPage) {
+      link.classList.add("active-link");
+    }
+  });
+</script>
+
+
+
+<style>
+  .activeTab {
+    border-bottom: 2px solid #0E4D22;
+    color: #0E4D22;
+    font-weight: 600;
+  }
+</style>
+<style>
+  .active-link {
+    background-color: #f5f5f5; /* Light gray */
+    border: 1px solid #e3e3e3; /* Optional soft border */
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+</style>
+	
+	<script src="js/script.js"></script>
+	<script src="../js/script.js"></script>
+	
+</body>
+</html>
