@@ -166,7 +166,7 @@
   <div class="lg:col-span-2 space-y-4">
 
     <div class="rounded-xl bg-white p-4 shadow-sm border border-gray-100">
-<div class="py-4 px-4 bg-green-600 text-white mb-4">My Swaps</div>
+<div class="py-4 px-4 bg-green-600 text-white mb-4">Overview</div>
       <!-- TABS -->
       <div class="space-y-6">
 		
@@ -254,29 +254,29 @@
   <!-- Mobile overlay sidebar (simple) -->
   <div id="mobileSidebar" class="fixed inset-0 z-40 md:hidden hidden">
     <div class="absolute inset-0 bg-black/40" onclick="closeMobileSidebar()"></div>
-    <div class="absolute left-0 top-0 h-full w-72 bg-white p-5">
-      <div class="flex items-center gap-3 mb-6">
-        <div class="w-10 h-10 rounded-full bg-green-700 flex items-center justify-center text-white font-bold">A</div>
+    <div class="absolute left-0 top-0 h-full w-72 bg-white dark:bg-gray-900 p-5">
+      <div class="flex items-center gap-3  px-4 py-4 rounded-half">
+        <!-- Replace with your SVG logo or <img> -->
+        <div class=" rounded-full flex items-center justify-center text-white font-bold"> <img src="../img/logo/app-logo.png" alt="SwapIt Logo" class="h-8"></div>
         <div>
-          <h2 class="font-semibold">Afromark</h2>
-          <p class="text-xs text-gray-500">Community Trade</p>
+        
         </div>
       </div>
       <nav class="space-y-3 text-sm">
         <!-- Reuse same menu items -->
-        <a href="../index.html" data-page="index" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-2 py-2 rounded-lg hover:bg-gray-50"><svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3 9 4-18 3 9h4"/></svg><span>Home</span></a>
+        <a href="../index-web.html" data-page="index" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50 nav-link block px-2 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"><img src="../../img/buttom-nav/Home-1.svg" alt="SwapIt Logo" class="h-4"><span class="text-gray-900 dark:text-white">Home</span></a>
 		  
-        <a href="dashboard.html" data-page="dashboard" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-2 py-2 rounded-lg hover:bg-gray-50"><svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3 9 4-18 3 9h4"/></svg><span>Dashboard Overview</span></a>
+        <a href="../dashboard/dashboard.html" data-page="dashboard" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-2 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"><img src="../img/buttom-nav/index/dashboard-green.svg" alt="SwapIt Logo" class="h-3"><span class="text-gray-900 dark:text-white">Dashboard Overview</span></a>
 		  
-		  <a href="donate-overview.html" data-page="donations" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-2 py-2 rounded-lg hover:bg-gray-50"><svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3 9 4-18 3 9h4"/></svg><span>Donations & Request</span></a>
+		  <a href="../donation/donation-web-search.html" data-page="donations" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-2 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"><img src="../img/buttom-nav/index/giveback-green.svg" alt="SwapIt Logo" class="h-3"><span class="text-gray-900 dark:text-white">Donations & Request</span></a>
 		  
-		  <a href="investment-overview.html" data-page="investment" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-2 py-2 rounded-lg hover:bg-gray-50"><svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3 9 4-18 3 9h4"/></svg><span>Pitches & Investment</span></a>
+		  <a href="investor-marketplace.html" data-page="investment" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-2 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"><img src="../img/buttom-nav/index/investment.svg" alt="SwapIt Logo" class="h-4"><span class="text-gray-900 dark:text-white">Pitches & Investment</span></a>
 		  
-		  <a href="#" data-page="points" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-2 py-2 rounded-lg hover:bg-gray-50"><svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3 9 4-18 3 9h4"/></svg><span>Points & Rewards</span></a>
+		  <a href="../all-users/invite-earn.html" data-page="points" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-4 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"><img src="../img/buttom-nav/index/points.svg" alt="SwapIt Logo" class="h-4"><span class="text-gray-900 dark:text-white">Points & Rewards</span></a>
 		  
-		  <a href="../pages/premium/premium.html" data-page="premium" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-2 py-2 rounded-lg hover:bg-gray-50"><svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3 9 4-18 3 9h4"/></svg><span>Premium Offers</span></a>
+		  <a href="../pages/premium/premium.html" data-page="premium" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-2 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"><img src="../img/buttom-nav/index/premium-green.svg" alt="SwapIt Logo" class="h-4"><span class="text-gray-900 dark:text-white">Premium Offers</span></a>
 		  
-		  <a href="../all-users/settings.html" data-page="settings" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-2 py-2 rounded-lg hover:bg-gray-50"><svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3 9 4-18 3 9h4"/></svg><span>Accounts & Settings</span></a>
+		  <a href="../all-users/settings.html" data-page="settings" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-2 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"><img src="../img/buttom-nav/index/acc-green.svg" alt="SwapIt Logo" class="h-3"><span class="text-gray-900 dark:text-white">Accounts & Settings</span></a>
         
         
       </nav>
@@ -284,7 +284,16 @@
   </div>
 
   
-
+<script>
+		    // Sidebar toggle
+    document.getElementById('openSidebarBtn').addEventListener('click', () => {
+      document.getElementById('mobileSidebar').classList.remove('hidden');
+    });
+    function closeMobileSidebar() {
+      document.getElementById('mobileSidebar').classList.add('hidden');
+    }
+	  
+	</script>
 
 
 <style>

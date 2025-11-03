@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwapIt - Home</title>
+
+	<link href="../dist/output.css" rel="stylesheet">
+
+</head>
+
+<body class="dark:bg-gray-900 text-black dark:text-white font-sans">
+	
+	<div class="flex">
+<aside id="sidebar" class="hidden md:flex md:flex-col w-72 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-700 p-5 space-y-6">
+      <div class="flex items-center gap-3">
+        <!-- Replace with your SVG logo or <img> -->
+        <div class="w-10 h-10 rounded-full bg-green-700 flex items-center justify-center text-white font-bold">A</div>
+        <div>
+          <h1 class="text-lg font-semibold">Afromark</h1>
+          <p class="text-xs text-gray-500">Community Trade</p>
+        </div>
+      </div>
+
+      <nav class="flex-1">
+  <ul class="space-y-2 text-sm">
+    <li>
+      <a href="index.html" data-page="index"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+		  <svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3 9 4-18 3 9h4"/></svg>
+        <span>Home</span>
+      </a>
+    </li>
+    <li>
+      <a href="dashboard.html" data-page="dashboard"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+		  <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18"/></svg>
+        <span>Dashboard Overview</span>
+      </a>
+    </li>
+	  <li>
+      <a href="donate.html" data-page="donations"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+		  <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18"/></svg>
+        <span>Donations & Request</span>
+      </a>
+    </li>
+	  <li>
+      <a href="donate.html" data-page="investment"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+		  <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18"/></svg>
+        <span>Pitches & Investment</span>
+      </a>
+    </li>
+    <li>
+      <a href="redeem-points.html" data-page="profile-points"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+		  <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18"/></svg>
+        <span>A-Points & Rewards</span>
+      </a>
+    </li>
+    
+    <li>
+      <a href="premium.html" data-page="premium"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+		  <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18"/></svg>
+        <span>Premium Offers</span>
+      </a>
+    </li>
+    <li>
+      <a href="settings.html" data-page="settings"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50"><svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18"/></svg>
+        <span>Accounts & Settings</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+
+      <div class="mt-auto">
+        <button class="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-50 text-sm text-red-600">Logout</button>
+      </div>
+    </aside>
+
+<div class="w-full">
+	<header class="bg-[#0E4D22] text-white">
+		<div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
+      <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
+      <h1 class="text-center font-semibold mt-4">Request Help From a Donor or Donate Your Extra Food to the Community</h1>
+      
+    </div>
+      <!-- Close button only (right) -->
+      <button
+        type="button"
+        aria-label="Close"
+        class="absolute left-3 top-5 w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20 transition"
+        onclick="history.back()">
+        <img src="../img/nav/back-arrow-1.png" alt="SwapIt Logo" class="h-3">
+      </button>
+    </div>
+    
+      <!-- Close button only (right) -->
+ <div class="flex justify-between items-center px-20 py-2 border-white dark:border-gray-700">
+    <button onclick="window.location.href='../dashboard/donate-overview.html'" class="text-sm font-bold text-gray-700 dark:text-green-200 font-Kodchasan text-green-700">Donations</button>
+    <button onclick="window.location.href='donate.html'" class="px-3 py-1 border border-gray-300 rounded text-sm font-bold text-green-700 dark:text-green-200 font-Kodchasan">+ Donate</button>
+  </div>
+	  
+    <!-- curved white top like in mock -->
+    <div class="max-w-md mx-auto bg-white dark:bg-green-900 rounded-t-3xl h-6"></div>
+  </header>
+	
+
+
+<!-- Search Bar -->
+<div class="w-full flex justify-center mt-4 px-4">
+  <div class="relative w-full max-w-[80%]">
+    <input 
+      id="searchInput" 
+      type="text" 
+      placeholder="Food name (e.g., Yam, Beans, Rice)" 
+      class="w-full border rounded-full px-4 pr-10 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-gray-800 dark:border-gray-900"
+    >
+    
+    <!-- Search Icon inside field -->
+    <button 
+      id="searchBtn" 
+      class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-green-600"
+    >
+      <img src="../img/search/search.svg" alt="Search" class="h-5 opacity-70">
+    </button>
+  </div>
+</div>
+
+
+  <!-- Suggestions -->
+  <ul 
+  id="suggestions" 
+  class="hidden w-full max-w-[80%] mx-auto mt-2 border rounded-lg bg-green-50 shadow text-sm 
+         dark:bg-gray-700 dark:text-white dark:border-gray-900 divide-y"
+></ul>
+
+
+  <!-- Filters -->
+	<div id="filters" class="hidden w-full flex justify-center mt-3 px-4">
+  <div class="w-full max-w-[80%] grid grid-cols-2 gap-3">
+
+    <!-- Category Filter -->
+    <div class="relative w-full">
+      <select 
+        id="categoryFilter" 
+        class="block w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm 
+               bg-white dark:bg-gray-800 dark:border-gray-900 focus:ring-green-600 focus:border-green-600 
+               text-gray-700 dark:text-gray-300 appearance-none h-[42px]"
+      >
+        <option value="">Select Category</option>
+        <option value="grains">Grains</option>
+        <option value="tubers">Tubers</option>
+        <option value="vegetables">Vegetables</option>
+      </select>
+
+      <svg 
+        class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none" 
+        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </div>
+
+    <!-- Sort Filter -->
+    <div class="relative w-full">
+      <select 
+        id="sortFilter" 
+        class="block w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm 
+               bg-white dark:bg-gray-800 dark:border-gray-900 focus:ring-green-600 focus:border-green-600 
+               text-gray-700 dark:text-gray-300 appearance-none h-[42px]"
+      >
+        <option value="">Sort by</option>
+        <option value="online">Online</option>
+        <option value="recent">Most Recent</option>
+        <option value="verified">Verified Users</option>
+      </select>
+
+      <svg 
+        class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none" 
+        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </div>
+
+  </div>
+</div>
+
+	
+
+
+  <!-- Results -->
+	<div id="results" class="flex-grow px-6 py-3 mb-20 overflow-y-auto 
+  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+
+    <!-- JS will render cards here -->
+  </div>
+
+
+  <!-- No Results -->
+  <div id="noResults" class="hidden text-center mt-10">
+    <img src="no-results.png" alt="No results" class="mx-auto w-32 opacity-70 mb-3">
+    <p class="text-gray-600 font-medium">No results found</p>
+    <p class="text-gray-400 text-sm">Try searching with different keywords or categories</p>
+  </div>
+	
+	</div>
+</div>
+  <!-- Bottom Navigation -->
+  <nav class="hidden block md:hidden fixed bottom-0 w-full bg-white shadow-inner flex justify-around py-2 dark:bg-gray-900">
+    <a href="../../index.html"><div class="flex flex-col items-center text-gray-700">
+      <img src="../../img/buttom-nav/index/Home-green.svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7m-9 2v8m-4 4h8a2 2 0 002-2V9m-6 13h-2a2 2 0 01-2-2v-2" />
+      
+      <p class="text-xs dark:text-white">Home</p>
+		</div></a>
+    <a href=""><div class="flex flex-col items-center text-green-600">
+      <img src="../../img/buttom-nav/index/find.svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      
+      <p class="text-xs font-bold dark:text-green-200">Find</p>
+		</div></a>
+    <a href="../premium/premium.html"><div class="flex flex-col items-center text-gray-600">
+      <img src="../../img/buttom-nav/index/premium-green.svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3-1.343 3-3S13.657 2 12 2 9 3.343 9 5s1.343 3 3 3zM4 22h16a2 2 0 002-2v-1c0-2.21-1.79-4-4-4H6c-2.21 0-4 1.79-4 4v1a2 2 0 002 2z" />
+     
+      <p class="text-xs dark:text-white">Premium</p>
+		</div></a>
+    <a href="../../donation/donation-search.html"><div class="flex flex-col items-center text-gray-600">
+      <img src="../../img/buttom-nav/index/giveback-green.svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+     
+      <p class="text-xs dark:text-white">Give Back</p>
+		</div></a>
+    <div id="accountBtn" class="flex flex-col items-center text-gray-600">
+      <img src="../../img/buttom-nav/index/acc-green.svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 15c2.485 0 4.797.758 6.879 2.052M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      <p class="text-xs dark:text-white">Account</p>
+    </div>
+  </nav>
+
+	<div id="backdrop" class="fixed inset-0 bg-black bg-opacity-40 hidden"></div>
+	
+	<!-- Slide-up Menu -->
+  <div id="accountMenu" class="fixed bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-lg transform translate-y-full transition-transform duration-300 dark:bg-gray-800">
+    <div class="flex justify-between items-center px-4 py-3 border-b border-gray-200 dark:border-gray-700">
+      <h2 class="text-lg font-semibold dark:text-white">Account</h2>
+      <button id="closeMenu" class="text-gray-400 hover:text-gray-600 text-xl">&times;</button>
+    </div>
+    <ul class="p-4 space-y-4 text-gray-700">
+      <a href="../../all-users/settings.html"><li class="flex items-center space-x-2 mb-4"><span><img src="../../img/account/settings.svg" alt="" class="h-4"></span><span class="dark:text-green-200">Settings</span></li></a>
+		<a href="../../all-users/faqs.html"><li class="flex items-center space-x-2 mb-4"><span><img src="../../img/account/faqs.svg" alt="" class="h-4"></span><span class="dark:text-green-200">FAQs</span></li></a>
+		  <a href="../../all-users/terms-condition.html"><li class="flex items-center space-x-2 mb-4"><span><img src="../../img/account/privacy.svg" alt="" class="h-4"></span><span class="dark:text-green-200">Privacy Policy</span></li></a>
+		  <a href="../../all-users/how-it-works.html"><li class="flex items-center space-x-2 mb-4"><span><img src="../../img/account/how-it-works.svg" alt="" class="h-4"></span><span class="dark:text-green-200">How it works</span></li></a>
+		  <a href="../../all-users/contact-us.html"><li class="flex items-center space-x-2 mb-4"><span><img src="../../img/account/contact.svg" alt="" class="h-4"></span><span class="dark:text-green-200">Contact Us</span></li></a>
+		  <a href="../../all-users/about-us.html"><li class="flex items-center space-x-2 mb-4"><span><img src="../../img/account/about-us.svg" alt="" class="h-3"></span><span class="dark:text-green-200">About Us</span></li></a>
+    </ul>
+  </div>
+	<script src="js/script.js"></script>
+	<script src="../../js/script.js"></script>
+	
+</body>
+</html>

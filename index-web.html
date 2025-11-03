@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Afromark — Dashboard</title>
+  <!-- Link to your compiled Tailwind CSS -->
+  <link href="../dist/output.css" rel="stylesheet">
+</head>
+<body class=" dark:bg-gray-900 text-black dark:text-white font-sans">
+
+  <div class="min-h-screen flex">
+
+    <!-- SIDEBAR -->
+    <aside id="sidebar" class="hidden md:flex md:flex-col w-72 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-700 p-5 space-y-6">
+      <div class="flex items-center gap-3">
+        <!-- Replace with your SVG logo or <img> -->
+        <div class="w-10 h-10 rounded-full bg-green-700 flex items-center justify-center text-white font-bold">A</div>
+        <div>
+          <h1 class="text-lg font-semibold">Afromark</h1>
+          <p class="text-xs text-gray-500">Community Trade</p>
+        </div>
+      </div>
+
+      <nav class="flex-1">
+  <ul class="space-y-2 text-sm">
+    <li>
+      <a href="index.html" data-page="index"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+		  <svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3 9 4-18 3 9h4"/></svg>
+        <span>Home</span>
+      </a>
+    </li>
+    <li>
+      <a href="dashboard.html" data-page="dashboard"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+		  <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18"/></svg>
+        <span>Dashboard Overview</span>
+      </a>
+    </li>
+	  <li>
+      <a href="donate.html" data-page="donations"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+		  <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18"/></svg>
+        <span>Donations & Request</span>
+      </a>
+    </li>
+	  <li>
+      <a href="donate.html" data-page="investment"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+		  <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18"/></svg>
+        <span>Pitches & Investment</span>
+      </a>
+    </li>
+    <li>
+      <a href="redeem-points.html" data-page="profile-points"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+		  <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18"/></svg>
+        <span>A-Points & Rewards</span>
+      </a>
+    </li>
+    
+    <li>
+      <a href="premium.html" data-page="premium"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+		  <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18"/></svg>
+        <span>Premium Offers</span>
+      </a>
+    </li>
+    <li>
+      <a href="settings.html" data-page="settings"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50"><svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18"/></svg>
+        <span>Accounts & Settings</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+
+      <div class="mt-auto">
+        <button class="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-50 text-sm text-red-600">Logout</button>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="flex-1 flex flex-col ">
+
+      <!-- TOPBAR (mobile hamburger + search + profile) -->
+      <header class="hidden md:flex items-center justify-between px-6 py-4 bg-white border border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+
+        <div class="flex items-center gap-3">
+          <!-- Hamburger for small screens -->
+         <button id="openSidebarBtn" class="block md:hidden p-2 rounded-md bg-gray-100">
+            <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+
+
+          <div class="relative hidden sm:block">
+            <input type="search" placeholder="Search swaps, users, items..." class="w-80 px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-900 bg-gray-50 text-sm focus:ring-1 focus:ring-green-200 outline-none dark:bg-gray-800">
+			  <img src="img/search/search.svg" alt="Profile" class="absolute right-3 top-2.5 w-4 h-4 text-gray-400" fill="none">
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button class="p-2 rounded-md hover:bg-gray-50" title="Notifications">
+            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 10-12 0v3.159a2.032 2.032 0 01-.595 1.436L4 17h5"/></svg>
+          </button>
+
+          <!-- Profile / My Account -->
+          <div class="flex items-center gap-2 p-1 rounded-md hover:bg-gray-50 cursor-pointer">
+            <img src="../img/profile/profile-pic.jpg" alt="Profile" class="w-8 h-8 rounded-full object-cover">
+            <div class="text-sm text-right dark:text-gray-300">
+              <div class="font-medium">My Account</div>
+              <div class="text-xs text-gray-500 dark:text-gray-400">Manage profile</div>
+            </div>
+          </div>
+        </div>
+      </header>
+		
+		<header class="block md:hidden bg-[#0E4D22] text-white">
+    <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
+      <h1 class="text-center font-semibold dark:text-green-200">Dashboard</h1>
+      <!-- Close button only (right) -->
+		<button
+        type="button"
+        aria-label="Close"
+        class="absolute left-3 top-5 w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20 transition"
+        onclick="window.location.href='../index.html'">
+        <img src="../img/nav/back-arrow-1.png" alt="SwapIt Logo" class="h-3">
+      </button>
+      
+    </div>
+    <!-- curved white top like in mock -->
+    <div class="max-w-md mx-auto bg-white dark:bg-gray-900 rounded-t-3xl h-6"></div>
+  </header>
+
+      <!-- DASHBOARD GRID -->
+      <main class="p-6 space-y-6 border dark:border-gray-900">
+
+        <!-- Top Cards -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="rounded-xl bg-white p-4 shadow-sm border border-gray-100 dark:border-gray-600 dark:bg-gray-800">
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-xs text-gray-500 dark:text-gray-300">A-Points Balance</div>
+                <div class="text-2xl font-semibold text-green-700 dark:text-green-200" id="pointsBalance">2,230</div>
+                <div class="text-xs text-gray-400 mt-1 dark:text-gray-300">Points available</div>
+              </div>
+              <div class="flex flex-col items-end">
+                <button onclick="window.location.href='../all-users/redeem-points.html'" class="bg-green-600 text-white px-3 py-1 rounded-md text-sm">Redeem</button>
+                <a href="profile-points.html" class="text-xs text-gray-500 mt-2 hover:text-green-700 dark:text-gray-300">View history</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-white p-4 shadow-sm border border-gray-100 dark:border-gray-600 dark:bg-gray-800">
+            <div class="text-xs text-gray-500 dark:text-gray-300">Trust Score</div>
+            <div class="flex items-center gap-3 mt-2">
+              <div class="text-3xl font-semibold">4.7</div>
+              <div class="text-xs text-gray-400 dark:text-gray-300">Based on 128 swaps</div>
+            </div>
+            <div class="mt-3">
+              <div class="w-full bg-gray-100 rounded-full h-2">
+                <div id="trustBar" class="bg-green-600 h-2 rounded-full" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-white p-4 shadow-sm border border-gray-100 dark:border-gray-600 dark:bg-gray-800">
+            <div class="text-xs text-gray-500 dark:text-gray-300">Recent Activity</div>
+            <div class="mt-3 text-sm text-gray-700 dark:text-gray-300">
+              <div id="recentActivity">3 swaps confirmed in last 7 days</div>
+            </div>
+            <div class="mt-3">
+              <a href="redeem-points.html" class="inline-block bg-green-50 text-green-700 px-3 py-1 rounded-full text-sm">Redeem Rewards</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Main split: Recent Swaps / Pending Negotiations + Invite -->
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+  <!-- Recent Swaps / Pending / Cancelled (Tabs) -->
+  <div class="lg:col-span-2 space-y-4">
+
+    <div class="rounded-xl bg-white shadow-sm border border-gray-100 dark:border-gray-900 dark:bg-gray-900">
+<div class="py-4 px-4 bg-green-900 text-white mb-4">Trade smarter, save more. Swap food, connect with impact investors or give back to the community</div>
+      
+   <!-- Action Cards -->
+  <section class="grid grid-cols-3 gap-4 px-4 py-6">
+    <a href="./pages/free/search.html"><div class="bg-white shadow dark:bg-gray-800 shadow-soft rounded-xl p-3 flex flex-col items-center text-center">
+      <img src="img/index-pic/search-pic.png" class="h-12 mb-2" alt="">
+      <p class="text-sm font-bold font-Kodchasan text-green-700 dark:text-green-200">Find Food<br> Swaps</p>
+    </div></a>
+    <a href="./pages/free/posting.html"><div class="bg-white shadow dark:bg-gray-800 shadow-soft rounded-xl p-3 flex flex-col items-center text-center">
+      <img src="img/index-pic/post-pic.png" class="h-12 mb-2" alt="">
+      <p class="text-sm font-bold font-Kodchasan text-green-700 dark:text-green-200">Post Your<br>Foodstock</p>
+		</div></a>
+    <a href="./donation/donation-search.html"><div class="bg-white shadow dark:bg-gray-800 shadow-soft rounded-xl p-3 flex flex-col items-center text-center">
+      <img src="img/index-pic/donation.png" class="h-12 mb-2" alt="">
+      <p class="text-sm font-bold font-Kodchasan text-green-700 dark:text-green-200">Donate &<br>Support</p>
+		</div></a>
+  </section>
+
+<a href="dashboard/dashboard-mobile.html">
+  <div class="px-4">
+    <div class="dark:bg-gray-800 border-b border-yellow-200 rounded-md mb-6 shadow-deep p-2 flex items-center justify-center gap-3">
+      
+      
+
+      <p class="font-semibold text-gray-500 font-Kodchasan dark:text-green-200">
+        Go To Dashboard Overview
+      </p>
+		<img src="img/nav/forward-arrow.svg" class="h-3" alt="">
+
+    </div>
+  </div>
+</a>
+
+
+  <!-- Premium Section -->
+  <section class=" mx-4 rounded-md p-4 mb-20">
+    <h2 class="font-bold text-lg font-Kodchasan mb-2">🌟 Premium Offers</h2>
+    <p class="text-sm mb-4 text-center">
+      Gain priority visibility, pitch to investors, and access exclusive markets tailored for agriculture, technology, and development-focused ventures.
+    </p>
+
+    <!-- Premium Cards -->
+    <div class="space-y-6">
+		
+      <a href="./pages/premium/payment-plan.html"><div class="bg-white dark:bg-gray-800 border-b border-yellow-200 rounded-md mb-6 shadow-deep p-5 flex items-center gap-3">
+        <img src="img/index-pic/signup-pic.png" class="h-20" alt="">
+        <div class="">
+          <p class="font-semibold text-green-700 font-Kodchasan dark:text-green-200">Signup to Premium</p>
+          <p class="text-xs text-gray-600 dark:text-white ">Engage directly with verified large-scale food suppliers, processors, investors, and NGOs.</p>
+        </div>
+		  </div></a>
+
+      <a href="./pages/premium/progress-tracker.html"><div class="bg-white dark:bg-gray-800 border-b border-green-200 rounded-md mb-6 shadow-deep p-5 flex items-center gap-3">
+        <img src="img/index-pic/donate.png" class="h-20" alt="">
+        <div class="">
+          <p class="font-semibold text-green-700 font-Kodchasan dark:text-green-200">Become a Donor</p>
+          <p class="text-xs text-gray-600 dark:text-white">Give back to the socierty. Your donations help people in real need</p>
+        </div>
+		  </div></a>
+
+      <a href="./pages/premium/premium-search.html"><div class="bg-white dark:bg-gray-800 border-b border-orange-200 rounded-md shadow-deep p-5 flex items-center gap-3">
+        <img src="img/premium/exclusive.png" class="h-20" alt="">
+        <div class="px-2">
+          <p class="font-semibold text-green-700 font-Kodchasan dark:text-green-200">Exclusive Swaps</p>
+          <p class="text-xs text-gray-600 dark:text-white">Access special swap opportunities reserved for premium users.</p>
+        </div>
+		  </div></a>
+    </div>
+  </section>
+	
+  <!-- Bottom Navigation -->
+  <nav class="block md:hidden fixed bottom-0 w-full bg-white dark:bg-gray-900 shadow-inner flex justify-around py-2">
+    <a href="index.html"><div class="flex flex-col items-center text-green-700 dark:text-green-200">
+      <img src="img/buttom-nav/index/Home-green.svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7m-9 2v8m-4 4h8a2 2 0 002-2V9m-6 13h-2a2 2 0 01-2-2v-2" />
+      
+      <p class="text-xs font-bold">Home</p>
+		</div></a>
+    <a href="pages/free/search.html"><div class="flex flex-col items-center text-gray-600 dark:text-white">
+      <img src="img/buttom-nav/index/find-green.svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      
+      <p class="text-xs">Find</p>
+		</div></a>
+    <a href="pages/premium/premium.html"><div class="flex flex-col items-center text-gray-600 dark:text-white">
+      <img src="img/buttom-nav/index/premium-green.svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3-1.343 3-3S13.657 2 12 2 9 3.343 9 5s1.343 3 3 3zM4 22h16a2 2 0 002-2v-1c0-2.21-1.79-4-4-4H6c-2.21 0-4 1.79-4 4v1a2 2 0 002 2z" />
+     
+      <p class="text-xs">Premium</p>
+		</div></a>
+    <a href="./donation/donation-search.html"><div class="flex flex-col items-center text-gray-600 dark:text-white">
+      <img src="img/buttom-nav/index/giveback-green.svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+     
+      <p class="text-xs">Give Back</p>
+		</div></a>
+    <div id="accountBtn" class="flex flex-col items-center text-gray-600 dark:text-white">
+      <img src="img/buttom-nav/index/acc-green.svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor ">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 15c2.485 0 4.797.758 6.879 2.052M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      <p class="text-xs">Account</p>
+    </div>
+  </nav>
+
+	<div id="backdrop" class="fixed inset-0 bg-black bg-opacity-40 hidden"></div>
+	
+	<!-- Slide-up Menu -->
+  <div id="accountMenu" class="fixed bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-lg transform translate-y-full transition-transform duration-300 dark:bg-gray-800">
+    <div class="flex justify-between items-center px-4 py-3 border-b border-gray-200 dark:border-gray-700">
+      <h2 class="text-lg font-semibold dark:text-white">Account</h2>
+      <button id="closeMenu" class="text-gray-400 hover:text-gray-600 text-xl">&times;</button>
+    </div>
+    <ul class="p-4 space-y-4 text-gray-700">
+      <a href="./all-users/settings.html"><li class="flex items-center space-x-2 mb-4"><span><img src="img/account/settings.svg" alt="" class="h-4"></span><span class="dark:text-green-200">Settings</span></li></a>
+		<a href="./all-users/faqs.html"><li class="flex items-center space-x-2 mb-4"><span><img src="img/account/faqs.svg" alt="" class="h-4"></span><span class="dark:text-green-200">FAQs</span></li></a>
+		  <a href="./all-users/terms-condition.html"><li class="flex items-center space-x-2 mb-4"><span><img src="img/account/privacy.svg" alt="" class="h-4"></span><span class="dark:text-green-200">Privacy Policy</span></li></a>
+		  <a href="./all-users/how-it-works.html"><li class="flex items-center space-x-2 mb-4"><span><img src="img/account/how-it-works.svg" alt="" class="h-4"></span><span class="dark:text-green-200">How it works</span></li></a>
+		  <a href="./all-users/contact-us.html"><li class="flex items-center space-x-2 mb-4"><span><img src="img/account/contact.svg" alt="" class="h-4"></span><span class="dark:text-green-200">Contact Us</span></li></a>
+		  <a href="./all-users/about-us.html"><li class="flex items-center space-x-2 mb-4"><span><img src="img/account/about-us.svg" alt="" class="h-3"></span><span class="dark:text-green-200">About Us</span></li></a>
+    </ul>
+  </div>
+	
+<script src="donation/js/script.js"></script>
+	<script src="js/script.js"></script>   
+
+  </div>
+			</div>
+
+
+
+          <!-- Right Column: Invite + Quick Actions -->
+          <aside class="space-y-4">
+
+            <div class="rounded-xl bg-white p-4 shadow-sm border border-gray-100 dark:border-gray-600 dark:bg-gray-800">
+              <div class="flex items-start justify-between">
+                <div>
+                  <h4 class="font-semibold text-gray-800 dark:text-gray-300">Invite & Earn</h4>
+                  <p class="text-xs text-gray-500 mt-1 dark:text-gray-300">Share your code to earn A-Points</p>
+                </div>
+                <div class="text-right">
+                  <div class="text-sm font-semibold text-green-700 dark:text-green-200">AFM-7392-QJD</div>
+                  <button onclick="copyInvite()" class="mt-2 text-xs bg-green-600 text-white px-3 py-1 rounded-md">Copy</button>
+                </div>
+              </div>
+
+              <div class="mt-3">
+                <button onclick="shareWhatsApp()" class="w-full inline-flex items-center gap-2 justify-center bg-green-600 text-white px-3 py-2 rounded-lg text-sm">
+                  <img src="../img/social/whatsapp.svg" alt="whatsapp" class="w-4 h-4"> Share via WhatsApp
+                </button>
+                <button onclick="shareX()" class="w-full mt-2 inline-flex items-center gap-2 justify-center bg-sky-500 text-white px-3 py-2 rounded-lg text-sm">
+                  <img src="../img/social/twitter.svg" alt="x" class="w-4 h-4"> Share on X
+                </button>
+              </div>
+            </div>
+
+            <div class="rounded-xl bg-white p-4 shadow-sm border border-gray-100 dark:border-gray-600 dark:bg-gray-900">
+              <h4 class="font-semibold">Quick Actions</h4>
+              <div class="mt-3 grid grid-cols-2 gap-2">
+                <a href="profile-points.html" class="block text-center px-3 py-2 rounded-md bg-gray-50 hover:bg-gray-100 text-sm dark:bg-gray-800">My Points</a>
+                <a href="../all-users/redeem-points.html" class="block text-center px-3 py-2 rounded-md bg-gray-50 hover:bg-gray-100 text-sm dark:bg-gray-800">Redeem</a>
+                <a href="invite-earn.html" class="block text-center px-3 py-2 rounded-md bg-gray-50 hover:bg-gray-100 text-sm dark:bg-gray-800">Invite</a>
+                <a href="messages.html" class="block text-center px-3 py-2 rounded-md bg-gray-50 hover:bg-gray-100 text-sm dark:bg-gray-800">Messages</a>
+              </div>
+            </div>
+
+            <div class="rounded-xl bg-white p-4 shadow-sm border border-gray-100 dark:border-gray-600 text-sm dark:bg-gray-800">
+              <h4 class="font-semibold mb-2 ">Help & Safety</h4>
+              <p class="text-xs text-gray-500 dark:text-gray-300">Guides on safe swaps, meeting in public places, and dispute resolution.</p>
+              <a href="#" class="text-xs text-green-700 mt-2 inline-block dark:text-gray-300">Learn more →</a>
+            </div>
+
+          </aside>
+
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Mobile overlay sidebar (simple) -->
+  <div id="mobileSidebar" class="fixed inset-0 z-40 md:hidden hidden">
+    <div class="absolute inset-0 bg-black/40" onclick="closeMobileSidebar()"></div>
+    <div class="absolute left-0 top-0 h-full w-72 bg-white p-5">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 rounded-full bg-green-700 flex items-center justify-center text-white font-bold">A</div>
+        <div>
+          <h2 class="font-semibold">Afromark</h2>
+          <p class="text-xs text-gray-500">Community Trade</p>
+        </div>
+      </div>
+      <nav class="space-y-3 text-sm">
+        <!-- Reuse same menu items -->
+        <a href="../index.html" data-page="index" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-2 py-2 rounded-lg hover:bg-gray-50"><svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3 9 4-18 3 9h4"/></svg><span>Home</span></a>
+		  
+        <a href="dashboard.html" data-page="dashboard" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-2 py-2 rounded-lg hover:bg-gray-50"><svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3 9 4-18 3 9h4"/></svg><span>Dashboard Overview</span></a>
+		  
+		  <a href="donate-overview.html" data-page="donations" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-2 py-2 rounded-lg hover:bg-gray-50"><svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3 9 4-18 3 9h4"/></svg><span>Donations & Request</span></a>
+		  
+		  <a href="investment-overview.html" data-page="investment" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-2 py-2 rounded-lg hover:bg-gray-50"><svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3 9 4-18 3 9h4"/></svg><span>Pitches & Investment</span></a>
+		  
+		  <a href="#" data-page="points" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-2 py-2 rounded-lg hover:bg-gray-50"><svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3 9 4-18 3 9h4"/></svg><span>Points & Rewards</span></a>
+		  
+		  <a href="../pages/premium/premium.html" data-page="premium" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-2 py-2 rounded-lg hover:bg-gray-50"><svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3 9 4-18 3 9h4"/></svg><span>Premium Offers</span></a>
+		  
+		  <a href="../all-users/settings.html" data-page="settings" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-2 py-2 rounded-lg hover:bg-gray-50"><svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3 9 4-18 3 9h4"/></svg><span>Accounts & Settings</span></a>
+        
+        
+      </nav>
+    </div>
+  </div>
+
+  
+
+
+
+<style>
+  .activeTab {
+    border-bottom: 2px solid #0E4D22;
+    color: #0E4D22;
+    font-weight: 600;
+  }
+</style>
+<style>
+  .active-link {
+    background-color: #f5f5f5; /* Light gray */
+    border: 1px solid #e3e3e3; /* Optional soft border */
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+</style>
+</body>
+</html>
