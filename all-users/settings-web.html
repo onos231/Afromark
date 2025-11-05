@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Afromark — Dashboard</title>
+  <!-- Link to your compiled Tailwind CSS -->
+  <link href="../dist/output.css" rel="stylesheet">
+</head>
+	
+<body class="dark:bg-gray-900 text-black dark:text-white font-sans">
+
+  <div class="min-h-screen flex">
+
+    <!-- SIDEBAR -->
+    <aside id="sidebar" class="hidden md:flex md:flex-col w-72 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-700 p-5 space-y-6">
+      <div class="flex items-center gap-3  px-4 py-4 rounded-half">
+        <!-- Replace with your SVG logo or <img> -->
+        <div class=" rounded-full flex items-center justify-center text-white font-bold"> <img src="../img/logo/app-logo.png" alt="SwapIt Logo" class="h-8"></div>
+        <div>
+        
+        </div>
+      </div>
+
+      <nav class="flex-1">
+  <ul class="space-y-2 text-sm">
+    <li>
+      <a href="../index-web.html" data-page="index"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+		  <img src="../img/buttom-nav/index/Home-green.svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <span>Home</span>
+      </a>
+    </li>
+    <li>
+      <a href="../dashboard/dashboard-web.html" data-page="dashboard"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+		  <img src="../img/buttom-nav/index/dashboard-green.svg" alt="SwapIt Logo" class="h-3">
+        <span>Dashboard Overview</span>
+      </a>
+    </li>
+	  <li>
+      <a href="../donation/donation-web-search.html" data-page="donations"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+		  <img src="../img/buttom-nav/index/giveback-green.svg" alt="SwapIt Logo" class="h-3">
+        <span>Donations & Request</span>
+      </a>
+    </li>
+	  <li>
+      <a href="investor-marketplace-web.html"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+		  <img src="../img/buttom-nav/index/investment.svg" alt="SwapIt Logo" class="h-4">
+        <span>Pitches & Investment</span>
+      </a>
+    </li>
+    <li>
+      <a href="../all-users/redeem-points-web.html" data-page="profile-points"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+		  <img src="../img/buttom-nav/index/points.svg" alt="SwapIt Logo" class="h-4 px-1">
+        <span>A-Points & Rewards</span>
+      </a>
+    </li>
+    
+    <li>
+      <a href="premium-web.html" data-page="premium"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+		  <img src="../img/buttom-nav/index/premium-green.svg" alt="SwapIt Logo" class="h-4">
+        <span>Premium Offers</span>
+      </a>
+    </li>
+    <li>
+      <a href="../all-users/settings-web.html" data-page="settings"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50"><img src="../img/buttom-nav/index/acc-green.svg" alt="SwapIt Logo" class="h-3">
+        <span>Accounts & Settings</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+
+      <div class="mt-auto">
+        <button class="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-50 text-sm text-red-600 dark:text-red-300">Logout</button>
+      </div>
+    </aside>
+	  
+	  
+	  
+
+    <!-- MAIN CONTENT -->
+    <div class="flex-1 flex flex-col">
+
+      <!-- TOPBAR (mobile hamburger + search + profile) -->
+      <header class="flex items-center justify-between px-6 py-4 bg-white border border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+        <div class="flex items-center gap-3">
+          <!-- Hamburger for small screens -->
+         <button id="openSidebarBtn" class="block md:hidden p-2 rounded-md bg-gray-100 dark:bg-gray-700">
+            <svg class="w-5 h-5 text-gray-700 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+
+
+          <div class="relative hidden sm:block">
+            <input type="search" placeholder="Search swaps, users, items..." class="w-80 px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-900 bg-gray-50 text-sm focus:ring-1 focus:ring-green-200 outline-none dark:bg-gray-800">
+			  <img src="../../img/search/search.svg" alt="Profile" class="absolute right-3 top-2.5 w-4 h-4 text-gray-400" fill="none">
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button class="p-2 rounded-md hover:bg-gray-50" title="Notifications">
+            <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 10-12 0v3.159a2.032 2.032 0 01-.595 1.436L4 17h5"/></svg>
+          </button>
+
+          <!-- Profile / My Account -->
+          <div class="flex items-center gap-2 p-1 rounded-md hover:bg-gray-50 cursor-pointer">
+            <img src="../../img/profile/profile-pic.jpg" alt="Profile" class="w-8 h-8 rounded-full object-cover">
+            <div class="text-sm text-right">
+              <div class="font-medium">My Account</div>
+              <div class="text-xs text-gray-500">Manage profile</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+		
+		
+		
+      <!-- DASHBOARD GRID -->
+		<div class="p-4 max-w-7xl mx-auto mb-20">
+
+  <!-- FLEX WRAPPER (This is the real fix) -->
+	  <div class="flex-grow px-4 py-3 mb-20 overflow-y-auto 
+  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+
+    <!-- Phone Number -->
+    <div class="shadow-deep dark:bg-gray-800 py-6 px-4 rounded-lg w-full md:w-1/3">
+      <label class="block mb-4 font-semibold text-green-700 dark:text-green-200 font-Kodchasan">Update Phone Number</label>
+      <label class="block mb-1 font-semibold dark:text-gray-300 px-3">Phone Number</label>
+      <input type="text" id="phoneInput" placeholder="Enter new phone number"
+        class="w-full border dark:bg-gray-900 dark:border-gray-900 rounded px-3 py-2 focus:ring-2 focus:ring-green-500 outline-none mb-4" />
+      <button id="updatePhoneBtn"
+        class="mt-3 w-full bg-yellow-500 text-gray-900 py-2 rounded-lg hover:bg-yellow-600 dark:text-white transition">
+        Update Phone
+      </button>
+    </div>
+
+    <!-- Change Password -->
+    <div class="shadow-deep dark:bg-gray-800 py-6 px-4 rounded-lg w-full md:w-1/3">
+      <label class="block mb-4 font-semibold text-green-700 dark:text-green-200 font-Kodchasan">Change Password</label>
+
+      <label class="block mb-1 font-semibold dark:text-gray-300 px-3">Old Password</label>
+      <input type="password" class="w-full px-3 py-2 rounded-lg border dark:bg-gray-900 dark:border-gray-900 focus:ring-2 focus:ring-green-500" />
+
+      <label class="block mt-4 mb-1 font-semibold dark:text-gray-300 px-3">New Password</label>
+      <input type="password" class="w-full px-3 py-2 rounded-lg border dark:bg-gray-900 dark:border-gray-900 focus:ring-2 focus:ring-green-500" />
+
+      <button id="updatePasswordBtn"
+        class="mt-3 w-full bg-yellow-500 text-gray-900 py-2 rounded-lg hover:bg-yellow-600 dark:text-white transition">
+        Update Password
+      </button>
+    </div>
+
+    <!-- Toggles -->
+    <div class="shadow-deep dark:bg-gray-800 py-6 px-4 rounded-lg w-full md:w-1/3 space-y-4">
+      <div class="flex justify-between items-center">
+        <span>Appear Offline</span>
+        <input type="checkbox" class="toggle">
+      </div>
+
+      <div class="flex justify-between items-center">
+        <span>Dark Theme</span>
+        <input type="checkbox" class="toggle">
+      </div>
+
+      <div class="flex justify-between items-center">
+        <span>Allow WhatsApp</span>
+        <input type="checkbox" class="toggle">
+      </div>
+
+      <div class="flex justify-between items-center">
+        <span>Allow Phone Calls</span>
+        <input type="checkbox" class="toggle">
+      </div>
+
+      <div class="flex justify-between items-center">
+        <span>Disable Notification</span>
+        <input type="checkbox" class="toggle">
+      </div>
+    </div>
+
+  </div>
+</div>
+
+    </div>
+ 
+
+  <!-- Mobile overlay sidebar (simple) -->
+  <div id="mobileSidebar" class="fixed inset-0 z-40 md:hidden hidden">
+    <div class="absolute inset-0 bg-black/40" onclick="closeMobileSidebar()"></div>
+    <div class="absolute left-0 top-0 h-full w-72 bg-white dark:bg-gray-900 p-5">
+      <div class="flex items-center gap-3  px-4 py-4 rounded-half">
+        <!-- Replace with your SVG logo or <img> -->
+        <div class=" rounded-full flex items-center justify-center text-white font-bold"> <img src="../img/logo/app-logo.png" alt="SwapIt Logo" class="h-8"></div>
+        <div>
+        
+        </div>
+      </div>
+      <nav class="space-y-3 text-sm">
+        <!-- Reuse same menu items -->
+        <a href="../index-web.html" data-page="index" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50 nav-link block px-2 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"><img src="../../img/buttom-nav/Home-1.svg" alt="SwapIt Logo" class="h-4"><span class="text-gray-900 dark:text-white">Home</span></a>
+		  
+        <a href="../dashboard/dashboard-web.html" data-page="dashboard" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-2 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"><img src="../img/buttom-nav/index/dashboard-green.svg" alt="SwapIt Logo" class="h-3"><span class="text-gray-900 dark:text-white">Dashboard Overview</span></a>
+		  
+		  <a href="../donation/donation-web-search.html" data-page="donations" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-2 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"><img src="../img/buttom-nav/index/giveback-green.svg" alt="SwapIt Logo" class="h-3"><span class="text-gray-900 dark:text-white">Donations & Request</span></a>
+		  
+		  <a href="investor-marketplace-web.html" data-page="investment" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-2 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"><img src="../img/buttom-nav/index/investment.svg" alt="SwapIt Logo" class="h-4"><span class="text-gray-900 dark:text-white">Pitches & Investment</span></a>
+		  
+		  <a href="../all-users/invite-earn-web.html" data-page="points" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-4 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"><img src="../img/buttom-nav/index/points.svg" alt="SwapIt Logo" class="h-4"><span class="text-gray-900 dark:text-white">Points & Rewards</span></a>
+		  
+		  <a href="../pages/premium/premium-web.html" data-page="premium" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-2 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"><img src="../img/buttom-nav/index/premium-green.svg" alt="SwapIt Logo" class="h-4"><span class="text-gray-900 dark:text-white">Premium Offers</span></a>
+		  
+		  <a href="../all-users/settings-web.html" data-page="settings" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50nav-link block px-2 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"><img src="../img/buttom-nav/index/acc-green.svg" alt="SwapIt Logo" class="h-3"><span class="text-gray-900 dark:text-white">Accounts & Settings</span></a>
+        
+        
+      </nav>
+    </div>
+  </div>
+	</div>
+  
+<script>
+		    // Sidebar toggle
+    document.getElementById('openSidebarBtn').addEventListener('click', () => {
+      document.getElementById('mobileSidebar').classList.remove('hidden');
+    });
+    function closeMobileSidebar() {
+      document.getElementById('mobileSidebar').classList.add('hidden');
+    }
+	  
+	</script>
+
+
+<style>
+  .activeTab {
+    border-bottom: 2px solid #0E4D22;
+    color: #0E4D22;
+    font-weight: 600;
+  }
+</style>
+<style>
+  .active-link {
+    background-color: #f5f5f5; /* Light gray */
+    border: 1px solid #e3e3e3; /* Optional soft border */
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+</style>
+	
+	
+	<script src="../donation/js/script.js"></script>
+	
+	<script src="../js/script.js"></script>
+</body>
+</html>
