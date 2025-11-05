@@ -27,7 +27,7 @@
 <div class="absolute top-4 left-4 right-4 flex justify-between items-center z-20">
   <!-- Back button -->
   <button 
-    onclick="window.location.href='../index.html'"
+    onclick="history.back()"
     class="p-2 rounded-full bg-gray-300 hover:scale-105 transition transform">
     <img src="../img/nav/back-arrow-1.png" alt="Back" class="h-3">
   </button>
@@ -83,6 +83,19 @@
 
   <!-- ==== Profile Links ==== -->
   
+<a href="profile-verification.html"
+       class="flex items-center justify-between bg-white dark:bg-gray-800 rounded-md shadow-deep hover:shadow-md transition dark:hover:bg-gray-700">
+      <div class="flex items-center gap-4 px-12">
+          <div class="bg-green-50 dark:text-green-700 w-10 h-10 rounded-xl flex flex-col justify-center items-center font-semibold dark:bg-gray-700">
+          <img src="../img/profile/verify.svg" alt="SwapIt Logo" class="object h-6">
+         
+        </div>
+        <div>
+          <p class="font-semibold text-gray-800 dark:text-white">Verify your account</p>
+        </div>
+      </div>
+      <img src="../img/profile/f-arrow.svg" class="h-3 px-2">
+    </a>
 
     <!-- Points & Rewards -->
     <a href="profile-points.html"

@@ -12,7 +12,7 @@
 <body class="bg-white dark:bg-gray-900 text-black dark:text-white font-sans">
 
  <!-- Header -->
-	<header class="flex items-center justify-between px-4 py-3 bg-white shadow">
+	<header class="hidden flex items-center justify-between px-4 py-3 bg-white shadow">
     <img src="../../img/logo/app-logo.png" alt="SwapIt Logo" class="h-8">
     <a href="../../all-users/profile.html"><div class="w-9 h-9 bg-gray-200 rounded-full flex items-center justify-center">
       <img src="../../img/profile/profile.svg" class="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -22,10 +22,20 @@
   </header>
 
   <header class="bg-[#0E4D22] text-white">
-    <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
-      <h1 class="text-center font-semibold">For everyone: readers and non-readers.<br>
+	  <div class="max-w-md mx-auto relative px-4 pt-6 pb-1">
+      <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
+      <h1 class="text-center font-semibold mt-4">For everyone: readers and non-readers.<br>
       Use typing or voice command.</h1>
       
+    </div>
+      <!-- Close button only (right) -->
+      <button
+        type="button"
+        aria-label="Close"
+        class="absolute left-3 top-5 w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20 transition"
+        onclick="history.back()">
+        <img src="../../img/nav/back-arrow-1.png" alt="SwapIt Logo" class="h-3">
+      </button>
     </div>
     <!-- curved white top like in mock -->
     <div class="max-w-md mx-auto bg-white dark:bg-gray-900 rounded-t-3xl h-6"></div>
@@ -139,7 +149,7 @@
 
 
   <!-- Bottom Navigation -->
-  <nav class="fixed bottom-0 w-full bg-white shadow-inner flex justify-around py-2 dark:bg-gray-800">
+  <nav class="hidden fixed bottom-0 w-full bg-white shadow-inner flex justify-around py-2 dark:bg-gray-800">
     <a href="../../index.html"><div class="flex flex-col items-center text-gray-700">
       <img src="../../img/buttom-nav/index/Home-green.svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7m-9 2v8m-4 4h8a2 2 0 002-2V9m-6 13h-2a2 2 0 01-2-2v-2" />

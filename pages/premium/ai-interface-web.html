@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwapIt - Home</title>
+
+	<link href="../../dist/output.css" rel="stylesheet">
+
+</head>
+
+<body class="dark:bg-gray-900 text-black dark:text-white font-sans">
+	
+	<div class="flex">
+<aside id="sidebar" class="hidden md:flex md:flex-col w-72 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-700 p-5 space-y-6">
+      <div class="flex items-center gap-3  px-4 py-4 rounded-half">
+        <!-- Replace with your SVG logo or <img> -->
+        <div class=" rounded-full flex items-center justify-center text-white font-bold"> <img src="../../img/logo/app-logo.png" alt="SwapIt Logo" class="h-8"></div>
+        <div>
+        
+        </div>
+      </div>
+
+      <nav class="flex-1">
+  <ul class="space-y-2 text-sm">
+    <li>
+      <a href="index.html" data-page="index"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+		  <img src="../../img/buttom-nav/index/Home-green.svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <span>Home</span>
+      </a>
+    </li>
+    <li>
+      <a href="dashboard.html" data-page="dashboard"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+		  <img src="../../img/buttom-nav/index/dashboard-green.svg" alt="SwapIt Logo" class="h-3">
+        <span>Dashboard Overview</span>
+      </a>
+    </li>
+	  <li>
+      <a href="donate.html" data-page="donations"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+		  <img src="../../img/buttom-nav/index/giveback-green.svg" alt="SwapIt Logo" class="h-3">
+        <span>Donations & Request</span>
+      </a>
+    </li>
+	  <li>
+      <a href="donate.html" data-page="investment"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+		  <img src="../../img/buttom-nav/index/investment.svg" alt="SwapIt Logo" class="h-4">
+        <span>Pitches & Investment</span>
+      </a>
+    </li>
+    <li>
+      <a href="redeem-points.html" data-page="profile-points"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+		  <img src="../../img/buttom-nav/index/points.svg" alt="SwapIt Logo" class="h-4 px-1">
+        <span>A-Points & Rewards</span>
+      </a>
+    </li>
+    
+    <li>
+      <a href="premium.html" data-page="premium"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+		  <img src="../../img/buttom-nav/index/premium-green.svg" alt="SwapIt Logo" class="h-4">
+        <span>Premium Offers</span>
+      </a>
+    </li>
+    <li>
+      <a href="settings.html" data-page="settings"
+         class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50"><img src="../../img/buttom-nav/index/acc-green.svg" alt="SwapIt Logo" class="h-3">
+        <span>Accounts & Settings</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+
+      <div class="mt-auto">
+        <button class="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-50 text-sm text-red-600">Logout</button>
+      </div>
+    </aside>
+
+<div class="w-full">
+  <header class="bg-[#0E4D22] text-white">
+	  	<div class="block md:hidden max-w-md mx-auto relative px-4 pt-6 pb-1">
+      <div class="max-w-md mx-auto relative px-4 pt-6 pb-5">
+      <h1 class="text-center font-semibold mt-4">For everyone: readers and non-readers.<br>
+      Use typing or voice command.</h1>
+      
+    </div>
+      <!-- Close button only (right) -->
+      <button
+        type="button"
+        aria-label="Close"
+        class="absolute left-3 top-5 w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20 transition"
+        onclick="history.back()">
+        <img src="../../img/nav/back-arrow-1.png" alt="SwapIt Logo" class="h-3">
+      </button>
+    </div>
+	  
+	  
+    
+	  <div class="flex justify-between items-center px-20 py-2 dark:border-gray-900">
+    <button onclick="window.location.href='../../dashboard/my-swap-overview.html'" class="text-sm font-bold font-Kodchasan text-green-200 dark:text-green-200">Swaps</button>
+    <button onclick="window.location.href='posting.html'" class="px-3 py-1 rounded text-sm font-bold font-Kodchasan text-green-200 border border-gray-300 dark:text-green-200">+ Post Swap</button>
+  </div>
+    <!-- curved white top like in mock -->
+    <div class="max-w-md mx-auto bg-green-900 dark:bg-green-900 rounded-t-3xl h-6"></div>
+  </header>
+  
+
+
+<!-- ==== MAIN INTERFACE (Under your header/nav) ==== -->
+  <main class="max-w-md mx-auto p-4 pb-2">
+
+    <!-- Search & AI Panel -->
+    <section class="space-y-3">
+      <label class="text-sm font-semibold text-gray-700 dark:text-gray-300">What do you have or need?</label>
+      <div class="flex gap-2">
+        <input id="searchInput" type="text"
+          placeholder="e.g., Onions, 1 basket"
+          class="flex-1 rounded-lg border border-gray-200 dark:border-gray-900 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-gray-800">
+        <button id="aiToggle"
+          class="px-3 py-2 rounded-lg bg-green-600 text-white text-sm font-medium">AI</button>
+      </div>
+
+      <!-- Suggestion chips -->
+      <div id="chips" class="flex flex-wrap gap-2 text-sm">
+        <button class="px-3 py-1 border border-gray-200 dark:border-gray-900 dark:bg-gray-800 rounded-full text-gray-700 dark:text-white">Onions</button>
+        <button class="px-3 py-1 border border-gray-200 dark:border-gray-900 dark:bg-gray-800 rounded-full text-gray-700 dark:text-white">Rice</button>
+        <button class="px-3 py-1 border border-gray-200 dark:border-gray-900 dark:bg-gray-800 rounded-full text-gray-700 dark:text-white">Yam</button>
+        
+        <button class="px-3 py-1 border border-gray-200 dark:border-gray-900 dark:bg-gray-800 rounded-full text-gray-700 dark:text-white">Donate surplus</button>
+      </div>
+
+      <!-- AI info card -->
+      <div id="aiCard" class="hidden rounded-xl border border-green-100 dark:border-gray-900 bg-green-50 p-4 dark:bg-gray-800">
+        <div class="flex justify-between items-start">
+          <div>
+            <p class="text-sm font-semibold text-green-800 dark:text-green-200">Afromark Assistant</p>
+            <p class="text-xs text-green-700 dark:text-green-200">AI found 3 matches near you</p>
+          </div>
+          <span class="text-xs text-green-600 dark:text-green-200">AI v1.0</span>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 mt-3 text-sm">
+          <div class="bg-white dark:bg-gray-900 rounded-md p-2 text-center shadow-sm">
+            <p class="text-xs text-gray-500 dark:text-gray-300">Best Match</p>
+            <p class="font-semibold text-green-700 dark:text-green-200">3 nearby listings</p>
+          </div>
+          <div class="bg-white rounded-md p-2 text-center shadow-sm dark:bg-gray-900">
+            <p class="text-xs text-gray-500 dark:text-gray-300">Trust</p>
+            <p class="font-semibold text-green-700 dark:text-green-200">Avg. 4.4⭐</p>
+          </div>
+        </div>
+
+        <div class="mt-3 flex gap-2">
+          <button class="flex-1 bg-green-600 text-white text-sm rounded-md py-1" id="autoSuggestBtn">Auto-suggest</button>
+          <button class="flex-1 border border-green-300 dark:border-gray-500 text-green-700 text-sm rounded-md py-1 dark:text-green-200" id="prepNegBtn">Prep negotiation</button>
+        </div>
+      </div>
+    </section>
+</main>
+    <!-- Match Results -->
+    <section class="mt-4 space-y-3 px-4">
+  <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-300">Suggested Matches</h3>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+    <!-- Card 1 -->
+    <div class="bg-white border dark:border-gray-700 shadow-deep dark:bg-gray-800 rounded-xl p-5">
+      <div class="flex gap-3">
+        <img src="../../img/free-swap/onions.jpg" class="w-16 h-16 object-cover rounded-lg" />
+        <div class="flex-1 space-y-1">
+          <p class="text-sm font-semibold text-gray-800 dark:text-gray-300">1 Basket of Onions</p>
+          <p class="text-xs text-gray-500 dark:text-gray-300">Wants: 3 Tubers of Yam</p>
+
+          <div class="flex justify-between items-center">
+            <span class="text-xs text-gray-400 dark:text-gray-300">Lagos • 400m</span>
+            <span class="bg-green-100 text-green-800 dark:text-green-200 dark:bg-gray-900 text-xs px-2 py-1 rounded-full">⭐4.6</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-sm text-gray-600 mt-2 dark:text-gray-300">Prefer fresh, big tubers, no rot and no new harvest.</p>
+
+      <div class="mt-3 flex gap-2">
+        <button class="flex-1 bg-green-600 text-white text-sm rounded-md py-1" onclick="openNegotiation('1 Basket of Onions','3 Tubers of Yam')">Request Swap</button>
+        <button class="flex-1 border border-gray-200 dark:border-gray-700 text-sm rounded-md py-1" onclick="openSchedule()">Schedule</button>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bg-white border dark:border-gray-700 shadow-deep dark:bg-gray-800 rounded-xl p-5">
+      <div class="flex gap-3">
+        <img src="../../img/free-swap/onions.jpg" class="w-16 h-16 object-cover rounded-lg" />
+        <div class="flex-1 space-y-1">
+          <p class="text-sm font-semibold text-gray-800 dark:text-gray-300">10 bulbs of Onions</p>
+          <p class="text-xs text-gray-500 dark:text-gray-300">Wants: 8 cups of Rice</p>
+
+          <div class="flex justify-between items-center">
+            <span class="text-xs text-gray-400 dark:text-gray-300">Lagos • 1.2km</span>
+            <span class="bg-green-100 text-green-800 dark:text-green-200 dark:bg-gray-900 text-xs px-2 py-1 rounded-full">⭐4.2</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-sm text-gray-600 mt-2 dark:text-gray-300">Can trade more onions if needed.</p>
+
+      <div class="mt-3 flex gap-2">
+        <button class="flex-1 bg-green-600 text-white text-sm rounded-md py-1" onclick="openNegotiation('10 bulbs of Onions','8 cups of Rice')">Request Swap</button>
+        <button class="flex-1 border border-gray-200 dark:border-gray-700 text-sm rounded-md py-1" onclick="openSchedule()">Schedule</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- Negotiation Modal -->
+    <div id="modal" class="fixed inset-0 hidden bg-black flex items-end justify-center">
+      <div class="bg-white dark:bg-gray-900 rounded-t-2xl p-4 w-full max-w-sm mt-10">
+        <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-300" id="modalTitle">Negotiate</h3>
+        <textarea id="negText" rows="4"
+          class="w-full mt-3 border border-gray-200 rounded-md p-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-gray-800 dark:text-gray-300"></textarea>
+        <div class="flex justify-between mt-3">
+          <button class="text-sm text-gray-500 dark:text-gray-300" onclick="closeModal()">Cancel</button>
+          <button class="bg-green-600 text-white px-4 py-1 text-sm rounded-md" onclick="sendNegotiation()">Send</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Schedule Modal -->
+    <div id="scheduleModal" class="fixed inset-0 hidden bg-black flex items-end justify-center">
+      <div class="bg-white dark:bg-gray-900 rounded-t-2xl p-4 w-full max-w-sm mt-10">
+        <h3 class="text-sm font-semibold text-gray-800 mb-3 dark:text-gray-300">Schedule Meeting</h3>
+
+        <label class="block text-xs text-gray-600 mb-1 dark:text-gray-300">Date</label>
+        <input id="scheduleDate" type="date" class="w-full border border-gray-200 dark:border-gray-500 rounded-md p-2 text-sm mb-3 focus:ring-2 focus:ring-green-500 dark:bg-gray-800">
+
+        <label class="block text-xs text-gray-600 mb-1 dark:text-gray-300">Time</label>
+        <input id="scheduleTime" type="time" class="w-full border border-gray-200 dark:border-gray-500 rounded-md p-2 text-sm mb-3 focus:ring-2 focus:ring-green-500 dark:bg-gray-800">
+
+        <label class="block text-xs text-gray-600 mb-1 dark:text-gray-300">Location</label>
+        <input id="scheduleLocation" type="text" placeholder="e.g., Community Hall, GRA Benin"
+          class="w-full border border-gray-200 dark:border-gray-500 rounded-md p-2 text-sm mb-4 focus:ring-2 focus:ring-green-500 dark:bg-gray-800">
+
+        <div class="flex justify-between">
+          <button class="text-sm text-gray-500 dark:text-gray-300" onclick="closeSchedule()">Cancel</button>
+          <button class="bg-green-600 text-white px-4 py-1 text-sm rounded-md" onclick="confirmSchedule()">Confirm</button>
+        </div>
+      </div>
+    </div>
+  
+		</div>
+
+  <!-- ==== JAVASCRIPT LOGIC ==== -->
+  <script>
+    const aiToggle = document.getElementById('aiToggle');
+    const aiCard = document.getElementById('aiCard');
+    const chips = document.querySelectorAll('#chips button');
+    const searchInput = document.getElementById('searchInput');
+
+    aiToggle.addEventListener('click', () => {
+      aiCard.classList.toggle('hidden');
+    });
+
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        searchInput.value = chip.textContent.trim();
+        aiCard.classList.remove('hidden');
+      });
+    });
+
+    document.getElementById('autoSuggestBtn')?.addEventListener('click', () => {
+      alert('AI suggests best swaps and fills negotiation templates.');
+    });
+    document.getElementById('prepNegBtn')?.addEventListener('click', () => {
+      alert('AI pre-fills safe negotiation and meeting suggestions.');
+    });
+
+    // Negotiation Modal
+    const modal = document.getElementById('modal');
+    const negText = document.getElementById('negText');
+    const modalTitle = document.getElementById('modalTitle');
+
+    function openNegotiation(offer, want) {
+      modal.classList.remove('hidden');
+      modalTitle.textContent = `Negotiate: ${offer} ↔ ${want}`;
+      negText.value = `Hi! I can offer ${offer}. Would you accept ${want}?`;
+    }
+    function closeModal() {
+      modal.classList.add('hidden');
+      negText.value = '';
+    }
+    function sendNegotiation() {
+      alert('Negotiation sent:\n\n' + negText.value);
+      closeModal();
+    }
+
+    // Schedule Modal
+    const scheduleModal = document.getElementById('scheduleModal');
+    const scheduleDate = document.getElementById('scheduleDate');
+    const scheduleTime = document.getElementById('scheduleTime');
+    const scheduleLocation = document.getElementById('scheduleLocation');
+
+    function openSchedule() {
+      scheduleModal.classList.remove('hidden');
+    }
+    function closeSchedule() {
+      scheduleModal.classList.add('hidden');
+      scheduleDate.value = '';
+      scheduleTime.value = '';
+      scheduleLocation.value = '';
+    }
+    function confirmSchedule() {
+      const d = scheduleDate.value || 'unspecified date';
+      const t = scheduleTime.value || 'unspecified time';
+      const l = scheduleLocation.value || 'unspecified location';
+      alert(`Meeting scheduled successfully!\n\n📅 ${d}\n⏰ ${t}\n📍 ${l}`);
+      closeSchedule();
+    }
+  </script>
+	
+	<script src="js/script.js"></script>
+	<script src="../../js/script.js"></script>
+	
+</body>
+</html>
